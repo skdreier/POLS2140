@@ -1,0 +1,475 @@
+---
+title: "POLS 2140: Introduction to Political Analysis"
+subtitle: "Fall 2026 | University of New Mexico"
+author: "Professor Dreier, Ph.D."
+date: "Fall 2026"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    number-sections: false
+    theme: cosmo
+---
+
+| | |
+|:---|:---|
+| **Professor:** Dr. Sarah Dreier (she/her) | **Class time:** T/Th 11:00 am–12:15 pm |
+| **Office:** SSCO 2048 | **Class location:** DSH 224 |
+| **Office Hours:** Tue 2:30–4:30 pm | |
+
+**Course TA:** Karla Eickhoff (she/her)
+**Office:** SSCO 2076
+**Office Hours:** Tue 12:30–2:30 pm; Thurs 12:30–1:30 pm
+**E-mail:** [keickhoff@unm.edu](mailto:keickhoff@unm.edu)
+
+---
+
+*Founded in 1889, the University of New Mexico sits on the traditional homelands of the Pueblo of Sandia. The original peoples of New Mexico—Pueblo, Navajo, and Apache—since time immemorial, have deep connections to the land and have made significant contributions to the broader community statewide. We honor the land itself and those who remain stewards of this land throughout the generations and also acknowledge our committed relationship to Indigenous peoples. We gratefully recognize our history.*
+
+---
+
+## Course Objectives
+
+This course will teach you to understand and conduct statistics-based scientific research about politics. After successful completion of this course, students will:
+
+- Understand the fundamental components of social science research;
+- Know how to interpret statistical and experimental evidence;
+- Be able to implement basic statistical analysis in **R** (data science program);
+- Think critically about how data, evidence, and empirical analysis can reinforce or challenge the unearned dominance of certain social groups over other minoritized groups.
+
+As part of this process, you will apply the scientific method to examine and write about a political topic that matters to you. If you wish to pursue a political science honors thesis, develop an independent research plan, or pitch commentary to a newspaper, the research that you conduct in this course could help you do so. Ultimately, this course aims to introduce you to skills that can help you pursue careers in politics, government, research, or data science.
+
+**Course Credit Hours:** This is a three credit-hour course. Class meets for two 75-minute sessions of direct instruction per week for fifteen weeks during the Fall 2026 semester. Please plan for a *minimum* of six hours of out-of-class work (including reading, homework, study, assignment completion, and class preparation) each week.
+
+---
+
+## Working with Professor Dreier and Karla (TA)
+
+**Pre-requisites:** There are no pre-requisites for this class. You do not need to have any prior knowledge or skills to succeed in this class. We will cover statistics concepts and computer coding tools that are new to and/or unfamiliar to many political science majors. In previous years, some students had difficulty approaching course concepts or become uncertain about whether they belonged in the political science major. My advice is to hang in there, work with your TA and/or me, put in some extra hours studying, and/or access student resources. We will guide you along the way and are dedicated to helping each of you take the positive steps and do the focused work you need to do to succeed in this class, to thrive as a political science major, and to master these exciting data-science tools!
+
+**Working with your TA:** Your TA is Karla Eickhoff, Ph.D. student in political science. Karla's job is to help support and guide you through the course. She can help you understand course material, trouble-shoot your computer (R) code, develop and execute your research project, and generally navigate course tasks. When you have questions about course material, concerns or circumstances to address, accommodations you need, or thoughts you wish to share, **please start by contacting Karla**. If Karla is unable to help you, please come to my office hours!
+
+**Office hours:** Karla holds office hours immediately after class on Tuesdays and Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas.
+
+**Course communication:** You should regularly check your UNM email and UNM Canvas for important course changes, updates, and announcements. We **do not** reply to emails/messages sent via Canvas. ***Note that class time and office hours (rather than email) are usually the most productive venues for you to raise substantive questions regarding course material and evaluation.*** We aim to reply to student emails on **weekdays**, within 48 hours.
+
+**Resources for academic success:** Past students have used campus resources to help them succeed in this course, including: peer tutoring at the [Center for Academic Program Support](https://caps.unm.edu/) (CAPS), [mental health services](http://mentalhealth.unm.edu), free food at the Lobo Food Pantry, and jobs on campus. Your advisor, the resource centers, the Dean of Students, and I can help you find the right opportunities for you.
+
+**Life Responsibilities:** Many students face obstacles to their education as a result of working jobs; caring for children or other family members; meeting family, cultural or religious obligations; or unforeseen personal responsibilities or difficulties. If you experience challenges that require you to miss a class or that otherwise impact your ability to succeed in this course, please contact Karla and/or me. We may be able to build in some flexibility to support your learning.
+
+**Your Circumstances:** I welcome you to notify me (in person or via email) if you wish to clarify your pronouns or to confidentially discuss any circumstances that may impact your performance in this class. These circumstances may include: a standing conflict with student drop-in hours, an ARC-approved accommodation, your learning preferences, your ability to access required course material, and/or your family- or job-related responsibilities.
+
+**Citizenship and/or Immigration Status:** All students are welcome in this class regardless of citizenship, residency, or immigration status. I will respect your privacy if you choose to disclose your status. As for all students in the class, family emergency-related absences are normally excused with reasonable notice to the professor. UNM as an institution has made a [core commitment](http://undocumented.unm.edu/) to the success of all our students, including members of our undocumented community.
+
+---
+
+## Course Conduct
+
+**Classroom Environment:** It is my intent that students from all backgrounds and perspectives be well-served by this course and that diversity within the classroom be viewed as a resource, strength and benefit. I will strive to present materials in ways that respect such differences. I expect the same of you: While discomfort is an important part of the learning process, nobody should be made to feel unsafe in this classroom. Students are expected to respect the gender, race, age, national origin, ethnicity, gender identity and expression, immigration status, sexual orientation, socio-economic class, family status, primary language, military experience, or political identification of each of their colleagues. It is everyone's responsibility to cultivate a hospitable classroom environment in which everyone feels respected. I will work to uphold these standards in class and will not create or allow space for offensive language or behavior related to these differences. No hostile language or attitudes will be tolerated. I encourage you to speak with me if anyone in class makes you or any of your colleagues feel undermined or unsafe.
+
+**Laptops in class:** Students are **not permitted** to use laptops, cell phones, or tablets during course lectures, discussions, and activities. Use of laptops is permitted during live R coding sessions. Use of email, text messaging, social media, or any other non-course function is never permitted.
+
+**Course records:** Class sessions are places for each of you to ask questions, grapple with course material, and debate important ideas. In order for class to be a safe space for questions and debate, students may not audio/video record lectures and discussions or post/use social media during class time. Students with ARC accommodations may not retain, post, share or circulate class recordings. I will post all lecture slides following each class to help support your learning.
+
+**Academic Integrity (Doing the Right Thing):** Submitting material as your own work that has been generated on a website, that appears in a publication, that has been written by someone else or by an artificial intelligence algorithm (e.g., Chat GPT), or that has been generated by breaking the rules of an assignment **constitute academic dishonesty**. It is a student code-of-conduct violation that can lead to a disciplinary procedure. UNM has policies to preserve and protect you and the rest of the UNM academic community, available in the [Student Pathfinder](https://pathfinder.unm.edu/). These include policies on student grievances ([D175](https://handbook.unm.edu/d175/), undergraduates; [D176](https://handbook.unm.edu/d176/), graduate and professional students), academic dishonesty ([D100](https://handbook.unm.edu/d100/)), and maintaining a respectful campus environment ([CO9](https://handbook.unm.edu/c09/)). Please ask for help in understanding and avoiding cheating, plagiarism, or other forms of academic dishonesty. **Doing something dishonest in a class or on an assignment can lead to serious academic consequences.** Come seek help from me or support staff at one of our [student resource centers](https://students.unm.edu/find-your-pack/resource-centers.html) before you do something that may compromise your academic career.
+
+**Note about using generative AI tools:** You may use Generative AI tools (e.g., ChatGPT) to help adapt and de-bug your R code. With the exception of coding assistance, you should **not** rely on Generative AI tools to do your research or writing for you, and I recommend that you avoid using these tools altogether. If you do use a generative AI tool for any task beyond coding assistance, you must add a paragraph at the end of your assignment submission (not included in your assignment's length) detailing how you used these tools to aid rather than to replace your own work and learning process. Any use of Generative AI tools (beyond for coding assistance) without explaining how you used these tools will be considered cheating/plagiarism and treated accordingly. Your TA and I reserve the right to decide whether your use is appropriate or constitutes cheating.
+
+---
+
+## University Policies
+
+**Accommodations:** UNM is committed to providing equitable access to learning opportunities for students with documented disabilities. As your instructor, it is my objective to facilitate an inclusive classroom setting, in which students have full access and opportunity to participate. To engage in a confidential conversation about the process for requesting reasonable accommodations for this class and/or program, please contact Accessibility Resource Center at [arcsrvs@unm.edu](mailto:arcsrvs@unm.edu) or by phone at 505-277-3506.
+
+**Title IX:** Title IX prohibitions on sex discrimination include various forms of sexual misconduct, such as sexual assault, rape, sexual harassment, domestic and dating violence, and stalking. Our classroom and our university should always be spaces of safety, mutual respect, kindness, and support, without fear of discrimination, harassment, or violence. Should you ever need assistance or have concerns about incidents that violate this principle, you should feel free to access the resources available to you on campus. Please note that, because UNM faculty, TAs, and GAs are considered "responsible employees," **any disclosure of gender discrimination (including sexual harassment, sexual misconduct, and sexual violence) made to a faculty member, TA, or GA must be reported to the Title IX Coordinator** at the [Office of Compliance, Ethics, and Equal Opportunity](https://oeo.unm.edu/title-ix/title-ix-reporting-obligations.html). For more information on the campus policy regarding sexual misconduct, see [Policy 2740](https://policy.unm.edu/university-policies/2000/2740.html).
+
+**If you or someone you know has been harassed or assaulted and would like to receive confidential support and academic advocacy, there are a number of routes available to you.** For example, you can contact the [Women's Resource Center](https://women.unm.edu/), the [LGBTQ Resource Center](https://lgbtqrc.unm.edu/), [Student Health and Counseling](http://shac.unm.edu/) (SHAC), or [LoboRESPECT Advocacy Center](https://loborespect.unm.edu/). LoboRESPECT provides avenues for confidential reporting and support with faculty outreach and absentee notifications. They can be contacted on their 24-hour crisis line at (505) 277-2911 and online at [loborespect@unm.edu](mailto:loborespect@unm.edu). You can receive non-confidential support and learn more about Title IX through the Office of Equal Opportunity's [Title IX Coordinator](http://oeo.unm.edu/title-ix/). Reports to law enforcement can be made to UNM Police Department at (505) 277-2241.
+
+---
+
+## Required Course Material
+
+- Kellstedt, Whitten and Tuch. 2023. *The Fundamentals of Social Science Research, Fourth Edition*. New York, NY: Cambridge University Press. You may alternatively select to use the Third Edition (entitled *The Fundamentals of Political Science Research*), but keep in mind that the chapter numbers and page numbers will be different. **A copy is on reserve at the UNM Zimmerman Library for students to borrow for a few hours at a time.**
+
+- **R and RStudio:** You will be introduced to—and use—the free, open-source statistical computing program **R**, and its user interface, **RStudio**. Both **R** and **RStudio** are free and can be downloaded using [swirl](https://swirlstats.com/students.htm)'s step-by-step prompts.
+
+  > You can either install and use **R/RStudio** on your own personal computer or use a UNM campus computer. [UNM IT](https://it.unm.edu/support/index.html) provides various options for students to access laptops, including: short- and long-term laptop rentals ([student technology access](https://at.unm.edu/coronavirus/student-tech-access.html)), computers for library check-out ([UNM Library Computer Finder](https://library.unm.edu/services/technology/computers/finder.php)), and UNM's [Coffee and Code](https://libguides.unm.edu/coffee-and-code/Coffee-and-Code) program.
+
+- Additional **required** readings, including from the following books, are posted on Canvas:
+  - D'Ignazio and Klein. 2023. *Data Feminism.* MIT Press.
+  - Spiegelhalter. 2019. *The Art of Statistics: Learning from data.* Penguin UK.
+  - Wheelan. 2013. *Naked Statistics: Stripping the dread from the data.* WW Norton & Co.
+
+---
+
+## Grade Composition
+
+All assignments will be posted and submitted (by 11:59 pm on the due date) via **Canvas**.
+
+Your final grade will be determined as follows:
+
+**PARTICIPATION (25%):** Course attendance is mandatory. You should come to class prepared to discuss course material and ask questions about things you do not understand. Your preparation for and participation in various class activities are part of your participation grade. These class activities include (but are not limited to) periodic in-class reading responses, a data news assessment, selection and discussion of a social science research article (Week 2), and participation in interpreting student statistical analysis results (Weeks 13–14).
+
+> *Note about attendance:* We anticipate that many students will have to miss a few classes throughout the semester (due to illness, family circumstances, etc.), and we take that into account when collaborating final grades. You are welcome to notify us if you are experiencing a life circumstance that prevents you from attending multiple (3+) consecutive class periods.
+
+**WEEKLY ASSIGNMENTS (25%):** You will have a short homework assignment to complete each week (posted on Canvas on Thursdays; due on Canvas on Sunday evenings). These low-stakes assignments are designed to help you put the week's material to practice, to help you apply the week's material to your research analysis, and/or to help you practice statistical analysis in **R/RStudio**. Some assignments may not take you more than 30 minutes to complete, while others (particularly during the statistics unit) will likely take longer to complete. I reserve the right to cancel a given week's assignment (announced on Canvas) when appropriate. *Late assignments will be accepted and graded but will not receive feedback.*
+
+**MIDTERM EXAM (25%):** You will be examined on **political science research design, data exploration, and R coding basics** (material from Weeks 1–7). My goal for the exam is to encourage and facilitate your learning. The exam is an in-person, hand-written exam which includes concept identification, multiple choice, short-answer and paragraph responses. After the exam has been graded, students have the option to update their exams (by providing correct answers and a discussion of their evolved understanding) to raise their exam score by up to one letter grade.
+
+**FINAL RESEARCH ANALYSIS (25%):** You will develop an original research hypothesis and statistically test that hypothesis using one of two datasets provided in class. The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Bi-variate Hypothesis Test Results, Multiple-variable Regression Results, and Concluding Implications.
+
+We will break this project into several small assigned tasks (in the weekly assignments and other tasks, detailed in the course schedule), so that you receive guidance throughout the semester and do not have to scramble at the end of the term!
+
+**There is no final exam in this course.**
+
+---
+
+## Grade Breakdown
+
+| **Final %** | **Grade** | **Description** |
+|:---|:---|:---|
+| 92–100+ | A | excellent |
+| 90–91 | A– | |
+| 88–89 | B+ | |
+| 82–87 | B | good |
+| 80–81 | B– | |
+| 78–79 | C+ | |
+| 72–77 | C\* | adequate |
+| 70–71 | C– | |
+| 68–69 | D+ | |
+| 62–67 | D | sub-par |
+| 60–61 | D– | |
+| <60 | F | fail |
+
+\*Minimum grade for political science credit
+
+***Note:*** Do **not** rely on Canvas's grade calibrator. It will not give you an accurate assessment of your current grade in this course.
+
+---
+
+## Data News Assessment
+
+Once during the semester, you will select, read, summarize, and assess a news article (ideally published within the last year) that presents social science research or that uses data to explain a contemporary political issue.
+
+You should select your data news article from a **reputable news source**. Places to look include (but are not limited to): the *Wall Street Journal*, *New York Times* [Upshot](https://www.nytimes.com/section/upshot), the *Washington Post* [Monkey Cage](https://www.washingtonpost.com/monkey-cage/) (ended 2022), Nate Silver's [FiveThirtyEight](https://fivethirtyeight.com/), the *Guardian*'s [Data News](https://www.theguardian.com/data), the [Economist](https://www.economist.com/), ProPublica's [Graphics and Data](https://www.propublica.org//newsapps/), or your preferred newspaper or news-related magazine. If your article is behind a paywall, contact the UNM library, who can help you access news articles.
+
+Your written assessment of your selected news article should include the following:
+
+- The **link** to the article you selected and its full citation (including the title, author, date, publication source, and url).
+- Your **brief summary** (one paragraph) of the article, including the **question** the data is seeking to answer or the **phenomenon** the data is being used to explain; your description of the **data** being used to answer the question; and the **conclusion** or "take-away" that the article highlights based on the data.
+- Your **assessment** (one paragraph) about the article. How well did the data and/or methods answer the question or explain the phenomenon? What are the **implications** of the data, analysis, and conclusions? Implications could include **policy changes** that can or should happen on account of this research, and/or how the research **addresses inequality** or **challenges powerful people/systems**.
+- A one-sentence response to **each** of the following: 1) Name at least 1–2 course concepts that were discussed in / relevant to the article; 2) Name one thing you learned about how data is used in research and public discourse from this article; 3) List one **discussion question** for the class to guide a group assessment of the research approach, data, and/or conclusions.
+
+For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_YnlgaPTIIq_IjHzhG7TpTGRIutR2eOhizBgY/edit?usp=sharing) for a week to complete this assessment. It is **your responsibility** to sign up, to remember the week in which you have signed up, and to conduct this assessment on the week in which you signed up. Each Thursday, we will select 1–2 news articles to discuss in class (you will not be responsible for any in-class presentations).
+
+---
+
+## Course Schedule
+
+*This schedule of readings, deadlines, and activities is subject to change to best accommodate students' learning needs. Changes will be announced on Canvas and (if possible) in class.*
+
+### Week 1 — INTRODUCTIONS
+
+- **Tue 8/18:** Course introductions
+- **Thu 8/20:** Introduction to political science
+  - *Assigned Readings:*
+    - *Fundamentals*, Ch 1, "The Scientific Study of Society."
+    - Burdick, "Measuring the Cost of Racial Abuse in Soccer."
+
+---
+
+### Week 2 — RESEARCH IN THE REAL WORLD
+
+- **Tue 8/25:** Political science research blogs
+  > *Assigned reading:* Select and read a blog post from either [Good Authority](https://goodauthority.org/) or one of the [London School of Economics blogs](https://blogs.lse.ac.uk/lse-research-blogs/). Be prepared to discuss the featured research in class, including identifying the research question, independent variable and dependent variable.
+
+- **Thu 8/27:** Political science research blogs (cont)
+  - *Assigned readings:*
+    - Barrowman, "Why Data is Never Raw."
+    - Silberzahn et al, "Many Analysts, One Data Set."
+
+---
+
+### Week 3 — DATA IS SUBJECTIVE
+
+- **Tue 9/1:** Data feminism framework
+  - *Assigned readings:*
+    - *Data Feminism* Ch 1, "The Power Chapter."
+
+- **Thu 9/3:** Data feminism guidelines for class
+  - *Assigned readings:*
+    - Select and read ONE of the following chapters:
+      - *Data Feminism* Ch 4, "What Gets Counted Counts," pg. 97–111, 122–123.
+      - *Data Feminism* Ch 6, "The Numbers Don't Speak for Themselves," pg. 153–169, 171–172.\* *(Contains discussion of data related to sexual violence that may be disturbing to some students.)*
+    - *Read in class:* *Art of Statistics*, 369–371.
+
+---
+
+### Week 4 — DEVELOPING YOUR RESEARCH IDEAS
+
+- **Tue 9/8:** Course datasets and variables
+  - *Assigned readings:*
+    - *Fundamentals* Ch 5, "Survey Research."
+    - Review the course datasets and select which you plan to use:
+      > **1) American National Election Studies (ANES) 2024 survey** asks Americans about their partisan preferences, their attitudes about social and political issues, and their candidate preferences leading up to and after the 2024 general election. Read the [summary](https://electionstudies.org/about-us/) and [2020 survey details](https://electionstudies.org/data-center/2020-time-series-study/).
+      >
+      > **2) World Values Survey (WVS) Wave 7 (2017–2020)** asks people from 64 countries about their perspectives on a wide variety of social, cultural, economic, political and governance issues. Read the [summary and Wave 7 survey details](https://www.worldvaluessurvey.org/WVSContents.jsp).
+
+- **Thu 9/10:** Developing your theory
+  - *Assigned readings:*
+    - *Fundamentals* Ch 2, "The Art of Theory Building," 29–38.
+    - *Fundamentals* Ch 3, "Evaluating Causal Relationships."
+
+:::{.callout-note}
+**Begin your Final Research Analysis Task 1: Theory and Hypothesis**
+:::
+
+---
+
+### Week 5 — MEASURING CONCEPTS AS VARIABLES
+
+- **Tue 9/15:** Concept validity
+  - *Assigned reading:* *Fundamentals* Ch 6, "Measuring Concepts of Interest."
+  - *Read in class:* *Art of Statistics*, 7–10.
+
+- **Thu 9/17:** Introduction to **R**
+  - *Assigned tasks:*
+    - Download **R** and **RStudio** using [swirl](https://swirlstats.com/students.htm)'s step-by-step prompts
+    - Download (from Canvas) the dataset you will use; this file will end in ".csv".
+
+:::{.callout-note}
+**Submit Final Research Analysis Task 1: Theory and Hypothesis ([Due: Sun 09/20](#task1-due))**
+:::
+
+---
+
+### Week 6 — VARIABLE TYPES AND DESCRIPTIVE STATISTICS
+
+- **Tue 9/22:** Variable types and descriptive statistics
+  - *Assigned reading:* *Fundamentals* Ch 7, "Getting to Know Your Data."
+- **Thu 9/24:** Descriptive statistics in **R**
+
+:::{.callout-note}
+**Begin your Final Research Analysis Task 2: Data and Variable Description**
+:::
+
+---
+
+### Week 7 — EXPERIMENTAL RESEARCH AND MIDTERM REVIEW
+
+- **Tue 9/29:** Experimental research
+  - *Assigned readings:*
+    - *Fundamentals* Ch 4, "Research Design," 65–77.
+    - *Art of Statistics*, Ch 4, "What Causes What?," 108–119.
+    - Aizenman, "How to Fix Poverty: Why Not Just Give People Money?" and "An Experiment Gives Cash Aid to the Poor. Is that Ethical?" Review results of experimental interventions [here](https://www.givedirectly.org/gdresearch/).
+  - *Recommended:* *New York Times* Daily (podcast): "Trump, Tylenol and Autism" [[link]](https://www.nytimes.com/2025/09/23/podcasts/the-daily/autism-trump-tylenol.html)
+
+- **Thu 10/1:** Recoding variables and midterm review
+
+---
+
+### Week 8 — MIDTERM WEEK
+
+- **Tue 10/6:** Midterm (in class)
+- **Thu 10/8:** NO CLASS (Fall Break)
+
+:::{.callout-note}
+**Submit Final Research Analysis Task 2: Data and Variable Description ([Due: Sun 10/11](#task2-due))**
+:::
+
+---
+
+### Week 9 — PROBABILITY
+
+- **Tue 10/13:** Probability
+  - *Assigned reading:* *Fundamentals* Ch 8, "Probability and Statistical Inference."
+- **Thu 10/15:** Probability (cont)
+  - *Assigned reading:* *Naked Statistics* Ch 8, "The Central Limit Theorem: The LeBron James of statistics."
+
+---
+
+### Week 10 — BI-VARIATE HYPOTHESIS TESTING
+
+- **Tue 10/20:** Bi-variate hypothesis tests
+  - *Assigned reading:* *Fundamentals* Ch 9, "Bivariate Hypothesis Testing."
+- **Thu 10/22:** Bi-variate hypothesis tests in **R**
+  - *Assigned reading:* *Art of Statistics*, Ch 10, "Answering Questions and Claiming Discoveries," 278–287, 294–304.
+
+:::{.callout-note}
+**Final Research Analysis Task 3 ([Due: Sun 10/25](#task3-due)):** Write your **Bi-variate Hypothesis Test: Methods Description and Results**.
+:::
+
+---
+
+### Week 11 — BI-VARIATE REGRESSION
+
+- **Tue 10/27:** Bi-variate regression
+  - *Assigned readings:* *Fundamentals* Ch 10, "Two-Variable Regression Models"
+- **Thu 10/29:** Bi-variate regression in **R**
+  - *Assigned reading:* *Naked Statistics* Ch 11, "Regression Analysis: The miracle elixir."
+
+---
+
+### Week 12 — MULTIPLE-VARIABLE REGRESSION
+
+- **Tue 11/3:** Multiple-variable regression
+  - *Assigned reading:* *Fundamentals* Ch 11, "Multiple Regression," 201–232.
+- **Thu 11/5:** Multiple-variable regression in **R**
+
+:::{.callout-note}
+**Final Research Analysis Task 4 ([Due: Sun 11/8](#task4-due)):** Write your **Multiple-variable Regression: Methods Description**, conduct and submit your **multiple-variable regression results table**.
+:::
+
+---
+
+### Week 13 — REGRESSION INTERPRETATION
+
+- **Tue 11/10 and Thu 11/12:** We will discuss and help interpret each student's multiple-variable regression results in class.
+
+---
+
+### Week 14 — REGRESSION INTERPRETATION (cont)
+
+- **Tue 11/17 and Thu 11/19:** We will discuss and help interpret each student's multiple-variable regression results in class.
+
+:::{.callout-note}
+**Final Research Analysis Task 5 ([Due: Sun 11/22](#task5-due)):** Write up your **Multiple-variable Regression: Results** and **Concluding Implications**.
+:::
+
+---
+
+### Week 15 — NO CLASS (Thanksgiving Week)
+
+---
+
+### Week 16 — COURSE CONCLUSIONS
+
+- **Tue 12/1:** Statistics' past and future
+  - *Assigned readings:*
+    - Clayton, "How Eugenics Shaped Statistics."
+    - *Art of Statistics*, Ch 12, "How Things Go Wrong"
+    - *Art of Statistics*, Ch 13, "How We Can Do Statistics Better."
+
+- **Thu 12/3:** Project workshop day
+
+:::{.callout-important}
+**Final Research Analysis: Final Paper ([Due Mon 12/7](#final-paper-due))**
+*I will offer a 48-hour extension (no questions asked) upon request via email. Late papers will be docked 1/2 letter grade for each additional day late. No papers will be accepted after Fri 12/11.*
+:::
+
+
+---
+
+## Course Calendar
+
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-swatch" style="background:#cfe2ff"></span> Class meeting</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#f8d7da"></span> Midterm exam</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#e2e3e5"></span> No class</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#fff3cd"></span> Assignment due</div>
+</div>
+
+
+
+<style>
+.cal-wrap { margin-bottom: 2.5rem; }
+.cal-wrap h4 { background:#495057; color:#fff; padding:6px 12px; border-radius:4px 4px 0 0; margin:0; font-size:1rem; }
+.cal-table { width:100%; border-collapse:collapse; font-size:0.78rem; }
+.cal-table th { background:#6c757d; color:#fff; text-align:center; padding:4px; }
+.cal-table td { border:1px solid #dee2e6; vertical-align:top; padding:4px 5px; min-width:60px; height:60px; }
+.cal-empty { background:#f8f9fa; }
+.cal-num { font-weight:700; font-size:0.82rem; }
+.cal-class { background:#cfe2ff; }
+.cal-exam  { background:#f8d7da; }
+.cal-noclass { background:#e2e3e5; }
+.cal-due   { background:#fff3cd; }
+.cal-label { font-size:0.68rem; color:#333; margin-top:2px; display:block; line-height:1.2; }
+.legend { display:flex; gap:12px; flex-wrap:wrap; font-size:0.75rem; margin-bottom:1rem; }
+.legend-item { display:flex; align-items:center; gap:5px; }
+.legend-swatch { width:14px; height:14px; border:1px solid #ccc; display:inline-block; border-radius:2px; }
+</style>
+
+
+```{=html}
+
+<div class="cal-wrap">
+<h4>August 2026</h4>
+<table class="cal-table">
+<thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+<tbody>
+<tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class=""><span class="cal-num">1</span></td></tr>
+<tr><td class=""><span class="cal-num">2</span></td><td class=""><span class="cal-num">3</span></td><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td><td class=""><span class="cal-num">8</span></td></tr>
+<tr><td class=""><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td><td class=""><span class="cal-num">15</span></td></tr>
+<tr><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td><td class="cal-class"><span class="cal-num">18</span><span class="cal-label">W1: Introductions</span></td><td class=""><span class="cal-num">19</span></td><td class="cal-class"><span class="cal-num">20</span><span class="cal-label">W1: Intro to Poli Sci</span></td><td class=""><span class="cal-num">21</span></td><td class=""><span class="cal-num">22</span></td></tr>
+<tr><td class=""><span class="cal-num">23</span></td><td class=""><span class="cal-num">24</span></td><td class="cal-class"><span class="cal-num">25</span><span class="cal-label">W2: Research Blogs</span></td><td class=""><span class="cal-num">26</span></td><td class="cal-class"><span class="cal-num">27</span><span class="cal-label">W2: Research Blogs cont.</span></td><td class=""><span class="cal-num">28</span></td><td class=""><span class="cal-num">29</span></td></tr>
+<tr><td class=""><span class="cal-num">30</span></td><td class=""><span class="cal-num">31</span></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td></tr>
+
+</tbody>
+</table>
+</div>
+
+
+<div class="cal-wrap">
+<h4>September 2026</h4>
+<table class="cal-table">
+<thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+<tbody>
+<tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W3: Data Feminism</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W3: Data Feminism cont.</span></td><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td></tr>
+<tr><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td><td class="cal-class"><span class="cal-num">8</span><span class="cal-label">W4: Course Datasets</span></td><td class=""><span class="cal-num">9</span></td><td class="cal-class"><span class="cal-num">10</span><span class="cal-label">W4: Developing Theory</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
+<tr><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W5: Concept Validity</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W5: Intro to R</span></td><td class=""><span class="cal-num">18</span></td><td class=""><span class="cal-num">19</span></td></tr>
+<tr><td class="cal-due"><span id="task1-due"></span><span class="cal-num">20</span><span class="cal-label">Task 1 Due</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W6: Variable Types</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-class"><span class="cal-num">24</span><span class="cal-label">W6: Descriptive Stats in R</span></td><td class=""><span class="cal-num">25</span></td><td class=""><span class="cal-num">26</span></td></tr>
+<tr><td class=""><span class="cal-num">27</span></td><td class=""><span class="cal-num">28</span></td><td class="cal-class"><span class="cal-num">29</span><span class="cal-label">W7: Experimental Research</span></td><td class=""><span class="cal-num">30</span></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td></tr>
+
+</tbody>
+</table>
+</div>
+
+
+<div class="cal-wrap">
+<h4>October 2026</h4>
+<table class="cal-table">
+<thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+<tbody>
+<tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W7: Recoding & Midterm Review</span></td><td class=""><span class="cal-num">2</span></td><td class=""><span class="cal-num">3</span></td></tr>
+<tr><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td><td class="cal-exam"><span class="cal-num">6</span><span class="cal-label">W8: MIDTERM EXAM</span></td><td class=""><span class="cal-num">7</span></td><td class="cal-noclass"><span class="cal-num">8</span><span class="cal-label">W8: NO CLASS (Fall Break)</span></td><td class=""><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td></tr>
+<tr><td class="cal-due"><span id="task2-due"></span><span class="cal-num">11</span><span class="cal-label">Task 2 Due</span></td><td class=""><span class="cal-num">12</span></td><td class="cal-class"><span class="cal-num">13</span><span class="cal-label">W9: Probability</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W9: Probability cont.</span></td><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td></tr>
+<tr><td class=""><span class="cal-num">18</span></td><td class=""><span class="cal-num">19</span></td><td class="cal-class"><span class="cal-num">20</span><span class="cal-label">W10: Bi-variate Tests</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W10: Bi-variate Tests in R</span></td><td class=""><span class="cal-num">23</span></td><td class=""><span class="cal-num">24</span></td></tr>
+<tr><td class="cal-due"><span id="task3-due"></span><span class="cal-num">25</span><span class="cal-label">Task 3 Due</span></td><td class=""><span class="cal-num">26</span></td><td class="cal-class"><span class="cal-num">27</span><span class="cal-label">W11: Bi-variate Regression</span></td><td class=""><span class="cal-num">28</span></td><td class="cal-class"><span class="cal-num">29</span><span class="cal-label">W11: Bi-variate Regression in R</span></td><td class=""><span class="cal-num">30</span></td><td class=""><span class="cal-num">31</span></td></tr>
+
+</tbody>
+</table>
+</div>
+
+
+<div class="cal-wrap">
+<h4>November 2026</h4>
+<table class="cal-table">
+<thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+<tbody>
+<tr><td class=""><span class="cal-num">1</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W12: Multi-var Regression</span></td><td class=""><span class="cal-num">4</span></td><td class="cal-class"><span class="cal-num">5</span><span class="cal-label">W12: Multi-var Regression in R</span></td><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td></tr>
+<tr><td class="cal-due"><span id="task4-due"></span><span class="cal-num">8</span><span class="cal-label">Task 4 Due</span></td><td class=""><span class="cal-num">9</span></td><td class="cal-class"><span class="cal-num">10</span><span class="cal-label">W13: Regression Interp.</span></td><td class=""><span class="cal-num">11</span></td><td class="cal-class"><span class="cal-num">12</span><span class="cal-label">W13: Regression Interp.</span></td><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td></tr>
+<tr><td class=""><span class="cal-num">15</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">18</span></td><td class="cal-class"><span class="cal-num">19</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">20</span></td><td class=""><span class="cal-num">21</span></td></tr>
+<tr><td class="cal-due"><span id="task5-due"></span><span class="cal-num">22</span><span class="cal-label">Task 5 Due</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-noclass"><span class="cal-num">24</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">25</span></td><td class="cal-noclass"><span class="cal-num">26</span><span class="cal-label">W15: NO CLASS (Thanksgiving)</span></td><td class=""><span class="cal-num">27</span></td><td class=""><span class="cal-num">28</span></td></tr>
+<tr><td class=""><span class="cal-num">29</span></td><td class=""><span class="cal-num">30</span></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td></tr>
+
+</tbody>
+</table>
+</div>
+
+
+<div class="cal-wrap">
+<h4>December 2026</h4>
+<table class="cal-table">
+<thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+<tbody>
+<tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W16: Statistics Past & Future</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W16: Project Workshop</span></td><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td></tr>
+<tr><td class=""><span class="cal-num">6</span></td><td class="cal-due"><span id="final-paper-due"></span><span class="cal-num">7</span><span class="cal-label">FINAL PAPER DUE</span></td><td class=""><span class="cal-num">8</span></td><td class=""><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
+<tr><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td><td class=""><span class="cal-num">15</span></td><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td><td class=""><span class="cal-num">18</span></td><td class=""><span class="cal-num">19</span></td></tr>
+
+</tbody>
+</table>
+</div>
+
+```
