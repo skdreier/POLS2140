@@ -1,4 +1,4 @@
-% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[11pt]{article}
 \usepackage{fullpage}
 \usepackage[left=1in,top=1in,right=1in,bottom=1in,headheight=3ex,headsep=3ex]{geometry}
@@ -8,43 +8,34 @@
 \usepackage{natbib, bibentry}
 \bibliographystyle{plain}
 
-%\newcommand{\skd}[1]{\textcolor{orange}{[Next time: #1]}}
-
 \newcommand{\skd}[1]{\textcolor{orange}{[NOTE: #1]}}
 
 \newcommand{\blankline}{\quad\pagebreak[2]}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Modify Course title, instructor name, semester here %%%%%%%%
 
 \title{POLS 2140: Introduction to Political Analysis\vspace{-20pt}}
 \author{Professor Dreier, Ph.D.}
 \date{\vspace{-8pt}Fall 2025\footnote{Syllabus v.1 (01/19/25); subject to change.}\vspace{-10pt}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[sc]{mathpazo}
-\linespread{1.05} % Palatino needs more leading (space between lines)
+\linespread{1.05}
 \usepackage[T1]{fontenc}
-\usepackage[mmddyyyy]{datetime}% http://ctan.org/pkg/datetime
-\usepackage{advdate}% http://ctan.org/pkg/advdate
+\usepackage[mmddyyyy]{datetime}
+\usepackage{advdate}
 \newdateformat{syldate}{\twodigit{\THEMONTH}/\twodigit{\THEDAY}}
-\newsavebox{\MONDAY}\savebox{\MONDAY}{Mon}% Mon
-\newcommand{\week}[1]{%
-%  \cleardate{mydate}% Clear date
-% \newdate{mydate}{\the\day}{\the\month}{\the\year}% Store date
-  \paragraph*{\kern-2ex\quad #1 \AdvanceDate[1]\syldate{\today} \& \AdvanceDate[2]\syldate{\today} :}% Set heading  \quad #1
-%  \setbox1=\hbox{\shortdayofweekname{\getdateday{mydate}}{\getdatemonth{mydate}}{\getdateyear{mydate}}}%
+\newsavebox{\MONDAY}\savebox{\MONDAY}{Mon}
+\newcommand{\week}[1]{
+
+  \paragraph*{\kern-2ex\quad #1 \AdvanceDate[1]\syldate{\today} \& \AdvanceDate[2]\syldate{\today} :}
+
   \ifdim\wd1=\wd\MONDAY
     \AdvanceDate[7]
   \else
     \AdvanceDate[7]
-  \fi%
+  \fi
 }
 \usepackage{setspace}
 \usepackage{multicol}
-%\usepackage{indentfirst}
+
 \usepackage{fancyhdr,lastpage}
 \usepackage{url}
 \pagestyle{fancy}
@@ -55,21 +46,18 @@
 
 \lhead{}
 \chead{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Modify header here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \rhead{\footnotesize POLS 2140: Introduction to Political Analysis (v.1)}
 
 \lhead{\footnotesize University of New Mexico}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Don't touch this %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \lfoot{}
 \cfoot{\small \thepage/\pageref*{LastPage}}
 \rfoot{}
 
 \usepackage{array, xcolor}
 \usepackage{color,hyperref}
-%\definecolor{teal}{HTML}{EA6A20}
+
 \hypersetup{colorlinks,breaklinks,linkcolor=teal,urlcolor=teal,anchorcolor=teal,citecolor=black}
 
 \begin{document}
@@ -77,10 +65,10 @@
 \maketitle
 
 \begin{tabular*}{.93\textwidth}{@{\extracolsep{\fill}}lr}
-%\textbf{CONTACT ME!} & \textbf{COME TO CLASS!}\\
+
 \textbf{Professor:} Dr. Sarah Dreier (she/her) & \textbf{Class time: }T/Th 9:30--10:45 am\\
-\textbf{Office:} SSCO 2048 & \textbf{Class location: } SSCO 2060\\ 
-\textbf{Office Hours}: Tue: 2:30-4:30 pm &\\% \textbf{Computer lab:} SSCO 2060
+\textbf{Office:} SSCO 2048 & \textbf{Class location: } SSCO 2060\\
+\textbf{Office Hours}: Tue: 2:30-4:30 pm &\\
 \end{tabular*}
 \vspace{15pt}
 
@@ -90,7 +78,7 @@
 \indent \textbf{Office Hours:} Tue 12:30 - 2:30 pm; Thurs 12:30-1:30 pm \\
 \indent \textbf{E-mail:} \href{keickhoff@unm.edu}{keickhoff@unm.edu}
 \vspace{15pt}
-%\small{Syllabus v.1 (01/19/25)}\\
+
 \normalsize
 
 \noindent \textit{Founded in 1889, the University of New Mexico sits on the traditional homelands of the Pueblo of Sandia. The original peoples of New Mexico---Pueblo, Navajo, and Apache---since time
@@ -98,61 +86,40 @@ immemorial, have deep connections to the land and have made significant contribu
 throughout the generations and also acknowledge our committed relationship to Indigenous peoples. We gratefully recognize our history.
 }\vspace{-10pt}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section*{Course objectives}
 
-This course will teach you to understand and conduct statistics-based scientific research about politics. After successful completion of this course, students will: 
+This course will teach you to understand and conduct statistics-based scientific research about politics. After successful completion of this course, students will:
 
 \begin{itemize}
-    \item Understand the fundamental components of social science research; 
+    \item Understand the fundamental components of social science research;
     \item Know how to interpret statistical and experimental evidence;
     \item Be able to implement basic statistical analysis in \textbf{\textsf{R}} (data science program);
-    \item Think critically about how data, evidence, and empirical analysis can reinforce or challenge the unearned dominance of certain social groups over other minoritized groups. 
-   
-\end{itemize}
-%You will learn: the fundamental components of social science research, how to use social science to expose injustice, the basics about understanding statistics for the social sciences, how to interpret statistical claims in political science and the news, and how to develop research about the political topics you care about. 
-\noindent  %The first section of this course will teach you about the scientific method and the components of research design in political science. The second section will introduce you to qualitative and statistical approaches to conducting political science research. The final section will introduce you to a variety of cutting-edge approaches to using data to analyze politics. 
+    \item Think critically about how data, evidence, and empirical analysis can reinforce or challenge the unearned dominance of certain social groups over other minoritized groups.
 
-\noindent As part of this process, you will apply the scientific method to examine and write about political topic that matters to you. %, and you will write an op-ed/blog post about that research. 
+\end{itemize}
+
+\noindent
+
+\noindent As part of this process, you will apply the scientific method to examine and write about political topic that matters to you.
 If you wish to pursue a political science honors thesis, develop an independent research plan, or pitch commentary to a newspaper, the research that you conduct in this course could help you do so. Ultimately, this course aims to introduce you to skills that can help you pursue careers in politics, government, research, or data science.
 
-\begin{comment}
-\noindent \textbf{By the end of this course, you will have gained experience:}
-
-\begin{itemize} 
-    \item Reading and critiquing political science research \vspace{-5pt}
-    \item Recognizing, understanding, and critiquing the data that shapes public debates \vspace{-5pt}
-    \item Identifying the basic components of a scientific research design\vspace{-5pt}
-    \item Interpreting statistical research claims and results\vspace{-5pt}
-    \item Executing basic data science commands\vspace{-5pt}
-    \item Crafting a high-quality research design\vspace{-5pt}
-    \item Presenting research for a public audience
-\end{itemize} 
-
-\noindent The skills you will learn in this course will help you in your study of political science, in your understanding of the social world, and in your preparation for a variety of career paths.
-
-\end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{-5pt}
 \paragraph{Course Credit Hours} This is a three credit-hour course. Class meets for two 75-minute sessions of direct instruction per week for fifteen weeks during the Fall 2025 semester. Please plan for a \textit{minimum} of six hours of out-of-class work (including reading, homework, study, assignment completion, and class preparation) each week.
 
 \section*{Working with Professor Dreier and Karla (TA)}
 
-\paragraph{Pre-requisites} There are no pre-requisites for this class. You do not need to have any prior knowledge or skills to succeed in this class. We will cover statistics concepts and computer coding tools that are new to and/or unfamiliar to many political science majors. In previous years, some students had difficulty approaching course concepts or become uncertain about whether they belonged in the political science major. My advise is to hang in there, work with your TA and/or me, put in some extra hours studying, and/or access student resources. We will guide you along the way and are dedicated to helping each of you take the positive steps and do the focused work you need to do to succeed in this class, to thrive as a political science major, and to master these exciting data-science tools! 
+\paragraph{Pre-requisites} There are no pre-requisites for this class. You do not need to have any prior knowledge or skills to succeed in this class. We will cover statistics concepts and computer coding tools that are new to and/or unfamiliar to many political science majors. In previous years, some students had difficulty approaching course concepts or become uncertain about whether they belonged in the political science major. My advise is to hang in there, work with your TA and/or me, put in some extra hours studying, and/or access student resources. We will guide you along the way and are dedicated to helping each of you take the positive steps and do the focused work you need to do to succeed in this class, to thrive as a political science major, and to master these exciting data-science tools!
 
 \paragraph{Working with your TA} Your TA is Karla Eickhoff, Ph.D. student in political science. Karla's job is to help support and guide you through the course. She can help you understand course material, trouble-shoot your computer (R) code, develop and execute your research project, and generally navigate course tasks. When you have questions about course material, concerns or circumstances to address, accommodations you need, or thoughts you wish to share, \textbf{please start by contacting Karla}. If Karla is unable to help you, please come to my office hours!
 
-\paragraph{Office hours} Karla holds office hours immediately after class on Tuesdays and Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas. 
+\paragraph{Office hours} Karla holds office hours immediately after class on Tuesdays and Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas.
 
-\paragraph{Course communication}  %To protect your privacy, we can only reply to emails sent from your UNM email addresses, and we will not provide information about your performance in this course via email. 
+\paragraph{Course communication}
 You should regularly check your UNM email and UNM Canvas for important course changes, updates, and announcements. We\textbf{ do not} reply to emails/messages sent via Canvas. \textbf{\textit{Note that class time and office hours (rather than email) are usually the most productive venues for you to raise substantive questions regarding course material and evaluation.}} We aim to reply to student emails on \textbf{weekdays}, within 48 hours.
 
 \paragraph{Resources for academic success} Past students have used campus resources to help them succeed in this course, including: peer tutoring at the \href{https://caps.unm.edu/}{Center for Academic Program Support} (CAPS),  \href{http://mentalhealth.unm.edu}{mental health services}, free food at the Lobo Food Pantry, and jobs on campus. Your advisor, the resource centers, the Dean of Students, and I can help you find the right opportunities for you.
 
-\paragraph{Life Responsibilities} %I have great respect for students who are balancing their education with responsibilities of caring for family members and/or working jobs. 
+\paragraph{Life Responsibilities}
 Many students face obstacles to their education as a result of working jobs; caring for children or other family members; meeting family, cultural or religious obligations; or unforeseen personal responsibilities or difficulties. If you experience challenges that require you to miss a class or that otherwise impact your ability to succeed in this course, please contact Karla and/or me. We may be able to build in some flexibility to support your learning.
 
 \paragraph{Your Circumstances} I welcome you to notify me (in person or via email) if you wish to clarify your pronouns or to confidentially discuss any circumstances that may impact your performance in this class. These circumstances may include: a standing conflict with student drop-in hours, an ARC-approved accommodation, your learning preferences (e.g., if you feel most comfortable in small or large groups, individual or group writing exercises, one-on-one discussions, etc.), your ability to access required course material, and/or your family- or job-related responsibilities.
@@ -161,23 +128,14 @@ Many students face obstacles to their education as a result of working jobs; car
 
 \section*{Course conduct}
 
-\paragraph{Classroom Environment} It is my intent that students from all backgrounds and perspectives be well-served by this course and that diversity within the classroom be viewed as a resource, strength and benefit. I will strive to present materials in ways that respect such differences. I expect the same of you: While discomfort is an important part of the learning process, nobody should be made to feel unsafe in this classroom. Students are expected to respect the gender, race, age, national origin, ethnicity, gender identity and expression, immigration status, sexual orientation, socio-economic class, family status, primary language, military experience, or political identification of each of their colleagues. It is everyone’s responsibility to cultivate a hospitable classroom environment in which everyone feels respected. I will work to uphold these standards in class and will not create or allow space for offensive language or behavior related to these differences. No hostile language or attitudes will be tolerated. I encourage you to speak with me if anyone in class makes you or any of your colleagues feel undermined or unsafe. 
+\paragraph{Classroom Environment} It is my intent that students from all backgrounds and perspectives be well-served by this course and that diversity within the classroom be viewed as a resource, strength and benefit. I will strive to present materials in ways that respect such differences. I expect the same of you: While discomfort is an important part of the learning process, nobody should be made to feel unsafe in this classroom. Students are expected to respect the gender, race, age, national origin, ethnicity, gender identity and expression, immigration status, sexual orientation, socio-economic class, family status, primary language, military experience, or political identification of each of their colleagues. It is everyone’s responsibility to cultivate a hospitable classroom environment in which everyone feels respected. I will work to uphold these standards in class and will not create or allow space for offensive language or behavior related to these differences. No hostile language or attitudes will be tolerated. I encourage you to speak with me if anyone in class makes you or any of your colleagues feel undermined or unsafe.
 
-
-\paragraph{Laptops in class} Students are \textbf{not permitted} to use laptops, cell phones, or tablets during course lectures, discussions, and activities. Use of laptops is permitted during live R coding sessions. % Students are strongly encouraged to bring laptops to each class session. This will allow them to follow along during in-class exercises and live \textbf{\textsf{R}} coding sessions. 
-Use of email, text messaging, social media, or any other non-course function is never permitted. %\textit{I will revoke in-class laptop, tablet, or phone use if students abuse this privilege.} 
+\paragraph{Laptops in class} Students are \textbf{not permitted} to use laptops, cell phones, or tablets during course lectures, discussions, and activities. Use of laptops is permitted during live R coding sessions.
+Use of email, text messaging, social media, or any other non-course function is never permitted.
 
 \paragraph{Course records} Class sessions are places for each of you to ask questions, grapple with course material, and debate important ideas. In order for class to be a safe space for questions and debate, students may not audio/video record lectures and discussions or post/use social media during class time. Students with ARC accommodations may not retain, post, share or circulate class recordings. I will post all lecture slides following each class to help support your learning. \vspace{-5pt}
 
-%Tardiness: Students arriving to seminar late create considerable disruption. If you are unable to make it to class on time, you should not remain in this course. 
-
-
-
-
-
-
-
-\paragraph{Academic Integrity (Doing the Right Thing)} Submitting material as your own work that has been generated on a website, that appears in a publication, that has been written by someone else or by an artificial intelligence algorithm (e.g., Chat GPT), or that has been generated by breaking the rules of an assignment \textbf{constitute academic dishonesty}. It is a student code-of-conduct violation that can lead to a disciplinary procedure. UNM has policies to preserve and protect you and the rest of the UNM academic community, available in the \href{https://pathfinder.unm.edu/}{Student Pathfinder}. These include policies on student grievances (\href{https://handbook.unm.edu/d175/}{D175}, undergraduates; \href{https://handbook.unm.edu/d176/}{D176,} graduate and professional students), academic dishonesty (\href{https://handbook.unm.edu/d100/}{D100}), and maintaining a respectful campus environment (\href{https://handbook.unm.edu/c09/}{CO9}). Please ask for help in understanding and avoiding cheating, plagiarism, or other forms academic dishonesty. \textbf{Doing something dishonest in a class or on an assignment can lead to serious academic consequences.} Come seek help from me or support staff at one of our \href{https://students.unm.edu/find-your-pack/resource-centers.html}{student resource centers} before you do something that may compromise your academic career.%\paragraph{Academic Dishonesty} I will not tolerate plagiarism, cheating, or any other dishonest behavior.
+\paragraph{Academic Integrity (Doing the Right Thing)} Submitting material as your own work that has been generated on a website, that appears in a publication, that has been written by someone else or by an artificial intelligence algorithm (e.g., Chat GPT), or that has been generated by breaking the rules of an assignment \textbf{constitute academic dishonesty}. It is a student code-of-conduct violation that can lead to a disciplinary procedure. UNM has policies to preserve and protect you and the rest of the UNM academic community, available in the \href{https://pathfinder.unm.edu/}{Student Pathfinder}. These include policies on student grievances (\href{https://handbook.unm.edu/d175/}{D175}, undergraduates; \href{https://handbook.unm.edu/d176/}{D176,} graduate and professional students), academic dishonesty (\href{https://handbook.unm.edu/d100/}{D100}), and maintaining a respectful campus environment (\href{https://handbook.unm.edu/c09/}{CO9}). Please ask for help in understanding and avoiding cheating, plagiarism, or other forms academic dishonesty. \textbf{Doing something dishonest in a class or on an assignment can lead to serious academic consequences.} Come seek help from me or support staff at one of our \href{https://students.unm.edu/find-your-pack/resource-centers.html}{student resource centers} before you do something that may compromise your academic career.
  \vspace{-5pt}
 
 \paragraph{Note about using generative AI tools} You may use Generative AI tools (e.g., ChatGPT) to help adapt and de-bug your R code. With the exception of coding assistance, you should \textbf{not} rely on Generative AI tools to do your research or writing for you, and I recommend that you avoid using these tools altogether. If you do use a generative AI tool for any task beyond coding assistance, you must add a paragraph at the end of your assignment submission (not included in your assignment's length) detailing how you used these tools to aid rather than to replace your own work and learning process. Any use of Generative AI tools (beyond for coding assistance) without explaining how you used these tools will be considered cheating/plagiarism and treated accordingly. Your TA and I reserve the right to decide whether your use is appropriate or constitutes cheating.
@@ -186,30 +144,21 @@ Use of email, text messaging, social media, or any other non-course function is 
 \paragraph{Accommodations} UNM is committed to providing equitable access to learning opportunities for students with documented disabilities. As your instructor, it is my objective to facilitate an inclusive classroom setting, in which students have full access and opportunity to participate. To engage in a confidential conversation about the process for requesting reasonable accommodations for this class and/or program, please contact Accessibility Resource Center at \href{arcsrvs@unm.edu}{arcsrvs@unm.edu} or by phone at 505-277-3506.
 
 \vspace{-5pt}
-\paragraph{Title IX} Title IX prohibitions on sex discrimination include various forms of sexual misconduct, such as sexual assault, rape, sexual harassment, domestic and dating violence, and stalking. Our classroom and our university should always be spaces of safety, mutual respect, kindness, and support, without fear of discrimination, harassment, or violence. Should you ever need assistance or have concerns about incidents that violate this principle, you should feel free to access the resources available to you on campus. Please note that, because UNM faculty, TAs, and GAs are considered ``responsible employees,'' \textbf{any disclosure of gender discrimination (including sexual harassment, sexual misconduct, and sexual violence) made to a faculty member, TA, or GA must must be reported to the Title IX Coordinator }at the \href{https://oeo.unm.edu/title-ix/title-ix-reporting-obligations.html}{Office of Compliance, Ethics, and Equal Opportunity}. For more information on the campus policy regarding sexual misconduct, see \href{https://policy.unm.edu/university-policies/2000/2740.html}{Policy 2740% on Sexual Harassment Including Sexual Assault
+\paragraph{Title IX} Title IX prohibitions on sex discrimination include various forms of sexual misconduct, such as sexual assault, rape, sexual harassment, domestic and dating violence, and stalking. Our classroom and our university should always be spaces of safety, mutual respect, kindness, and support, without fear of discrimination, harassment, or violence. Should you ever need assistance or have concerns about incidents that violate this principle, you should feel free to access the resources available to you on campus. Please note that, because UNM faculty, TAs, and GAs are considered ``responsible employees,'' \textbf{any disclosure of gender discrimination (including sexual harassment, sexual misconduct, and sexual violence) made to a faculty member, TA, or GA must must be reported to the Title IX Coordinator }at the \href{https://oeo.unm.edu/title-ix/title-ix-reporting-obligations.html}{Office of Compliance, Ethics, and Equal Opportunity}. For more information on the campus policy regarding sexual misconduct, see \href{https://policy.unm.edu/university-policies/2000/2740.html}{Policy 2740
 }.\vspace{10pt}
 
 \noindent \textbf{If you or someone you know has been harassed or assaulted and would like to receive confidential support and academic advocacy, there are a number of routes available to you.} For example, you can contact the \href{https://women.unm.edu/}{Women's Resource Center}, the \href{https://lgbtqrc.unm.edu/}{LGBTQ Resource Center}, \href{http://shac.unm.edu/}{Student Health and Counseling} (SHAC), or \href{https://loborespect.unm.edu/}{LoboRESPECT Advocacy Center}. LoboRESPECT provides avenues for confidential reporting and support with faculty outreach and absentee notifications. They can be contacted on their 24-hour crisis line at (505) 277-2911 and online at \href{loborespect@unm.edu}{loborespect@unm.edu}. You can receive non-confidential support and learn more about Title IX through the Office of Equal Opportunity's \href{http://oeo.unm.edu/title-ix/}{Title IX Coordinator}. Reports to law enforcement can be made to UNM Police Department at (505) 277-2241.
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage \section*{Required course material}
 
 \begin{itemize}
 \item Kellstedt, Whitten and Tuch. 2023. \textit{The Fundamentals of Social Science Research, Fourth Edition}. New York, NY: Cambridge University Press. You may alternatively select to use the Third Edition (entitled \textit{The Fundamentals of Political Science Research}), but keep in mind that the chapter numbers and page numbers will be different. \textbf{A copy is on reserve at the UNM Zimmerman Library for students to borrow for a few hours at a time.}
 
-%\item \textbf{KW Workbook:} Kellstedt and Whitten. 2021. \textit{An \textbf{\textsf{R}} Companion for the Third Edition of the Fundamentals of Political Science Research}. New York, NY: Cambridge University Press. \textbf{Recommended.}
-
-%\item D'Ignazio and Klein. 2020. \textit{Data Feminism}. Cambridge, MA: MIT Press. \textbf{PDFs posted on Canvas.} 
-
-%\item \textbf{RR:} Remler and Ryzin. 2022. \textit{Research Methods in Practice: Strategies for Description and Causation, Third Edition}. Thousand Oaks, CA: Sage Publications. \textbf{PDFs posted on Canvas.} 
-
 \item \textbf{\textsf{R} and \textsf{RStudio}: }You will be introduced to---and use---the free, open-source statistical computing program \textbf{\textsf{R}}, and its user interface, \textbf{\textsf{RStudio}}. Both \textbf{\textsf{R}} and \textbf{\textsf{RStudio}} are free and can be downloaded using \href{https://swirlstats.com/students.htm}{swirl}'s step-by-step prompts.
 
 \begin{quotation} \noindent You can either install and use \textbf{\textsf{R/RStudio}} on your own personal computer or use a UNM campus computer. \href{https://it.unm.edu/support/index.html}{UNM IT} provides various options for students to access laptops, including: short- and long-term laptop rentals (\href{https://at.unm.edu/coronavirus/student-tech-access.html}{student technology access}), computers for library check-out (\href{https://library.unm.edu/services/technology/computers/finder.php}{UNM Library Computer Finder}), and
 UNM's \href{https://libguides.unm.edu/coffee-and-code/Coffee-and-Code}{Coffee and Code} program (which may allow you to access their computer lab with \textbf{\textsf{R/RStudio}} already installed). \end{quotation}
-    
+
 \item Additional \textbf{required} readings, including from the following books, are posted on Canvas:
 \begin{itemize}
     \item D'ignazio and Klein. 2023. \textit{Data feminism.} MIT press.
@@ -217,59 +166,33 @@ UNM's \href{https://libguides.unm.edu/coffee-and-code/Coffee-and-Code}{Coffee an
     \item Wheelan. 2013. \textit{Naked statistics: Stripping the dread from the data.} WW Norton \& Co.
 \end{itemize}
 
-%^\item R open software package. You are required to bring your laptop to this class to follow along with or complete our in-class research exercises. 
 \end{itemize}
 
-
-\begin{comment}
-\subsection*{Recommended resources}
-\begin{itemize}
-    \item Wheelan. 2013. \textit{Naked Statistics}. New York, NY: W. W. Norton \& Company. 
-    \item Gonick and Smith. 2005. \textit{The Cartoon Guide to Statistics}. Harper Collins Books.
-    
-    %\item Alley. 2021. "An Open Collection of Political Science Research with OLS Models and Cross-Sectional Data." Society for Political Methodology blog. Available at \url{https://polmeth.org/blog/open-collection-political-science-research-ols-models-and-cross-sectional-data}.
-    
-    %\item %Kim and Ng. ``Teaching Computational Social Science for All'' (working paper). 
-    Kim. 2021. "Computational Thinking for Social Scientists." Available at \url{https://jaeyk.github.io/comp_thinking_social_science/}.
-\end{itemize}
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Grade composition}
 
 All assignments will be posted and submitted (by 11:59 on the due date) via \textbf{Canvas}. \\
 
 \noindent Your final grade will be determined as follows:
 \begin{itemize}
-	\item \underline{\textbf{PARTICIPATION (25\%):}} Course attendance is mandatory. You should come to class prepared to discuss course material and ask questions about things you do not understand. % You are adults and I expect you to be motivated to grow in your knowledge and abilities by engaging in assignments and course lectures. 
-    Your preparation for and participation in various class activities are part of your participation grade. These class activities include (but are not limited to) periodic in-class reading responses, a data news assessment, selection and discussion of a social science research article (Week 2), and participation in interpreting student statistical analysis results (Weeks 13-14). 
+	\item \underline{\textbf{PARTICIPATION (25\%):}} Course attendance is mandatory. You should come to class prepared to discuss course material and ask questions about things you do not understand.
+    Your preparation for and participation in various class activities are part of your participation grade. These class activities include (but are not limited to) periodic in-class reading responses, a data news assessment, selection and discussion of a social science research article (Week 2), and participation in interpreting student statistical analysis results (Weeks 13-14).
 
    \textit{Note about attendance:} We anticipate that many students will have to miss a few classes throughout the semester (due to illness, family circumstances, etc.), and we take that into account when collaborating final grades. You are welcome to notify us if you are experiencing a life circumstance that prevents you from attending multiple (3+) consecutive class periods.
-	
-	\item \underline{\textbf{WEEKLY ASSIGNMENTS (25\%):}} You will have a  short homework assignment to complete each week (posted on Canvas on Thursdays; due on Canvas on Sunday evenings). These low-stakes assignments are designed to help you put the week's material to practice, to help you apply the week's material to your research analysis, and/or to help you practice statistical analysis in \textbf{\textsf{R/RStudio}}. Some assignments may not take you more than 30 minutes to complete, while others (particularly during the statistics unit) will likely take longer to complete. I reserve the right to cancel a given week's assignment (announced on Canvas) when appropriate. % \textit{Your lowest-scoring weekly assignment will be dropped from your final course grade.}
-    \textit{Late assignments will be accepted and graded but will not receive feedback.}
-	
-    \item \underline{\textbf{MIDTERM EXAM (25\%):}} You will be examined on \textbf{political science research design, data exploration, and \textsf{R} coding basics} (material from Weeks 1-7). My goal for the exam is to encourage and facilitate your learning. The exam is an in-person, hand-written exam which includes concept identification, multiple choice, short-answer and paragraph responses. %You may use paper notes (no electronics, textbooks, or printed lecture slides or readings).
-    After the exam has been graded, students have the option to update their exams (by providing correct answers and a discussion of their evolved understanding) to raise their exam score by up to one letter grade.% This is entirely optional.
-	
-%    \item \underline{\textbf{STATISTICS HOMEWORK (20\%):}} You will be given a statistics homework assignment that evaluates your \textbf{understanding of the basics of statistics} and how you might apply statistics to your own research interests. You will receive the homework on Wed 11/24 (UNM Canvas) and it will be due on Tue 11/30 (11:59 pm). 
 
-	\item \underline{\textbf{FINAL RESEARCH ANALYSIS (25\%):}} You will develop an original research hypothesis and statistically test that hypothesis using one of two datasets provided in class. The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Bi-variate Hypothesis Test Results, Multiple-variable Regression Results, and Concluding Implications. 
- 
- We will break this project into several small assigned tasks (in the weekly assignments and other tasks, detailed in the course schedule), so that you receive guidance throughout the semester and do not have to scramble at the end of the term! Completing each of these assignments will count toward your Final Research Analysis grade. 
- 
-   % In addition to regular tasks/deadlines, you will be responsible for the following:
- 
- %\begin{itemize}
- %    \item \textbf{Initial multivariate analysis  (Mon 11/13):} You will submit a table with your initial multivariate analysis results on Canvas. That week (11/14 and 11/16), the class will go over your table to help interpret, discuss, and troubleshoot your results. 
- %    \item \textbf{Final research analysis (Mon 12/11):} You will put all the pieces of previous assignments together to generate a research analysis with the following sections: Introduction, Theory and Hypothesis, Data Description, Results, and Concluding Implications. 
-%\end{itemize}
-%\item \underline{\textbf{TEAM-AUTHORED OP-ED/BLOG (10\%):}} You will work in groups at the end of the semes-ter to present one research result as an op-ed/blog. Each student may (but are not required to) submit their own research analysis results for consideration as a group op-ed project. Students who wish to work alone or who are unable to attend the relevant work days may conduct this project independently, but I think it will be more fun in teams! \textbf{Due: Thurs 12/07.}
+	\item \underline{\textbf{WEEKLY ASSIGNMENTS (25\%):}} You will have a  short homework assignment to complete each week (posted on Canvas on Thursdays; due on Canvas on Sunday evenings). These low-stakes assignments are designed to help you put the week's material to practice, to help you apply the week's material to your research analysis, and/or to help you practice statistical analysis in \textbf{\textsf{R/RStudio}}. Some assignments may not take you more than 30 minutes to complete, while others (particularly during the statistics unit) will likely take longer to complete. I reserve the right to cancel a given week's assignment (announced on Canvas) when appropriate.
+    \textit{Late assignments will be accepted and graded but will not receive feedback.}
+
+    \item \underline{\textbf{MIDTERM EXAM (25\%):}} You will be examined on \textbf{political science research design, data exploration, and \textsf{R} coding basics} (material from Weeks 1-7). My goal for the exam is to encourage and facilitate your learning. The exam is an in-person, hand-written exam which includes concept identification, multiple choice, short-answer and paragraph responses.
+    After the exam has been graded, students have the option to update their exams (by providing correct answers and a discussion of their evolved understanding) to raise their exam score by up to one letter grade.
+
+	\item \underline{\textbf{FINAL RESEARCH ANALYSIS (25\%):}} You will develop an original research hypothesis and statistically test that hypothesis using one of two datasets provided in class. The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Bi-variate Hypothesis Test Results, Multiple-variable Regression Results, and Concluding Implications.
+
+ We will break this project into several small assigned tasks (in the weekly assignments and other tasks, detailed in the course schedule), so that you receive guidance throughout the semester and do not have to scramble at the end of the term! Completing each of these assignments will count toward your Final Research Analysis grade.
+
 \end{itemize}
 
 	\textbf{There is no final exam in this course.}
 
-%    \item [] \textit{A timeline/checklist of course assignments and deadlines will be published on UNM Canvas on 08/30.}
-	
 \section*{Grade breakdown}
 
 \begin{table}[h!]
@@ -280,7 +203,7 @@ All assignments will be posted and submitted (by 11:59 on the due date) via \tex
 90-91	& A-& \\ \hline
 88-89	& B+& \\
 82-87	& B & good \\
-80-81	& B-& \\ \hline 
+80-81	& B-& \\ \hline
 78-79	& C+& \\
 72-77	& C* & adequate \\
 70-71	& C-& \\ \hline
@@ -292,26 +215,25 @@ All assignments will be posted and submitted (by 11:59 on the due date) via \tex
     \end{tabular}
 \end{table}
 
-%*A+ grades are reserved for exceptional cases.
 \noindent \textbf{\textit{Note: }} Do \textbf{not} rely on Canvas's grade calibrator. It will not give you an accurate assessment of your current grade in this course.
 
 \clearpage
 
-\section*{Data News Assessment} 
+\section*{Data News Assessment}
 
 \noindent Once during the semester, you will select, read, summarize, and assess a news article (ideally published within the last year) that presents social science research or that uses data to explain a contemporary political issue. \\
 
 \noindent You should select your data news article from a \textbf{reputable news source}. Places to look include (but are not limited to): the \textit{Wall Street Journal}, \textit{New York Times} \href{https://www.nytimes.com/section/upshot}{Upshot}, the Washington Post \href{https://www.washingtonpost.com/monkey-cage/}{Monkey Cage} (end: 2022), Nate Silver's \href{https://fivethirtyeight.com/}{FiveThirtyEight}, the Guardian's \href{https://www.theguardian.com/data}{Data News}, the \href{https://www.economist.com/}{Economist}, ProPublica's \href{https://www.propublica.org//newsapps/}{Graphics and Data}, or your preferred newspaper or news-related magazine. If your article you are interested in is behind a paywall, contact the UNM library, who can help you access news articles.\\
 
-\noindent Your written assessment of your selected news article should include the following: 
+\noindent Your written assessment of your selected news article should include the following:
 
 \begin{itemize}
     \item The \textbf{link} to the article you selected and its full citation (including the title, author, date, publication source, and url).
-    
+
     \item Your \textbf{brief summary} (one paragraph) of the article, including the \textbf{question} the data is seeking to answer or the \textbf{phenomenon} the data is being used to explain; your description of the \textbf{data} is being used to answer the question; and the \textbf{conclusion} or ``take-away'' that the article highlights based on the data.
-    
+
     \item Your \textbf{assessment} (one paragraph) about the article. How well did the data and/or methods answer the question or explain the phenomenon? What are the \textbf{implications} of the data, analysis, and conclusions? Implications could include \textbf{policy changes} that can or should happen on account of this research, and/or how the research \textbf{addresses inequality} or \textbf{challenges powerful people/systems}.
-    
+
     \item A one-sentence response to \textbf{each} of the following: 1) Name at least 1-2 course concepts that were discussed in / relevant to the article; 2) Name one thing you learned about how data is used in research and public discourse from this article; List one \textbf{discussion question} for the class to guide a group assessment of the research approach, data, and/or conclusions.
 \end{itemize}
 
@@ -319,209 +241,7 @@ All assignments will be posted and submitted (by 11:59 on the due date) via \tex
 
 \clearpage
 
-\begin{comment}
-
-\section*{Final Project: Research Design}
-
-\subsection*{40\% of your final grade (40 points)}
-
-
-GENERAL RESOURCES:
-USC Libraries: \href{https://libguides.usc.edu/writingguide/purpose}{Organizing your social science research paper}
-
-As your final project, you will produce an original study (``research design'') to address a research question of your choosing. We will break this assignment into a number of small assigned tasks.
-
-
-As your final project, you will develop an original ``research design'' to address a research question of your choosing, using the elements of research we discuss in class. A research design includes all elements of a scientific study, \textit{except} the actual execution of the data analysis itself. This project could serve as the basis for a senior thesis, a proposed independent study, an undergraduate grant application, a proposal for graduate school, or a commentary (op-ed) article pitched to the \textit{Daily Lobo}. \\
-
-\noindent Your final research design will be roughly 15 pages, double-spaced, 1-inch margins, 12-point font. We will break this assignment into a number of smaller assigned tasks throughout the semester and provide you feedback along the way, so that you can feel confident about your final paper submission. These tasks will not be graded (pass/no credit). \textbf{If you successfully submit each assigned portion of this research by its due date, you will automatically earn 15 out of 40 points on your final research design} (2 points lost for each assigned portion missed).
-
-\subsection*{1. Research question}
-
-\noindent \textbf{Initial questions}: Identify three research questions that you might be interested in trying to answer. For each, identify the dependent variable. \textit{Optional:} Do your questions work to secure power (for dominant groups) or challenge power (to empower minoritized groups, DK pg. 60); why or why not? Submit your initial questions. \textcolor{red}{\textbf{Due: Mon 09/06}}. \\
-
-\noindent \textbf{Revised questions}: Pick the question you will explore for your final research design and revise it. What is one possible independent variable, and how might it be connected to your dependent variable? Write one paragraph about your hunches, as well as any possible biases or preconceptions you think you have about this issue. Submit your final question, dependent variable, possible independent variable, and your `hunch' paragraph. \textcolor{red}{\textbf{Due: Sun 09/12}}.
-
-\subsection*{2. Literature review}
-
-\textbf{Literature Review, part 1}: Conduct a literature review related to existing studies on your topic and how previous scholars have addressed your topic. You should use Google scholar and UNM library resources (introduced in class). Complete an annotated bibliography for at least seven articles related to your topic and question. For each source, include: what question that article tries to answer (one sentence), what the author(s) think is the answer (one sentence), and how the author(s) conducted their analysis (their data and methods, 2-3 sentences). \textcolor{red}{\textbf{Due: Fri 09/24}}.\\
-
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://www.youtube.com/watch?v=dc-vKk205c8}{How to use Google Scholar}
-    \item \href{https://www.youtube.com/watch?v=SKxm2HF_-k0}{How to read an academic paper}
-    \item \href{https://libguides.usc.edu/writingguide/annotatedbibliography}{Writing an annotated bibliography}
-\end{itemize}
-
-
-\noindent \textbf{Literature review, part 2}: Write a few paragraphs (roughly 2 pages, double-spaced) describing how the existing literature (i.e., the articles you selected above) addresses your topic, what might be missing/overlooked, and what your study could add. This will become the ``Literature Review'' section of your final paper. \textcolor{red}{\textbf{Due: Fri 10/01}}.
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/literaturereview}{How to write a literature review}
-    \item \href{http://web.archive.org/web/20180710180615/http://www.nsd.uib.no/macrodataguide/source_v2.html}{Ideas about where to find data}
-\end{itemize}
-
-
-\subsection*{3. Theory and hypothesis} 
-
-Identify your independent variable and hypothesis. Why do you think your independent variable is related to your dependent variable (i.e., what is your theory)? Describe the logical steps connecting a change in your independent variable(s) to a change in your dependent variable(s). How would you know if your proposed theory was right (i.e., what is your one-sentence hypothesis)? What are some alternative arguments that could be made about your independent and dependent variables? What would it look like if you were wrong (i.e., what is your null hypothesis)? \textcolor{red}{\textbf{Due: Fri 10/22}}.
-
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/researchproposal}{How to write a research proposal}
-    \item \href{https://morganonscience.com/grantwriting/nih-grant-writing-tips-the-significance-of-significance/}{The significance of significance}
-\end{itemize}
-
-
-%2) Revise your hypothesis and variable as discussed; fl esh out your page from above - this will be come the “theory” section of your proposal (2-3 pages). Next, fl esh out your background andsignifi cance section (1-2 pages). This is a rough draft. Take a look at theory sections from class readings before writing a draft of yours.
-
-\subsection*{4. Data and measurement}
-
-\noindent How would you measure your dependent and independent variables of interest? In an ideal world, how would you measure these variables? What constraints would likely prevent you from using these measurements in reality? What alternative approaches could you use to measure your variables? Are there people or perspectives that could be omitted, marginalized, or under-represented in your proposed approach to measurement? \textcolor{red}{\textbf{Due: Fri 11/12}}.
-
-\subsection*{5. Approach to analyzing your data (methodology)}
-
-Outline your proposed approach to analyzing your data. This should be designed to help you answer your research question and test your hypothesis. Why is this the best approach for answering your question? What are the downsides (limitations) to this approach? How will you know if you are right? How does this approach relate to the theory you proposed (which must be falsifiable)? \textit{Note:} You may propose a primarily qualitative analysis, a primarily statistical analysis, or a mixed-methods approach. No matter what you choose, you should include at least some component of both qualitative and quantitative approaches and discuss how they would work together to help you answer your question. \textcolor{red}{\textbf{Due: Sun 12/05}}.
-
-
-\subsection*{6. Final touches}
-
-Consider the following aspects of your research design: Why is your research relevant to current political events (hook)? What ethical concerns do you need to consider when executing your research? What are the limitations to your proposed research? What are your possible conclusions? How could your conclusions function to secure power (for dominant groups) or challenge power (to empower minoritized groups) (implications)? What policy proposals or political changes might you recommend, depending on the results of your analysis (policy proposals)? \textit{Bonus:} Do you have any interest in executing this research or pitching an opinion piece (based on your analytic review of existing literature) to the \textit{Daily Lobo?} \textcolor{red}{\textbf{We will work on these ``final touches'' in class during Week 16}}.
-
-\subsection*{7. Final Research Design}
-
-Put together all of the pieces of your research design! You should now have drafts of your literature review; your theory and hypothesis; your data and measurement; your methodological approach; and your possible conclusions, implications, and policy proposals. Now, you can put all of these pieces together, read through your draft, revise it to make sure it all fits together, and write an introduction (executive summary) that summarizes your research design. This is also your time to fill any holes in your paper; revisit course material and update your paper as appropriate; and re-write your paper to make your writing as direct, clear and concise as possible. Try to remove passive voice, over-writing, or ``throat-clearing.'' You should edit your paper from start to finish at least three times. 
-
-\subsection*{Submissions}
-
-All components of this assignment should be submitted to UNM Canvas by 11:59 pm on the day they are due. \textcolor{red}{\textbf{The final research design should be submitted to UNM Canvas by \textbf{Mon 12/13} (11:59 pm)}. }\textit{I will grant a 48-hour extension, no questions asked.}
-
-\begin{center} \textit{This assignment is inspired by and adapted from Emily Gade's POLS 394 Syllabus, Emory University} \end{center}
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection*{Attendance Policy}
-
-%\subsection*{Policies on Incomplete Grades and Late Assignments}
-
 \clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\begin{comment}
-
-\section*{Final Project: Research Design}
-
-GENERAL RESOURCES:
-USC Libraries: \href{https://libguides.usc.edu/writingguide/purpose}{Organizing your social science research paper}
-
-As your final project, you will produce an original study (``research design'') to address a research question of your choosing. We will break this assignment into a number of small assigned tasks.
-
-\subsection*{1. Develop a research question}
-\paragraph{Due} XXX \\
-
-1) Identify three research questions that you might be interested in trying to answer. For each, identify the dependent variable. Write and re-write each question several ways to evaluate how phrasing might impact what you find.\\
-
-2) Revise your questions based on class feedback and then pick one. Think through a possible answer (or two) to your question. What is the logic connecting the question and your answer? Write one paragraph about your hunches, as well as any possible biases or preconceptions you think you have about this issue. Submit your final question, dependent variable and your `hunch' paragraph. 
-
-\subsection*{2. Conduct a thorough literature review}
-\paragraph{Due} XXX \\
-
-1) Conduct a thorough lit review related to existing studies on this topic and particularly the methodological approaches previous scholars have used to address this topic using Google scholar and library resources. Read them strategically. Complete an annotated bibliography for roughly 10 articles. For each source include: what question this piece tries to answer (one sentence), what the author(s) think the answer is (one sentence), but go into greater depth about why they think they know (their methodological approach). In class, you will summarize what you’ve learned and get feedback/ brainstorm what might come next.\\
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://www.youtube.com/watch?v=dc-vKk205c8}{How to use Google Scholar}
-    \item \href{https://www.youtube.com/watch?v=SKxm2HF_-k0}{How to read an academic paper}
-    \item \href{https://libguides.usc.edu/writingguide/annotatedbibliography}{Writing an annotated bibliography}
-\end{itemize}
-
-2) Write a few paragraphs (-/+ 1-2 pages) describing how the existing literature talks to itself, and what your study will add. This will become the “Literature Review” section of your paper.\\
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/literaturereview}{How to write a literature review}
-    \item \href{http://web.archive.org/web/20180710180615/http://www.nsd.uib.no/macrodataguide/source_v2.html}{Ideas about where to find data}
-\end{itemize}
-
-\subsection*{3. Develop a theory and hypothesis}
-\paragraph{Due} XXX \\
-
-1) Identify your independent variable and hypothesis. Draft one page of notes describing: what are the logical steps connecting a change in your independent variable(s) to a change in your dependent variable(s)? How would you know if your proposed theory were right? What are some alternative arguments that could be made about your independent and dependent variables? How would you know if your argument (and not alternatives) were correct? Next, sketch out one page of notes on the “background and signifi cance” of your study (how have other people tried to answer this question, what did they miss, and why should we care?). We will discuss and revise in class.\\
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/researchproposal}{How to write a research proposal}
-    \item \href{https://morganonscience.com/grantwriting/nih-grant-writing-tips-the-significance-of-significance/}{The significance of significance}
-\end{itemize}
-
-2) Revise your hypothesis and variable as discussed; fl esh out your page from above - this will be come the “theory” section of your proposal (2-3 pages). Next, fl esh out your background and
-signifi cance section (1-2 pages). This is a rough draft. Take a look at theory sections from class readings before writing a draft of yours.
-
-
-\subsection*{4. Outline your research approach}
-\paragraph{Due} XXX \\
-
-1) Outline your proposed research design. This should include details about why this is an appropriate approach to answer your question, how you will rule out possible confounders, and what your data collection protocol might look like. We will discuss in class and you will get feedback on your approach. Look back to your research methods course (prerequisite for this class) to consider the best approach for your question.\\
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://ucsd.libguides.com/c.php?g=90743&p=875422}{Resources on research design}
-    \item \href{https://conjointly.com/kb/research-design/}{Research design}
-\end{itemize}
-
-2)  Respond to the feedback you receive in class; consider alternative approaches, and draft a few pages (-/+ 2) detailing your proposed approach. Why will this help you answer your question? How will you know if you are right? How do this approach relate to the theory you proposed (which must be falsifi able), and to the alternative explanations you considered. Make sure to take a look at some of the methods and analysis sections from class articles before writing yours. Turn in the outline as well as your two page write up on Canvas.
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/methodology}{Writing a good methods section}
-\end{itemize}
-
-
-\subsection*{5. Design your instrument/proposal draft}
-\paragraph{Due} XXX \\
-
-1) Part one: How will you execute your proposed approach? If you are proposing a survey or an experiment, design the tool you will use/study protocol here. If you are proposing fi eldwork, merging existing datasets, archival research or a meta-analysis, etc. provide details about how you will collect and analyze that data. We will discuss in class and give each other feedback.\\
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://conjointly.com/kb/experimental-design/}{Experimental design}
-    \item \href{https://conjointly.com/kb/survey-research/}{Designing a survey}
-\end{itemize}
-
-2) Reply to class feedback following your instrument/data collection protocol. Start building a draft/outline of your proposal by revising the parts you’ve already written and putting them together in one document. When you put together what you’ve done so far, you should have a draft of your literature review (1-2 pages), your theory section (2-3 pages), your methodological approach (1-2 pages), and your data collection approach or instrument (-/+ 2 pages). After reading through your materials and revising lightly, write a draft of your introduction (1-2 pages) and abstract. Take a look at examples from our course materials before writing yours. Reply to any class feedback and submit your introduction, abstract, outline/draft and fi nal instrument/data collection approach on Canvas.
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/introduction}{How to write a good introduction}
-    \item \href{https://libguides.usc.edu/writingguide/abstract}{How to write a good abstract}
-    \item \href{https://libguides.usc.edu/writingguide/outline}{Making an outline}
-\end{itemize}
-
-
-\subsection*{6. Develop a research question}
-\paragraph{Due} XXX \\
-
-Ok, we have worked on this paper all semester! Now you rewrite and revise. Paste all the parts together and go over the proposal with a fine-tooth-comb in response to my comments, and cut down too length. Make sure to include a short conclusion. Figure out any big structural issues first. Then hunt for careful, clear sentence construction, and get rid of passive voice and overwriting. Be direct, concise and clear. You should edit your proposal from start to finish at least three times. Total proposal should be about 12 pages single spaced NTY 12 pt font, 1 inch margins, excludes bibliography.
-
-Resources to help you:
-\begin{itemize}
-    \item \href{https://libguides.usc.edu/writingguide/proofreading}{Proofreading a paper}
-    \item \href{http://www.jlakes.org/ch/web/The-elements-of-style.pdf}{The elements of style}
-    \item \href{https://libguides.usc.edu/writingguide/conclusion}{How to write a good conclusion}
-\end{itemize}
-
-
-
-
-
-
-\begin{center} \textit{This assignment is inspired by and adapted from Emily Gade's POLS 394 Syllabus, Emory University} \end{center}
-
-\end{comment}
 
 \newpage
 \section*{Course Schedule}
@@ -529,60 +249,54 @@ Resources to help you:
 
 This schedule of readings, deadlines, and activities is subject to change to best accommodate students' learning needs. Changes will be announced on Canvas and (if possible) in class.
 
-
 \week{Week 1} INTRODUCTIONS
 
 \begin{itemize}
     \item [] \textbf{Tue:} Course introductions
     \item [] \textbf{Thurs:} Introduction to political science
-    \subitem \textbf{\textit{Assigned Readings:}} 
+    \subitem \textbf{\textit{Assigned Readings:}}
     \subsubitem \textit{Fundamentals}, Ch 1, ``The Scientific Study of Society.''
     \subsubitem Burdick, ``Measuring the Cost of Racial Abuse in Soccer.''
 \end{itemize}
-
 
 \week{Week 2} RESEARCH IN THE REAL WORLD
 
 \begin{itemize}
     \item [] \textbf{Tue:} Political science research blogs
-\begin{quotation}\noindent \textbf{\textit{Assigned reading:}} Select and read a blog post from either \href{https://goodauthority.org/}{Good Authority} %\textit{The Washington Post's} \href{https://www.washingtonpost.com/monkey-cage/}{Monkey Cage} (ended in 2022, see a list of topics \href{https://monkeycagetopicguides.org/}{here}), \href{https://politicalviolenceataglance.org/}{Political Violence at a Glance} (ended in 2023), 
+\begin{quotation}\noindent \textbf{\textit{Assigned reading:}} Select and read a blog post from either \href{https://goodauthority.org/}{Good Authority}
 or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School of Economics blogs}. Be prepared to discuss the featured research in class, including identifying the research question, independent variable and dependent variable.  \end{quotation}
 
     \item []\textbf{Thurs:} Political science research blogs (cont)
-        \subitem \textbf{\textit{Assigned readings:}} 
+        \subitem \textbf{\textit{Assigned readings:}}
         \subsubitem Barrowman, ``Why Data is Never Raw.''
         \subsubitem Silberzahn et al, ``Many Analysts, One Data Set.''
 \end{itemize}
 
-    
 \week{Week 3} DATA IS SUBJECTIVE
 
 \begin{itemize}
     \item [] \textbf{Tue:} Data feminism framework
-        \subitem \textbf{\textit{ Assigned readings:}} 
+        \subitem \textbf{\textit{ Assigned readings:}}
         \subsubitem \textit{Data Feminism} Ch 1, ``The Power Chapter.''
 
-    
     \item [] \textbf{Thurs:} Data feminism guidelines for class
-       
-       \subitem \textbf{\textit{Assigned readings:}} 
-        \subsubitem Select and read ONE of the following chapters: 
-        \subsubitem \textit{Data Feminism} Ch 4, ``What Gets Counted Counts'' pg. 97-111, 122-123. 
+
+       \subitem \textbf{\textit{Assigned readings:}}
+        \subsubitem Select and read ONE of the following chapters:
+        \subsubitem \textit{Data Feminism} Ch 4, ``What Gets Counted Counts'' pg. 97-111, 122-123.
         \subsubitem \textit{Data Feminism} Ch 6, ``The Numbers Don't Speak for Themselves,'' pg. 153-169, 71-72.*\vspace{-5pt} \subsubitem \textit{\footnotesize*Contains discussion of data related to sexual violence that may be disturbing to some students.}
        \subitem \textbf{\textit{Read in class:}} \textit{Art of Statistics}, 369--371.
     \end{itemize}
 
-
-
 \week{Week 4} DEVELOPING YOUR RESEARCH IDEAS
 \begin{itemize}
     \item [] \textbf{Tue:} Course datasets and variables
-        \subitem \textit{\textbf{Assigned readings:}} 
+        \subitem \textit{\textbf{Assigned readings:}}
 
         \subsubitem \textit{Fundamentals} Ch 5, ``Survey Research.''
-        
-        \subsubitem Review the course datasets and select which you plan to use:\vspace{-2pt}\begin{quotation}\noindent \textbf{1) American National Election Studies (ANES) 2024 survey} asks Americans about their partisan presences, their attitudes about social and political issues, and their candidate preferences leading up to and after the 2024 general election. Read the \href{https://electionstudies.org/about-us/}{summary} and \href{https://electionstudies.org/data-center/2020-time-series-study/}{2020 survey details}. 
-        
+
+        \subsubitem Review the course datasets and select which you plan to use:\vspace{-2pt}\begin{quotation}\noindent \textbf{1) American National Election Studies (ANES) 2024 survey} asks Americans about their partisan presences, their attitudes about social and political issues, and their candidate preferences leading up to and after the 2024 general election. Read the \href{https://electionstudies.org/about-us/}{summary} and \href{https://electionstudies.org/data-center/2020-time-series-study/}{2020 survey details}.
+
         \vspace{5pt}\noindent \textbf{2) World Values Survey (WVS) Wave 7 (2017-2020)} asks people from 64 countries about their perspectives on a wide variety of social, cultural, economic, political and governance issues. Read the \href{https://www.worldvaluessurvey.org/WVSContents.jsp}{summary} and \href{https://www.worldvaluessurvey.org/WVSContents.jsp}{Wave 7 survey details.}
         \end{quotation}
     \item [] \textbf{Thurs:} Developing your theory
@@ -593,7 +307,6 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
 
 \noindent Begin your \textcolor{blue}{\textbf{Final Research Analysis Task 1: Theory and Hypothesis}}.
 
-
 \week{Week 5} MEASURING CONCEPTS AS VARIABLES
 
 \begin{itemize}
@@ -601,7 +314,7 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
     \subitem \textbf{\textit{Assigned reading:}} \textit{Fundamentals} Ch 6, ``Measuring Concepts of Interest.''
     \subitem \textbf{\textit{Read in class:}} \textit{Art of Statistics}, 7-10.
     \item [] \textbf{Thur:} Introduction to \textbf{\textsf{R}}
-        \subitem \textbf{\textit{Assigned tasks:}} 
+        \subitem \textbf{\textit{Assigned tasks:}}
             \subsubitem Download \textbf{\textsf{R}} and \textbf{\textsf{RStudio}} using \href{https://swirlstats.com/students.htm}{swirl}'s step-by-step prompts
             \subsubitem Download (from Canvas) the dataset you will use; this file will end in ``.csv''.
 \end{itemize}
@@ -618,27 +331,19 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
 
 \noindent Begin your \textcolor{blue}{\textbf{Final Research Analysis Task 2: Data and Variable Description.}}
 
-
 \week{Week 7} EXPERIMENTAL RESEARCH and MIDTERM REVIEW
 
 \begin{itemize}
 \item [] \textbf{Tue:} Experimental research
    \subitem \textbf{\textit{Assigned readings:}}
     \subsubitem \textit{Fundamentals} Ch 4, ``Research Design,'' 65-77.
-    
+
     \subsubitem \textit{Art of Statistics}, Ch 4, ``What Causes What?,'' 108-119.
-    %\subsubitem \textbf{Natural experiment:} Burdick, ``Measuring the Cost of Racial Abuse in Soccer.''
-    %\subsubitem \textbf{Ethics:} Willis, ``Professors’ Research Project Stirs Political Outrage in Montana.''
+
     \subsubitem Aizenman, ``How to Fix Poverty: Why Not Just Give People Money?'' and \\\vspace{-20pt} \subsubitem ``An Experiment Gives Cash Aid to the Poor. Is that Ethical?'' Review results of \\\vspace{-20pt} \subsubitem experimental interventions \href{https://www.givedirectly.org/gdresearch/}{here}.
-
-    %\subsubitem Guisinger et al, ``How do Americans see U.S. support for Ukraine? \href{https://goodauthority.org/news/how-do-americans-see-us-support-for-ukraine-trump-putin-summit/}{[link]}.
-    
-
-%\subitem \textbf{\textit{Read in class:}} \textit{Al Jazeera}, ``Trump Muslim ban shifted public opinion'' \href{https://www.aljazeera.com/news/2018/1/13/trump-muslim-ban-shifted-public-opinion-study-finds}{[link]}.
 
 \subitem \textbf{\textit{Recommended:}} \textit{New York Times} Daily (podcast): ``Trump, Tylenol and Autism'' \href{https://www.nytimes.com/2025/09/23/podcasts/the-daily/autism-trump-tylenol.html}{[link]}.
 
-    
     \item [] \textbf{Thurs:} Recoding variables and midterm review
 \end{itemize}
 
@@ -650,7 +355,6 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
 \end{itemize}
 
 \noindent Submit your \textcolor{blue}{\textbf{Final Research Analysis Task 2: Data and Variable Description}} (Due Sun 10/12).
-
 
 \week{Week 9} PROBABILITY
 
@@ -666,12 +370,12 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
     \item [] \textbf{Tue:} Bi-variate hypothesis tests
     \subitem \textit{\textbf{Assigned reading:}} \textit{Fundamentals} Ch 9, ``Bivariate Hypothesis Testing.''
     \item [] \textbf{Thu:} Bi-variate hypothesis tests in \textbf{\textsf{R}}
-     \subitem \textbf{\textit{Assigned reading:}} 
+     \subitem \textbf{\textit{Assigned reading:}}
      \textit{Art of Statistics}, Ch 10, ``Answering Questions and Claiming Discov-\vspace{-5pt} \subitem eries,'' 278-287, 294-304.
-     %\textit{Naked Statistics} Ch 9, ``Inference: Why my statistics professor thought\vspace{-5pt} \subitem I might have cheated.''
+
 \end{itemize}
 
-\noindent \textcolor{blue}{\textbf{Final Research Analysis Task 3 (Due Sun 10/26):}} Write your \textbf{Bi-variate Hypothesis Test: Methods Description and Results.}% (bi-variate hypothesis test and regression).
+\noindent \textcolor{blue}{\textbf{Final Research Analysis Task 3 (Due Sun 10/26):}} Write your \textbf{Bi-variate Hypothesis Test: Methods Description and Results.}
 
 \week{Week 11} BI-VARIATE REGRESSION
 \begin{itemize}
@@ -686,13 +390,13 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
 \begin{itemize}
     \item [] \textbf{Tue:} Multiple-variable regression
     \subitem \textbf{\textit{Assigned reading:}} \textit{Fundamentals} Ch 11, ``Multiple Regression,'' 201-232.
-    
+
     \item [] \textbf{Thu:} Multiple-variable regression in \textbf{\textsf{R}}
 \end{itemize}
 
-\noindent \textcolor{blue}{\textbf{Final Research Analysis Task 4 (Due Sun 11/09):}} Write your \textbf{Multiple-variable Regression: Methods Description}, conduct and submit your \textbf{multiple-variable regression results table}.% (bi-variate hypothesis test and regression).
+\noindent \textcolor{blue}{\textbf{Final Research Analysis Task 4 (Due Sun 11/09):}} Write your \textbf{Multiple-variable Regression: Methods Description}, conduct and submit your \textbf{multiple-variable regression results table}.
 
-\week{Week 13} REGRESSION INTERPRETATION 
+\week{Week 13} REGRESSION INTERPRETATION
 
 \begin{itemize}
     \item []\textbf{Tue and Thu:} We will discuss and help interpret each student's multiple-variable regression results in class.
@@ -704,9 +408,7 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
     \item []\textbf{Tue and Thu:} We will discuss and help interpret each student's multiple-variable regression results in class.
 \end{itemize}
 
-%TAKE-HOME EXAM DUE
-
-\noindent \textcolor{blue}{\textbf{Final Research Analysis Task 5 (Due Sun 11/23):}} Write up your \textbf{Multiple-variable Regression: Results} and \textbf{Concluding Implications}.% (bi-variate hypothesis test and regression).
+\noindent \textcolor{blue}{\textbf{Final Research Analysis Task 5 (Due Sun 11/23):}} Write up your \textbf{Multiple-variable Regression: Results} and \textbf{Concluding Implications}.
 
 \week{Week 15} NO CLASS; Work on final papers
 
@@ -717,15 +419,14 @@ or one of the \href{https://blogs.lse.ac.uk/lse-research-blogs/}{London School o
         \subsubitem Clayton, ``How Eugenics Shaped Statistics.''
         \subsubitem \textit{Art of Statistics}, Ch 12, ``How Things Go Wrong''
         \subsubitem \textit{Art of Statistics}, Ch 13, ``How We Can Do Statistics Better.''
-       % \subsubitem Wasserstein, Schirm and Lazar, ``Moving to a World Beyond `p < 0.05,' '' pg. 1-10.
-        %\subsubitem Poiret, ``Sciences and Statistics: Should we go beyond p-value?''
+
     \item[] \textbf{Thurs:} Project workshop day
 \end{itemize}
 
 \noindent \textcolor{blue}{\textbf{Final Research Analysis: Final Paper (Due Mon 12/08)}}*\\
 \textit{*I will offer a 48-hour extension (no questions asked) upon request via email. Late papers will be docked 1/2 letter grade for each additional day late. No papers will be accepted after Fri 05/16.}
 \end{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
 \section*{Course Schedule XXXX}
 
@@ -738,7 +439,6 @@ This schedule of readings, deadlines, and activities is subject to change to bes
     \item Nix WB data
 \end{itemize}
 
-
 \subsection*{I. Political science in the real world} \hline \vspace{12pt}
 \SetDate[13/01/2025]
 
@@ -750,12 +450,11 @@ This schedule of readings, deadlines, and activities is subject to change to bes
 
 \textbf{Week goal:} IV, DV, correlation
 
-
 \week{Week 2} RESEARCH FOR THE REAL WORLD
 
-Pick a monkey cage article, read the "real world" research it is pointing to. 
+Pick a monkey cage article, read the "real world" research it is pointing to.
 
-\textbf{Week goal:} Identify IVs and DVs in the real world; take a look at a real research project 
+\textbf{Week goal:} Identify IVs and DVs in the real world; take a look at a real research project
 
 \week{Week 3} DATA FEMINISM,  RESEARCH ETHICS
 
@@ -765,8 +464,6 @@ Pick a monkey cage article, read the "real world" research it is pointing to.
 \item Tue lecture: Data Feminism
 \item Thurs lab: Intro to course datasets
 \end{itemize}
-
-%\subsection*{II. One outcome (variable) you care about} \hline \vspace{12pt}
 
 \week{Week 4} Picking your DV, Theories about what shapes it
 
@@ -782,18 +479,14 @@ Intro to course datasets, pick your DV of interest, develop a theory (what cause
 
 \begin{itemize}
     \item Tue lecture: Measuring concepts, types of variables
-    \item Thurs lab: 
+    \item Thurs lab:
 \end{itemize}
-
-
 
 \week{Week 6} MEANS AND WHAT THEY MEAN: CENTRAL TENDENCY and DISPERSION
 
 \textbf{Week goal:} Start using R, recode your variable, central tendancy / dispersion, visualization, what influences this variation (research question)?\\
 
 \textcolor{blue}{Final project: DV Description Due}
-
-
 
 \week{Week 7} PUTTING IT ALL TOGETHER: Research question, theory, hypothesis, what will it look like if you are right, visualize your IV/DV
 
@@ -810,341 +503,20 @@ Tue: NO CLASS (ISA)
 
 \week{Week 11} BI-VARIATE/MULTIVARIATE REGRESSION (and limits to causality)
 
-\week{Week 12} INTERPRETATION, CONFIDENCE INTERVALS, LIMITS TO CAUSALITY 
+\week{Week 12} INTERPRETATION, CONFIDENCE INTERVALS, LIMITS TO CAUSALITY
 
 Thurs: NO CLASS (WPSA)
 
 \week{Week 13} REGRESSION INTERPRETATION / EXPERIMENTAL INTERVENTIONS
-\week{Week 14} REGRESSION INTERPRETATION / EXPERIMENTAL INTERVENTIONS 
-
-%TAKE-HOME EXAM DUE
+\week{Week 14} REGRESSION INTERPRETATION / EXPERIMENTAL INTERVENTIONS
 
 \week{Week 15} CONCLUSIONS
 \begin{itemize}
     \item Tue: Beyond p-values
     \item Thurs: The subjective origins of modern statistics
 \end{itemize}
-
-\begin{comment}
-\subsection*{I. POLITICAL SCIENCE RESEARCH FUNDAMENTALS}\hline 
-
-\vspace{10pt}
-
-% Set first date of the semester (for some reason this is a week before what comes up, but that's easy to get around)
-\SetDate[14/08/2023]
-\week{Week 1} STUDYING POLITICS
-\begin{itemize}
-\item []\textbf{Tue}: Course introductions
-\item []\textbf{Thurs}: What is social science?
-
-\skd{Fix this lecture}
-
-\begin{itemize}
-
-
-\item The \textit{Washington Post}'s ``Monkey Cage'' is a blog for political scientists to present their research to a public audience (-2022). Select and read an article from the \href{https://www.washingtonpost.com/monkey-cage/}{Monkey Cage} that interests you. See their \href{https://monkeycagetopicguides.org/}{Topic Guides} to search for articles about a particular topic. If you hit a paywall, let us know and we can help!
-        \item Burdick. “Measuring the Cost of Racial Abuse in Soccer.'' \textit{The New York Times}, July 16, 2021. (\href{https://www.nytimes.com/2021/07/16/science/covid-racism-soccer-football-falco.html}{link})    
-
-
-%\item RR\footnote{Remler and Ryzin. 2022. \textit{Research Methods in Practice: Strategies for Description and Causation, Third Edition}. Thousand Oaks, CA: Sage Publications. \textbf{PDFs posted on Canvas.} } Ch 1, ``Research in the Real World,'' pp. 13-17, 20-24. -- optional
-\end{itemize}
-
-    \item[]  \textcolor{blue}{\textbf{Weekly assignment \#1 (due Sun 08/27)}}
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\week{Week 2} DATA FEMINISM
-\begin{itemize}
-\item [] \textbf{Tue}: Understanding power and oppression; subjective data
-\begin{itemize}
-    \item Data Feminism\footnote{D'Ignazio and Klein. 2020. \textit{Data Feminism}. Cambridge, MA: MIT Press. \textbf{PDFs posted on Canvas.} 
-} Ch 1, ``The Power Chapter.''
-    \item Barrowman. 2018. ``Why Data is Never Raw: On the seductive myth of information free of human judgment.'' \textit{The New Atlantis}. 
-    \item Optional: Data Feminism Ch 2, ``Collect, Analyze, Imagine, Teach,'' pp. 53-65.
-
-\end{itemize}
-\item [] \textbf{Thurs}: Building blocks of political science; intro to datasets in this class
-\begin{itemize}
-    \item KW\footnote{Kellstedt and Whitten. 2018. \textit{The Fundamentals of Political Science Research, Third Edition}. New York, NY: Cambridge University Press. \textbf{You must have your own copy.}} Ch 1, ``The Scientific Study of Politics.''(\href{https://www.thenewatlantis.com/publications/why-data-is-never-raw}{link})
-        \item KW Ch 2, ``The Art of Theory Building,'' pp. 25-42.
-   % 
-   % \item  ``Why Choose Data Science as Your Career: A Complete Beginners Guide,'' \textit{Medium}, Nov 17, 2020. (\href{https://medium.com/swlh/why-data-science-a-complete-beginners-guide-to-data-science-ea6910826f2b}{link})
-\end{itemize}
-
-    \item[]  \textcolor{blue}{\textbf{Weekly assignment \#2 (due Sun 09/03)}}
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\week{Week 3} RESEARCH QUESTIONS AND CAUSALITY
-\begin{itemize}
-\item [] \textbf{Tue}: Workshop: Your IVs and DVs
-
-\begin{itemize}
-    %\item \textit{Optional}: DK Ch 2, ``Collect, Analyze, Imagine, teach''
-\end{itemize}
-
-\item [] \textbf{Thurs}: Causality
-
-\begin{itemize}
-		\item KW Ch 3, ``Evaluating Casual Relationships.''   
-  \item  ``The cost of misogyny: Societies that treat women badly are poorer and less stable.'' \textit{The Economist}, September 11, 2021.  (\href{https://www.economist.com/international/2021/09/11/societies-that-treat-women-badly-are-poorer-and-less-stable}{link})
-
-\end{itemize}
-
-\item[]  \textcolor{blue}{\textbf{Weekly assignment \#3 (due Sun 09/10)}}
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\week{Week 4} DESIGNING RESEARCH
-\begin{itemize}
-\item [] \textbf{Tue}: Research Design
-
-\begin{itemize}
-    \item KW Ch 4, ``Research Design."
-
-\end{itemize}
-
-
-\item [] \textbf{Thurs}: Types of research designs; Identifying causal claims
-
-\begin{itemize}
-    \item RR\footnote{Remler and Ryzin. 2022. \textit{Research Methods in Practice: Strategies for Description and Causation, Third Edition}. Thousand Oaks, CA: Sage.} Ch 11, ``Causation,'' pp. 412-419.
-
-        \item Burdick. “Measuring the Cost of Racial Abuse in Soccer.'' \textit{The New York Times}, July 16, 2021. (\href{https://www.nytimes.com/2021/07/16/science/covid-racism-soccer-football-falco.html}{link})    
-	\end{itemize}
-
-\item[]  \textcolor{blue}{\textbf{Weekly assignment \#4 (due Sun 09/17)}} 
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\week{Week 5} CAPTURING CONCEPTS
-
-\begin{itemize}
-\item [] \textbf{Tue}: Concept Measurement
-
-\begin{itemize}
-    \item KW Ch 5, ``Measuring Concepts of Interest.''
-\end{itemize}
-
-\item [] \textbf{Thurs}: Data Feminism considerations
-\begin{itemize}
-    \item Data Feminism Ch 4, ``What Gets Counted Counts.''
-    \item KW 2023 Ch 1 (pp 1-10).
-
-\end{itemize}
-\item[]  \textcolor{blue}{\textbf{Weekly assignment \#5 (due Sun 09/24)}}
-
-\item[]  \textcolor{purple}{\textbf{Research Analysis Assignment \#1: Research question, theory, hypothesis (due Sun 09/24)}}
-    \end{itemize}
-\vspace{10pt}
-
-\week{Week 6} DATA EXPLORATION
-\begin{itemize}
-\item [] \textbf{Tue}: What does data look like?
-\begin{itemize}
-
-    \item KW Ch 6, ``Getting to Know Your Data.''
-    \item  KW Workbook, 27-34.
-
-   \item Look at your codebook, cat/ordinal/continuous/binary, different ways to measure/cut your variable
-\end{itemize}
-
-\item [] \textbf{Thurs}: Numbers and Data Feminism
-\begin{itemize}
-    \item Data Feminism Ch 6, ``The Numbers Don't Speak for Themselves.''
-    \item Outliers, rank statistics, statistical moments; Use R to look at variables; visualization
-\end{itemize}
-
-\item[]  \textcolor{blue}{\textbf{Weekly assignment \#6 (due Sun 10/01)}}
-
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\week{Week 7} MIDTERM I
-\begin{itemize}
-\item [] \textbf{Tue}: DF Catchup; Midterm Review
-
-\item [] \textbf{Thurs}: \textcolor{teal}{\textbf{Midterm Exam}}: Open-note, in-person exam.
-
-
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\week{Week 8} MIDTERM II and FALL BREAK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-    \item [] \textbf{Tue}: \textcolor{teal}{\textbf{Midterm Exam Discussion}}
-    \item [] \textbf{Thurs}: NO CLASS (Fall break)
-    \item [] \textcolor{teal}{\textbf{Midterm Exam Updates (due Sun 10/15)}}
-    \item[]  \textcolor{purple}{\textbf{Research Analysis Assignment \#2: Data description (due Sun 10/08)}}
-
-\end{itemize}
-\vspace{10pt}
-
-\subsection*{II. STATISTICAL DATA ANALYSIS: THE BASICS}\hline \vspace{10pt}
-
-\textbf{Useful Resources for understanding statistics:}\vspace{-4pt}
-\begin{itemize}
-    \item Wheelan. 2013. \textit{Naked Statistics}. New York, NY: W. W. Norton \& Company.\vspace{-6pt}
-    \item Gonick and Smith. 2005. \textit{The Cartoon Guide to Statistics}. Harper Collins Books.\vspace{-6pt}
-    \item Statistics Simulations: \href{https://learncheme.com/simulations/statistics/}{https://learncheme.com/simulations/statistics/}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\week{Week 9}  PROBABILITY
-\begin{itemize}
-\item [] Need to add a class day to cover reporting/visualizing descriptive statistics
-
-\item [] \textbf{Tue}: Probability
-
-\begin{itemize}
-    \item KW Ch 7, ``Probability and Statistical Inference.''
-\end{itemize}
-\item [] \textbf{Thurs}: Probability (cont)
-
-\begin{itemize}
-    \item KW Workbook, pp. 35-41
-    \item \textit{Recommended:} \textit{Naked Statistics}, Ch 1; \textit{Cartoon guide to statistics}, Ch 3, 5, and 6.
-\end{itemize}
-
-\textcolor{blue}{\textbf{Weekly assignment \#7 (due Sun 10/22)}}
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\week{Week 10} BI-VARIATE HYPOTHESIS TESTING
-\begin{itemize}
-\item [] \textbf{Tue}: Bi-variate hypothesis testing
-
-\begin{itemize}
-    \item KW Ch 8, ``Bi-variate Hypothesis Testing.''
-    \item  \textit{Recommended:} Cartoon guide to statistics, Ch 8
-\end{itemize}
-
-\item [] \textbf{Thurs}: Bivariate hypothesis testing (cont)
-
-\begin{itemize}
-    \item KW Workbook, pp. 42-49
-\end{itemize}
-
-\textcolor{blue}{\textbf{Weekly assignment \#8 (due Sun 10/29)}}
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\week{Week 11} TWO-VARIABLE REGRESSION MODELS
-\begin{itemize}
-\item [] \textbf{Tue}: Two-variable regression models
-
-\begin{itemize}
-    \item KW Ch 9, ``Two-Variable Regression Models.''
-    \item  \textit{Recommended:} Naked Statistics Ch 11, ``Regression Analysis: The miracle elixir.'' 
-    \item \textit{Recommended:} Cartoon guide to statistics, Ch 11.
-\end{itemize}
-
-\item [] \textbf{Thurs}: Two-variable regression models (cont)
-\item []\textcolor{blue}{\textbf{Weekly assignment \#9 (due Sun 11/05)}}
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\week{Week 12} MULTI-VARIATE REGRESSION
-\begin{itemize}
-\item [] \textbf{Tue}: Multi-variate regression
-
-    \begin{itemize}
-        \item KW Ch 10, ``Multiple Regression: The Basics.''
-    \end{itemize}
-
-\item [] \textbf{Thurs}: Multi-variate regression (cont)
-
-\begin{itemize}
-    \item  KW Workbook, pp. 50-57
-\end{itemize}
-
-\textcolor{blue}{\textbf{Weekly assignment \#10 (due Mon 11/12)}}
-
-\item[]  \textcolor{purple}{\textbf{Research Analysis Assignment \#3: Regression results table (due Sun 11/12)}}
-
-\end{itemize}
-\vspace{10pt}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{III. INTERPRETING AND PRESENTING YOUR RESULTS}\hline \vspace{10pt}
-
-\week{Week 13} INTERPRETING RESULTS
-
-\begin{itemize}
-\item [] \textbf{Tue}: Class exercise: Interpreting your results
-
-\item [] \textbf{Thurs}: Class exercise: Interpreting your results (cont)
-
-\item[]  \textcolor{purple}{\textbf{Research Analysis Assignment \#4: Regression results: Updated table and write-up (due Sun 11/19)}}
-\end{itemize}
-\vspace{10pt}
-
-\week{Week 14} FINALIZING YOUR RESEARCH ANALYSIS
-
-\begin{itemize}
-\item [] \textbf{Tue}: Wrapping up your research analysis with an Introduction and a Conclusion
-\item [] \textbf{Thurs}: NO CLASS (Federal holiday)
-
-\item[]  \textcolor{purple}{\textbf{Research Analysis Assignment \#5: Research analysis draft (due Sun 11/26)}}
-\end{itemize}
-\vspace{10pt}
-
-\week{Week 15} TEAM-AUTHORED OP-EDS/BLOGS
-\begin{itemize}
-\item [] \textbf{Tue}: Team-based exercise: Writing an op-ed/blog for research results
-
-\item [] \textbf{Thurs}: Team-based exercise: Writing an op-ed/blog for research results (cont)
-
-\end{itemize}
-\vspace{10pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\week{Week 16} FINAL REMARKS
-
-\begin{itemize}
-\item [] \textbf{Tue}: Thinking critically about data and statistics
-    \begin{itemize}
-        \item Clayton. 2009. ``How Eugenics Shaped Statistics: Exposing the damned lies of three science pioneers.'' \textit{Nautilus} (\href{https://nautil.us/how-eugenics-shaped-statistics-238014/}{link}).
-%        \item Merry. 2016. \textit{The Seductions of Quantification}. Chicago, IL: University of Chicago Press. (excerpts)
-    \end{itemize}
-
-\item [] \textbf{Thurs}: Course conclusions
-
-\item [] \textcolor{teal}{\textbf{Team-authored Op-eds/Blogs (due Thurs 12/07)}}
-
-\item [] \textcolor{purple}{\textbf{Final (Individual) Research Analysis (due Mon 12/11)}}
-\end{itemize}
-
-
-\end{comment}
-
-
 \clearpage
 \bibliography{ref.bib}
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
 \newpage
@@ -1153,24 +525,15 @@ Thurs: NO CLASS (WPSA)
 
 \paragraph{UNM Administrative Mandate on Required Vaccinations} All students, staff, and instructors are required by \href{https://bringbackthepack.unm.edu/vaccine/vaccine-requirement.html}{UNM Administrative Mandate on Required Vaccinations} to be fully vaccinated for COVID-19 as soon as possible, but no later than September 30, 2021, and must provide proof of vaccination or of a UNM validated limited exemption or exemption no later than September 30, 2021 to the \href{https://lobocheckin.unm.edu/checkin/svpfa/24}{UNM vaccination verification site}. Students seeking medical exemption from the vaccination policy must submit a request to the \href{https://lobocheckin.unm.edu/checkin/svpfa/24}{UNM verification site} for review by the \href{https://arc.unm.edu/}{UNM Accessibility Resource Center}. Students seeking religious exemption from the vaccination policy must submit a request for reasonable accommodation to the \href{https://lobocheckin.unm.edu/checkin/svpfa/24}{UNM verification site} for review by the \href{https://oeo.unm.edu/}{Compliance, Ethics, and Equal Opportunity Office}. For further information on the requirement and on limited exceptions and exemptions, see the \href{https://bringbackthepack.unm.edu/vaccine/vaccine-requirement.html}{UNM Administrative Mandate on Required Vaccinations}.\vspace{-10pt}
 
-\paragraph{UNM Requirements on Masking in Indoor Spaces} All students, staff, and instructors are required to wear face masks in indoor classes, labs, studios and meetings on UNM campuses (see \href{https://bringbackthepack.unm.edu/protecting-the-pack/vaccination-and-masking-requirements.html}{masking requirement}). %Qualified music students must follow appropriate specific mask policies issued by the Chair of the Department of Music and the Dean of the College of Fine Arts. 
+\paragraph{UNM Requirements on Masking in Indoor Spaces} All students, staff, and instructors are required to wear face masks in indoor classes, labs, studios and meetings on UNM campuses (see \href{https://bringbackthepack.unm.edu/protecting-the-pack/vaccination-and-masking-requirements.html}{masking requirement}).
 Vaccinated and unvaccinated instructors teaching in classrooms must wear a mask when entering and leaving the classroom and when moving around the room. When vaccinated instructors are able to maintain at least six feet of distance, they may choose to remove their mask for the purpose of increased communication during instruction. Instructors who are not vaccinated (because of an approved medical or religious exemption), or who are not vaccinated yet, must wear their masks at all times. Students who do not wear a mask indoors on UNM campuses can expect to be asked to leave the classroom and to be dropped from a class if failure to wear a mask occurs more than once in that class. With the exception of the limited cases described above, students and employees who do not wear a mask in classrooms and other indoor public spaces on UNM campuses are subject to disciplinary actions. \vspace{-10pt}
 
 \paragraph{\textit{Acceptable masks and mask wearing in class}} A two-layer mask that covers the nose and mouth and that is cleaned regularly is acceptable, as are disposable medical masks, KN95, KF94, FFP1 and FFP2 masks. A face shield is not sufficient protection. It is vital that you wear your mask correctly, covering your nose and mouth. Removing your mask for an extended period to eat or drink in class violates the university mask requirement and endangers others.\vspace{-10pt}
 
 \paragraph{\textit{Consequences of not wearing a mask properly}} If you do not wear a mask, or if you do not wear a mask properly by covering your nose and mouth, you will be asked to leave class. If you fail to wear a mask properly on more than one occasion, you can expect to be dropped from the class. If you insist on remaining in the classroom while not wearing a mask, class will be dismissed for the day to protect others and you will be dropped from the class immediately.\vspace{-10pt}
 
-
-
 \paragraph{Communication on change in modality} The President and Provost of UNM may direct that classes move to remote delivery at any time to preserve the health and safety of the students, instructor and community. Please check \href{www.learn.unm.edu}{UNM Canvas} regularly for updates about our class and please check \href{https://bringbackthepack.unm.edu}{Bringing Back the Pack} regularly for general UNM updates about COVID-19 and the health of our community.
 \clearpage
 
 \end{document}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\begin{figure*}
-%\includegraphics[width=2,angle=90]{}
-%\end{figure*}

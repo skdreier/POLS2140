@@ -1,7 +1,13 @@
+<!--
+To publish via terminal:
+source ~/.zshrc
+pub-2140-syllabus
+-->
+
 ---
 title: "POLS 2140: Introduction to Political Analysis"
 subtitle: "Fall 2026 | University of New Mexico"
-author: "Professor Dreier, Ph.D."
+author: "Professor Sarah Dreier, Ph.D."
 date: "Fall 2026"
 format:
   html:
