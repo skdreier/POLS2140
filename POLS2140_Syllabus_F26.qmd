@@ -19,22 +19,28 @@ format:
     embed-resources: true
 ---
 
-| | |
-|:---|:---|
-| **Professor:** Dr. Sarah Dreier (she/her) | **Class time:** T/Th 11:00 am–12:15 pm |
-| **Office:** SSCO 2048 | **Class location:** DSH 224 |
-| **Office Hours:** Tue 2:30–4:30 pm | |
+**Class time:** Tue/Thurs 11:00 am–12:15 pm \
+**Class location:** DSH 224
 
-**Course TA:** Karla Eickhoff (she/her)
-**Office:** SSCO 2076
-**Office Hours:** Tue 12:30–2:30 pm; Thurs 12:30–1:30 pm
-**E-mail:** [keickhoff@unm.edu](mailto:keickhoff@unm.edu)
+::: {style="display: flex; gap: 2rem;"}
+::: {}
+**Professor:** Dr. Sarah Dreier (she/her) \
+**E-mail:** [skdreier@unm.edu](mailto:skdreier@unm.edu) \
+**Professor Office Hours:** Tue 2:30–4:30 pm \
+**Professor Office:** SSCO 2048
+:::
 
----
+::: {}
+**Course TA:** Karla Eickhoff (she/her) \
+**E-mail:** [keickhoff@unm.edu](mailto:keickhoff@unm.edu) \
+**TA Office Hours:** TBD \
+**TA Office:** SSCO 2076
+:::
+:::
 
-*Founded in 1889, the University of New Mexico sits on the traditional homelands of the Pueblo of Sandia. The original peoples of New Mexico—Pueblo, Navajo, and Apache—since time immemorial, have deep connections to the land and have made significant contributions to the broader community statewide. We honor the land itself and those who remain stewards of this land throughout the generations and also acknowledge our committed relationship to Indigenous peoples. We gratefully recognize our history.*
+<!-- *Founded in 1889, the University of New Mexico sits on the traditional homelands of the Pueblo of Sandia. The original peoples of New Mexico—Pueblo, Navajo, and Apache—since time immemorial, have deep connections to the land and have made significant contributions to the broader community statewide. We honor the land itself and those who remain stewards of this land throughout the generations and also acknowledge our committed relationship to Indigenous peoples. We gratefully recognize our history.* -->
 
----
+
 
 ## Course Objectives
 
