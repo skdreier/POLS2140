@@ -24,17 +24,24 @@ format:
 
 ::: {style="display: flex; gap: 2rem;"}
 ::: {}
-**Professor:** Dr. Sarah Dreier (she/her) \
+**Professor:** Dr. Sarah Dreier \
 **E-mail:** [skdreier@unm.edu](mailto:skdreier@unm.edu) \
-**Professor Office Hours:** Tue 2:30–4:30 pm \
+**Office Hours:** Tue 2:30–4:30 pm \
 **Professor Office:** SSCO 2048
 :::
 
 ::: {}
-**Course TA:** Karla Eickhoff (she/her) \
+**Main TA:** Karla Eickhoff  \
 **E-mail:** [keickhoff@unm.edu](mailto:keickhoff@unm.edu) \
 **TA Office Hours:** TBD \
 **TA Office:** SSCO 2076
+:::
+
+::: {}
+**TA (Data News):** Lindsey Atencio \
+**E-mail:** [lba@unm.edu](mailto:lba@unm.edu) \
+**TA Office Hours:** TBD \
+**TA Office:** TBD
 :::
 :::
 
@@ -47,7 +54,7 @@ format:
 This course will teach you to understand and conduct statistics-based scientific research about politics. After successful completion of this course, students will:
 
 - Understand the fundamental components of social science research;
-- Know how to interpret statistical and experimental evidence;
+- Gain experience interpreting statistical and experimental evidence;
 - Be able to implement basic statistical analysis in **R** (data science program);
 - Think critically about how data, evidence, and empirical analysis can reinforce or challenge the unearned dominance of certain social groups over other minoritized groups.
 
@@ -57,13 +64,13 @@ As part of this process, you will apply the scientific method to examine and wri
 
 ---
 
-## Working with Professor Dreier and Karla (TA)
+## Working with Professor Dreier and your TAs
 
 **Pre-requisites:** There are no pre-requisites for this class. You do not need to have any prior knowledge or skills to succeed in this class. We will cover statistics concepts and computer coding tools that are new to and/or unfamiliar to many political science majors. In previous years, some students had difficulty approaching course concepts or become uncertain about whether they belonged in the political science major. My advice is to hang in there, work with your TA and/or me, put in some extra hours studying, and/or access student resources. We will guide you along the way and are dedicated to helping each of you take the positive steps and do the focused work you need to do to succeed in this class, to thrive as a political science major, and to master these exciting data-science tools!
 
-**Working with your TA:** Your TA is Karla Eickhoff, Ph.D. student in political science. Karla's job is to help support and guide you through the course. She can help you understand course material, trouble-shoot your computer (R) code, develop and execute your research project, and generally navigate course tasks. When you have questions about course material, concerns or circumstances to address, accommodations you need, or thoughts you wish to share, **please start by contacting Karla**. If Karla is unable to help you, please come to my office hours!
+**Working with your TA:** Your TAs are graduate students earning their Ph.D.s in political science. Your main TA is Karla Eickhoff. Karla's job is to help support and guide you through the course. She can help you understand course material, trouble-shoot your computer (R) code, develop and execute your research project, and generally navigate course tasks. Lindsey Atencio will be your point of contact for your Data News project. When you have questions about course material, concerns or circumstances to address, accommodations you need, or thoughts you wish to share, **please start by contacting your TAs**. If they are unable to help you, please come to my office hours!
 
-**Office hours:** Karla holds office hours immediately after class on Tuesdays and Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas.
+**Office hours:** Karla holds office hours immediately after class Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas.
 
 **Course communication:** You should regularly check your UNM email and UNM Canvas for important course changes, updates, and announcements. We **do not** reply to emails/messages sent via Canvas. ***Note that class time and office hours (rather than email) are usually the most productive venues for you to raise substantive questions regarding course material and evaluation.*** We aim to reply to student emails on **weekdays**, within 48 hours.
 
@@ -81,13 +88,13 @@ As part of this process, you will apply the scientific method to examine and wri
 
 **Classroom Environment:** It is my intent that students from all backgrounds and perspectives be well-served by this course and that diversity within the classroom be viewed as a resource, strength and benefit. I will strive to present materials in ways that respect such differences. I expect the same of you: While discomfort is an important part of the learning process, nobody should be made to feel unsafe in this classroom. Students are expected to respect the gender, race, age, national origin, ethnicity, gender identity and expression, immigration status, sexual orientation, socio-economic class, family status, primary language, military experience, or political identification of each of their colleagues. It is everyone's responsibility to cultivate a hospitable classroom environment in which everyone feels respected. I will work to uphold these standards in class and will not create or allow space for offensive language or behavior related to these differences. No hostile language or attitudes will be tolerated. I encourage you to speak with me if anyone in class makes you or any of your colleagues feel undermined or unsafe.
 
-**Laptops in class:** Students are **not permitted** to use laptops, cell phones, or tablets during course lectures, discussions, and activities. Use of laptops is permitted during live R coding sessions. Use of email, text messaging, social media, or any other non-course function is never permitted.
+**Laptops in class:** Unless otherwise specified, students are **not permitted** to use laptops, cell phones, or tablets during course lectures and discussions. Use of laptops is permitted during live R coding sessions and certain course activities. I recommend that you bring a personal laptop (if available) to each class period but anticipate relying on hand-written notes during most class sessions. Use of AI tools during class time is prohibited unless explicitly directed by the professor. Email, text messaging, social media, or any other non-course function is never permitted.
 
 **Course records:** Class sessions are places for each of you to ask questions, grapple with course material, and debate important ideas. In order for class to be a safe space for questions and debate, students may not audio/video record lectures and discussions or post/use social media during class time. Students with ARC accommodations may not retain, post, share or circulate class recordings. I will post all lecture slides following each class to help support your learning.
 
 **Academic Integrity (Doing the Right Thing):** Submitting material as your own work that has been generated on a website, that appears in a publication, that has been written by someone else or by an artificial intelligence algorithm (e.g., Chat GPT), or that has been generated by breaking the rules of an assignment **constitute academic dishonesty**. It is a student code-of-conduct violation that can lead to a disciplinary procedure. UNM has policies to preserve and protect you and the rest of the UNM academic community, available in the [Student Pathfinder](https://pathfinder.unm.edu/). These include policies on student grievances ([D175](https://handbook.unm.edu/d175/), undergraduates; [D176](https://handbook.unm.edu/d176/), graduate and professional students), academic dishonesty ([D100](https://handbook.unm.edu/d100/)), and maintaining a respectful campus environment ([CO9](https://handbook.unm.edu/c09/)). Please ask for help in understanding and avoiding cheating, plagiarism, or other forms of academic dishonesty. **Doing something dishonest in a class or on an assignment can lead to serious academic consequences.** Come seek help from me or support staff at one of our [student resource centers](https://students.unm.edu/find-your-pack/resource-centers.html) before you do something that may compromise your academic career.
 
-**Note about using generative AI tools:** You may use Generative AI tools (e.g., ChatGPT) to help adapt and de-bug your R code. With the exception of coding assistance, you should **not** rely on Generative AI tools to do your research or writing for you, and I recommend that you avoid using these tools altogether. If you do use a generative AI tool for any task beyond coding assistance, you must add a paragraph at the end of your assignment submission (not included in your assignment's length) detailing how you used these tools to aid rather than to replace your own work and learning process. Any use of Generative AI tools (beyond for coding assistance) without explaining how you used these tools will be considered cheating/plagiarism and treated accordingly. Your TA and I reserve the right to decide whether your use is appropriate or constitutes cheating.
+**Note about using generative AI tools:** You may use Generative AI tools (e.g., ChatGPT) to help adapt and de-bug your R code. You may use AI tools for coding assistance and when explicitly directed by the professor in course activities and assignments. Beyond those cases, you should **not** rely on Generative AI tools to do your research or writing for you, and I recommend that you avoid using these tools altogether. If you do use a generative AI tool for any task beyond coding assistance, you must add a paragraph at the end of your assignment submission (not included in your assignment's length) detailing how you used these tools to aid rather than to replace your own work and learning process. Any use of Generative AI tools (beyond for coding assistance or as directed by the professor) without explaining how you used these tools will be considered cheating/plagiarism and treated accordingly. Your TAs and I reserve the right to decide whether your use is appropriate or constitutes cheating. We also reserve the right to use AI detection software, including screening for AI watermarks, when we suspect AI has been used inappropriately. 
 
 ---
 
@@ -105,7 +112,7 @@ As part of this process, you will apply the scientific method to examine and wri
 
 - Kellstedt, Whitten and Tuch. 2023. *The Fundamentals of Social Science Research, Fourth Edition*. New York, NY: Cambridge University Press. You may alternatively select to use the Third Edition (entitled *The Fundamentals of Political Science Research*), but keep in mind that the chapter numbers and page numbers will be different. **A copy is on reserve at the UNM Zimmerman Library for students to borrow for a few hours at a time.**
 
-- **R and RStudio:** You will be introduced to—and use—the free, open-source statistical computing program **R**, and its user interface, **RStudio**. Both **R** and **RStudio** are free and can be downloaded using [swirl](https://swirlstats.com/students.htm)'s step-by-step prompts.
+- **R and RStudio:** You will be introduced to—and use—the free, open-source statistical computing program **R**, and its user interface, **RStudio**. Both **R** and **RStudio** are free and can be downloaded using [swirl](https://swirlstats.com/students.html)'s step-by-step prompts.
 
   > You can either install and use **R/RStudio** on your own personal computer or use a UNM campus computer. [UNM IT](https://it.unm.edu/support/index.html) provides various options for students to access laptops, including: short- and long-term laptop rentals ([student technology access](https://at.unm.edu/coronavirus/student-tech-access.html)), computers for library check-out ([UNM Library Computer Finder](https://library.unm.edu/services/technology/computers/finder.php)), and UNM's [Coffee and Code](https://libguides.unm.edu/coffee-and-code/Coffee-and-Code) program.
 
