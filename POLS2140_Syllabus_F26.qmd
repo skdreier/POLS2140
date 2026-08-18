@@ -201,7 +201,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 3 — DATA IS SUBJECTIVE
 
-- **Tue 9/1:** Data feminism framework
+- **Tue 9/1:** Data Feminism framework
   - *Assigned readings:*
     - *Data Feminism* Ch 1, "The Power Chapter."
     - *Data Feminism* Ch 6, "The Numbers Don't Speak for Themselves."\* \
@@ -209,7 +209,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
   - *Read in class:* *Art of Statistics*, 369–371. 
 
-- **Thu 9/3:** NO CLASS
+- **Thu 9/3:** Data Feminism (cont.)
 
 ---
 
