@@ -1,0 +1,364 @@
+---
+title: "Data and Social Science Blogs"
+subtitle: "POLS 2140: Introduction to Political Analysis"
+author:
+  - name: Sarah Dreier
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+
+#use the three lines below to make a bibliography in APA format
+
+bibliography: references_2140.bib
+biblio-title: References
+csl: apa.csl
+
+#Download style from https://github.com/citation-style-language/styles
+
+---
+
+## Class Announcements
+
+Announcements go here
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## Sarah-to-Sarah Notes {visibility="hidden"}
+
+<!-- When these issues are resolved, you can delete this slide. -->
+
+---
+
+::: {style="text-align: center; font-size: 2em; font-weight: bold;"}
+Identifying IVs, DVs, and Hypotheses
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## What is political science? {.smaller}
+
+::: {style="text-align: center;"}
+The <span style="color:#c0392b;">**scientific study**</span> of political phenomena.
+:::
+
+- <span style="color:#c0392b;">Exploring and testing the **relationships** between observable **"variables."**</span>
+- **Dependent Variable (DV, Y)** — the outcome you want to explain; the thing that **depends on** (is influenced by) something else.
+- **Independent Variable (IV, X)** — the thing you think influences your DV; in theory the IV should "come before" your DV (reality is not that simple).
+- **Hypothesis** — your guess about the relationship between IV and DV: if X happens, then Y will follow; if we see an increase in X, we should see an (increase/decrease) in Y.
+
+---
+
+## Tuesday's Reading
+
+:::: {layout="[[1,1],[1]]"}
+
+::: {}
+<img src="1_course_intros_files/images/good_authority_logo.png" alt="Good Authority Logo" style="width: 100%; max-height: 100%;" />
+:::
+
+::: {}
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+  <img src="1_course_intros_files/images/the_washpo.png" alt="The Washington Post" style="width: 80%; margin: 0; padding: 0;" />
+  <img src="1_course_intros_files/images/monkey_cage.png" alt="Monkey Cage" style="width: 80%; margin: 0; padding: 0;" />
+  <img src="1_course_intros_files/images/lse_blogs.png" alt="LSE Blogs" style="width:80%; margin: 0; padding: 0;" />
+  <img src="1_course_intros_files/images/political_violence.png" alt="Political Violence at a Glance" style="width: 80%; margin: 0; padding: 0;" />
+</div>
+:::
+
+::: {}
+<div style="font-size: 1.1em; padding-top: 1em;">
+These are blogs for social scientists to present their research to a public audience. Select and read an article that interests you from <strong>Good Authority</strong> (most recommended), "Monkey Cage" (2022), "Political Violence at a Glance" (2023), or an LSE blog. Identify the author's IV, DV, and conclusion, and be prepared to discuss in class on Tuesday.
+</div>
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+:::: {layout="[60,40]"}
+
+::: {#first-column}
+<img src="1_course_intros_files/images/wapo_african_women.png" style="width: 100%; margin-bottom: 0.3em;" />
+
+<div style="font-size: 0.8em; color: #444;">
+https://www.washingtonpost.com/news/monkey-cage/wp/2016/07/15/womens-rights-in-africa-grow-stronger-after-conflicts-heres-why/
+</div>
+:::
+
+::: {#second-column style="font-size: 1.2em;"}
+
+- Researcher's DV?
+- Researcher's IV?
+- Summary of the researcher's hypothesis
+- Did the researcher prove, disprove, challenge, or advance their hypothesis? Are there caveats or qualifications to their conclusions?
+
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## Research blog exercise
+
+<div style="font-size: 1.1em;">
+<span class="fragment" style="color:#c0392b;">Hint: this will be your weekly assignment!</span>
+</div>
+
+**Jot down in the course worksheet (Google Sheets):**
+
+- The researcher's **Dependent Variable (DV, Y)**
+- The researcher's **Independent Variable (IV, X)**
+- Your summary of the researcher's **Hypothesis**
+- Did the researcher prove, disprove, challenge, or advance their hypothesis? Any caveats?
+
+<!--# Simplified from the original hand-drawn SVG arrow (which depended on present_style1.css's pixel-positioned .arrow-svg/.arrow-label classes) to a plain fragment reveal — same "call out the hint" effect, no custom CSS dependency. -->
+
+::: {.notes}
+DV: the outcome you want to explain — the thing that depends on (is influenced by) something else.
+IV: the thing you think influences the DV; in theory the IV should "come before" the DV (reality is not that simple).
+Hypothesis: their guess about the relationship between IV and DV — e.g., if X happens, then Y will follow; if we see an increase in X, we should see an increase/decrease in Y.
+:::
+
+---
+
+::: {style="text-align: center; font-size: 2em; font-weight: bold;"}
+What is data?
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+::: {style="text-align: center;"}
+<span style="font-size: 1.5em;">What is **data?**</span>
+
+What are some examples of data used to study **politics** and/or the **social world?**
+
+What data did the research in your blog post use?
+
+Did the researchers generate the data themselves or adopt it from somewhere else?
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+<img src="1_course_intros_files/images/wired_end_of_theory.png" style="width: 100%; margin-bottom: 0.3em;" />
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+<img src="1_course_intros_files/images/atlantis_data_never_raw.png" style="width: 100%; margin-bottom: 0.3em;" />
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## The production of data is intertwined with human judgment {.smaller}
+
+:::: {layout="[65,35]"}
+
+::: {#first-column}
+
+> "The context of data — why it was collected, how it was collected, and how it was transformed — is always relevant. There is, then, no such thing as context-free data..." (Barrowman)
+
+**Some (of many) questions to ask about our data:**
+
+- Who is excluded/under-represented?
+- Are we measuring what we think we're measuring?
+- Do people have incentives to lie, distort, or refuse to answer?
+- What about the questions we ask to begin with?
+
+:::
+
+::: {#second-column}
+<img src="1_course_intros_files/images/haraway_primate_visions.jpg" style="width: 100%; margin-bottom: 0.3em;" />
+:::
+
+::::
+
+::: {.notes}
+More questions to raise if time allows: How does our choice of language shape our outcomes? Did people make mistakes entering the data? Do the researcher's incentives or perspectives shape how data is gathered/recorded?
+:::
+
+---
+
+::: {style="text-align: center; font-size: 1.2em;"}
+"But experts and non-experts alike encounter the world not merely through sense experiences but **through frameworks of understanding shaped by numerous factors including theories, values, norms, and faith.** It may be tempting to suppose that this context can simply be set aside. But assumptions, when not made explicit, do not simply cease to exist. Rather, they influence the direction of inquiry, the choice of measurements, the way the data is collected and transformed, and the conclusions that are drawn."
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## EX from AfroBarometer {.smaller}
+
+:::: {layout="[65, 35]"}
+
+::: {#first-column}
+
+**Would you like having people from this group as neighbors?**
+
+- People from a different region
+- People from other ethnic groups
+- <span style="display: inline-block; padding: 0.2em 1.2em; border: 2px solid black; border-radius: 50%; line-height: 1.2; text-align: center; white-space: nowrap;">LGB people</span>
+- Immigrants or foreign workers
+- People who support a different political party
+
+<img src="1_course_intros_files/images/afrobarometer.png" style="width: 100%; margin-bottom: 0.3em;" />
+
+:::
+
+::: {#second-column}
+
+**Response Options:**
+
+1. Strongly dislike
+2. Somewhat dislike
+3. <span style="display: inline-block; padding: 0.2em 0.4em; border: 4px solid #0077cc; font-weight: bold; line-height: 1.2; white-space: nowrap;">Would not care</span>
+4. Somewhat like
+5. Strongly like
+6. DK/Refuse
+
+**Some (of many) questions to ask:**
+
+- Who is excluded? What are we measuring?
+- Does language matter? Are people being honest?
+- Did people make mistakes? Who is gathering the data, and why?
+
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## Ex from Natural Language Processing: Human bias in "pretraining" data {.smaller}
+
+**Large Language Models** are used to **classify, predict,** or **generate** large amounts of text (e.g., predicting what question you'll google, or **generating** text via ChatGPT).
+
+::: {.fragment fragment-index=1 .fade-in}
+LLMs are **"pretrained"** on huge swaths of human-written text. The biases reflected in these texts get baked into the language models.
+:::
+
+:::: {layout="[35, 65]"}
+
+::: {#first-column .fragment fragment-index=1 .fade-in}
+<img src="1_course_intros_files/images/nlp_vector_illustration.png" style="width: 100%; margin-bottom: 0.3em;" />
+
+::: {style="text-align: center; font-weight: bold;"}
+Human judgement?
+:::
+:::
+
+::: {#second-column .fragment fragment-index=1 .fade-in}
+<img src="1_course_intros_files/images/bolukbasi_etal_abstract.png" style="width: 100%; margin-bottom: 0.3em;" />
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## Ex from Criminal Justice {.smaller}
+
+:::: {layout="[40, 60]"}
+
+::: {#first-column}
+
+The **"New Jim Code"**: using aggregated data about *social groups* to make decisions about *individuals.*
+
+Past data are products of structurally unequal conditions.
+
+Data are not raw — data are products of unequal social relations.
+
+<div style="font-size: 0.8em; color: #444; margin-top: 1em;">
+<em>Data Feminism,</em> pg. 54
+</div>
+
+:::
+
+::: {#second-column}
+<img src="1_course_intros_files/images/new_jim_code.png" style="width: 100%; margin-bottom: 0.3em;" />
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## Ex from Criminal Justice (cont.)
+
+:::: {.grid layout="[2,2]"}
+
+::: {.grid-item}
+<img src="1_course_intros_files/images/npr_logo.png" style="width: 70%; margin-bottom: 0.3em;" />
+:::
+
+::: {.grid-item}
+<img src="1_course_intros_files/images/npr_racial-bias_issues.png" style="width: 100%; margin-bottom: 0.3em;" />
+:::
+
+::: {.grid-item}
+<img src="1_course_intros_files/images/npr_prisoners_release.png" style="width: 100%; margin-bottom: 0.3em;" />
+:::
+
+::::
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## So does this mean we dismiss all data out-of-hand? {.smaller}
+
+::: {style="text-align: center; font-size: 1.1em;"}
+*"But experts and non-experts alike encounter the world not merely through sense experiences but **through frameworks of understanding shaped by numerous factors including theories, values, norms, and faith.** It may be tempting to suppose that this context can simply be set aside. But assumptions, when not made explicit, do not simply cease to exist. Rather, they influence the direction of inquiry, the choice of measurements, the way the data is collected and transformed, and the conclusions that are drawn."*
+:::
+
+::: {.fragment style="text-align: center; font-size: 1.1em;"}
+**Instead: actively consider sources of bias and/or harmful downstream uses. Look for them, name them, think through what this means for your conclusions.**
+:::
+
+::: {.notes}
+Speaker notes go here.
+:::
