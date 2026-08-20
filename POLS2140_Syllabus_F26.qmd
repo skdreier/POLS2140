@@ -102,7 +102,7 @@ As part of this process, you will apply the scientific method to examine and wri
 
 ## Required Course Material
 
-- Kellstedt, Whitten and Tuch. 2023. *The Fundamentals of Social Science Research, Fourth Edition*. New York, NY: Cambridge University Press. You may alternatively select to use the Third Edition (entitled *The Fundamentals of Political Science Research*), but keep in mind that the chapter numbers and page numbers will be different. **A copy is on reserve at the UNM Zimmerman Library for students to borrow for a few hours at a time.**
+- Kellstedt, Whitten and Tuch. 2023. *The Fundamentals of Social Science Research*. New York, NY: Cambridge University Press. You may alternatively select to use a prior edition (entitled *The Fundamentals of Political Science Research*, Third Edition), but keep in mind that the chapter numbers and page numbers will be different. **A copy is on reserve at the UNM Zimmerman Library for students to borrow for a few hours at a time.**
 
 - **R and RStudio:** You will be introduced to—and use—the free, open-source statistical computing program **R**, and its user interface, **RStudio**. Both **R** and **RStudio** are free and can be downloaded using [swirl](https://swirlstats.com/students.html)'s step-by-step prompts.
 
