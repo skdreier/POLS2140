@@ -19,14 +19,58 @@ csl: apa.csl
 
 ---
 
-## Class Announcements
+## Announcements
 
-Announcements go here
+- **Local internship workshop**: Wed Aug 26, 3:00-4:00 pm at Social Sciences 2060
+
+- **Political Science open house**: Wed Aug 26, 4:00-5:30 pm at Social Sciences Floor 2
+
+- Sign up for your Data News presentation (by Fri Aug 28) via Canvas Pages!
 
 ::: {.notes}
 Speaker notes go here.
 :::
 
+---
+
+<img src="1_course_intros_files/images/heinrich_internship_event.png" alt="UNM Department of Political Science: local internship info session with Senator Martin Heinrich's office, Wednesday August 26, 3-4pm, Social Sciences 2060, no RSVP required" style="width: 100%; margin-bottom: 0.3em;" />
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+<!--
+
+---
+
+## Wrap up from last class
+
+-->
+
+---
+
+## Reading Prompt
+
+<div style="font-size: 1.2em;">
+What is one "rule of the road" the chapter discussed? In your own words, why is it important for the practice of political science?
+
+::: {.fragment}
+What does it mean to approach understanding politics as a *scientific* exercise?
+:::
+
+</div>
+
+<!--
+**Option A — Paradigm shift:** Chapter 1 uses the 16th-century example of astronomers abandoning the idea that the Earth was the center of the universe to introduce the term "paradigm shift." In your own words: what is a paradigm shift — and why does the book say political scientists actually *disagree* about whether their own field has ever had one?
+
+. . .
+
+**Option B — Erie County, Ohio:** Chapter 1 opens its discussion of scientific knowledge with a team of Columbia University researchers who studied public opinion in Erie County, Ohio during the 1944 presidential election. What were they trying to find out?
+
+. . .
+
+**Option C — The "boring EU course":** Chapter 1 contrasts a "just-the-facts" course (e.g., the EU had 15 members in 1995, 28 in 2016) with a more scientific approach. Why does the book argue that a scientific approach is more interesting/desirable than the just-the-facts one?
+-->
 ---
 
 ## Sarah-to-Sarah Notes {visibility="hidden"}
@@ -37,19 +81,7 @@ Content: I had trouble updating the LGBTQ+ elected officials slide for a couple 
 
 Technical: This slide mixes R language and HTML language more than I'd like. This is because I initially wanted to stay mainly with R language throughout and I've learned that it will probably be better/easier/more efficient to mostly use HTML language for formatting/design/layout stuff. I will try to use more consistent language in the future and I can go back and clean up if you want.
 
----
-
-## What is political science?
-
-::: {style="text-align: center; font-size: 125%;"}
-"The Scientific Study of Politics." [@kellstedt2022fundamentals]
-:::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
----
+<!-- Commented out — uncomment to restore these two slides.
 
 ::: {style="text-align: center; font-size: 125%;"}
 What is one thing that you KNOW to be true?
@@ -80,13 +112,7 @@ Ideas and observations about *political* phenomena are inevitably shaped by soci
 Speaker notes go here.
 :::
 
----
-
-## What is political science?
-
-::: {.text-center}
-The scientific study of political phenomena.
-:::
+-->
 
 ---
 
@@ -95,15 +121,19 @@ The scientific study of political phenomena.
 ::: {style="text-align: center;"}
 The scientific study of <span style="color:#c0392b;">**political phenomena.**</span>
 :::
+. . .
 
 <!--# To make text a different color, use HTML like shown above. -->
 
 ### Political phenomena:
 
-1. People's political behavior: votes, tweets, campaign promises, political attitudes, protesting, etc.
-2. Government power
-3. Who governs whom (and how that impacts those who are governed)
-4. Interactions between/within political state boundaries — how states relate to one another, and how individuals relate to political institutions
+::: {.incremental}
+1. People's **political behavior**: votes, tweets, campaign promises, political attitudes, protesting, etc.
+2. **Government power**, including to write/enforce laws and policies, detain/restrict behavior, use violence.
+3. **Who governs whom** (and how that impacts those who are governed).
+4. **Distribution of legitimacy and resources**.
+4. **Interactions between/within political state boundaries** — how states relate to one another, and how individuals relate to political institutions.
+:::
 
 ::: {.notes}
 Speaker notes go here.
@@ -113,10 +143,11 @@ Speaker notes go here.
 
 ## JOT DOWN specific examples of:
 
-1. Your own **political behavior** (voting, protests, blog posts, etc.)
-2. A time when you (or someone close to you) experienced **government power**
-3. How someone or something **"governs"** your behavior
-4. A time **states and/or countries interacted with one another** in a way that affected your life
+1. Your own **political behavior** (voting, protests, blog posts, etc.).
+2. A time when you (or someone close to you) experienced **government power**.
+3. How someone or something **"governs"** your behavior.
+4. How you were impacted by how resources are distributed or how identities are (de)legitimized
+4. A time **states and/or countries interacted with one another** in a way that affected your life.
 
 ::: {.notes}
 Speaker notes go here.
@@ -130,8 +161,10 @@ Speaker notes go here.
 The <span style="color:#c0392b;">**scientific study**</span> of political phenomena.
 :::
 
+::: {.incremental}
 - <span style="color:#c0392b;">Exploring and testing the relationships between observable "variables."</span>
 - With one variable, I can describe something going on in the world.
+:::
 
 ::: {.notes}
 Speaker notes go here.
@@ -139,29 +172,45 @@ Speaker notes go here.
 
 ---
 
-:::: {layout="[25,75]"}
+:::: {layout="[45,55]"}
 
 ::: {#first-column}
 
+<div id="circ-text" style="font-size: .9em; line-height: 1.3;">
+
 **Describe** a circumstance:
 
+::: {.incremental}
 - In 2024, about 27% of national parliamentarians are women. [@ipu2024women]
 - 25.1% of countries for which 2024 data is available have 1/3 or more of their parliamentary seats held by women. [@worldbank2024parliament]
 - What observations can you make with this information?
 - What questions does this information spark for you?
+:::
+
+</div>
+
+<style>
+#circ-text p { margin: 0.3em 0; }
+#circ-text ul { margin: 0.3em 0; padding-left: 1.1em; }
+#circ-text li { margin-bottom: 0.2em; }
+</style>
 
 :::
 
-::: {#second-column style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;"}
+::: {#second-column}
 
-<div style="font-size: 1em; font-weight: bold; margin-bottom: 0.5em;">
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+
+<div style="font-size: 0.85em; font-weight: bold; margin-bottom: 0.1em;">
 Proportion of Seats Held by Women in National Parliaments Over Time (%)
 </div>
 
-<img src="1_course_intros_files/images/women_in_parliament.png" style="width: 100%; margin-bottom: 0.3em;" />
+<img src="1_course_intros_files/images/women_in_parliament.png" style="max-width: 100%; max-height: 50vh; width: auto; margin-bottom: 0.1em;" />
 
-<div style="font-size: 0.8em; color: #444;">
+<div style="font-size: 0.55em; color: #444;">
 Source: World Bank Group
+</div>
+
 </div>
 
 :::
@@ -174,7 +223,7 @@ Speaker notes go here.
 
 ---
 
-## The stats: National parliamentarians
+## The stats: National parliamentarians {.smaller}
 
 <!--# The fragmenting language makes this part of the slide show up separately after the first (for more complicated fragmenting, you can specify orders or make a bulletted list show up as a list of fragments) -->
 
@@ -192,22 +241,22 @@ No clear association between a country's wealth and representation.
 :::
 
 ::: {.grid-item .fragment fragment-index=1 .fade-in}
-<img src="1_course_intros_files/images/women_in_parliament_ranking_info.png" alt="Proportion of seats held by women in national parliaments over time (%)" style="width: 85%; margin-bottom: 0.1em;" />
+<img src="1_course_intros_files/images/women_in_parliament_ranking_info.png" alt="Proportion of seats held by women in national parliaments over time (%)" style="max-width: 85%; max-height: 26vh; width: auto; margin-bottom: 0.1em;" />
 :::
 
 ::::
 
 :::: {.grid}
 
-::: {.grid-item span-col=2}
+::: {.grid-item span-col=2 .fragment fragment-index=2 .fade-in}
 
-<div style="font-size: 1em; font-weight: bold; margin-bottom: 0.5em;">
+<div style="font-size: 0.85em; font-weight: bold; margin-bottom: 0.3em;">
 Proportion of Seats Held by Women in National Parliaments by Region (%)
 </div>
 
-<img src="1_course_intros_files/images/women_in_parliament_by_region_table.png" alt="Proportion of seats held by women in national parliaments by Region" style="width: 100%; margin-bottom: 0.1em;" />
+<img src="1_course_intros_files/images/women_in_parliament_by_region_table.png" alt="Proportion of seats held by women in national parliaments by Region" style="max-width: 100%; max-height: 26vh; width: auto; margin-bottom: 0.1em;" />
 
-<div style="font-size: 0.8em; color: #444;">
+<div style="font-size: 0.65em; color: #444;">
 Source: IPU Parline
 </div>
 
@@ -221,7 +270,22 @@ Speaker notes go here.
 
 ---
 
-## The stats: LGBTQ+ elected officials
+## UPDATE: Women in National Parliaments (2026)
+
+![](1_course_intros_files/images/parliament_2026_update.png)
+
+- Growth has slowed to its lowest rate since 2017 — at this pace, global gender parity is roughly 75 years away
+- The Americas remain the highest-representation region, at 35.6%
+
+::: {.notes}
+2026 IPU update: 27.5% globally as of Jan 1, 2026, up from 27.2% a year earlier — a 0.3-point gain, matching 2024's rate as the slowest since 2017. Regional breakdown and speaker/committee-chair trends are also in the source report if useful for discussion.
+:::
+
+[@ipu2026women]
+
+---
+
+## The stats: LGBTQ+ elected officials {.smaller}
 
 :::: {.grid}
 
@@ -237,12 +301,12 @@ Speaker notes go here.
 
 :::: {.grid layout="[63, 37]"}
 
-::: {.grid-item}
-![2025 US Elected Officials (0.26% LGBTQ+, Source: LGBTQ+ Victory Institute):](1_course_intros_files/images/lgbtq_represent_us_graph.png)
+::: {.grid-item style="font-size: 0.75em;"}
+![2025 US Elected Officials (0.26% LGBTQ+, Source: LGBTQ+ Victory Institute):](1_course_intros_files/images/lgbtq_represent_us_graph.png){style="max-height: 32vh; width: auto;"}
 :::
 
-::: {.grid-item}
-![In the US 2025: (Source: LGBTQ+ Victory Institute)](1_course_intros_files/images/lgbtq_represent_us.png)
+::: {.grid-item style="font-size: 0.75em;"}
+![In the US 2025: (Source: LGBTQ+ Victory Institute)](1_course_intros_files/images/lgbtq_represent_us.png){style="max-height: 32vh; width: auto;"}
 :::
 
 ::::
@@ -250,6 +314,21 @@ Speaker notes go here.
 ::: {.notes}
 Speaker notes go here.
 :::
+
+---
+
+## UPDATE: LGBTQ+ Elected Officials (2026)
+
+![](1_course_intros_files/images/lgbtq_2026_update.png)
+
+- Up from 1,334 the prior year — modest continued growth
+- Some researchers argue this report still **undercounts** LGBTQ+ officials, particularly in California — worth remembering as we discuss how data is never fully "raw" or neutral
+
+::: {.notes}
+Ties back nicely to the Barrowman "Why Data is Never Raw" reading and the Week 3 Data Feminism unit — even a well-intentioned census like this one has known measurement gaps.
+:::
+
+[@victory2026out]
 
 ---
 
@@ -266,7 +345,7 @@ Speaker notes go here.
 
 ---
 
-## The stats: Heads of state
+## The stats: Heads of state {.smaller}
 
 - 60 UN member states (31%) have had women heads of state [@pew2024womenleaders]
 
@@ -288,7 +367,22 @@ Speaker notes go here.
 
 ---
 
-## The stats: Resources and interactive data portals {.smaller}
+## UPDATE: Women Heads of State (2026)
+
+![](1_course_intros_files/images/hos_2026_update.png)
+
+- 63 of 193 UN member states have now *ever* had a woman leader — up from 60
+- For comparison: as of January 2026, only 28 countries are **currently** led by a woman — just 1 in 7 worldwide
+
+::: {.notes}
+Good spot to distinguish two different metrics: cumulative ("ever had") vs. current snapshot. The "currently led" figure is a different, smaller number than "ever had" — useful for discussing how the same underlying reality can be described very differently depending on which statistic you choose to report.
+:::
+
+[@pew2026womenleaders]
+
+---
+
+## Resources and interactive data portals {.smaller}
 
 - **UN Women** — [Women's leadership and political participation](https://www.unwomen.org/en/what-we-do/leadership-and-political-participation/facts-and-figures) (facts, figures, and infographic)
 - **IPU Parline** — [Global data on women in national parliaments](https://data.ipu.org/women-ranking/)
@@ -308,29 +402,11 @@ Speaker notes go here.
 The <span style="color:#c0392b;">**scientific study**</span> of political phenomena.
 :::
 
+::: {.incremental}
 - <span style="color:#c0392b;">Exploring and testing the relationships between observable "variables."</span>
 - **With one variable,** I can describe something going on in the world.
-- **With two variables,** I can begin to explain *why* that thing is the way it is.
-
-::: {.text-center}
-Beginning to capture causation can help us understand how things come about and what social or policy changes could lead to **new** outcomes.
+- **With two variables,** I can begin to explain <strong>why</strong> that thing is the way it is: <span class="fragment" style="color:#1e6091; font-weight:bold;">causation</span>.
 :::
-
-::: {.notes}
-Speaker notes go here.
-:::
-
----
-
-## What is political science?
-
-::: {style="text-align: center;"}
-The <span style="color:#c0392b;">**scientific study**</span> of political phenomena.
-:::
-
-- <span style="color:#c0392b;">Exploring and testing the relationships between observable "variables."</span>
-- **With one variable,** I can describe something going on in the world.
-- **With two variables,** I can begin to explain <strong>why</strong> that thing is the way it is — this is <span class="fragment" style="color:#1e6091; font-weight:bold;">causation</span>.
 
 ::: {.text-center .fragment}
 Beginning to capture causation can help us understand how things come about and what social or policy changes could lead to **new** outcomes.
@@ -344,27 +420,37 @@ Speaker notes go here.
 
 ---
 
-:::: {layout="[30,70]"}
+:::: {layout="[42,58]"}
 
-::: {#first-column style="font-size: 1.1em; line-height: 1.6;"}
+::: {#first-column}
 
+<div style="font-size: 0.9em; line-height: 1.3;">
+
+::: {.fragment}
 How does this new information shift your original observations?
+:::
 
+::: {.fragment}
 Does this mean that an increase in **time <span style="color:#1e6091;">causes</span>** an increase in **women's representation?**
+:::
 
+::: {.fragment}
 Or is there something else that maybe also increases with time that is the real cause of women's representation?
+:::
+
+</div>
 
 :::
 
 ::: {#second-column style="text-align: center;"}
 
-<div style="font-size: 1em; font-weight: bold; margin-bottom: 0.5em;">
+<div style="font-size: 0.8em; font-weight: bold; margin-bottom: 0.3em;">
 Proportion of Seats Held by Women in National Parliaments Over Time (%)
 </div>
 
-<img src="1_course_intros_files/images/portion_women_parliament_trend.png" alt="Proportion of seats held by women in national parliaments over time (%)" style="width: 90%; margin-bottom: 0.3em;" />
+<img src="1_course_intros_files/images/portion_women_parliament_trend.png" alt="Proportion of seats held by women in national parliaments over time (%)" style="max-width: 90%; max-height: 38vh; width: auto; margin-bottom: 0.2em;" />
 
-<div style="font-size: 0.8em; color: #444;">
+<div style="font-size: 0.65em; color: #444;">
 Source: World Bank Group
 </div>
 
@@ -384,9 +470,11 @@ Speaker notes go here.
 The <span style="color:#c0392b;">**scientific study**</span> of political phenomena.
 :::
 
+::: {.incremental}
 - <span style="color:#c0392b;">Exploring and testing the relationships between observable **"variables."**</span>
 - **Dependent Variable (DV, Y)** — the outcome you want to explain; the thing that **depends on** (is influenced by) something else.
 - **Independent Variable (IV, X)** — the thing you think influences your DV; in theory the IV should "come before" your DV (reality is not that simple).
+:::
 
 ::: {.notes}
 Speaker notes go here.
@@ -394,27 +482,37 @@ Speaker notes go here.
 
 ---
 
-:::: {layout="[30,70]"}
+:::: {layout="[42,58]"}
 
-::: {#first-column style="font-size: 1.1em; line-height: 1.6;"}
+::: {#first-column}
+
+<div style="font-size: 0.9em; line-height: 1.3;">
 
 What kinds of <span style="color:#1e6091;">causal relationships</span> might you expect?
 
+::: {.incremental}
 - % women as the DV?
 - % women as the IV?
+:::
+
+</div>
 
 :::
 
-::: {#second-column style="text-align: center;"}
+::: {#second-column}
 
-<div style="font-size: 1em; font-weight: bold; margin-bottom: 0.5em;">
+<div style="text-align: center; margin-left: 2em;">
+
+<div style="font-size: 0.8em; font-weight: bold; margin-bottom: 0.3em;">
 Proportion of Seats Held by Women in National Parliaments Over Time (%)
 </div>
 
-<img src="1_course_intros_files/images/portion_women_parliament_trend.png" alt="Proportion of seats held by women in national parliaments over time (%)" style="width: 90%; margin-bottom: 0.3em;" />
+<img src="1_course_intros_files/images/portion_women_parliament_trend.png" alt="Proportion of seats held by women in national parliaments over time (%)" style="max-width: 100%; max-height: 55vh; width: auto; margin-bottom: 0.2em;" />
 
-<div style="font-size: 0.8em; color: #444;">
+<div style="font-size: 0.65em; color: #444;">
 Source: World Bank Group
+</div>
+
 </div>
 
 :::
@@ -427,16 +525,18 @@ Speaker notes go here.
 
 ---
 
-## What is political science? {.smaller}
+## What is political science?
 
 ::: {style="text-align: center;"}
 The <span style="color:#c0392b;">**scientific study**</span> of political phenomena.
 :::
 
+::: {.incremental}
 - <span style="color:#c0392b;">Exploring and testing the **relationships** between observable **"variables."**</span>
 - **Dependent Variable (DV, Y)** — the outcome you want to explain; the thing that **depends on** (is influenced by) something else.
 - **Independent Variable (IV, X)** — the thing you think influences your DV; in theory the IV should "come before" your DV.
 - **Hypothesis** — your guess about the relationship between IV and DV: if X happens, then Y will follow; if we see an increase in X, we should see an (increase/decrease) in Y.
+:::
 
 ::: {.notes}
 Speaker notes go here.
@@ -456,26 +556,27 @@ Example: As **women's education (IV)** in a given country increases, I expect th
 
 ---
 
-## Tuesday's Reading
+## Tuesday's Reading {.smaller}
 
 :::: {layout="[[1,1],[1]]"}
 
 ::: {}
-<img src="1_course_intros_files/images/good_authority_logo.png" alt="Good Authority Logo" style="width: 82%; max-height: 100%;" />
+<a href="https://goodauthority.org/" target="_blank">
+<img src="1_course_intros_files/images/good_authority_logo.png" alt="Good Authority Logo" style="max-width: 150%; max-height: 20vh; width: auto;" />
+</a>
 :::
 
 ::: {}
 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-  <img src="1_course_intros_files/images/the_washpo.png" alt="The Washington Post" style="width: 65%; margin: 0; padding: 0;" />
-  <img src="1_course_intros_files/images/monkey_cage.png" alt="Monkey Cage" style="width: 65%; margin: 0; padding: 0;" />
-  <img src="1_course_intros_files/images/lse_blogs.png" alt="LSE Blogs" style="width:65%; margin: 0; padding: 0;" />
-  <img src="1_course_intros_files/images/political_violence.png" alt="Political Violence at a Glance" style="width: 65%; margin: 0; padding: 0;" />
+  <a href="https://blogs.lse.ac.uk/" target="_blank">
+  <img src="1_course_intros_files/images/lse_blogs.png" alt="LSE Blogs" style="width:700%; margin: 0; padding: 0;" />
+  </a>
 </div>
 :::
 
 ::: {}
-<div style="font-size: 1.1em; padding-top: 1em;">
-These are blogs for social scientists to present their research to a public audience. Select and read an article that interests you from <strong>Good Authority</strong> (most recommended), "Monkey Cage" (2022), "Political Violence at a Glance" (2023), or an LSE blog. Identify the author's IV, DV, and conclusion, and be prepared to discuss in class on Tuesday.
+<div style="font-size: 0.95em; padding-top: 0.5em; line-height: 1.3;">
+These are blogs for social scientists to present their research to a public audience. Select and read an article that interests you from <strong><a href="https://goodauthority.org/" target="_blank">Good Authority</a></strong> (most recommended) or an <a href="https://blogs.lse.ac.uk/" target="_blank">LSE blog</a>. Identify the author's IV, DV, and conclusion, and be prepared to discuss in class on Tuesday.
 </div>
 :::
 
@@ -483,4 +584,21 @@ These are blogs for social scientists to present their research to a public audi
 
 ::: {.notes}
 Speaker notes go here.
+:::
+
+---
+
+## TL;DR
+
+- Political science is the **scientific study of political phenomena** — people's political behavior; government power; who governs whom; allocation of resources and legitimacy; and interactions between states, institutions, and individuals
+- With **one variable** you can describe what's happening in the world; with **two variables** (an IV and a DV) you can start to explain *why* — that's the move into causal reasoning
+- A **hypothesis** is a testable guess about how your IV influences your DV — the backbone of the research process we'll use all semester
+- Real-world data (e.g., women's political representation) shows both progress and persistent inequities — and even good, well-sourced data has limits and undercounts worth interrogating
+- **For Tuesday**: read a political science blog post and identify the author's IV, DV, and conclusion
+
+---
+
+## References {.smaller}
+
+::: {#refs}
 :::
