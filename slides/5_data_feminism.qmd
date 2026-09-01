@@ -257,14 +257,19 @@ What is the **privilege hazard**?
 ::: {.incremental}
 - "The phenomenon that makes those who occupy the most privileged positions among us...so poorly equipped to recognize instances of oppression in the world (Data Feminism, p. 29)
 - What are some risks associated with this **privilege hazard**?
-- Among other issues: **missing datasets**
-  - Examples from reading or your own observations?
+:::
+
+. . .
+
+Among other issues: **missing datasets**
+
+::: {.incremental}
+- Examples from reading or your own observations?
 - Other ways to think about **missing data**":
   - Who gets to <span style="color: #107895; font-weight: bold;">tell their own story</span> and <span style="color: #107895; font-weight: bold;">self-dictate the data associated with themselves</span>?
   - Who has their story <span style="color: #107895; font-weight: bold;">told for them</span> or <span style="color: #107895; font-weight: bold;">their data dictated for them</span>?
   - Ex: Women in the developing world asked about their contraception, not the sports they play.
 :::
-
 
 ---
 
