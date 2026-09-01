@@ -1,0 +1,61 @@
+---
+title: "Data News Thursday!"
+subtitle: "POLS 2140: Introduction to Political Analysis"
+author:
+  - name: Dr. Sarah Dreier
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+
+#use the three lines below to make a bibliography in APA format
+
+bibliography: references_2140.bib
+csl: apa.csl
+
+#Download style from https://github.com/citation-style-language/styles
+
+---
+
+
+## Reading Prompt
+
+*Data Feminism* [@dignazio2020data]:
+
+Answer **one** of the following two questions:
+
+- Ch 6: From a Data Feminism perspective, what does it mean to consider context when consuming or analyzing data? What is one example (from the reading or your own observations) in which actively considering context leads you to a different understanding of the data?
+
+- In your own words, describe what the Data Feminism framework is, why it matters, and how you think this perspective can help guide your work in this course. 
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+## Announcements
+
+- **We the People** (James Padilla)
+- **Karla Office Hours Today**: 12:30-2:30
+- **Data News Presenters**: 
+  - Dylan Provencio, Mana Ahmadi, Nathan Saavedra, Jendrik Diaz
+- **Weekly Assignment** posted today (Due Sun)
+
+---
+
+## For next Tuesday
+
+  - *Assigned readings:*
+    - *Fundamentals* Ch 5, "Survey Research."
+    - Review the course datasets and select which you plan to use in your own analysis: \
+      <span style="margin-left: 1.5em; display: inline-block;">**1) American National Election Studies (ANES) 2024 survey** asks Americans about their partisan preferences, their attitudes about social and political issues, and their candidate preferences leading up to and after the 2024 general election. Read about the [2024 survey](https://electionstudies.org/data-center/2024-time-series-study/).</span> \
+      <span style="margin-left: 1.5em; display: inline-block;">**2) World Values Survey (WVS) Wave 7 (2017–2022)** asks people from 64 countries about their perspectives on a wide variety of social, cultural, economic, political and governance issues. Read the [summary and Wave 7 survey details](https://www.worldvaluessurvey.org/WVSContents.jsp).</span>
+
+---
+
+## References {.smaller}
+
+::: {#refs}
+:::
