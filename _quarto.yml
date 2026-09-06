@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# Render profiles for the syllabus.
+#
+#   Student view  (DEFAULT):  quarto render POLS2140_Syllabus_F26.qmd
+#       -> POLS2140_Syllabus_F26.html   (notes-to-self are STRIPPED OUT)
+#       This is the file published to https://skdreier.github.io/POLS2140/
+#
+#   Instructor view:          quarto render POLS2140_Syllabus_F26.qmd --profile instructor
+#       -> POLS2140_Syllabus_F26_INSTRUCTOR.html   (notes-to-self INCLUDED)
+#       Local only -- git-ignored, never published.
+#
+# The schedule, readings, and dates live OUTSIDE any profile block, so every
+# edit to them appears in BOTH outputs automatically. Only the per-week
+# "Instructor notes" callouts are conditional.
+# ---------------------------------------------------------------------------
+
+profile:
+  default: student
+  group:
+    - [student, instructor]

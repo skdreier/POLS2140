@@ -1,0 +1,16 @@
+# Overrides applied ONLY when rendering with --profile instructor.
+# Writes to a distinct filename so it never overwrites the student build
+# (and never gets copied to index.html / published).
+
+format:
+  html:
+    output-file: POLS2140_Syllabus_F26_INSTRUCTOR.html
+    include-in-header:
+      text: |
+        <style>
+          .instructor-banner {
+            background: #b5179e; color: #fff;
+            padding: .6rem 1rem; border-radius: 6px;
+            font-weight: 600; margin: 1rem 0;
+          }
+        </style>

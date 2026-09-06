@@ -1,0 +1,12 @@
+# Instructor build — private notes, never publish
+POLS2140_Syllabus_F26_INSTRUCTOR.html
+POLS2140_Syllabus_F26_INSTRUCTOR_files/
+
+# Quarto scratch
+.quarto/
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Redundant when embed-resources is on
+POLS2140_Syllabus_F26_files/

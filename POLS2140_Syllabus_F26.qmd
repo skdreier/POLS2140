@@ -21,6 +21,12 @@ format:
 
 Course Syllabus permanent link: [https://skdreier.github.io/POLS2140/](https://skdreier.github.io/POLS2140/)
 
+::: {.content-visible when-profile="instructor"}
+::: {.instructor-banner}
+🔒 INSTRUCTOR COPY — includes private weekly notes. Do not distribute or publish this file. (The student version at the permanent link above never contains these notes.)
+:::
+:::
+
 **Class time:** Tue/Thurs 11:00 am–12:15 pm \
 **Class location:** DSH 224
 
@@ -173,7 +179,19 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 *Final schedule of assigned readings deadlines, and activities will be **updated and finalized each Thursday** for the following week. Changes will be populated [here](https://skdreier.github.io/POLS2140/).*
 
+### UNIT 1: COURSE FRAMEWORKS
+
+---
+
 ### Week 1 — INTRODUCTIONS
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 1"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 8/18:** Course introductions
 - **Thu 8/20:** Introduction to political science
@@ -186,6 +204,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 2 — RESEARCH IN THE REAL WORLD
 
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 2"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
 - **Tue 8/25:** Political science research blogs
   - *Assigned reading:* 
     - Select and read a blog post from either [Good Authority](https://goodauthority.org/) or one of the [London School of Economics blogs](https://blogs.lse.ac.uk/lse-research-blogs/). Be prepared to discuss the featured research in class, including identifying the research question, data used, and independent/dependent variables of interest (if applicable).
@@ -193,11 +219,19 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 - **Thu 8/27:** Political science research blogs (cont)
   - *Assigned readings:*
     - Barrowman, "Why Data is Never Raw."
-    - Silberzahn et al, "Many Analysts, One Data Set."
+    - Silberzahn et al, "Many Analysts, One Data Set," especially 338-339, 343-351.
 
 ---
 
 ### Week 3 — DATA IS SUBJECTIVE
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 3"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:** If you have to pick only one additional DF chapter, use Ch 4, not Ch 6.
+:::
+:::
 
 - **Tue 9/1:** Data Feminism framework
   - *Assigned readings:*
@@ -211,7 +245,23 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ---
 
+### UNIT 2: DESIGING YOUR RESEARCH
+
+---
+
 ### Week 4 — DEVELOPING YOUR RESEARCH IDEAS
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 4"}
+- **Lecture goals (Tue):**
+  - Familiarize students with survey datasets
+  - Guide students to select an IV/DV
+- **Lecture goals (Thurs):** 
+  - Draft a theory and hypothesis
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 9/8:** Course datasets and variables
   - *Assigned readings:*
@@ -220,10 +270,12 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
       <span style="margin-left: 1.5em; display: inline-block;">**1) American National Election Studies (ANES) 2024 survey** asks Americans about their partisan preferences, their attitudes about social and political issues, and their candidate preferences leading up to and after the 2024 general election. Read about the [2024 survey](https://electionstudies.org/data-center/2024-time-series-study/).</span> \
       <span style="margin-left: 1.5em; display: inline-block;">**2) World Values Survey (WVS) Wave 7 (2017–2022)** asks people from 64 countries about their perspectives on a wide variety of social, cultural, economic, political and governance issues. Read the [summary and Wave 7 survey details](https://www.worldvaluessurvey.org/WVSContents.jsp).</span>
 
-- **Thu 9/10:** Identifying your variables
+- **Thu 9/10:** Identifying and connecting your variables
   - *Assigned readings:*
     - *Fundamentals* Ch 2, "The Art of Theory Building," 29–38.
-    - *Fundamentals* Ch 3, "Evaluating Causal Relationships."
+    - Using [Google Scholar](https://scholar.google.com/), identify and skim one academic article related to your topic of interest.
+    
+<!-- - *Fundamentals* Ch 3, "Evaluating Causal Relationships." -->
 
 :::{.callout-note}
 **Begin your Final Research Analysis Task 1: Theory and Hypothesis**
@@ -233,10 +285,24 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 5 — MEASURING CONCEPTS AS VARIABLES
 
-- **Tue 9/15:** Concept validity
-  - *Assigned reading:* *Fundamentals* Ch 6, "Measuring Concepts of Interest."
-      - *Data Feminism* Ch 4, "What Gets Counted Counts," pg. 97–111.
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 5"}
+- **Lecture goals (Tue):**
+  - Consider multiple approaches to measuring the same concept
+  - Apply Data Feminism framework to understanding surveys
+  - Consider the strengths and limitations of your own survey measure
+- **Lecture goals (Thurs):**
+  - Open students' datasets in R
+  - Begin to examine variables of interest
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
+- **Tue 9/15:** Concept validity
+  - *Assigned readings:* 
+      - *Fundamentals* Ch 6, "Measuring Concepts of Interest."
+      - *Data Feminism* Ch 4, "What Gets Counted Counts," pg. 97–111.
   - *Read in class:* *Art of Statistics*, 7–10.
 
 - **Thu 9/17:** Introduction to **R**
@@ -253,9 +319,25 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 6 — VARIABLE TYPES AND DESCRIPTIVE STATISTICS
 
-- **Tue 9/22:** Variable types and descriptive statistics
-  - *Assigned reading:* *Fundamentals* Ch 7, "Getting to Know Your Data."
-- **Thu 9/24:** Descriptive statistics in **R**
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 6"}
+- **Lecture goals (Tue):**
+  - Define and explain different forms of variables
+  - Introduce central tendency and variance (statistical moments) for each variable form
+- **Lecture goals (Tue):**
+  - Consider how to drop and recode variables
+  - Approaches for recoding variables in R
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
+- **Tue 9/22:** Describing your variables
+  - *Assigned readings:* 
+    - *Fundamentals* Ch 7, "Getting to Know Your Data."
+    - Recommended: *Art of Statistics,* 19-51
+  
+- **Thu 9/24:** Recoding variables and descriptive statistics in **R**
 
 :::{.callout-note}
 **Begin your Final Research Analysis Task 2: Data and Variable Description**
@@ -263,20 +345,39 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ---
 
-### Week 7 — EXPERIMENTAL RESEARCH AND MIDTERM REVIEW
 
-- **Tue 9/29:** Experimental research
+
+### Week 7 - TWO TYPES OF RESEARCH DESIGNS
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 7"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
+- **Tue 9/29:** Experimental v. observational research
   - *Assigned readings:*
-    - *Fundamentals* Ch 4, "Research Design," 65–77.
-    - *Art of Statistics*, Ch 4, "What Causes What?," 108–119.
-    - Aizenman, "How to Fix Poverty: Why Not Just Give People Money?" and "An Experiment Gives Cash Aid to the Poor. Is that Ethical?" Review results of experimental interventions [here](https://www.givedirectly.org/gdresearch/).
-  - *Recommended:* *New York Times* Daily (podcast): "Trump, Tylenol and Autism" [[link]](https://www.nytimes.com/2025/09/23/podcasts/the-daily/autism-trump-tylenol.html)
+    - *Fundamentals* Ch 4, "Research Design."
+    - Recommended: *The Art of Statistics* Ch 4, "What Causes What?"
 
-- **Thu 10/1:** Recoding variables and midterm review
+- **Thurs 10/01:** 
+  - *Assigned readings:*
+    - Aizenman, "How to Fix Poverty: Why Not Just Give People Money?" and "An Experiment Gives Cash Aid to the Poor. Is that Ethical?" Review results of experimental interventions [here](https://www.givedirectly.org/gdresearch/).
+    - TBD: Survey research example
 
 ---
 
 ### Week 8 — MIDTERM WEEK
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 8"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 10/6:** Midterm (in class)
 - **Thu 10/8:** NO CLASS (Fall Break)
@@ -289,6 +390,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 9 — PROBABILITY
 
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 9"}
+- **Lecture goals:** Designing an experiment and taking stock.
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
 - **Tue 10/13:** Probability
   - *Assigned reading:* *Fundamentals* Ch 8, "Probability and Statistical Inference."
 - **Thu 10/15:** Probability (cont)
@@ -297,6 +406,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 ---
 
 ### Week 10 — BI-VARIATE HYPOTHESIS TESTING
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 10"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 10/20:** Bi-variate hypothesis tests
   - *Assigned reading:* *Fundamentals* Ch 9, "Bivariate Hypothesis Testing."
@@ -311,6 +428,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 11 — BI-VARIATE REGRESSION
 
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 11"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
 - **Tue 10/27:** Bi-variate regression
   - *Assigned readings:* *Fundamentals* Ch 10, "Two-Variable Regression Models"
 - **Thu 10/29:** Bi-variate regression in **R**
@@ -319,6 +444,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 ---
 
 ### Week 12 — MULTIPLE-VARIABLE REGRESSION
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 12"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 11/3:** Multiple-variable regression
   - *Assigned reading:* *Fundamentals* Ch 11, "Multiple Regression," 201–232.
@@ -332,11 +465,27 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 13 — REGRESSION INTERPRETATION
 
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 13"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
 - **Tue 11/10 and Thu 11/12:** We will discuss and help interpret each student's multiple-variable regression results in class.
 
 ---
 
 ### Week 14 — REGRESSION INTERPRETATION (cont)
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 14"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 11/17 and Thu 11/19:** We will discuss and help interpret each student's multiple-variable regression results in class.
 
@@ -348,9 +497,25 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ### Week 15 — NO CLASS
 
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 15"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
+
 ---
 
 ### Week 16 — COURSE CONCLUSIONS
+
+::: {.content-visible when-profile="instructor"}
+::: {.callout-tip title="🔒 Instructor notes — Week 16"}
+- **Lecture goals:**
+- **Logistics / timing:**
+- **Next time:**
+:::
+:::
 
 - **Tue 12/1:** Statistics' past and future
   - *Assigned readings:*
