@@ -1,0 +1,415 @@
+---
+title: "Quarto Slides Cheat Sheet"
+subtitle: "clean-revealjs formatting reference"
+author:
+  - name: Dr. Sarah Dreier
+    affiliation: University of New Mexico
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+    # [text]{.hl} = teal-bold emphasis shortcut.
+    include-in-header:
+      text: |
+        <style>.reveal .hl { color: #107895 !important; font-weight: 700; }</style>
+    # Plain [text](https://…) links open in a new tab automatically.
+    include-after-body:
+      text: |
+        <script>
+          document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+            a.target = "_blank"; a.rel = "noopener";
+          });
+        </script>
+
+# Bibliography in APA format. Keep these two lines in every deck; do NOT add
+# `biblio-title:` (it collides with the manual `## References` slide below and
+# suppresses that slide's heading). CSL style from https://github.com/citation-style-language/styles
+
+bibliography: references_2140.bib
+csl: apa.csl
+
+---
+
+## About this cheat sheet
+
+A browsable reference for formatting slides in this deck style (`format: clean-revealjs`). To actually **start a new deck**, duplicate `sarah_slide_template.qmd` instead — this file is for looking things up, not for building on top of.
+
+**Every deck opens with two blank slides, in this order** (Reading Prompt, then Announcements — see below; no "Wrap up from last class" slide) **and ends with a TL;DR slide, then a References slide** (see the last slides in this file) with 3–5 real takeaways generated from that lecture's actual content.
+
+---
+
+## Reading Prompt
+
+---
+
+## Announcements
+
+---
+
+## Pausing between lines or images {.smaller}
+
+**The simplest way — three dots on their own line:**
+
+```
+Line one shows immediately.
+
+. . .
+
+Line two waits for a click.
+
+. . .
+
+An image can pause too — same trick, no wrapping needed.
+
+![](my_image.png)
+```
+
+Just type `. . .` (three dots, spaces between them) on its own blank-line-separated line, in **plain slide markdown** — no `:::` wrapper, no HTML needed. Everything after it becomes a click-to-reveal fragment; add another `. . .` for another pause.
+
+This is a real, working feature — implemented by `_extensions/grantmcdermott/clean/pause-dots.lua`, a filter registered on this theme that every deck using `clean-revealjs` picks up automatically. It works inside plain slide markdown, inside Pandoc `::: {...}` fenced divs, and inside `layout=` panel columns.
+
+**One situation where it still doesn't work — use `.fragment` instead:**
+
+- **Inside a raw HTML `<div>...</div>` block** (e.g. `<div class="text-center">`). The filter deliberately leaves `. . .` alone there and prints a build-time warning, rather than risk producing malformed nested HTML by wrapping across the raw div's own open/close tags. Wrap the content in a fragment div instead:
+  ```
+  <div class="fragment">
+  This pauses correctly inside HTML.
+  </div>
+  ```
+
+**One thing to know about lists:** `. . .` between items in the same bullet list still splits it into two separate `<ul>` elements (a Pandoc markdown-parsing quirk, not something the filter can avoid) — it works as a pause, but for a single continuous list it's cleaner to wrap the whole thing in `.incremental` instead so every item pauses on its own click without splitting the underlying HTML:
+  ```
+  ::: {.incremental}
+  - First point
+  - Second point
+  - Third point
+  :::
+  ```
+
+---
+
+## Pause demo: three dots
+
+First line shows immediately.
+
+. . .
+
+Second line waits for a click.
+
+. . .
+
+Third line waits for another click.
+
+---
+
+## Pause demo: image
+
+An image can pause too — same three-dot trick, no wrapping needed:
+
+Text before the image.
+
+. . .
+
+![](1_course_intros_files/images/week_snapshot.png){width="60%"}
+
+---
+
+## Pause demo: inside a raw HTML div (needs `.fragment`)
+
+<div class="text-center">
+This shows immediately — plain text inside a raw HTML div.
+
+<div class="fragment">
+This pauses correctly, because it's a real fragment div, not three dots.
+</div>
+</div>
+
+---
+
+## Pause demo: a whole list
+
+::: {.incremental}
+- Point one
+- Point two
+- Point three
+:::
+
+---
+
+## Default: pause between bullets and lines
+
+Unless a slide is meant to dump everything at once (e.g. a dense links/resources slide), **default to pausing between bullets and between separate lines/sentences** so the presenter reveals one idea at a time:
+
+- **Bullet lists (`-`/`1.`):** wrap the whole list in `::: {.incremental}` so every item is its own click — this works even nested inside a raw HTML `<div>` (Pandoc still parses list markdown inside HTML blocks).
+- **Separate lines/paragraphs that aren't a list:** a plain `. . .` between them now works reliably (see "Pausing between lines or images" above) — including inside `::: {...}` fenced divs and `layout=` columns. The one place it still doesn't work is inside a raw HTML `<div>...</div>` block; use `::: {.fragment}` there instead, and don't share one fragment wrapper across multiple lines you want to reveal separately — each line needs its own `.fragment` (or its own `. . .` marker).
+- A slide with just one short idea, or one meant to be read as a whole (links/resources, a single quote), doesn't need this — use judgment.
+
+---
+
+## Basic text formatting
+
+Regular text, **bold**, *italic*, and `inline code` — plain markdown, no HTML needed.
+
+> A blockquote, for a quote or a callout note.
+
+- A bullet
+- Another bullet
+  - A sub-bullet
+
+1. A numbered item
+2. Another numbered item
+
+---
+
+## Two columns
+
+::: {.columns}
+::: {.column width="50%"}
+### Left side
+Text or a list here.
+:::
+
+::: {.column width="40%"}
+![](1_course_intros_files/images/week_snapshot.png)
+:::
+:::
+
+---
+
+## Two-column layout via `layout=` (more control) {.smaller}
+
+`.columns`/`.column` above is the simplest option. For exact proportional control (and to combine with images/captions/notes cleanly), use a `layout=` panel instead:
+
+```
+:::: {layout="[42,58]"}
+
+::: {#first-column}
+<div style="font-size: 0.9em; line-height: 1.3;">
+Text column content here.
+</div>
+:::
+
+::: {#second-column}
+<div style="text-align: center;">
+![](my_image.png){style="max-height: 40vh; width: auto;"}
+</div>
+:::
+
+::::
+```
+
+The numbers are relative proportions (don't need to sum to 100). **Put custom `style` on a nested `<div>` inside each column** — not on `#first-column`/`#second-column` itself — see the gotcha further down; Quarto silently discards it otherwise.
+
+---
+
+## Grid layout: multi-row panels & grouped pauses {.smaller}
+
+For more than two columns, or extra full-width rows, use `.grid`/`.grid-item` instead of a `layout=` panel:
+
+```
+:::: {.grid layout="[1,2]"}
+::: {.grid-item}
+Text here.
+:::
+::: {.grid-item}
+![](chart.png)
+:::
+::::
+
+:::: {.grid}
+::: {.grid-item span-col=2}
+A full-width row below the two columns above.
+:::
+::::
+```
+
+`span-col=N` makes one grid item span N columns — handy for a full-width row under a multi-column row.
+
+**Grouping multiple elements to reveal on the same click:** give each element the same `fragment-index`:
+
+```
+::: {.grid-item .fragment fragment-index=1 .fade-in}
+Text that appears on click 1.
+:::
+
+::: {.grid-item .fragment fragment-index=1 .fade-in}
+![](chart.png)
+:::
+```
+
+Both fade in together on that first click; use `fragment-index=2` on the next group for a second, separate click.
+
+---
+
+## Dark background slide
+
+Use `{background-color="#1a1a1a"}` on the slide heading (even an empty one) for a full-bleed dark slide, and set text color inline since the theme's default text is dark:
+
+```
+## {background-color="#1a1a1a"}
+
+<div style="color:#ffffff;">
+Your content here.
+</div>
+```
+
+---
+
+## {background-color="#1a1a1a"}
+
+<div class="text-center" style="color:#ffffff;">
+This is what the dark slide looks like.
+</div>
+
+---
+
+## Speaker notes
+
+Text here shows on the slide.
+
+::: {.notes}
+This text only shows in Speaker View (press `S` while presenting) — never on the projected slide.
+:::
+
+---
+
+# A section divider slide {background-color="#2c3e50"}
+
+A single `#` heading (instead of `##`) makes a full-bleed section-break slide — handy for splitting a lecture into parts. **Always put `{background-color="#2c3e50"}` on it** — that slate is the standard contrast color for these decks; the theme flips the heading text to light automatically.
+
+---
+
+## Gotcha: blockquotes nested under a bullet
+
+If you want a note/blockquote to appear under a specific bullet (not as a new top-level block), you need a **blank line** before the `>` — otherwise Pandoc doesn't parse it as a real blockquote and it renders as broken literal text.
+
+```
+- My bullet point
+
+  > A properly nested note under that bullet.
+```
+
+---
+
+## Gotcha: image paths
+
+Always double-check the image path is relative to *this* file's location, not to the folder in general. A quick `quarto render` will silently produce a blank spot (or a console warning) if the path is wrong — check the rendered `.html` if an image doesn't show up.
+
+---
+
+## Linking an image
+
+Wrap the `<img>` in a plain `<a>` tag:
+
+```
+<a href="https://example.com/" target="_blank">
+<img src="my_image.png" style="width: 100%;" />
+</a>
+```
+
+`target="_blank"` opens the link in a new tab, so clicking during a live presentation doesn't lose the slide.
+
+---
+
+## Gotcha: `class="fragment"` directly on an `<img>` tag gets silently dropped {.smaller}
+
+With `self-contained: true`, Quarto re-embeds every image as a base64 `data:` URI — and when it rebuilds the `<img>` tag to do that, it only keeps `src`/`alt`/`style`-type attributes and **drops a `class="fragment"` written directly on the tag**, with no warning. The image just never pauses.
+
+```
+<!-- Doesn't work — class gets stripped during self-contained image embedding -->
+<img src="my_image.png" class="fragment" style="width: 100%;" />
+
+<!-- Works — wrap it in a fragment div instead -->
+::: {.fragment}
+<img src="my_image.png" style="width: 100%;" />
+:::
+```
+
+Same underlying lesson as the `layout=` panel gotcha above: **verify by grepping the rendered `.html`, not the `.qmd`** — since the image's filename disappears into the base64 blob, search for the wrapping `class="fragment"` div instead of the image's `src`.
+
+---
+
+## Gotcha: shrinking a dense slide
+
+If a slide has too much content, add `{.smaller}` right after the heading text — no custom CSS class needed, it's built into the theme:
+
+```
+## A dense slide {.smaller}
+```
+
+If that's not enough (e.g. a `layout=` panel or raw HTML block `{.smaller}` doesn't reach), see "Fitting content to the slide" below.
+
+---
+
+## Gotcha: `layout=` columns silently drop custom styles {.smaller}
+
+`:::: {layout="[X,Y]"}` column panels are convenient, but Quarto **overwrites the `style` attribute** on `::: {#first-column style="..."}` / `#second-column` with its own auto-generated `flex-basis` rule — any custom `font-size`, `line-height`, `display: flex`, etc. placed directly on that column div is silently discarded at render time. There's no warning; the `.qmd` looks correct and `quarto render` succeeds anyway.
+
+**Fix:** put your styling on a nested `<div>` *inside* the column instead of on the column div itself:
+
+```
+::: {#first-column}
+<div style="font-size: 0.9em; line-height: 1.3;">
+Your content here.
+</div>
+:::
+```
+
+**Always verify a style change actually landed** — grep the rendered `.html` for it after `quarto render`; don't just trust that editing the `.qmd` was enough.
+
+---
+
+## Fitting content to the slide (without going comically small) {.smaller}
+
+**Base rule: if a slide's text overflows the screen, set it to `font-size: 0.9em` first.** Apply it as `## Slide Title {style="font-size: 0.9em;"}` on the heading — that puts the `style` on the generated `<section>`, so it scales the whole slide with one clean mechanism. This is the default first move, not a last resort.
+
+1. **0.9em via the heading `style=` attribute is step one.** Don't reach for `{.smaller}` as the default fix — it's a bigger, less predictable jump (the theme's own preset reduction) than a controlled 0.9em.
+2. **Never stack `{.smaller}` and an explicit `font-size` on the same slide.** They compound (e.g. `.smaller`'s own reduction × 0.9 again) and overshoot into unreadably tiny — this has actually happened. Pick one mechanism per slide.
+3. **If 0.9em alone doesn't clear the overflow**, then: check column proportions — a narrow `layout="[25,75]"` text column forces long bullets to wrap into many lines, and rebalancing (e.g. `[42,58]`) is often the real fix, not more shrinking.
+4. **Cap images by `max-height` in `vh` units** (e.g. `style="max-height: 40vh; width: auto;"`), not just `width: 100%` — width-only sizing lets a tall image blow past the slide regardless of column width.
+5. **Tighten margins/line-height before dropping font-size further.** Cutting `line-height` (to ~1.2–1.3) and list-item `margin-bottom` (to ~0.15–0.2em) often recovers enough room without going below 0.9em at all.
+6. **Only drop below 0.9em if 1–5 didn't create enough room**, and treat that as unusual — technically-not-overflowing-but-uncomfortably-tiny isn't a fix.
+7. **Default toward bigger, not smaller.** Once content fits, images and text should be as large as the slide comfortably allows — keep normal margins/column gaps rather than cramming just because there's room to shrink more.
+8. **Always render and check.** `quarto render`, then actually look at (or grep) the output — don't assume a style change worked, especially inside a `layout=` column panel (see the gotcha above).
+
+---
+
+## Citing sources — always use `@key` citations, never hand-written links {.smaller}
+
+**Every source citation on a slide uses a Quarto `@key` citation** keyed to an entry in `references_2140.bib`. Do **not** hand-write `<a href>` links or plain-text "(Author Year)" strings for sources — `@key` renders a clickable citation that jumps to the References slide, and citeproc formats the full APA entry there automatically.
+
+- Parenthetical: `[@dignazio2020data]` → "(D'Ignazio & Klein, 2020)"
+- Narrative: `@dignazio2020data` → "D'Ignazio & Klein (2020)"
+- With a locator: `@silberzahn2018many [Fig. 2, p. 346]` → "Silberzahn et al. (2018, Fig. 2, p. 346)"
+- As a source line under a figure: put it in a fenced div so citeproc processes it — `::: {style="font-size: 0.6em; color: #666;"}` / `Source: @silberzahn2018many [p. 345]` / `:::`. (A raw HTML `<div>` swallows the citation — use `:::`, not `<div>`.)
+
+If the source isn't in `references_2140.bib` yet, add a BibTeX entry for it there first.
+
+---
+
+## For [Day]:
+
+**Every deck's last three slides, in this order: next-class reading, TL;DR, References.** This slide is the first of those three — it names the *next* class meeting's assigned reading, using the `## For [Day]:` heading style (matches the "For Thursday:" / "For Tuesday:" pattern already used elsewhere in this course's decks). Pull the actual reading from the syllabus's Course Schedule, verified against it, not invented:
+
+<a href="https://skdreier.github.io/POLS2140/" target="_blank">*Fundamentals*, Ch. X — see the full schedule on the syllabus</a>
+
+---
+
+## TL;DR
+
+**Second-to-last slide.** Once the deck has real lecture content, replace this with 3–5 genuine main takeaways generated from *that lecture's* actual material — not generic placeholders. Example shape:
+
+- Point one — the single biggest idea from the lecture
+- Point two — a key term/concept students should walk away knowing
+- Point three — how this connects to the next class or an assignment
+- (Point four/five if the lecture genuinely covered that much ground — don't pad to hit 5)
+
+---
+
+## References {.smaller}
+
+::: {#refs}
+:::
+
+**Every deck ends with this slide, even with nothing yet cited.** Without a `bibliography:` set, or without this `::: {#refs}` placeholder, Quarto tacks the reference list onto whatever the last content slide is and it overflows. The `## References` heading only renders if nothing (e.g. an HTML comment block) sits between it and the `::: {#refs}` div, and if `biblio-title:` is NOT set in the YAML.
