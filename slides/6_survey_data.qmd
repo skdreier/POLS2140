@@ -59,8 +59,9 @@ Speaker notes go here.
 
 ## Announcements
 
-::: {.notes}
-Speaker notes go here.
+::: {.incremental}
+- **Office Hours** this week (Dr. Dreier): Friday 12:30-2:30
+- **Consequences for late work?**
 :::
 
 ---
