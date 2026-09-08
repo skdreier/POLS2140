@@ -18,3 +18,5 @@ contributes:
             <script src="mathjax-config.js"></script>
       format-resources:
         - mathjax-config.js
+      filters:
+        - pause-dots.lua
