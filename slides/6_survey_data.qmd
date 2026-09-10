@@ -112,8 +112,8 @@ Speaker notes go here.
 - **Variables**: Each specific question asked <span style="color: #107895;">→</span> *columns*
   - +1,000 variables!
   - **Variable label:** What each survey question is called/labeled
-    - V201001 – V201658: Pre-election survey questions
-    - V202001 – V202645: Post-election survey questions
+    - V240001 – V241751: Pre-election survey questions
+    - V242002 – V242640: Post-election survey questions
   - **Variable value:** How each person responded to each question
 :::
 
@@ -124,7 +124,7 @@ Speaker notes go here.
 
 ---
 
-## Variable V241177: Political Ideology {style="font-size: 0.85em;"}
+## Variable V241177: Political Ideology {style="font-size: 0.8em;"}
 
 *"Where would you place yourself on this scale, or haven't you thought much about this?"*
 
@@ -363,7 +363,7 @@ Speaker notes go here.
 
 ---
 
-## Variables Q243 & Q249: Essential features to a democracy {style="font-size: 0.85em;"}
+## Variables Q243 & Q249: Essential features to a democracy {style="font-size: 0.8em;"}
 
 *How essential to a democracy is it that: People choose their leaders in free elections (Q243) or that: Women have the same rights as men (Q249)?*
 
@@ -375,8 +375,8 @@ Speaker notes go here.
 #| label: wvs-hist-pooled
 #| echo: false
 #| fig-width: 7
-#| fig-height: 3.0
-#| out-width: "100%"
+#| fig-height: 2.3
+#| out-width: "82%"
 
 suppressMessages(library(tidyverse))
 
@@ -539,7 +539,7 @@ Speaker notes go here.
 
 ---
 
-## Let's find some variables about your topic! {style="font-size: 0.85em;"}
+## Let's find some variables about your topic! {style="font-size: 0.8em;"}
 
 **In-class exercise:** Open your codebook (Canvas or QR codes). Search for 2–3 survey questions related to your topic of interest. I recommend using your computers keyword search function (Ctrl/Cmd-F).
 
