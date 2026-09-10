@@ -305,7 +305,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
       - *Data Feminism* Ch 4, "What Gets Counted Counts," pg. 97–111.
   - *Read in class:* *Art of Statistics*, 7–10.
 
-- **Thu 9/17:** Introduction to **R**
+- **Thu 9/17:** Introduction to **R** (and catch-up day)
   - *Assigned tasks:*
     - Download **R** and **RStudio** using [swirl](https://swirlstats.com/students.htm)'s step-by-step prompts
     - Download (from Canvas) the dataset you will use; this file will end in ".csv".
