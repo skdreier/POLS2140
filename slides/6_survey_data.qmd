@@ -581,24 +581,20 @@ Speaker notes go here.
 
 ---
 
-## Workshop your approach with a classmate {style="font-size: 0.85em;"}
+## Workshop your approach {style="font-size: 0.85em;"}
 
 ::: {.incremental}
 - Your political topic of interest
 - 2-3 survey variables that begin to capture your topic of interest. What do you like about the variable(s)? What are some limitations to the variable(s)?
-- Brainstorm:
-  - Might there be a better way to capture your topic of interest?
-    - **Think about your topic/variable as an outcome (DV).** What might be good IVs captured in the survey data that influence your topic? *When in doubt, what makes for a great IV?* A respondent's characteristics that likely pre-date their social/policy opinions.
-    - **Think about your topic/variable as a cause of something else (IV).** What might be good DVs captured in the survey that are influenced by your topic? 
+- **Think about your topic/variable as an outcome (DV).** What might be good IVs captured in the survey data that influence your topic? *When in doubt, what makes for a great IV?* A respondent's characteristics that likely pre-date their social/policy opinions.
+- **Think about your topic/variable as a cause of something else (IV).** What might be good DVs captured in the survey that are influenced by your topic? 
 - Develop a research question you have about your topic, based on the variables in the survey. Ex: *Does gender shape people's attitudes toward climate change?*
-- Record your work in the class [Google drive](https://docs.google.com/spreadsheets/d/17W2_PpL2DCbcXn6pim2iVZCAcC7JBVsnrd_Cf4BaUrU/edit?gid=0#gid=0) (Modules -> Course exercises -> Project IV/DV)
+- Record your working IV/DV in the class [Google drive](https://docs.google.com/spreadsheets/d/17W2_PpL2DCbcXn6pim2iVZCAcC7JBVsnrd_Cf4BaUrU/edit?gid=0#gid=0) (Modules -> Course exercises -> Project IV/DV)
 :::
-
 
 ::: {.notes}
 Speaker notes go here.
 :::
-
 
 ---
 
