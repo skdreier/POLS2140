@@ -54,6 +54,17 @@ $selection-bg: #26351c !default;
   margin-top: 1.25em;
 }
 
+// POLS 2140 house rule: every section-divider slide (a single `#` heading,
+// auto-tagged with background-color="#2c3e50" by section-dividers.lua unless
+// the author overrode it) gets automatically-white body text — the theme's
+// own default already lightens the heading; this covers everything else
+// (paragraphs, lists, blockquotes, citations) so no per-slide
+// `::: {style="color: #ffffff;"}` wrap is ever required. A more specific
+// rule (e.g. `.hl` teal emphasis) still wins normally via CSS specificity.
+.reveal .slides section[data-background-color="#2c3e50"] {
+  color: #ffffff;
+}
+
 // title and headings
 
 #title-slide {

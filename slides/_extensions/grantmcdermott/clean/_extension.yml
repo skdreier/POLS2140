@@ -20,3 +20,4 @@ contributes:
         - mathjax-config.js
       filters:
         - pause-dots.lua
+        - section-dividers.lua
