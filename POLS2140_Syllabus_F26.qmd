@@ -133,7 +133,9 @@ Your final grade will be determined as follows:
 
 **MIDTERM EXAM (20%):** You will be examined on **political science research design, data exploration, and R coding basics** (material from Weeks 1–7). My goal for the exam is to encourage and facilitate your learning. The exam is an in-person, hand-written exam which includes concept identification, multiple choice, short-answer and paragraph responses. After the exam has been graded, students have the option to update their exams (by providing correct answers and a discussion of their evolved understanding) to raise their exam score by up to one letter grade. **Date: Tue 10/6.**
 
+<!--
 **FINAL RESEARCH ANALYSIS (20%):** You will develop an original research hypothesis, statistically test that hypothesis using one of two observational datasets provided in class, and evaluate the hypothesis using an experimental survey (completed in groups). The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Observational analysis using multiple-variable regression (OLS), Experimental analysis using a survey experiment, and Concluding Implications. We will break this project into several small assigned tasks (in the weekly assignments) and provide assigned periodic research tasks in incremental chunks throughout the semester to prevent you from scrambling at the end of the term! **Due: Wed 12/9.**
+-->
 
 **There is no final exam in this course.** All assignments will be posted and submitted (by 11:59 pm on the due date) via **Canvas**. Each submitted assignment will include detailed instructions regarding when and how use of AI tools are acceptable and when such use will be penalized.
 
@@ -277,9 +279,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
     
 <!-- - *Fundamentals* Ch 3, "Evaluating Causal Relationships." -->
 
+<!--
 :::{.callout-note}
 **Begin your Final Research Analysis Task 1: Theory and Hypothesis**
 :::
+-->
 
 ---
 
@@ -310,9 +314,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
     - Download **R** and **RStudio** using [swirl](https://swirlstats.com/students.html)'s step-by-step prompts
     - Download (from Canvas) the dataset you will use; this file will end in ".csv".
 
+<!--
 :::{.callout-note}
 **Submit Final Research Analysis Task 1: Theory and Hypothesis ([Due: Sun 09/20](#task1-due))**
 :::
+-->
 
 ---
 
@@ -339,9 +345,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
   
 - **Thu 9/24:** Recoding variables and descriptive statistics in **R**
 
+<!--
 :::{.callout-note}
 **Begin your Final Research Analysis Task 2: Data and Variable Description**
 :::
+-->
 
 ---
 
@@ -382,9 +390,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 - **Tue 10/6:** Midterm (in class)
 - **Thu 10/8:** NO CLASS (Fall Break)
 
+<!--
 :::{.callout-note}
 **Submit Final Research Analysis Task 2: Data and Variable Description ([Due: Sun 10/11](#task2-due))**
 :::
+-->
 
 ---
 
@@ -436,9 +446,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 - **Thu 10/29:** Bi-variate hypothesis tests in **R**
   - *Assigned reading:* *Art of Statistics*, Ch 10, "Answering Questions and Claiming Discoveries," 278–287, 294–304.
 
+<!--
 :::{.callout-note}
 **Final Research Analysis Task 3 ([Due: Sun 11/1](#task3-due)):** Write your **Bi-variate Hypothesis Test: Methods Description and Results**.
 :::
+-->
 
 ---
 
@@ -473,9 +485,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
   - *Assigned reading:* *Fundamentals* Ch 11, "Multiple Regression," 201–232.
 - **Thu 11/12:** Multiple-variable regression in **R**
 
+<!--
 :::{.callout-note}
 **Final Research Analysis Task 4 ([Due: Sun 11/15](#task4-due)):** Write your **Multiple-variable Regression: Methods Description**, conduct and submit your **multiple-variable regression results table**.
 :::
+-->
 
 ---
 
@@ -491,9 +505,11 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 - **Tue 11/17 and Thu 11/19:** We will discuss and help interpret each student's multiple-variable regression results in class.
 
+<!--
 :::{.callout-note}
 **Final Research Analysis Task 5 ([Due: Sun 11/22](#task5-due)):** Write up your **Multiple-variable Regression: Results** and **Concluding Implications**.
 :::
+-->
 
 ---
 
@@ -527,10 +543,12 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 - **Thu 12/3:** Project workshop day
 
+<!--
 :::{.callout-important}
 **Final Research Analysis: Final Paper ([Due Wed 12/9](#final-paper-due))**
 *Late papers will be docked 1/2 letter grade for each additional day late. No papers will be accepted after Fri 12/11.*
 :::
+-->
 
 ## Course Calendar
 
@@ -590,7 +608,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W3: Data Feminism</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W3: Data Feminism cont.</span></td><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">6</span><span class="cal-label">Weekly Assignment #3 Due</span></td><td class=""><span class="cal-num">7</span></td><td class="cal-class"><span class="cal-num">8</span><span class="cal-label">W4: Course Datasets</span></td><td class=""><span class="cal-num">9</span></td><td class="cal-class"><span class="cal-num">10</span><span class="cal-label">W4: Developing Theory</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">13</span><span class="cal-label">Weekly Assignment #4 Due</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W5: Concept Validity</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W5: Intro to R</span></td><td class=""><span class="cal-num">18</span></td><td class=""><span class="cal-num">19</span></td></tr>
-<tr><td class="cal-due"><span id="task1-due"></span><span class="cal-num">20</span><span class="cal-label">Research Task 1 Due</span><span class="cal-label">Weekly Assignment #5 Due</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W6: Variable Types</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-class"><span class="cal-num">24</span><span class="cal-label">W6: Descriptive Stats in R</span></td><td class=""><span class="cal-num">25</span></td><td class=""><span class="cal-num">26</span></td></tr>
+<tr><td class="cal-due"><!--<span id="task1-due"></span>--><span class="cal-num">20</span><!--<span class="cal-label">Research Task 1 Due</span>--><span class="cal-label">Weekly Assignment #5 Due</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W6: Variable Types</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-class"><span class="cal-num">24</span><span class="cal-label">W6: Descriptive Stats in R</span></td><td class=""><span class="cal-num">25</span></td><td class=""><span class="cal-num">26</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">27</span><span class="cal-label">Weekly Assignment #6 Due</span></td><td class=""><span class="cal-num">28</span></td><td class="cal-class"><span class="cal-num">29</span><span class="cal-label">W7: Experimental Research</span></td><td class=""><span class="cal-num">30</span></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td></tr>
 
 </tbody>
@@ -605,7 +623,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <tbody>
 <tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W7: Recoding & Midterm Review</span></td><td class=""><span class="cal-num">2</span></td><td class=""><span class="cal-num">3</span></td></tr>
 <tr><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td><td class="cal-exam"><span class="cal-num">6</span><span class="cal-label">W8: MIDTERM EXAM</span></td><td class=""><span class="cal-num">7</span></td><td class="cal-noclass"><span class="cal-num">8</span><span class="cal-label">W8: NO CLASS (Fall Break)</span></td><td class=""><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td></tr>
-<tr><td class="cal-due"><span id="task2-due"></span><span class="cal-num">11</span><span class="cal-label">Research Task 2 Due</span><span class="cal-label">Weekly Assignment #7 Due</span></td><td class=""><span class="cal-num">12</span></td><td class="cal-class"><span class="cal-num">13</span><span class="cal-label">W9: Workshop: Exp. Design</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W9: Workshop cont.</span></td><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td></tr>
+<tr><td class="cal-due"><!--<span id="task2-due"></span>--><span class="cal-num">11</span><!--<span class="cal-label">Research Task 2 Due</span>--><span class="cal-label">Weekly Assignment #7 Due</span></td><td class=""><span class="cal-num">12</span></td><td class="cal-class"><span class="cal-num">13</span><span class="cal-label">W9: Workshop: Exp. Design</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W9: Workshop cont.</span></td><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">18</span><span class="cal-label">Weekly Assignment #8 Due</span></td><td class=""><span class="cal-num">19</span></td><td class="cal-class"><span class="cal-num">20</span><span class="cal-label">W10: Probability</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W10: Probability cont.</span></td><td class=""><span class="cal-num">23</span></td><td class=""><span class="cal-num">24</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">25</span><span class="cal-label">Weekly Assignment #9 Due</span></td><td class=""><span class="cal-num">26</span></td><td class="cal-class"><span class="cal-num">27</span><span class="cal-label">W11: Bi-variate Tests</span></td><td class=""><span class="cal-num">28</span></td><td class="cal-class"><span class="cal-num">29</span><span class="cal-label">W11: Bi-variate Tests in R</span></td><td class=""><span class="cal-num">30</span></td><td class=""><span class="cal-num">31</span></td></tr>
 
@@ -619,10 +637,10 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <table class="cal-table">
 <thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
 <tbody>
-<tr><td class="cal-due"><span id="task3-due"></span><span class="cal-num">1</span><span class="cal-label">Research Task 3 Due</span><span class="cal-label">Weekly Assignment #10 Due</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W12: Bi-variate Regression</span></td><td class=""><span class="cal-num">4</span></td><td class="cal-class"><span class="cal-num">5</span><span class="cal-label">W12: Bi-variate Regression in R</span></td><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td></tr>
+<tr><td class="cal-due"><!--<span id="task3-due"></span>--><span class="cal-num">1</span><!--<span class="cal-label">Research Task 3 Due</span>--><span class="cal-label">Weekly Assignment #10 Due</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W12: Bi-variate Regression</span></td><td class=""><span class="cal-num">4</span></td><td class="cal-class"><span class="cal-num">5</span><span class="cal-label">W12: Bi-variate Regression in R</span></td><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">8</span><span class="cal-label">Weekly Assignment #11 Due</span></td><td class=""><span class="cal-num">9</span></td><td class="cal-class"><span class="cal-num">10</span><span class="cal-label">W13: Multi-var Regression</span></td><td class=""><span class="cal-num">11</span></td><td class="cal-class"><span class="cal-num">12</span><span class="cal-label">W13: Multi-var Regression in R</span></td><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td></tr>
-<tr><td class="cal-due"><span id="task4-due"></span><span class="cal-num">15</span><span class="cal-label">Research Task 4 Due</span><span class="cal-label">Weekly Assignment #12 Due</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">18</span></td><td class="cal-class"><span class="cal-num">19</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">20</span></td><td class=""><span class="cal-num">21</span></td></tr>
-<tr><td class="cal-due"><span id="task5-due"></span><span class="cal-num">22</span><span class="cal-label">Research Task 5 Due</span><span class="cal-label">Weekly Assignment #13 Due</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-noclass"><span class="cal-num">24</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">25</span></td><td class="cal-noclass"><span class="cal-num">26</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">27</span></td><td class=""><span class="cal-num">28</span></td></tr>
+<tr><td class="cal-due"><!--<span id="task4-due"></span>--><span class="cal-num">15</span><!--<span class="cal-label">Research Task 4 Due</span>--><span class="cal-label">Weekly Assignment #12 Due</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">18</span></td><td class="cal-class"><span class="cal-num">19</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">20</span></td><td class=""><span class="cal-num">21</span></td></tr>
+<tr><td class="cal-due"><!--<span id="task5-due"></span>--><span class="cal-num">22</span><!--<span class="cal-label">Research Task 5 Due</span>--><span class="cal-label">Weekly Assignment #13 Due</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-noclass"><span class="cal-num">24</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">25</span></td><td class="cal-noclass"><span class="cal-num">26</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">27</span></td><td class=""><span class="cal-num">28</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">29</span><span class="cal-label">Weekly Assignment #14 Due</span></td><td class=""><span class="cal-num">30</span></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td></tr>
 
 </tbody>
@@ -636,7 +654,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
 <tbody>
 <tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W16: Statistics Past & Future</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W16: Project Workshop</span></td><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td></tr>
-<tr><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td><td class=""><span class="cal-num">8</span></td><td class="cal-due"><span id="final-paper-due"></span><span class="cal-num">9</span><span class="cal-label">FINAL PAPER DUE</span></td><td class=""><span class="cal-num">10</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
+<tr><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td><td class=""><span class="cal-num">8</span></td><td class=""><!--<span id="final-paper-due"></span><span class="cal-label">FINAL PAPER DUE</span>--><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
 
 </tbody>
 </table>
