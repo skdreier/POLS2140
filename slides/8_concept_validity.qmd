@@ -35,16 +35,11 @@ Speaker notes go here.
 
 ## Announcements
 
-::: {.incremental}
-- **Final Research Analysis Task #1** originally due this coming **Sunday**
-  - Extended one week (due Sept 27)
-  - Thurs: workshop this task
 - **Today:** Concept measurement ("operationalizing" variables of interest)
 - **Thursday:** 
   - Intro to coding in R / RStudio; uploading your dataset in R
   - Theory writing workshop
   - Recommended: **Bring your laptop**
-:::
 
 ::: {.notes}
 Speaker notes go here.
@@ -83,7 +78,7 @@ Kellstedt & Whitten, *Fundamentals*, Ch. 5, "Measuring Concepts of Interest" [@k
 
 ## In-class excercise
 
-- What is your [concpet of interest]{.hl}?
+- What is your [concept of interest]{.hl}?
 - What are 2-3 different ways to measure this concept?
 - Which do you think is the best and why? 
 
@@ -152,7 +147,157 @@ Source: @nyt2021covid
 :::
 :::
 
+
+# Measuring Democracy: A case study in content validity {background-color="#2c3e50"}
+
 ---
+
+## Ex: measuring democracy {style="font-size: 0.85em;"}
+
+. . .
+
+**Define democracy:**
+
+::: {.incremental}
+- Binary (0 = not democracy; 1 = democracy) or scale?
+- What components should it include?
+  - Competitive elections
+  - Near-universal participation among the adult population [@dahl1971polyarchy]
+  - Anything else?
+- **Polity IV measure** (−10 = strongly autocratic; 10 = strongly democratic) [@marshall2020polity]
+- **Look at the US Polity score over time…**
+:::
+
+---
+
+## Polity IV score {style="font-size: 0.8em;"}
+
+::: {.columns}
+::: {.column width="48%"}
+![](8_concept_validity_files/images/cm_image7.png){style="max-height: 55vh; width: auto;"}
+
+::: {style="font-size: 0.7em; color: #666;"}
+Figure 5.3, "Polity IV score for the United States" [@kellstedt2022fundamentals]
+:::
+:::
+
+::: {.column width="52%"}
+::: {.incremental}
+- Has the United States' level of democracy been constant since before 1900?
+- Democracy: competitive elections, near-universal participation in elections.
+- Who is excluded?
+  - African Americans (1868)
+  - Women (1919/1920)
+  - Voting Rights Act (1965)
+  - Voter suppression
+  - Incarcerated adults
+  - Non-citizens
+- Is the Polity IV measure valid?
+- **Lacks content validity.**
+:::
+:::
+:::
+
+---
+
+## Polity V score
+
+::: {.columns}
+::: {.column width="50%"}
+Updated **Polity V** score suggests a little more variation in the US democracy score, but still appears not to take critical aspects into account.
+:::
+
+::: {.column width="50%"}
+![](8_concept_validity_files/images/polity_updated.png){style="max-height: 58vh; width: auto;"}
+
+::: {style="font-size: 0.6em; color: #666;"}
+Source: @marshall2020polity
+:::
+:::
+:::
+
+---
+
+## Varieties in Democracy (V-Dem) {style="font-size: 0.8em;"}
+
+::: {.columns}
+::: {.column width="45%"}
+![](8_concept_validity_files/images/vdem_electoral.png){style="max-height: 55vh; width: auto;"}
+
+::: {style="font-size: 0.55em; color: #666;"}
+Source: @vdem2024
+:::
+:::
+
+::: {.column width="55%"}
+> "The **electoral principle of democracy** seeks to embody the core value of making rulers responsive to citizens, achieved through electoral competition for the electorate's approval under circumstances when suffrage is extensive; political and civil society organizations can operate freely; elections are clean and not marred by fraud or systematic irregularities; and elections affect the composition of the chief executive of the country. In between elections, there is **freedom of expression** and an **independent media** capable of presenting alternative views on matters of political relevance." [@vdem2024]
+:::
+:::
+
+---
+
+## Varieties in Democracy (V-Dem) {style="font-size: 0.8em;"}
+
+::: {.columns}
+::: {.column width="55%"}
+> "The **liberal principle of democracy** emphasizes the importance of protecting individual and minority rights against the tyranny of the state and the tyranny of the majority. The liberal model takes a 'negative' view of political power insofar as it judges the quality of democracy by the limits placed on government. This is achieved by constitutionally protected **civil liberties**, strong **rule of law**, an **independent judiciary**, and effective **checks and balances** that, together, limit the exercise of executive power. To make this a measure of liberal democracy, the index also takes the level of electoral democracy into account." [@vdem2024]
+:::
+
+::: {.column width="45%"}
+![](8_concept_validity_files/images/vdem_liberal.png){style="max-height: 55vh; width: auto;"}
+
+::: {style="font-size: 0.55em; color: #666;"}
+Source: @vdem2024
+:::
+:::
+:::
+
+---
+
+## Varieties in Democracy (V-Dem)
+
+::: {.columns}
+::: {.column width="50%"}
+![](8_concept_validity_files/images/vdem_electoral.png){style="max-height: 58vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+![](8_concept_validity_files/images/vdem_liberal.png){style="max-height: 58vh; width: auto;"}
+:::
+:::
+
+::: {style="font-size: 0.55em; color: #666; text-align: center;"}
+Source: @vdem2024
+:::
+
+---
+
+## Ex: measuring democracy {style="font-size: 0.85em;"}
+
+**In short:** different approaches to measuring democracy provide very different stories about the level of democracy in a given country (here, the United States) at a given year and/or over time.
+
+::: {.columns}
+::: {.column width="25%"}
+![](8_concept_validity_files/images/cm_image7.png){style="max-height: 34vh; width: auto;"}
+:::
+
+::: {.column width="25%"}
+![](8_concept_validity_files/images/polity_updated.png){style="max-height: 34vh; width: auto;"}
+:::
+
+::: {.column width="25%"}
+![](8_concept_validity_files/images/vdem_electoral.png){style="max-height: 34vh; width: auto;"}
+:::
+
+::: {.column width="25%"}
+![](8_concept_validity_files/images/vdem_liberal.png){style="max-height: 34vh; width: auto;"}
+:::
+:::
+
+::: {style="font-size: 0.55em; color: #666; text-align: center;"}
+Polity IV/V [@kellstedt2022fundamentals; @marshall2020polity] and V-Dem electoral/liberal democracy [@vdem2024] — same country, very different stories.
+:::
+
 
 ## Standards for evaluating concept operationalization {style="font-size: 0.8em;"}
 
@@ -385,157 +530,6 @@ Speaker notes go here.
 - Do you expect this measure to be **reliable**? Why / why not?
 - Does this measure seem to have **validity**? Why / why not?
 
-
-# Measuring Democracy: A case study in content validity {background-color="#2c3e50"}
-
----
-
-## Ex: measuring democracy {style="font-size: 0.85em;"}
-
-. . .
-
-**Define democracy:**
-
-::: {.incremental}
-- Binary (0 = not democracy; 1 = democracy) or scale?
-- What components should it include?
-  - Competitive elections
-  - Near-universal participation among the adult population [@dahl1971polyarchy]
-  - Anything else?
-- **Polity IV measure** (−10 = strongly autocratic; 10 = strongly democratic) [@marshall2020polity]
-- **Look at the US Polity score over time…**
-:::
-
----
-
-## Polity IV score {style="font-size: 0.8em;"}
-
-::: {.columns}
-::: {.column width="48%"}
-![](8_concept_validity_files/images/cm_image7.png){style="max-height: 55vh; width: auto;"}
-
-::: {style="font-size: 0.7em; color: #666;"}
-Figure 5.3, "Polity IV score for the United States" [@kellstedt2022fundamentals]
-:::
-:::
-
-::: {.column width="52%"}
-::: {.incremental}
-- Has the United States' level of democracy been constant since before 1900?
-- Democracy: competitive elections, near-universal participation in elections.
-- Who is excluded?
-  - African Americans (1868)
-  - Women (1919/1920)
-  - Voting Rights Act (1965)
-  - Voter suppression
-  - Incarcerated adults
-  - Non-citizens
-- Is the Polity IV measure valid?
-- **Lacks content validity.**
-:::
-:::
-:::
-
----
-
-## Polity V score
-
-::: {.columns}
-::: {.column width="50%"}
-Updated **Polity V** score suggests a little more variation in the US democracy score, but still appears not to take critical aspects into account.
-:::
-
-::: {.column width="50%"}
-![](8_concept_validity_files/images/polity_updated.png){style="max-height: 58vh; width: auto;"}
-
-::: {style="font-size: 0.6em; color: #666;"}
-Source: @marshall2020polity
-:::
-:::
-:::
-
----
-
-## Varieties in Democracy (V-Dem) {style="font-size: 0.8em;"}
-
-::: {.columns}
-::: {.column width="45%"}
-![](8_concept_validity_files/images/vdem_electoral.png){style="max-height: 55vh; width: auto;"}
-
-::: {style="font-size: 0.55em; color: #666;"}
-Source: @vdem2024
-:::
-:::
-
-::: {.column width="55%"}
-> "The **electoral principle of democracy** seeks to embody the core value of making rulers responsive to citizens, achieved through electoral competition for the electorate's approval under circumstances when suffrage is extensive; political and civil society organizations can operate freely; elections are clean and not marred by fraud or systematic irregularities; and elections affect the composition of the chief executive of the country. In between elections, there is **freedom of expression** and an **independent media** capable of presenting alternative views on matters of political relevance." [@vdem2024]
-:::
-:::
-
----
-
-## Varieties in Democracy (V-Dem) {style="font-size: 0.8em;"}
-
-::: {.columns}
-::: {.column width="55%"}
-> "The **liberal principle of democracy** emphasizes the importance of protecting individual and minority rights against the tyranny of the state and the tyranny of the majority. The liberal model takes a 'negative' view of political power insofar as it judges the quality of democracy by the limits placed on government. This is achieved by constitutionally protected **civil liberties**, strong **rule of law**, an **independent judiciary**, and effective **checks and balances** that, together, limit the exercise of executive power. To make this a measure of liberal democracy, the index also takes the level of electoral democracy into account." [@vdem2024]
-:::
-
-::: {.column width="45%"}
-![](8_concept_validity_files/images/vdem_liberal.png){style="max-height: 55vh; width: auto;"}
-
-::: {style="font-size: 0.55em; color: #666;"}
-Source: @vdem2024
-:::
-:::
-:::
-
----
-
-## Varieties in Democracy (V-Dem)
-
-::: {.columns}
-::: {.column width="50%"}
-![](8_concept_validity_files/images/vdem_electoral.png){style="max-height: 58vh; width: auto;"}
-:::
-
-::: {.column width="50%"}
-![](8_concept_validity_files/images/vdem_liberal.png){style="max-height: 58vh; width: auto;"}
-:::
-:::
-
-::: {style="font-size: 0.55em; color: #666; text-align: center;"}
-Source: @vdem2024
-:::
-
----
-
-## Ex: measuring democracy {style="font-size: 0.85em;"}
-
-**In short:** different approaches to measuring democracy provide very different stories about the level of democracy in a given country (here, the United States) at a given year and/or over time.
-
-::: {.columns}
-::: {.column width="25%"}
-![](8_concept_validity_files/images/cm_image7.png){style="max-height: 34vh; width: auto;"}
-:::
-
-::: {.column width="25%"}
-![](8_concept_validity_files/images/polity_updated.png){style="max-height: 34vh; width: auto;"}
-:::
-
-::: {.column width="25%"}
-![](8_concept_validity_files/images/vdem_electoral.png){style="max-height: 34vh; width: auto;"}
-:::
-
-::: {.column width="25%"}
-![](8_concept_validity_files/images/vdem_liberal.png){style="max-height: 34vh; width: auto;"}
-:::
-:::
-
-::: {style="font-size: 0.55em; color: #666; text-align: center;"}
-Polity IV/V [@kellstedt2022fundamentals; @marshall2020polity] and V-Dem electoral/liberal democracy [@vdem2024] — same country, very different stories.
-:::
-
 # When measuring our concepts reinforces unearned power
 
 ---
@@ -658,10 +652,10 @@ Speaker notes go here.
 ## TL;DR {.smaller}
 
 - **Operationalization** moves a concept from the abstract to a concrete, measured variable — and every measure is imperfect.
-- Judge a measure by three standards: **conceptual clarity**, **reliability** (repeatable / consistent), and **validity** (captures the intended concept — including *face* and *content* validity).
-- **Reliability often matters more than bias:** a biased-but-reliable measure still shows the X–Y pattern; an unreliable one obscures it (KW 114).
-- Measuring **democracy** shows the stakes: Polity IV/V and V-Dem tell very different stories about the same country because they include different components (content validity).
-- **Data Feminism:** measurement choices reinforce power — who is excluded, miscounted, or forced into ill-fitting categories; the **paradox of exposure**. Ask what power imbalances, conflicts of interest, and marginalized knowledge shaped the dataset.
+- Judge a measure by three standards: **conceptual clarity**, **reliability** (repeatable/consistent — matters more than bias for spotting real X–Y relationships, KW 114), and **validity** (captures the intended concept — including *face* and *content* validity).
+- Real survey items show how hard this is in practice: AfroBarometer's tolerance question buries "would not care" as option 3 of 6 — genuinely ambiguous between tolerance and indifference, a live validity/reliability problem, not just a textbook one.
+- Measuring **democracy** shows the same stakes at scale: Polity IV/V and V-Dem tell very different stories about the same country because each includes different components (content validity).
+- **Data Feminism:** measurement choices reinforce power — who is excluded, miscounted, or forced into ill-fitting categories; the **paradox of exposure**. Ask what power imbalances, conflicts of interest, and marginalized knowledge shaped any dataset you evaluate — including your own.
 
 ---
 
