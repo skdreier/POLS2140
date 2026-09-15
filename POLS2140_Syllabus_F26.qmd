@@ -388,7 +388,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ---
 
-### Week 9 — PROBABILITY
+### Week 9 — WORKSHOP: EXPERIMENTAL DESIGN
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 9"}
@@ -398,14 +398,13 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 :::
 :::
 
-- **Tue 10/13:** Probability
-  - *Assigned reading:* *Fundamentals* Ch 8, "Probability and Statistical Inference."
-- **Thu 10/15:** Probability (cont)
-  - *Assigned reading:* *Naked Statistics* Ch 8, "The Central Limit Theorem: The LeBron James of statistics."
+- **Tue 10/13:** Workshop: designing your experimental survey
+  - *In-class activity:* Work in groups to draft the survey-experiment component of your Final Research Analysis (used later to evaluate your hypothesis experimentally).
+- **Thu 10/15:** Workshop: designing your experimental survey (cont.)
 
 ---
 
-### Week 10 — BI-VARIATE HYPOTHESIS TESTING
+### Week 10 — PROBABILITY
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 10"}
@@ -415,18 +414,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 :::
 :::
 
-- **Tue 10/20:** Bi-variate hypothesis tests
-  - *Assigned reading:* *Fundamentals* Ch 9, "Bivariate Hypothesis Testing."
-- **Thu 10/22:** Bi-variate hypothesis tests in **R**
-  - *Assigned reading:* *Art of Statistics*, Ch 10, "Answering Questions and Claiming Discoveries," 278–287, 294–304.
-
-:::{.callout-note}
-**Final Research Analysis Task 3 ([Due: Sun 10/25](#task3-due)):** Write your **Bi-variate Hypothesis Test: Methods Description and Results**.
-:::
+- **Tue 10/20:** Probability
+  - *Assigned reading:* *Fundamentals* Ch 8, "Probability and Statistical Inference."
+- **Thu 10/22:** Probability (cont)
+  - *Assigned reading:* *Naked Statistics* Ch 8, "The Central Limit Theorem: The LeBron James of statistics."
 
 ---
 
-### Week 11 — BI-VARIATE REGRESSION
+### Week 11 — BI-VARIATE HYPOTHESIS TESTING
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 11"}
@@ -436,14 +431,18 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 :::
 :::
 
-- **Tue 10/27:** Bi-variate regression
-  - *Assigned readings:* *Fundamentals* Ch 10, "Two-Variable Regression Models"
-- **Thu 10/29:** Bi-variate regression in **R**
-  - *Assigned reading:* *Naked Statistics* Ch 11, "Regression Analysis: The miracle elixir."
+- **Tue 10/27:** Bi-variate hypothesis tests
+  - *Assigned reading:* *Fundamentals* Ch 9, "Bivariate Hypothesis Testing."
+- **Thu 10/29:** Bi-variate hypothesis tests in **R**
+  - *Assigned reading:* *Art of Statistics*, Ch 10, "Answering Questions and Claiming Discoveries," 278–287, 294–304.
+
+:::{.callout-note}
+**Final Research Analysis Task 3 ([Due: Sun 11/1](#task3-due)):** Write your **Bi-variate Hypothesis Test: Methods Description and Results**.
+:::
 
 ---
 
-### Week 12 — MULTIPLE-VARIABLE REGRESSION
+### Week 12 — BI-VARIATE REGRESSION
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 12"}
@@ -453,17 +452,14 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 :::
 :::
 
-- **Tue 11/3:** Multiple-variable regression
-  - *Assigned reading:* *Fundamentals* Ch 11, "Multiple Regression," 201–232.
-- **Thu 11/5:** Multiple-variable regression in **R**
-
-:::{.callout-note}
-**Final Research Analysis Task 4 ([Due: Sun 11/8](#task4-due)):** Write your **Multiple-variable Regression: Methods Description**, conduct and submit your **multiple-variable regression results table**.
-:::
+- **Tue 11/3:** Bi-variate regression
+  - *Assigned readings:* *Fundamentals* Ch 10, "Two-Variable Regression Models"
+- **Thu 11/5:** Bi-variate regression in **R**
+  - *Assigned reading:* *Naked Statistics* Ch 11, "Regression Analysis: The miracle elixir."
 
 ---
 
-### Week 13 — REGRESSION INTERPRETATION
+### Week 13 — MULTIPLE-VARIABLE REGRESSION
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 13"}
@@ -473,11 +469,17 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 :::
 :::
 
-- **Tue 11/10 and Thu 11/12:** We will discuss and help interpret each student's multiple-variable regression results in class.
+- **Tue 11/10:** Multiple-variable regression
+  - *Assigned reading:* *Fundamentals* Ch 11, "Multiple Regression," 201–232.
+- **Thu 11/12:** Multiple-variable regression in **R**
+
+:::{.callout-note}
+**Final Research Analysis Task 4 ([Due: Sun 11/15](#task4-due)):** Write your **Multiple-variable Regression: Methods Description**, conduct and submit your **multiple-variable regression results table**.
+:::
 
 ---
 
-### Week 14 — REGRESSION INTERPRETATION (cont)
+### Week 14 — REGRESSION INTERPRETATION
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 14"}
@@ -603,9 +605,9 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <tbody>
 <tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W7: Recoding & Midterm Review</span></td><td class=""><span class="cal-num">2</span></td><td class=""><span class="cal-num">3</span></td></tr>
 <tr><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td><td class="cal-exam"><span class="cal-num">6</span><span class="cal-label">W8: MIDTERM EXAM</span></td><td class=""><span class="cal-num">7</span></td><td class="cal-noclass"><span class="cal-num">8</span><span class="cal-label">W8: NO CLASS (Fall Break)</span></td><td class=""><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td></tr>
-<tr><td class="cal-due"><span id="task2-due"></span><span class="cal-num">11</span><span class="cal-label">Research Task 2 Due</span><span class="cal-label">Weekly Assignment #7 Due</span></td><td class=""><span class="cal-num">12</span></td><td class="cal-class"><span class="cal-num">13</span><span class="cal-label">W9: Probability</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W9: Probability cont.</span></td><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td></tr>
-<tr><td class="cal-due"><span class="cal-num">18</span><span class="cal-label">Weekly Assignment #8 Due</span></td><td class=""><span class="cal-num">19</span></td><td class="cal-class"><span class="cal-num">20</span><span class="cal-label">W10: Bi-variate Tests</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W10: Bi-variate Tests in R</span></td><td class=""><span class="cal-num">23</span></td><td class=""><span class="cal-num">24</span></td></tr>
-<tr><td class="cal-due"><span id="task3-due"></span><span class="cal-num">25</span><span class="cal-label">Research Task 3 Due</span><span class="cal-label">Weekly Assignment #9 Due</span></td><td class=""><span class="cal-num">26</span></td><td class="cal-class"><span class="cal-num">27</span><span class="cal-label">W11: Bi-variate Regression</span></td><td class=""><span class="cal-num">28</span></td><td class="cal-class"><span class="cal-num">29</span><span class="cal-label">W11: Bi-variate Regression in R</span></td><td class=""><span class="cal-num">30</span></td><td class=""><span class="cal-num">31</span></td></tr>
+<tr><td class="cal-due"><span id="task2-due"></span><span class="cal-num">11</span><span class="cal-label">Research Task 2 Due</span><span class="cal-label">Weekly Assignment #7 Due</span></td><td class=""><span class="cal-num">12</span></td><td class="cal-class"><span class="cal-num">13</span><span class="cal-label">W9: Workshop: Exp. Design</span></td><td class=""><span class="cal-num">14</span></td><td class="cal-class"><span class="cal-num">15</span><span class="cal-label">W9: Workshop cont.</span></td><td class=""><span class="cal-num">16</span></td><td class=""><span class="cal-num">17</span></td></tr>
+<tr><td class="cal-due"><span class="cal-num">18</span><span class="cal-label">Weekly Assignment #8 Due</span></td><td class=""><span class="cal-num">19</span></td><td class="cal-class"><span class="cal-num">20</span><span class="cal-label">W10: Probability</span></td><td class=""><span class="cal-num">21</span></td><td class="cal-class"><span class="cal-num">22</span><span class="cal-label">W10: Probability cont.</span></td><td class=""><span class="cal-num">23</span></td><td class=""><span class="cal-num">24</span></td></tr>
+<tr><td class="cal-due"><span class="cal-num">25</span><span class="cal-label">Weekly Assignment #9 Due</span></td><td class=""><span class="cal-num">26</span></td><td class="cal-class"><span class="cal-num">27</span><span class="cal-label">W11: Bi-variate Tests</span></td><td class=""><span class="cal-num">28</span></td><td class="cal-class"><span class="cal-num">29</span><span class="cal-label">W11: Bi-variate Tests in R</span></td><td class=""><span class="cal-num">30</span></td><td class=""><span class="cal-num">31</span></td></tr>
 
 </tbody>
 </table>
@@ -617,9 +619,9 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <table class="cal-table">
 <thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
 <tbody>
-<tr><td class="cal-due"><span class="cal-num">1</span><span class="cal-label">Weekly Assignment #10 Due</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W12: Multi-var Regression</span></td><td class=""><span class="cal-num">4</span></td><td class="cal-class"><span class="cal-num">5</span><span class="cal-label">W12: Multi-var Regression in R</span></td><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td></tr>
-<tr><td class="cal-due"><span id="task4-due"></span><span class="cal-num">8</span><span class="cal-label">Research Task 4 Due</span><span class="cal-label">Weekly Assignment #11 Due</span></td><td class=""><span class="cal-num">9</span></td><td class="cal-class"><span class="cal-num">10</span><span class="cal-label">W13: Regression Interp.</span></td><td class=""><span class="cal-num">11</span></td><td class="cal-class"><span class="cal-num">12</span><span class="cal-label">W13: Regression Interp.</span></td><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td></tr>
-<tr><td class="cal-due"><span class="cal-num">15</span><span class="cal-label">Weekly Assignment #12 Due</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">18</span></td><td class="cal-class"><span class="cal-num">19</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">20</span></td><td class=""><span class="cal-num">21</span></td></tr>
+<tr><td class="cal-due"><span id="task3-due"></span><span class="cal-num">1</span><span class="cal-label">Research Task 3 Due</span><span class="cal-label">Weekly Assignment #10 Due</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W12: Bi-variate Regression</span></td><td class=""><span class="cal-num">4</span></td><td class="cal-class"><span class="cal-num">5</span><span class="cal-label">W12: Bi-variate Regression in R</span></td><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td></tr>
+<tr><td class="cal-due"><span class="cal-num">8</span><span class="cal-label">Weekly Assignment #11 Due</span></td><td class=""><span class="cal-num">9</span></td><td class="cal-class"><span class="cal-num">10</span><span class="cal-label">W13: Multi-var Regression</span></td><td class=""><span class="cal-num">11</span></td><td class="cal-class"><span class="cal-num">12</span><span class="cal-label">W13: Multi-var Regression in R</span></td><td class=""><span class="cal-num">13</span></td><td class=""><span class="cal-num">14</span></td></tr>
+<tr><td class="cal-due"><span id="task4-due"></span><span class="cal-num">15</span><span class="cal-label">Research Task 4 Due</span><span class="cal-label">Weekly Assignment #12 Due</span></td><td class=""><span class="cal-num">16</span></td><td class="cal-class"><span class="cal-num">17</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">18</span></td><td class="cal-class"><span class="cal-num">19</span><span class="cal-label">W14: Regression Interp.</span></td><td class=""><span class="cal-num">20</span></td><td class=""><span class="cal-num">21</span></td></tr>
 <tr><td class="cal-due"><span id="task5-due"></span><span class="cal-num">22</span><span class="cal-label">Research Task 5 Due</span><span class="cal-label">Weekly Assignment #13 Due</span></td><td class=""><span class="cal-num">23</span></td><td class="cal-noclass"><span class="cal-num">24</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">25</span></td><td class="cal-noclass"><span class="cal-num">26</span><span class="cal-label">W15: NO CLASS</span></td><td class=""><span class="cal-num">27</span></td><td class=""><span class="cal-num">28</span></td></tr>
 <tr><td class="cal-due"><span class="cal-num">29</span><span class="cal-label">Weekly Assignment #14 Due</span></td><td class=""><span class="cal-num">30</span></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td></tr>
 
