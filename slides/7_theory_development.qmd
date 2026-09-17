@@ -1,0 +1,447 @@
+---
+title: "Developing Your Theory"
+subtitle: "POLS 2140: Introduction to Political Analysis"
+author:
+  - name: Dr. Sarah Dreier
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+    # Emphasis shortcut: write  [text]{.hl}  anywhere for teal-bold emphasis.
+    include-in-header:
+      text: |
+        <style>.reveal .hl { color: #107895 !important; font-weight: 700; }</style>
+    # Every external link opens in a new tab automatically, so a plain
+    # [text](https://…) is all you ever need to write for a hyperlink.
+    include-after-body:
+      text: |
+        <script>
+          document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+            a.target = "_blank"; a.rel = "noopener";
+          });
+        </script>
+
+# Bibliography in APA format. Keep these two lines in every deck; do NOT add
+# `biblio-title:` (it collides with the manual `## References` slide below and
+# suppresses that slide's heading).
+
+bibliography: references_2140.bib
+csl: apa.csl
+
+---
+
+<!--
+## Reading Prompt
+
+For today, you picked an academic article (from Google Scholar) related to your topic of interest.  In one sentence, try to summarize the article's main argument. What is one thing that you learned about your topic? Do you think that you will shift your research approach, based on this article? If so, how?
+
+-->
+
+---
+
+## Announcements
+
+- Data News presentations: 
+  - Julia Curry
+  - Yena Lim
+
+# Writing a theory {background-color="#2c3e50"}
+
+## What is a theory?
+
+In scientific research, what is a **theory**?
+
+. . .
+
+:::{.incremental}
+- Your written explanation about why you think two variables might be causally related
+  - Specifically, why you think your **independent variable** causes / shapes / influences your **dependent variable.**
+- Your hunch (tentative conjecture) for what causes an observed phenomenon of interest.
+- Should ``change [or clarify] the way we think about some aspect of the political world'' (KW 25).
+- Leads to a **testable hypothesis** (based on *how* the variables of interest are measured)
+
+<!--  
+- Ex: Economic vitality and presidential vote choice. 
+-->
+:::
+
+
+## Causality: the basics
+
+::: {.incremental}
+- Political science research almost always revolves around evaluating a **causal claim** about a relationship between two variables.
+- Some independent variable (IV aka "X") **causes** some dependent variable (DV aka "Y").
+- *Some independent variable (X) is **associated with** some dependent variable (Y).*
+- You have all made a prediction about a causal claim.
+- Causality is a very powerful form of evidence but is very tricky to achieve. Most of the time, political science research only *begins to approach* causality.
+- Be very **cautious** about making causal claims; be very **skeptical** about causal claims made by others.
+:::
+
+---
+
+
+## Why does a theory matter?
+
+Helps you articulate your causal story, think about the conditions under which your causal story is relevant, and avoid drawing flawed causal conclusions. 
+
+<style>
+.reveal section#why-does-a-theory-matter ul { margin: 0 !important; }
+.reveal section#why-does-a-theory-matter li { margin: 0 !important; line-height: 1.15 !important; }
+.reveal section#why-does-a-theory-matter div.fragment,
+.reveal section#why-does-a-theory-matter div.fragment p { margin: 0 !important; padding: 0 !important; }
+</style>
+
+:::{.fragment}
+- Prevents us from concluding that unrelated things are causally linked.
+:::
+
+::: {.fragment}
+![](7_theory_development_files/images/image22.png){style="position: absolute; bottom: 6%; left: 2%; width: 30%; height: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.25);"}
+:::
+
+::: {.fragment}
+<div id="posthoc-yt-s6" style="position: absolute; bottom: 6%; left: 35%; width: 28%; aspect-ratio: 16 / 9; box-shadow: 0 2px 10px rgba(0,0,0,0.25);"></div>
+
+<script>
+(function () {
+  var mount = document.getElementById("posthoc-yt-s6");
+  if (!mount || mount.dataset.loaded) return;
+  mount.dataset.loaded = "1";
+  var vid = "rsI36TzIikY";
+  var frame = document.createElement("iframe");
+  frame.width = "100%";
+  frame.height = "100%";
+  frame.title = "Post hoc, ergo propter hoc";
+  frame.frameBorder = "0";
+  frame.allow = "encrypted-media; picture-in-picture; fullscreen";
+  frame.allowFullscreen = true;
+  frame.src = "https://www.youtube.com/embed/" + vid + "?rel=0";
+  mount.appendChild(frame);
+})();
+</script>
+:::
+
+:::{.fragment}
+- Forces us to think through the possibility of "reverse causality" (prevents us from "flipping" the causal arrows).
+:::
+
+::: {.fragment}
+![](7_theory_development_files/images/image14.png){style="position: absolute; bottom: 6%; left: 66%; width: 30%; height: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.25);"}
+:::
+
+. . .
+
+- Helps clarify and focus our own understanding.
+
+---
+
+## In-Class Workshop: Writing your theory {style="font-size: 0.7em;"}
+
+1) Write 1-2 paragraphs explaining why you think your IV causes, influences, shapes, or leads to your DV. Can include anecdotal observations, hypothetical examples, cases/contexts in which you think this might be most likely the case, and/or the contexts under which you think your theory might be most relevant.
+
+. . .
+
+2) Consider causality. Is there a credible causal mechanism (theory) that connects X to Y? Is it possible that the causal arrows go in the opposite direction as you propose (reverse causality)? Could there be another variable (Z) that are actually causing both your IV and your DV (thus making  the association between your variables "spurious")?
+
+. . .
+
+3) Share your explanation with a buddy. (Buddy: Ask questions! Does this make sense? What questions do you have? Are there times/contexts in which you think this theory might be particularly "true"? Are there times/contexts in which you think this theory might not be relevant?)
+
+. . .
+
+4) AI Prompt: "Write me a 1-2 paragraph scientific theory explaining why [your IV] might influence [your DV]. Draw on 2-3 real citations (available on Google Scholar) that help support the arguement. 
+
+. . . 
+
+5) What does your theory accomplish that the AI response missed? What components of the AI response would you like to adopt into your theory write-up? 
+
+. . .
+
+6) Re-write your theory section, incorporating insights from the AI prompt.
+
+---
+
+
+# Slides not used
+
+# Causality: the basics {background-color="#2c3e50"}
+
+::: {style="color: #ffffff;"}
+Kellstedt & Whitten, *Fundamentals*, Ch. 3, "Causality" [@kellstedt2022fundamentals]
+:::
+
+---
+
+## Causality: the basics
+
+::: {.incremental}
+- Political science research almost always revolves around evaluating a **causal claim** about a relationship between two variables.
+- Some independent variable (IV aka "X") **causes** some dependent variable (DV aka "Y").
+- *Some independent variable (X) is **associated with** some dependent variable (Y).*
+- You have all made a prediction about a causal claim.
+- Causality is a very powerful form of evidence but is very tricky to achieve. Most of the time, political science research only *begins to approach* causality.
+- Be very **cautious** about making causal claims; be very **skeptical** about causal claims made by others.
+:::
+
+---
+
+## Proceed with caution… (silly examples)
+
+::: {.columns}
+::: {.column width="46%"}
+![](7_theory_development_files/images/image14.png)
+:::
+
+::: {.column width="54%"}
+::: {.incremental}
+- "Cats are so heavy that they cause indentations wherever they lie down!" → Cats → indentations
+- What's more likely? → Indentations → cats
+- Just because we observe two things together doesn't necessarily mean we understand their causal relationship.
+- Just because one thing happens *after* another thing does not mean that the first *caused* the second.
+- **Fallacy:** *post hoc ergo propter hoc* — "After this, therefore because of this."
+:::
+:::
+:::
+
+---
+
+## Proceed with caution… (silly examples)
+
+::: {.columns}
+::: {.column width="52%"}
+<div id="posthoc-yt" style="width: 100%; margin: 0.3em auto; aspect-ratio: 16 / 9;"></div>
+
+<script>
+(function () {
+  var mount = document.getElementById("posthoc-yt");
+  if (!mount || mount.dataset.loaded) return;
+  mount.dataset.loaded = "1";
+  var vid = "rsI36TzIikY";
+  var frame = document.createElement("iframe");
+  frame.width = "100%";
+  frame.height = "100%";
+  frame.title = "Post hoc, ergo propter hoc";
+  frame.frameBorder = "0";
+  frame.allow = "encrypted-media; picture-in-picture; fullscreen";
+  frame.allowFullscreen = true;
+  frame.src = "https://www.youtube.com/embed/" + vid + "?rel=0";
+  mount.appendChild(frame);
+})();
+</script>
+
+::: {style="text-align: center; font-size: 0.5em; color: #666;"}
+*The West Wing*, "Post Hoc, Ergo Propter Hoc" (2000)
+:::
+:::
+
+::: {.column width="48%"}
+::: {.incremental}
+- *Post hoc ergo propter hoc* — "After this, therefore because of this."
+- Just because one thing happens after another thing does not mean that the first caused the second.
+:::
+:::
+:::
+
+
+
+## Some other terms/concepts we have to know {style="font-size: 0.8em;"}
+
+::: {.incremental}
+- **Bivariate** (theory or model): involves just two variables (IV and DV).
+- **Multivariate** (theory or model): most (all?) DVs in social science are caused by more than one factor.
+  - Most of the time in social science, we are interested in a bivariate relationship (between the IV and DV) but we have to take other factors into account.
+- **Deterministic relationship:** a given causal effect will occur with certainty.
+  - Examples?
+- **Probabilistic relationship:** some causal variable (X) will increase/decrease the *probability* of some outcome variable (Y) occurring.
+  - Human interactions are not governed by "laws of nature" because humans have free will.
+  - One case alone does not disprove our theory ("outlier").
+  - Political science must be probabilistic in nature. There will always be exceptions.
+- **Goal of political science:** identify probabilistic causal relationships.
+:::
+
+---
+
+## Causality: four hurdles
+
+A guide for **critically evaluating causal claims made by others** and **critically evaluating your own causal claims**…
+
+. . .
+
+… **and writing your theory section.**
+
+---
+
+## Example theory
+
+**Ex. theory:** Richer countries are more likely to be democratic.
+
+---
+
+## Wealth and Democracy: A case study in causality (and the ``four hurdles'')
+
+"Richer countries are more likely to be democratic."
+
+::: {.incremental}
+- **1. Is there a credible causal mechanism that connects X to Y?** (Does it make intuitive sense? What would that look like?)
+  - What is it, specifically, about having **more (or less) of X** that will, in all probability, lead to **more (or less) of Y**?
+  - What is it about having more (or less) **wealth** that will likely lead to more (or fewer) **democratic qualities**?
+  - Here, we are just checking for **plausibility** (without examining data).
+- **If NO:** Go back to the drawing board.
+:::
+
+---
+
+## Causality: four hurdles
+
+"Richer countries are more likely to be democratic."
+
+::: {.incremental}
+- **2. Can we rule out the possibility of reverse causality** — that Y could cause X? (Is it possible that your DV might be *causing* your IV?)
+  - Could having more (or fewer) **democratic qualities** likely lead to more (or less) **wealth**?
+  - Can reverse causality be ruled out logically? How would we do so in this case? What kind of data would you want to look at to answer this question?
+- **If NO:** Proceed, keeping in mind that your "causal arrows" could be reversed.
+:::
+
+---
+
+## Causality: four hurdles
+
+"Richer countries are more likely to be democratic."
+
+**3. Is there co-variation between X and Y?** (Do the two variables mostly move together or opposite from one another in a systematic, generalizable way?)
+
+---
+
+## Co-variation: strong vs. weak
+
+::: {.columns}
+::: {.column width="30%"}
+Is there **co-variation** between X and Y?
+
+Do the two variables mostly move together or opposite from one another in a systematic, generalizable way?
+:::
+
+::: {.column width="70%"}
+::: {.fragment}
+![](7_theory_development_files/images/image16.png){style="max-height: 30vh; width: auto;"}
+:::
+
+::: {.fragment}
+![](7_theory_development_files/images/image17.png){style="max-height: 30vh; width: auto;"}
+:::
+:::
+:::
+
+---
+
+## Co-variation in real data
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.fragment}
+![](7_theory_development_files/images/image18.png){style="max-height: 52vh; width: auto;"}
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+![](7_theory_development_files/images/image19.png){style="max-height: 52vh; width: auto;"}
+:::
+:::
+:::
+
+::: {style="font-size: 0.6em; color: #666;"}
+Source: @nyt2021covid
+:::
+
+---
+
+## Co-variation: reading a scatterplot
+
+![](7_theory_development_files/images/image21.png){style="max-height: 62vh; width: auto;" fig-align="center"}
+
+---
+
+## Causality: four hurdles
+
+"Richer countries are more likely to be democratic."
+
+::: {.incremental}
+- **3. Is there co-variation between X and Y?** (Do the two variables mostly move together or opposite from one another in a systematic, generalizable way?)
+  - Is there some **measurable association** between **wealth** and **democratic processes**?
+  - **One place to start:** looking at a bivariate correlation (statistics).
+- **If NO:** You may be able to proceed, understanding that, after you control for a **confounding variable**, a relationship between X and Y might appear evident (e.g., strong economic performance → increased support for incumbent).
+:::
+
+---
+
+## Causality: four hurdles {style="font-size: 0.9em;"}
+
+"Richer countries are more likely to be democratic."
+
+::: {.incremental}
+- **4. Have we controlled for all confounding variables (Z)** that might make the association between X and Y **spurious**? (Is there something else that is both causing X *and* causing Y, but means that X and Y are not causally related?)
+  - Is something *else* causing both **wealth** and **democratic processes**?
+  - *In almost all cases, our DVs are caused by more than one IV. Our goal is to somehow "isolate" the unique impact that our IV of interest has on our DV. But if we **overlook** these confounding variables, we could reach incorrect conclusions about whether X causes Y.*
+- **If there is a clear confounding variable:** Start over.
+- **If there may be a confounding variable:** Control for those confounding variables.
+:::
+
+---
+
+## What causes democratization? {style="font-size: 0.9em;"}
+
+::: {style="border-left: 4px solid #2c3e50; padding-left: 0.8em;"}
+Recent research has confirmed what we thought we knew several decades ago: richer countries are more likely to be democratic. What **causes** this observation remains up for debate.
+
+Controversy continues about whether economic development increases the likelihood of **transitions to democracy** (causality). Przeworski and his co-authors (2000) have argued emphatically that development does not *cause* democratization; rather, development reduces the likelihood of democratic breakdown, thus increasing the number of rich democratic countries even though it has no causal effect on transitions to democracy. Other careful analyses of regime change, however, continue to find a relationship between development and transitions to democracy (e.g., Boix and Stokes 2003).
+:::
+
+::: {style="font-size: 0.6em; color: #666;"}
+Source: @geddes2011democratization
+:::
+
+---
+
+## Causality: four hurdles in practice
+
+::: {.incremental}
+- Is there a credible causal mechanism that connects X to Y?
+- Can we rule out the possibility of reverse causality?
+- Is there co-variation between X and Y?
+- Have we controlled for all confounding variables (Z) that might make the association between X and Y spurious?
+- Ideally, you would answer **yes** to all of these questions.
+- **Which ones are "deal-breakers"?** Answering NO to #1 (and maybe to #4).
+- **When might you still be able to proceed (with some caution)?** Answering NO to #2, #3, and maybe #4 (depending on the nature of the research question and data).
+:::
+
+---
+
+## Causality: four hurdles in practice
+
+::: {.incremental}
+- Is there a credible causal mechanism that connects X to Y? — **LOGIC**
+- Can we rule out the possibility of reverse causality? — **LOGIC and/or EXAMINE DATA**
+- Is there co-variation between X and Y? — **EXAMINE DATA**
+- Have we controlled for all confounding variables (Z) that might make the association between X and Y spurious? — **LOGIC and EXAMINE DATA**
+- Wait a minute… aren't our IV/DV collected at the same time? What assumptions about causality are we making in our dataset?
+- **Group work:** Without looking at the data, do you think your proposed causal relationship (IV → DV) passes hurdles 1, 2, and 4?
+:::
+
+---
+
+## TL;DR {.smaller}
+
+- A theory is a **causal claim**: some IV (X) shapes some DV (Y). Observing two things together — or one after another — never establishes cause (*post hoc ergo propter hoc*).
+- Social-science relationships are **probabilistic**, not deterministic — a single exception ("outlier") does not disprove a theory.
+- Kellstedt & Whitten's **four hurdles** for any causal claim: (1) credible causal mechanism, (2) rule out reverse causality, (3) co-variation between X and Y, (4) no confounding variable Z making X–Y spurious.
+- Hurdle 1 is the deal-breaker (often #4 too); you can sometimes proceed *cautiously* past #2 and #3. Hurdles 1–2 are cleared with **logic**, 3–4 by **examining data**.
+- Use the hurdles both ways: to critique others' causal claims *and* to write your own theory section.
+
+---
+
+## References {.smaller}
+
+::: {#refs}
+:::
