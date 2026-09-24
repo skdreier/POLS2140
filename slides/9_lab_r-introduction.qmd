@@ -1,0 +1,361 @@
+---
+title: "Intro to Coding in R"
+subtitle: "POLS 2140: Introduction to Political Analysis"
+author:
+  - name: Dr. Sarah Dreier
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+    # Emphasis shortcut: write  [text]{.hl}  anywhere for teal-bold emphasis
+    # (the deck's standard highlight — same as "emphasize" = teal).
+    # Secondary emphasis: [text]{.hl2} for maroon-bold — a callout/caveat/
+    # researcher-judgment note, standing out *differently* from .hl.
+    include-in-header:
+      text: |
+        <style>
+        .reveal .hl { color: #107895 !important; font-weight: 700; }
+        .reveal .hl2 { color: #9a2515 !important; font-weight: 700; }
+        </style>
+    # Every external link opens in a new tab automatically, so a plain
+    # [text](https://…) is all you ever write for a hyperlink — no {target="_blank"},
+    # no raw <a> tag.
+    include-after-body:
+      text: |
+        <script>
+          document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+            a.target = "_blank"; a.rel = "noopener";
+          });
+        </script>
+
+# Bibliography in APA format. Keep these two lines in every deck; do NOT add
+# `biblio-title:` (it collides with the manual `## References` slide below and
+# suppresses that slide's heading). CSL style from https://github.com/citation-style-language/styles
+
+bibliography: references_2140.bib
+csl: apa.csl
+
+---
+
+```{r setup}
+#| include: false
+# Static images live permanently in 9_lab_r-introduction_assets/images/ because
+# a knitr-executed self-contained render wipes the whole <deck>_files/ folder,
+# including hand-placed images referenced from it. Re-copy them in fresh before
+# anything on the first few slides references 9_lab_r-introduction_files/images/.
+dir.create("9_lab_r-introduction_files/images", recursive = TRUE, showWarnings = FALSE)
+file.copy(
+  list.files("9_lab_r-introduction_assets/images", full.names = TRUE),
+  "9_lab_r-introduction_files/images",
+  overwrite = TRUE
+)
+```
+
+## Announcements
+- Schedule shift next week (exam review on 10/01)
+- Data in the news:
+  - Raffaello Mancuso
+  - Brenda Vara
+
+# Intro to `R` and RStudio
+
+---
+
+## `R`/RStudio: the basics {style="font-size: 0.78em;"}
+
+. . .
+
+`R` is the coding program. [RStudio]{.hl} is the user-friendly interface.
+
+:::{.incremental}
+- `R` is an [object-oriented]{.hl} language. 
+- Many of the things that I work with in `R` are [objects]{.hl} that I name myself.
+- An [object]{.hl} can be:
+  - a number
+
+    ```{.r}
+    my_number <- 44
+    ```
+  - a dataset
+  
+    ```{.r}
+    my_data <- read_csv("data.csv")
+    ```
+  - a row of numbers ("vector"), e.g., a variable within a dataset!
+
+    ```{.r}
+    my_variable <- my_data$V123
+    ```
+:::
+
+. . . 
+
+OK, I have [RStudio]{.hl} open, but **I have no idea what I'm looking at...**
+
+---
+
+## {background-image="9_lab_r-introduction_files/images/rstudio_panes.png" background-size="contain" style="padding: 0;"}
+
+<div class="fragment" style="position: absolute; top: 12.6%; left: 3%; background: rgba(255,255,255,0.92); border: 2px solid #107895; border-radius: 6px; padding: 0.2em 0.5em; font-size: 0.6em; font-weight: bold; color: #107895;">SCRIPT: Where I write/save my code</div>
+
+<div class="fragment" style="position: absolute; bottom: 9.9%; left: 3%; background: rgba(255,255,255,0.92); border: 2px solid #107895; border-radius: 6px; padding: 0.2em 0.5em; font-size: 0.6em; font-weight: bold; color: #107895;">CONSOLE: Where I "run" my code</div>
+
+<div class="fragment" style="position: absolute; top: 12.6%; right: -2%; background: rgba(255,255,255,0.92); border: 2px solid #107895; border-radius: 6px; padding: 0.2em 0.5em; font-size: 0.6em; font-weight: bold; color: #107895;">ENVIRONMENT: Objects I've created</div>
+
+<div class="fragment" style="position: absolute; bottom: 9.9%; right: -8%; background: rgba(255,255,255,0.92); border: 2px solid #107895; border-radius: 6px; padding: 0.2em 0.5em; font-size: 0.6em; font-weight: bold; color: #107895;">FILES, PLOTS, etc.: Point and click functions</div>
+
+---
+
+## Three ways to run code in RStudio
+
+:::{.incremental}
+1. Place your cursor on the line and click the [Run]{.hl} button (top of your script pane)
+2. Copy and paste your code into the console, then hit `Enter`
+3. Place your cursor on the line and press [Cmd + Return]{.hl} (Mac) or [Ctrl + Enter]{.hl} (PC)
+:::
+
+# Let's explore `R` together!
+
+::: {style="font-size: 1.6em;"}
+Creating objects in `R`
+:::
+
+---
+
+## Some basic `R` ideas and terms {style="font-size: 0.85em;" footer="false"}
+
+:::{.incremental}
+- **Base-`R`** commands: already exist in your `R` program
+- **Packages:** other programs/functions as extensions to Base-`R`. You have to `install` a package once (upon first use) and then open the package (`library`) in `R` (every time you use it)
+:::
+
+. . . 
+
+```{.r}
+  install.packages("tidyverse")
+  library(tidyverse)
+```
+
+:::{.incremental}
+- **Working directory:** The current file folder on your computer in which `R` is operating (where `R` is [hanging out]{.hl}). You have to know where `R` is hanging out so you can tell it where to find things (like your survey dataset, which you will "load" as an object).
+- **Script:** Where you write and save your code. It's like where you write your paper. The order/organization matters (just like in a paper).
+  - Make notes to yourself with the `#`. `R` will ignore anything following a `#` on a given line in your script. 
+:::
+
+. . .
+
+```{.r}
+  ivar <- data$variable #this is my independent variable
+```
+  
+. . .
+
+- To create a new object, use the ``<`` and ``-`` together: 
+  - `new_object <- 365`
+
+---
+
+## Things to know before we start
+
+:::{.incremental}
+- `R` is very precise (finicky), case-sensitive, order matters, spelling matters, etc.
+  - `R` will **not** try to figure out what you *actually* mean
+- Spaces (vertical/horizontal) do not typically matter, so you can add spaces to make your script more readable to you.
+- Keep your script in the order in which it should run.
+- **What to do when things go wrong?** [Google, Stack Overflow, AI chatbots/agents, Karla + Dr. Dreier!]{.fragment}
+:::
+
+---
+
+## 🔴 Try it: Set up your course `R` script 
+
+::: {.fragment .fade-in-then-semi-out}
+- Clear your environment
+  ```r
+  rm(list=ls())
+  ```
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- Open the "packages" you need
+  ```r
+  install.packages("tidyverse") # only have to run (download) once
+  library(tidyverse) # run (open) every time
+  ```
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+- Set your working directory (to where your dataset is saved)
+  ```r
+  getwd() # shows your current working directory
+  setwd("/Users/sdpolscipriv/Library/CloudStorage/Dropbox/0SKD_files/Academic/UNM_courses/2140_Intro_Pol_Analysis/2140_data") # changes your working dir, specific to YOUR folders!
+  dir() # shows what is in the working directory folder
+  ```
+:::
+
+. . .
+
+[Live code:]{.hl2} How to set your working directory
+
+. . .
+
+Here's what your script should look like now...
+
+---
+
+## {background-image="9_lab_r-introduction_files/images/deck9-slide9.png" background-size="contain"}
+
+---
+
+## Pre-steps for loading your data {style="font-size: 0.82em;"}
+
+:::{.incremental}
+1) Download your dataset from Canvas Modules
+2) Save your dataset on your personal computer:
+    - Be sure to save it as a .csv file (*not* PDF, numbers doc, excel, etc.)
+    - Be sure to know where you saved it on your computer
+3) In the lower-right quadrant of RStudio, click "Files" and navigate to the folder in which your dataset is saved.
+    - Once there, click the blue tools icon and select "Set as working directory". The code to set this as your working directory should automatically populate and run in blue in your R console. 
+4) Copy and save the code for setting your working directory in your R script (for future work). It should look like this: `setwd("/Users/sdpolscipriv/2140_data")`. *Note your file pathway will be different from mine!
+5) Look at the files located within your set working directory. Check to make sure your dataset (saved as a .csv file) is there! 
+:::
+
+. . .
+
+[You are now ready to open your dataset!]{.hl}
+
+---
+
+## 🔴 Try it: Open your dataset {style="font-size: 0.8em;"}
+
+```{r}
+#| echo: true
+rm(list=ls())
+library(tidyverse)
+setwd("/Users/sdpolscipriv/Library/CloudStorage/Dropbox/0SKD_files/Academic/UNM_courses/2140_Intro_Pol_Analysis/2140_data")
+dir()
+anes_data <- read_csv("anesdata_2024.csv", col_names = T)
+wvs_data <- read_csv("WVS_Cross-National_Wave_7_csv_v5_0.csv", col_names = T)
+```
+
+. . .
+
+[Live code:]{.hl2} How do you know you successfully loaded your dataset?
+
+. . .
+
+- Appears as an object in your enviornment
+
+::: {style="display: flex; gap: 2em;"}
+::: {.fragment style="flex: 1;"}
+```{r}
+#| echo: true
+nrow(anes_data)
+ncol(anes_data)
+```
+:::
+
+::: {.fragment style="flex: 1;"}
+```{r}
+#| echo: true
+nrow(wvs_data)
+ncol(wvs_data)
+```
+:::
+:::
+
+---
+
+## Look at your variables {style="font-size: 0.8em;"}
+
+You've loaded your dataset as an object and given it a name (e.g., `anes_data`). Now, you can:
+
+:::{.incremental}
+- Look at the names of the variables (variable labels) in your dataset:
+::: 
+
+:::{.fragment}
+```{r}
+#| echo: true
+colnames(anes_data[1:20])
+colnames(wvs_data[1:20])
+```
+:::
+
+```{r}
+#| include: false
+# Stop executing R code from here on — everything below is shown as
+# illustrative (non-run) code only. Remove this to resume live execution.
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+:::{.fragment}
+- Work with your IVs/DVs within the dataset:
+:::
+
+. . .
+
+::: {style="text-align: center; font-size: 1.1em; margin-top: -0.5em;"}
+[anes_data]{.hl}**\$**[V241177]{style="color:#c0392b; font-weight:700;"}
+:::
+
+::: {style="text-align: center; font-size: 0.7em; color: #555; margin-top: -1em;"}
+[Dataset name]{.hl}&emsp;&emsp;&emsp;&emsp;[Variable name]{.hl2}
+:::
+
+:::{.fragment}
+- Create a copy of your variable named something easy to remember:
+```r
+anes_data$pol_ideology <- anes_data$V241177
+```
+:::
+
+---
+
+## Important reminder
+
+. . .
+
+Keep your script in the order in which it should run.
+
+:::{.incremental}
+  - If you re-run an object with the same name, you will replace the previous object
+  - If you make a change to an object, you can't undo it until you re-define the object
+  - If you create a new variable based on the old variable, both variables will now exist
+     `anes_data$pol_ideology <- anes_data$V241177`
+  - If you make a change to `anes_data$pol_ideology`, it will **not** also be made to `anes_data$V241177`
+:::
+
+---
+
+## Self study (i.e., google it) {style="font-size: 0.85em;"}
+
+::: {.incremental}
+- This is a learned skill.
+- You have to practice it.
+- It can be overwhelming.
+- It can feel undignified, even when it is going well.
+- Use coding help hours when you get stuck.
+- Use online tools (Tidyverse tutorials, Stack Overflow, generative AI tools)
+- Don't quit!
+:::
+
+---
+
+## `R/RStudio` check-in
+
+- Name
+- How are you doing with `R/RStudio'? Have you been able to download the programs? load your dataset? create a new, renamed variable of your IV or DV?
+- If you are stuck or confused about something, tell us about it!
+
+---
+
+## TL;DR {.smaller}
+
+- R is **object-oriented** — numbers, vectors, strings, datasets, and functions are all just objects you create and name.
+- **Script** (write/save code) vs. **Console** (run code) vs. **Environment** (see your objects) — know which pane you're looking at.
+- Load a dataset once (`read_csv()`), then reach into it with `data$variable` — `colnames()` shows you what's available.
+- `table()`/`summary()`/`mean()`/`sd()` describe categorical and continuous variables — but check `mode()` does *not* give you the statistical mode.
+- **Outliers and missing-data codes can look identical** in a quick summary — a value like `-9` is a real number to R, not a flag, until you tell R otherwise.
+- Fix missing-data codes *before* trusting your descriptive statistics — `data$variable[data$variable > 0]` (or `na_if()`/`mutate()`) removes the contamination.
