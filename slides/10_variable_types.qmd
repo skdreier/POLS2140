@@ -1,0 +1,1224 @@
+---
+title: "Descriptive Statistics"
+subtitle: "Representing ONE Variable at a Time"
+author:
+  - name: Dr. Sarah Dreier
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+    title-slide-attributes:
+      data-background-image: "10_variable_types_files/images/image1.png"
+      data-background-size: cover
+      data-background-opacity: "0.18"
+    # Emphasis shortcut: write  [text]{.hl}  anywhere for teal-bold emphasis
+    # (the deck's standard highlight — same as "emphasize" = teal).
+    # Secondary emphasis: [text]{.hl2} for maroon-bold — a callout/caveat/
+    # researcher-judgment note, standing out *differently* from .hl.
+    # Green pair: [text]{.gr1} (pine green) / [text]{.gr2} (olive green) —
+    # complementary to .hl/.hl2, used to distinguish two parallel concepts
+    # (e.g. "Rank Statistics" vs "Statistical Moments") from each other and
+    # from the existing teal/maroon pair.
+    include-in-header:
+      text: |
+        <style>
+        .reveal .hl { color: #107895 !important; font-weight: 700; }
+        .reveal .hl2 { color: #9a2515 !important; font-weight: 700; }
+        .reveal .gr1 { color: #0F7A4A !important; font-weight: 700; }
+        .reveal .gr2 { color: #6B7A1F !important; font-weight: 700; }
+        </style>
+    # Every external link opens in a new tab automatically, so a plain
+    # [text](https://…) is all you ever write for a hyperlink — no {target="_blank"},
+    # no raw <a> tag.
+    include-after-body:
+      text: |
+        <script>
+          document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+            a.target = "_blank"; a.rel = "noopener";
+          });
+        </script>
+
+bibliography: references_2140.bib
+csl: apa.csl
+
+---
+
+## Reading Prompt
+
+What is a [categorical variable]{.hl}? Provide an example of a concept that is likely to be measured as a categorical variable.
+
+[`R` check-in]{.hl}: Were you able to successfully download R/RStudio? If not, explain your troubles/difficulty. What help do you need?
+
+. . .
+
+**Done?** Put your papers in the center of your table.
+
+---
+
+## Reading Prompt: Midterm review version!
+
+Take a moment to review the Midterm Review Guide, if you haven't already (Canvas: Modules -> Midterm). 
+
+- What is one concept (Part 1) that you would like to discuss in class? 
+- What is one question you have about the midterm (substance, structure, etc.)?
+
+
+## Announcements
+
+- [Karla Office hours today]{.hl}: 12:30-2:30 pm
+- [Midterm]{.hl}: This coming Tuesday (Oct 6)
+- [Data news presentations]{.hl}: Luna Aggarwal and Matthew Fischer
+
+. . .
+
+Now that you've written your theory, let's talk about how variables are captured ([operationalized]{.hl})...
+
+
+# Types of Variables
+
+::: {style="font-size: 0.7em;"}
+@kellstedt2022fundamentals [Ch. 7]
+:::
+
+---
+
+Datasets take concepts and represent them as numbers.
+
+. . .
+
+:::: {layout="[50,50]"}
+
+::: {#first-column}
+![](10_variable_types_files/images/anes2024_codebook_cover.png){style="max-height: 55vh; width: auto;"}
+
+::: {style="font-size: 0.55em; text-align: center;"}
+ANES 2024 Time Series Study — User Guide and Codebook [@anes2024tsdata]
+:::
+:::
+
+::: {#second-column}
+![](10_variable_types_files/images/image3.png){style="max-height: 55vh; width: auto;"}
+
+::: {style="font-size: 0.55em; text-align: center;"}
+World Values Survey Wave 7 — Master Questionnaire [@wvs7data]
+:::
+:::
+
+::::
+
+---
+
+## How are your concepts captured [in numbers]{.hl}? {style="font-size: 0.85em;"}
+
+:::: {layout="[55,45]"}
+
+::: {#first-column}
+
+Every possible survey response is represented with a [number]{.hl}.
+
+:::{.incremental}
+- What are the available number response options, and what do those responses represent?
+- What is the minimum number? Maximum number?
+- How is "missing data" represented in your variable?
+:::
+:::
+
+::: {#second-column}
+::: {.fragment}
+#### ANES 2024 `V241501x`: Race/ethnicity {style="margin: 0;"}
+<div style="margin: 0;"><img src="10_variable_types_files/images/anes2024_v241501x_race.png" style="max-height: 45vh; width: auto; display: block; margin: 0 auto;"></div>
+:::
+
+::: {.fragment}
+#### ANES2024 `V241177`: Political Ideology {style="margin-top: 0.8em; margin-bottom: 0;"}
+<div style="margin: 0;"><img src="10_variable_types_files/images/anes2024_v241177_ideology.png" style="max-height: 45vh; width: auto; display: block; margin: 0 auto;"></div>
+:::
+:::
+
+::::
+
+<!--
+---
+
+## Look up a real variable: race/ethnicity {style="font-size: 0.82em;"}
+
+::: {.fragment}
+Ex: Respondent race/ethnicity — ANES 2024 `V241501x`
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/anes2024_v241501x_race.png){style="max-height: 24vh; width: auto; display: block; margin: 0.3em auto 0.8em;"}
+:::
+
+::: {.fragment}
+```r
+### My Independent Variable ###
+# ANES: Respondent's self-identified race/ethnicity (V241501x)
+# -9: refused
+# -8: don't know
+# -4: error
+# 1: White, non-Hispanic
+# 2: Black, non-Hispanic
+# 3: Hispanic
+# 4: Asian, Native Hawaiian, Pacific Islander
+# 5: Native American (or other race???)
+# 6: Multiple races, non-Hispanic
+```
+:::
+
+::: {style="font-size: 0.55em;"}
+Source: @anes2024tsdata
+:::
+
+---
+
+## Look up a real variable: ideology {style="font-size: 0.82em;"}
+
+::: {.fragment}
+Ex: Political ideology self-placement — ANES 2024 `V241177`
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/anes2024_v241177_ideology.png){style="max-height: 34vh; width: auto; display: block; margin: 0.3em auto;"}
+:::
+
+::: {.fragment}
+```r
+# Variable: Liberal/Conservative self-rating (V241177)
+# -9: refused
+# -4: error
+# 1: extremely liberal
+# 2: liberal
+# 3: slightly liberal
+# 4: moderate; middle of the road
+# 5: slightly conservative
+# 6: conservative
+# 7: extremely conservative
+# 99: haven't thought much
+```
+:::
+
+::: {style="font-size: 0.55em;"}
+Source: @anes2024tsdata
+:::
+
+-->
+---
+
+## Different kinds of variables {style="font-size: 0.78em; line-height: 1.0;"}
+
+<style>
+.reveal section#different-kinds-of-variables .fragment p { margin: 0; }
+.reveal section#different-kinds-of-variables .fragment ul { margin: 0.15em 0 0 0; }
+.reveal section#different-kinds-of-variables .fragment + .fragment { margin-top: 15px; }
+</style>
+
+<script>
+(function() {
+  function init() {
+    if (!(window.Reveal && Reveal.isReady && Reveal.isReady())) { setTimeout(init, 100); return; }
+    var el = document.getElementById('different-kinds-of-variables');
+    if (!el) return;
+    function apply() {
+      el.querySelectorAll('.fragment').forEach(function (f) {
+        if (f.classList.contains('current-fragment')) f.style.color = '#1a1a1a';
+        else if (f.classList.contains('visible')) f.style.color = '#999999';
+        else f.style.color = '';
+      });
+    }
+    Reveal.on('fragmentshown', apply);
+    Reveal.on('fragmenthidden', apply);
+    apply();
+  }
+  init();
+})();
+</script>
+
+::: {.fragment}
+[Categorical variable]{.hl}: Responses are categories that **cannot be ranked** or ordered numerically. We assign a number to each category, just to make the categories easier to work with (e.g., in `R`). But the number does not have any *numeric* meaning. 
+
+- **Examples?** [College major, religion, ethnicity, country of origin]{.fragment}
+:::
+
+::: {.fragment}
+[Ordinal variable]{.hl}: Responses are categories that **can be ranked** on some kind of meaningful human-created numeric scale. The assigned number reflects the categories' rankings. However, we cannot be certain that the difference between each category is numerically equal.
+
+- **Examples?** [Last completed education degree, strongly disagree -- strongly agree]{.fragment}
+:::
+
+::: {.fragment}
+[Continuous variable]{.hl}: Responses are numbers that **can be ranked** and also have **equal unit differences** (a one-unit increase in the value of that variable indicates the same amount of change across all values of that variable). *More simply:* These are numbers as numbers. 
+
+- **Examples?** [Years of education, income, country GDP]{.fragment}
+:::
+
+::: {.fragment}
+[Binary variable]{.hl}: The variable has only two assigned values (typically 0 or 1). Often used to denote a yes/no condition. Typically, you name the variable whatever category gets a [1]{.hl}, and everything else is 0. 
+
+- **Examples?** [**College graduate** (1=yes, 0=no)]{.fragment}, [**Republican** (1=Republican, 0=Anything else)]{.fragment}, [**Female** (1=Female, 0=Anything else)]{.fragment}
+:::
+
+---
+
+## General rules and guidelines
+
+:::{.incremental}
+- [Continuous variables]{.hl} are the truest numbers and therefore best-suited for most of the statistical methods we use in this class.
+- Most survey questions are [ordinal variables]{.hl}, but we will treat them as continuous variables.
+- You can transform an existing variable into one with fewer categories:
+  - *Continuous variable* --> *ordinal* or *categorical/binary* variable
+  - *Ordinal variable* --> *categorical/binary* variable
+  - **Note:** You lose some information/variation by "binning" your variable values into more general categories
+
+- [If one of your variables is [categorical]{.hl}, you will need to transform it into a [binary categorical variable]{.hl} for this class.]{.hl2}
+:::
+
+---
+
+## Ex: Democracy around the world (2018) {style="font-size: 0.85em;"}
+
+:::: {layout="[55,45]"}
+
+::: {#first-column}
+
+::: {.incremental}
+- Polity IV score for all countries, 2018.
+  - -10: Fully autocratic
+  - +10: Fully democratic
+- What type of variable is this? [[continuous variable]{.hl}]{.fragment}
+:::
+
+:::{.incremental}
+- How would you turn this [continuous variable]{.hl} into an [ordinal variable]{.hl2}?
+  - "Bin" them into three categories: autocracy, anocracy (semi-democracy), and democracy
+  - *Note*: Researcher judgment in if/how to re-categorize the data.
+- Why might you *want* to reduce a [continuous variable]{.hl} into an [ordinal variable]{.hl2}?
+:::
+:::
+
+::: {#second-column}
+![](10_variable_types_files/images/image8.png){style="max-height: 40vh; width: auto; display: block; margin: 0.3em auto;"}
+![](10_variable_types_files/images/image9.png){style="max-height: 40vh; width: auto; display: block; margin: 0.3em auto;"}
+:::
+
+::::
+
+---
+
+## <span style="font-size: 0.6em; font-weight: normal; color: #666;">EX from <a href="https://www.afrobarometer.org/" target="_blank" style="color: inherit;">AfroBarometer</a></span> {.smaller}
+
+<style>
+.reveal .fragment.annot { opacity: 1; visibility: visible; }
+.reveal .fragment.annot.annot-circle.visible {
+  display: inline-block; padding: 0.2em 1.2em;
+  border: 2px solid black; border-radius: 50%;
+  line-height: 1.2; text-align: center; white-space: nowrap;
+}
+.reveal .fragment.annot.annot-square.visible {
+  display: inline-block; padding: 0.2em 0.4em;
+  border: 4px solid #0077cc; font-weight: bold;
+  line-height: 1.2; white-space: nowrap;
+}
+</style>
+
+<img src="1_course_intros_files/images/afrobarometer.png" style="display: block; max-width: 58%; max-height: 20vh; width: auto; margin: 0 auto 0.4em auto;" />
+
+:::: {layout="[65, 35]"}
+
+::: {#first-column}
+
+**Would you like having people from this group as neighbors?**
+
+- People from a different region
+- People from other ethnic groups
+- LGB people
+- Immigrants or foreign workers
+- People who support a different political party
+
+:::
+
+::: {#second-column}
+
+**Response Options:**
+
+1. Strongly dislike
+2. Somewhat dislike
+
+::: {.fragment .annot .annot-square data-fragment-index="2"}
+3. Would not care
+4. Somewhat like
+5. Strongly like
+:::
+
+6. DK/Refuse
+
+:::
+
+::::
+
+::: {.fragment data-fragment-index="1" style="text-align: center; margin: -0.6em 0 0.2em 0; color: #0077cc; font-weight: bold; font-size: 1.15em;"}
+What answer indicates the greatest degree of tolerance?
+:::
+
+. . . 
+
+[Maybe you do not like the way the question was worded, so you (as the researcher) need to make modifications!]{.hl2}
+
+<!--
+::: {.incremental}
+- Who is excluded? What are we measuring?
+- Does language matter? Are people being honest?
+- Did people make mistakes? Who is gathering the data, and why?
+:::
+-->
+
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+---
+
+
+## Ex: Respondent Religion 
+
+What type of variable is a [respondent's religion]{.hl}?
+
+. . .
+
+**Categorical:** Muslim, Jewish, Indigenous, Hindu, Christian, Atheist
+
+. . .
+
+How could religion be measured as an [ordinal variable]{.hl2}? [[Continuous variable]{.hl}?]{.fragment}
+
+. . .
+
+How could you transform this categorical variable into a **binary variable**?
+
+
+# Update your Reading Response and turn in!
+
+---
+
+## In-class exercise
+
+:::: {layout="[70,30]"}
+
+::: {#first-column}
+- Is your IV categorical, ordinal, or continuous?
+- Is your DV categorical, ordinal, or continuous?
+- If categorical: How might you transform it into a binary variable?
+- Populate your answer on the class [google sheet](https://docs.google.com/spreadsheets/d/17W2_PpL2DCbcXn6pim2iVZCAcC7JBVsnrd_Cf4BaUrU/edit?gid=0#gid=0) (Canvas: Modules -> Course exercises)
+:::
+
+::: {#second-column}
+<div style="text-align: center;"><img src="10_variable_types_files/images/qr_google_sheet.png" style="max-height: 40vh; width: auto;"></div>
+
+::: {style="font-size: 0.55em; text-align: center;"}
+Class Variables (Google sheet)
+:::
+:::
+
+::::
+
+
+# Quantifying Your Variables
+
+---
+
+## Look at your variables {style="font-size: 0.9em;"}
+
+You've loaded your dataset as an object in R and given it a name (e.g., `anes_data`):
+
+::: {.fragment}
+```r
+anes_data <- read_csv("anesdata_2024.csv", col_names = T)
+```
+:::
+
+::: {.fragment}
+Next, you can look at the names of the variables in your dataset:
+:::
+
+::: {.fragment}
+```r
+colnames(anes_data)
+```
+:::
+
+:::{.fragment}
+... And see how many observations (rows) and variables (columns) are in your dataset:
+:::
+
+:::{.fragment}
+```r
+nrow(anes_data)
+ncol(anes_data)
+```
+:::
+
+::: {.fragment}
+Finally, you can look at/work with your specific variable of interest, connecting the name of your variable to your name for your dataset, using a `$`:
+:::
+
+::: {.fragment}
+```r
+anes_data$V241177
+```
+:::
+
+::: {.fragment}
+::: {style="text-align: center; font-size: 1.1em; margin-top: 0.4em;"}
+[anes_data]{.hl}**\$**[V241177]{style="color:#c0392b; font-weight:700;"}
+:::
+
+::: {style="text-align: center; font-size: 0.7em; color: #555;"}
+[name of your dataset]{.hl}&emsp;&emsp;&emsp;&emsp;[name of your variable]{.hl2}
+:::
+:::
+
+---
+
+## Prepare your independent and dependent variables {style="font-size: 0.85em;"}
+
+[Step 1:]{.hl2} Record (in your `R` script) relevant information about your variables (IV/DV), including the survey question, variable label, variable type, and what each response value represents:
+
+. . .
+
+```{.r}
+#### My IV (ordinal/continuous): ANES Respondent's liberal-conservative self-placement (V241177)
+# -9 Refused
+# -4 Error
+# 1 Extremely liberal
+# 2 Liberal
+# 3 Slightly liberal
+# 4 Moderate; middle of the road
+# 5 Slightly conservative
+# 6 Conservative
+# 7 Extremely conservative
+# 99 Haven't thought much about this
+```
+. . .
+
+[Step 2:]{.hl2} Create a [copy]{.hl} of each of your variables with names that makes sense to you:
+
+```{.r}
+anes_data$pol_ideology <- anes_data$V241177
+```
+
+. . .
+
+- This will create a [new variable]{.hl} in your dataset (not replace your original)
+
+---
+
+## Recall: Types of variables {style="font-size: 0.8em;"}
+
+
+[Different types of variables...]{.hl2}
+
+
+::: {.incremental}
+- [Categorical variable]{.hl}: Numeric values represent categories that cannot be numerically ranked
+- [Ordinal variable]{.hl}: Numeric values represent categories that can be numerically ranked; assigned numbers reflect an ordering.
+- [Continuous variable]{.hl}: Numeric values represent numbers as such (numbers, counts, percentages, scales)
+- [Binary variables]{.hl}: Variable with only two possible values (0,1), typically considered *categorical*
+:::
+
+. . .
+
+[...require different approaches to quantify and visualize.]{.hl2}
+
+---
+
+## Describing variables {style="font-size: 0.85em;"}
+
+. . .
+
+For each of our variables (our IV and our DV), we want to understand and describe its:
+
+. . .
+
+[Dispersion:]{.hl2} the distribution of values of the variable
+
+. . .
+
+[Central Tendency:]{.hl} the typical values at the center of the variable's distribution
+
+---
+
+## Describing **Categorical** Variables {style="font-size: 0.78em;"}
+
+:::: {layout="[50,50]"}
+
+::: {#first-column}
+::: {.fragment}
+![](10_variable_types_files/images/image12.png){style="max-height: 30vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+
+::: {#second-column}
+::: {.fragment}
+![](10_variable_types_files/images/image11.png){style="max-height: 30vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+
+::::
+
+::: {.incremental}
+- **Unit of observation?** [Country]{.fragment}
+- **Categories?** [Continent in which a given country belongs]{.fragment}
+- [Dispersion]{.hl2}? [Frequency (count) for each category]{.fragment}
+- [Central tendency]{.hl}? [Modal response]{.fragment}
+  - Most frequently occurring category
+  - Africa (1)
+:::
+
+---
+
+## Describing **Categorical** Variables {style="font-size: 0.85em;"}
+
+::: {.fragment data-fragment-index="0"}
+Ex: Respondent Race/Ethnicity: ANES `V241501x`
+:::
+
+
+```{r}
+#| include: false
+setwd("/Users/sdpolscipriv/Library/CloudStorage/Dropbox/0SKD_files/Academic/UNM_courses/2140_Intro_Pol_Analysis/2140_data")
+library(tidyverse)
+anes_data <- read_csv("anesdata_2024.csv", col_names = T)
+```
+
+:::: {layout="[50,50]"}
+
+::: {#first-column}
+::: {.fragment data-fragment-index="1"}
+```r
+# V241501x: PRE: SUMMARY: R SELF-IDENTIFIED RACE/ETHNICITY
+# -9: Refused
+# -8: Don't know
+# -4: Error
+# 1: White, non-Hispanic
+# 2: Black, non-Hispanic
+# 3: Hispanic
+# 4: Asian or Native Hawaiian/other Pacific Islander, non-Hispanic
+# 5: Native American/Alaska Native or other race, non-Hispanic
+# 6: Multiple races, non-Hispanic
+```
+:::
+:::
+
+::: {#second-column}
+::: {.fragment data-fragment-index="4"}
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 3.5
+#| out-width: "100%"
+hist(anes_data$V241501x)
+```
+:::
+:::
+
+::::
+
+::: {.fragment data-fragment-index="2"}
+To determine the variable's [dispersion]{.hl2} and [central tendency]{.hl}, use the `table` command:
+:::
+
+:::{.fragment data-fragment-index="3"}
+```{r}
+#| echo: true
+table(anes_data$V241501x)
+```
+:::
+
+---
+
+## Describing **Continuous** Variables {style="font-size: 0.8em;"}
+
+:::: {layout="[50,50]"}
+
+::: {#first-column}
+::: {.fragment}
+![](10_variable_types_files/images/image8.png){style="max-height: 30vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+
+::: {#second-column}
+::: {.fragment}
+![](10_variable_types_files/images/image9.png){style="max-height: 30vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+
+::::
+
+::: {.incremental}
+- **Unit of observation?** [Country]{.fragment}
+- **Variable values?** [Polity Score: -10 (full autocracy) to +10 (full democracy)]{.fragment}
+- Two approaches to capturing dispersion and central tendancy:
+  - [Rank Statistics]{.gr2}
+  - [Statistical Moments]{.gr1}
+:::
+
+---
+
+## Describing **Continuous** Variables {style="font-size: 0.82em;"}
+
+<style>
+.rank-stat-ribbon { display: flex; justify-content: space-between; font-weight: 700; margin: 0 0 0.6em 0; }
+#pol-ideology-hist img { max-height: 30vh; width: auto; display: block; margin: 0.15em auto; }
+#pol-ideology-hist pre { overflow-x: auto; }
+</style>
+
+<div class="rank-stat-ribbon"><span class="gr2">Rank Statistics</span><span class="gr1">Statistical Moments</span></div>
+
+::: {.incremental}
+- [Rank statistics:]{.gr2} Ranking values of a continuous variable from smallest to largest, and identify crucial junctures along the way
+  - [Central Tendancy:]{.hl} [Median (mid-point, the value of the variable at the 50% rank)]{.fragment}
+  - [Dispersion:]{.hl2} [25% rank (first quartile) and 75% rank (third quartile)]{.fragment}
+:::
+
+::: {style="display: flex; gap: 2em;"}
+::: {style="flex: 1; min-width: 0;"}
+::: {.fragment}
+![](10_variable_types_files/images/image8.png){style="max-height: 30vh; width: auto; display: block; margin: 0.15em auto;"}
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/image14.png){style="max-height: 8vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+
+::: {.fragment style="flex: 1; min-width: 0;" id="pol-ideology-hist"}
+```{r}
+#| echo: true
+anes_data$pol_ideology <- anes_data$V241177
+summary(anes_data$pol_ideology)
+pol_ideology_clean <- anes_data$pol_ideology[anes_data$pol_ideology > 0 & anes_data$pol_ideology != 99]
+hist(pol_ideology_clean, main = "Political Ideology", xlab = "1 = Extremely Liberal, 7 = Extremely Conservative")
+```
+:::
+:::
+
+---
+
+## Describing **Continuous** Variables {style="font-size: 0.78em;"}
+
+<div class="rank-stat-ribbon"><span class="gr2">Rank Statistics</span><span class="gr1">Statistical Moments</span></div>
+
+::: {.incremental}
+- [Statistical moments:]{.gr1} Statistical approach to describing a variable's central tendency and the distribution of values around it.
+  - [Central Tendancy:]{.hl} **Mean:** The average value
+    - Mathematically: the sum of all cases divided by the # of cases
+:::
+
+::: {style="display: flex; justify-content: center; gap: 0.6em;"}
+::: {style="flex: 0 0 auto;"}
+::: {.fragment style="display: flex; align-items: center; justify-content: center; max-height: 30vh; font-size: 2.4em;"}
+$$\bar{Y} = \dfrac{\displaystyle\sum_{i=1}^{n} Y_i}{n}$$
+:::
+:::
+
+::: {style="flex: 0 0 auto; max-width: 62%;"}
+::: {.incremental style="font-size: 1em;"}
+- $\bar{Y}$ = mean (average) value (response) for variable $Y$
+- $\sum$ = add everything that follows
+- $i$ = each individual case of variable $Y$
+- $n$ = number of observations (responses) in the dataset
+- $Y_i$ = value of variable $Y$ for individual person $i$
+:::
+:::
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/image18.png){style="max-height: 10vh; width: auto; display: block; margin: 0.15em auto;"}
+:::
+
+---
+
+## Describing **Continuous** Variables {style="font-size: 0.78em;"}
+
+<div class="rank-stat-ribbon"><span class="gr2">Rank Statistics</span><span class="gr1">Statistical Moments</span></div>
+
+::: {.incremental}
+- [Statistical moments:]{.gr1} Statistical approach to describing a variable's central tendency and the distribution of values around it.
+  - [Central Tendancy:]{.hl} **Mean:** The average value
+    - Mathematically: the sum of all cases divided by the # of cases
+  - [Dispersion]{.hl2}:
+    - **Variance:** The spread of the data around the mean
+      - Mathematically: The sum of the squared differences between each value $Y$ and the mean value of $Y$, divided by n-1.
+:::
+
+::: {style="display: flex; justify-content: center; gap: 0.6em;"}
+::: {style="flex: 0 0 auto;"}
+::: {.fragment style="display: flex; align-items: center; justify-content: center; max-height: 20vh; font-size: 1.9em;"}
+$$\text{var}(Y) = \dfrac{\displaystyle\sum_{i=1}^{n} (Y_i - \bar{Y})^2}{n-1}$$
+:::
+:::
+
+::: {style="flex: 0 0 auto; max-width: 62%;"}
+::: {.fragment style="font-size: 1.15em;"}
+![](10_variable_types_files/images/image21.png){style="max-height: 8vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+:::
+
+---
+
+## Describing **Continuous** Variables {style="font-size: 0.78em;"}
+
+<div class="rank-stat-ribbon"><span class="gr2">Rank Statistics</span><span class="gr1">Statistical Moments</span></div>
+
+:::{.incremental}
+- [Statistical moments:]{.gr1} Statistical approach to describing a variable's central tendency and the distribution of values around it.
+  - [Central Tendancy:]{.hl} **Mean:** The average value; the sum of all cases divided by the # of cases
+  - [Dispersion]{.hl2}
+    - **Variance:** The spread of the data around the mean of $Y$
+    - **Standard Deviation:** The average difference between each value of $Y$ and the mean of $Y$
+:::
+
+::: {style="display: flex; justify-content: center; gap: 0.6em;"}
+::: {style="flex: 0 0 auto;"}
+::: {.fragment style="display: flex; align-items: center; justify-content: center; max-height: 25vh; font-size: 1.9em;"}
+$$\text{S.D.} = \sqrt{\dfrac{\displaystyle\sum_{i=1}^{n} (Y_i - \bar{Y})^2}{n-1}}$$
+:::
+:::
+
+::: {style="flex: 0 0 auto; max-width: 62%;"}
+::: {.fragment style="font-size: 1.15em;"}
+![](10_variable_types_files/images/image24.png){style="max-height: 10vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+:::
+:::
+
+
+## Summary: Describing variables {.smaller}
+
+::: {.fragment}
+| | [Central Tendency]{.hl} | [Dispersion]{.hl2} |
+|---|---|---|
+| **Categorical variables** | **Mode** (Most frequently occurring value) <br> `table(data$variable)` | **Frequency** with which each category occurs <br> `table(data$variable)` |
+| **Continuous variables:** [Rank statistics]{.gr2} | **Median** (50% rank) <br> `summary(data$variable)` | First (25% rank) & Third (75% rank) **quartiles** <br> `summary(data$variable)` |
+| **Continuous variables:** [Statistical Moments]{.gr1} | **Mean** (average) <br> `mean(data$variable)` | Overall **variance** from the mean value <br> `var(data$variable)` <br> **Standard deviation** from the mean value <br>`sd(data$variable)` |
+| **Ordinal variables** | ??? | ??? |
+:::
+
+---
+
+## What to do with ordinal variables? {style="font-size: 0.85em;"}
+
+. . .
+
+*Fundamentals* (3rd edition):
+
+. . .
+
+> When we move to the vast majority of statistical analyses, we must decide between treating each of our variables as though it is categorical or as though it is continuous... If we treat an ordinal variable as though it is categorical, we are acting as though we know less about the values of this variable than we really know. On the other hand, treating an ordinal variable as though it is a continuous variable means that we are assuming that it has equal unit differences. Either way, it is critical that we be **aware of our decisions.** We can always **repeat our analyses under a different assumption** and see how robust our conclusions are to our choices.
+
+. . .
+
+**In other words:** Think through which makes most sense in your case, try both and see if this shifts your results.
+
+
+---
+
+## Descriptive statistics {style="font-size: 0.85em;"}
+
+:::: {layout="[50,50]"}
+
+::: {#first-column}
+::: {.fragment}
+For categorical (or ordinal) variables:
+:::
+
+::: {.fragment}
+```r
+table(data$variable)
+```
+:::
+
+::: {.fragment}
+For continuous variables:
+:::
+
+::: {.fragment}
+```r
+summary(data$variable)
+mean(data$variable)
+var(data$variable)
+sd(data$variable)
+```
+:::
+:::
+
+::: {#second-column}
+::: {.fragment}
+For ordinal variables:
+:::
+
+::: {.fragment}
+```r
+summary(data$variable)
+table(data$variable)
+mean(data$variable)
+var(data$variable)
+sd(data$variable)
+```
+:::
+:::
+
+::::
+
+::: {.fragment}
+If you were to run these commands on your variables [right now]{.hl}, would they give meaningful numbers? Why or why not?
+:::
+
+
+
+# Outliers and Missing Data
+
+---
+
+## Outliers {style="font-size: 0.9em;"}
+
+::: {.fragment}
+[Outliers]{.hl} (continuous variables): Real cases in the dataset that are **extremely low** or **extremely high**, relative to the rest of the data.
+:::
+
+::: {.incremental}
+- [Good to note your outliers.]{.hl} 
+  - They might be worth examining more closely. 
+  - They also might disproportionately **skew** your analysis and numeric understanding of the data.
+  - Ex: Country GDP per capita (2024):
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/image29.png){style="max-height: 30vh; width: auto; display: block; margin: 0.3em auto;"}
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/image15.png){style="max-height: 10vh; width: auto; display: block; margin: 0.3em auto;"}
+:::
+
+. . .
+
+::: {style="font-size: 0.55em;"}
+Source: @worldbank2024gdppc
+:::
+
+---
+
+## Missing data {style="font-size: 0.85em;"}
+
+
+[Missing data]{.hl}: When the data for a specific observation/variable is unavailable.
+
+:::{.incremental}
+- For survey data: When a person does not know how to answer a question or decides not to answer the question.
+- Often registered as extremely high numbers, low numbers, or negative numbers. But these numbers are **not real data** and will throw off your calculations!
+:::
+
+::: {style="display: flex; justify-content: center; gap: 1em;"}
+::: {.fragment style="flex: 0 0 auto;"}
+![](10_variable_types_files/images/image30.png){style="max-height: 34vh; width: auto; display: block; margin: 0.3em auto;"}
+:::
+
+::: {.fragment style="flex: 0 0 auto;"}
+![](10_variable_types_files/images/image9.png){style="max-height: 34vh; width: auto; display: block; margin: 0.3em auto;"}
+:::
+:::
+
+. . .
+
+::: {style="text-align: center; font-size: 0.5em; color: #666;"}
+Polity regime-characteristics scores, 1800–2018 [@marshall2020polity]. Left: raw scores including -66/-77/-88 codes. Right: after dropping those codes.
+:::
+
+---
+
+## Missing data
+
+. . .
+
+Two different ways that missing values are represented:
+
+::: {.incremental}
+1. **Weird or unreasonably high/low values** (e.g., -9)
+   - `R` thinks these are numbers and will treat them just like any other!
+   - Your measures of central tendency and dispersion will be inaccurate
+2. **"NA" (not available)**
+   - `R` understands that this is missing data (sort-of)
+   - Your measures of central tendency and dispersion will break
+:::
+
+::: {style="text-align: center; font-size: 0.55em; color: #666; margin-top: 0.5em;"}
+(seen in: ANES, WVS, World Bank data)
+:::
+
+
+---
+
+## Missing data — ANES: Level of education {style="font-size: 0.8em;"}
+
+::: {.fragment}
+![](10_variable_types_files/images/image31.png){style="max-height: 32vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/image32.png){style="max-height: 20vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+
+::: {.fragment}
+![](10_variable_types_files/images/image19.png){style="max-height: 8vh; width: auto; display: block; margin: 0.2em auto;"}
+:::
+
+. . .
+
+::: {style="text-align: center; font-size: 0.5em; color: #666;"}
+ANES 2020 Time Series [@anes2020tsdata].
+:::
+
+---
+
+## Looking ahead: recoding & filtering your data {style="font-size: 0.85em;"}
+
+After the midterm, we will have a workshop to transform your variables. You'll be able to:
+
+::: {.incremental}
+- Create new objects for your IV and DV that drop missing values
+  - `mutate()` &emsp; `filter()`
+- Recode any categorical variables into a binary structure
+  - `mutate()`
+- Subset your data to only the countries/cases of interest
+  - `filter()`
+- Confirm that you have done so correctly
+  - `table()` &emsp; `summary()`
+- Analyze your descriptive statistics
+  - `table()` &emsp; `summary()`
+- Save a cleaned R script for your future use
+:::
+
+---
+
+
+## References {.smaller}
+
+::: {#refs}
+:::
+
+
+# Extra slides: Exercises in examining your variables 
+
+---
+
+## World Bank Gender Data Portal {style="font-size: 0.85em;"}
+
+[genderdata.worldbank.org/indicators/](https://genderdata.worldbank.org/indicators/)
+
+:::: {layout="[50,50]"}
+
+::: {#first-column}
+![](10_variable_types_files/images/image33.png){style="max-height: 44vh; width: auto;"}
+:::
+
+::: {#second-column}
+![](10_variable_types_files/images/image34.png){style="max-height: 44vh; width: auto;"}
+:::
+
+::::
+
+---
+
+```{r setup}
+#| include: false
+# Static images live permanently in 9_lab_r-introduction_assets/images/ because
+# a knitr-executed self-contained render wipes the whole <deck>_files/ folder,
+# including hand-placed images referenced from it. Re-copy them in fresh before
+# anything on the first few slides references 9_lab_r-introduction_files/images/.
+dir.create("9_lab_r-introduction_files/images", recursive = TRUE, showWarnings = FALSE)
+file.copy(
+  list.files("9_lab_r-introduction_assets/images", full.names = TRUE),
+  "9_lab_r-introduction_files/images",
+  overwrite = TRUE
+)
+
+# Same gotcha applies to this deck's own hand-placed images now that it has real
+# {r} chunks too: the self-contained render wipes 10_variable_types_files/ as well,
+# so this deck's own images (originally from 10_descriptive_stats.pptx) live
+# permanently in 10_variable_types_assets/images/ and get re-copied in fresh here.
+dir.create("10_variable_types_files/images", recursive = TRUE, showWarnings = FALSE)
+file.copy(
+  list.files("10_variable_types_assets/images", full.names = TRUE),
+  "10_variable_types_files/images",
+  overwrite = TRUE
+)
+```
+
+```{r}
+#| include: false
+# Stop executing R code from here on — everything below is shown as
+# illustrative (non-run) code only. Remove this to resume live execution.
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+
+## 🔴 Try it: descriptive statistics — ordinal/continuous {style="font-size: 0.8em;"}
+
+`partyid` is a real 7-point party-identification variable (1 = Extremely Liberal … 7 = Extremely Conservative; negative values = refused/DK/inapplicable; 99 = "haven't thought much about it"):
+
+```{r}
+#| echo: true
+table(anes$partyid)
+```
+
+. . .
+
+```{r}
+#| echo: true
+mode(anes$partyid)
+```
+
+::: {.fragment}
+::: {style="padding: 0.4em 0.7em; border-left: 4px solid #c0392b; background: rgba(192,57,43,0.08); font-size: 0.85em;"}
+⚠️ **Gotcha:** `mode()` does **not** compute the statistical mode — it reports R's internal storage type. For the most common category, use:
+:::
+:::
+
+::: {.fragment}
+```{r}
+#| echo: true
+names(which.max(table(anes$partyid)))
+```
+:::
+
+---
+
+## 🔴 Try it: descriptive statistics — ordinal {style="font-size: 0.85em;"}
+
+`income` is a real 28-category household-income bracket:
+
+```{r}
+#| echo: true
+summary(anes$income)
+```
+
+. . .
+
+```{r}
+#| echo: true
+mean(anes$income)
+sd(anes$income)
+```
+
+::: {.fragment}
+::: {style="padding: 0.4em 0.7em; border-left: 4px solid #c0392b; background: rgba(192,57,43,0.08); font-size: 0.8em;"}
+That mean looks too low for a 28-bracket scale — and that minimum is **negative**. Keep this on your radar; the "Missing data" section below explains exactly why.
+:::
+:::
+
+
+---
+
+## 🔴 Try it: spotting outliers {style="font-size: 0.78em;"}
+
+```{r}
+#| echo: true
+#| fig-width: 6.5
+#| fig-height: 2.3
+#| out-width: "85%"
+
+ggplot(anes, aes(x = income)) +
+  geom_histogram(binwidth = 1, fill = "#107895", color = "white") +
+  labs(x = "income (28 brackets)", y = "Respondents") +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA)
+  )
+```
+
+::: {.fragment}
+::: {style="font-size: 0.8em;"}
+That spike at/below zero isn't low income — it's **refused / don't know / inapplicable** codes. Real outliers *and* missing-data codes can both show up as "extreme" values — you have to check which one you're looking at.
+:::
+:::
+
+---
+
+## 🔴 Try it: the same chart, live, with 2024 data {style="font-size: 0.75em;"}
+
+```{r}
+#| echo: true
+#| fig-width: 6.8
+#| fig-height: 2.3
+#| out-width: "85%"
+
+ggplot(anes, aes(x = factor(education))) +
+  geom_bar(fill = "#107895") +
+  labs(
+    x = "Level of education (ANES 2024 codes; negatives = refused/DK/inapplicable)",
+    y = "Respondents"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA)
+  )
+```
+
+::: {style="text-align: center; font-size: 0.5em; color: #666;"}
+ANES 2024 Time Series [@anes2024tsdata].
+:::
+
+---
+
+## Removing missing data
+
+To get true numbers once you know your missing-data codes:
+
+```r
+summary(data$variable[data$variable > 0])
+mean(data$variable[data$variable > 0])
+var(data$variable[data$variable > 0])
+sd(data$variable[data$variable > 0])
+```
+
+---
+
+## 🔴 Try it: fixing missing-value codes {style="font-size: 0.85em;"}
+
+Before — contaminated by refused/DK/inapplicable codes:
+
+```{r}
+#| echo: true
+summary(anes$income)
+```
+
+. . .
+
+After — filtered to valid responses only:
+
+```{r}
+#| echo: true
+summary(anes$income[anes$income > 0])
+```
+
+. . .
+
+```{r}
+#| echo: true
+mean(anes$income[anes$income > 0])
+sd(anes$income[anes$income > 0])
+```
+
+::: {.fragment}
+::: {style="font-size: 0.8em;"}
+Same real dataset, same command pattern from the slide above — the mean moved because the -9/-5/-1 codes are gone, not because the data changed.
+:::
+:::
+
+

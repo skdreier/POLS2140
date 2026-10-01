@@ -7,6 +7,7 @@ $accent: #107895;
 $accent2: #9a2515;
 // $accent2: #e64173;
 $right-arrow: "\2192"; // Unicode character for right arrow
+$sub-dash: "\2013"; // En dash, used for third-level (and deeper) bullets
 
 // fonts
 
@@ -169,6 +170,27 @@ $selection-bg: #26351c !default;
   li:before {
     content: $right-arrow;
     color: mix($accent, white, 60%);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+  }
+}
+
+// Third-level (and deeper) nested lists: `ul ul` above matches any nested
+// <ul> regardless of depth, so without this rule a third-level list just
+// repeats the second level's teal arrow marker — same glyph, same color,
+// only the base 16px padding to show it's deeper. That reads as "more of
+// the same bullet," not a clearly subordinate level. This gives level 3+
+// its own muted dash marker and a bit of extra indent so the hierarchy is
+// visually obvious at a glance.
+.reveal ul ul ul {
+  list-style: none;
+  padding-left: 20px;
+
+  li:before {
+    content: $sub-dash;
+    color: mix($jet, white, 55%);
     display: inline-block;
     width: 1em;
     margin-left: -1em;
