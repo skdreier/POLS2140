@@ -39,6 +39,11 @@ format:
         .reveal:has(section#freq-dist-pew.present) .footer { display: none !important; }
         .reveal section:has(.style-step.visible) .step-grey,
         .reveal section:has(.style-step.visible) .step-grey .hl2 { color: #a6a6a6 !important; }
+        /* ```{.r .line-frags} code block: each line is its own click (script in
+           include-after-body); the box stays hidden until its first line shows. */
+        .reveal div.sourceCode:has(.line-frags):not(:has(.fragment.visible)) { visibility: hidden; }
+        /* [text]{.slide-sub} right under a ## heading = a smaller, italic slide subtitle */
+        .reveal .slide-sub { display: block; font-size: 0.7em; font-style: italic; color: #555; margin-top: -0.4em; }
         /* .tight: compact paragraph spacing (CI calculation lines under the columns) */
         .reveal .tight p { margin: 0.25em 0; }
         </style>
@@ -51,6 +56,16 @@ format:
           document.querySelectorAll('a[href^="http"]').forEach(function (a) {
             a.target = "_blank"; a.rel = "noopener";
           });
+          document.querySelectorAll('pre.line-frags').forEach(function (pre) {
+            pre.querySelectorAll('code > span').forEach(function (ln) {
+              ln.classList.add("fragment");
+            });
+            // let Reveal renumber this slide's clicks in on-page order
+            pre.closest('section').querySelectorAll('[data-fragment-index]').forEach(function (f) {
+              f.removeAttribute('data-fragment-index');
+            });
+          });
+          if (window.Reveal && Reveal.isReady && Reveal.isReady()) Reveal.sync();
         </script>
 
 bibliography: references_2140.bib
@@ -70,6 +85,7 @@ Place your response in the center of the table.
 
 - Office hours: Rescheduled for tomorrow (Wed 2:30-4:30 pm)
 - Apply for the honors program!
+- *New York Times* resources
 
 ---
 
@@ -406,34 +422,20 @@ In your own words: What is the Central Limit Theorem and what does it allow us t
 ## Announcements
 
 :::{.incremental}
-- Midterm Updates: Canvas Assignments
-- Honors program application (Nov 6)
-- Data News: 
-  - Esteban Cordova-Teupell
-  - Abby Mills
+- Midterm updates: Due this Friday (Fri Oct 23)
+- Paid political internships: Due next Friday (Fri Oct 30)
+  - Info session today!
+- Honors program application: Due in two weeks (Fri Nov 6)
+- Today: Wrap up probability (Central Limit Theorem)
+- Thurs: Begin bivariate hypothesis tests (*Fundamentals* Ch 9)
 :::
 
 --- 
 
-## Note about sample sizes {style="font-size: 0.85em;"}
-
-[GOAL:]{.hl2} Infer what we can about the [whole population]{.hl} based on what we **know with certainty** about a [sample population]{.hl}.
-
-::: {.incremental}
-- The greater the random sample size (n) of your dataset, the *less uncertainty* and *smaller confidence intervals* you will have about the real population
-- If our samples were both random, the size of the sample:population would not a problem.
-- However, with real-world survey data, there are a lot of things that undermine their randomness
-  - In the case of WVS: its really complicated to get a truly "random" sample, which undermines our certainty. But `R` still assumes that you are dealing w a random sample.
-  - Bolivia: 12m (n=2067)
-  - China: 1.4b (n=3036)
-- Your models don't know that these limits exist → more confidence than may be appropriate.
-:::
-
----
 
 ## Recap: Statistical Inference and Normal Distribution {style="font-size: 0.90em;"}
 
-[GOAL:]{.hl2} Infer what we can about the [whole population]{.hl} based on what we **know with certainty** about a [sample population]{.hl}.
+[GOAL of statistical inference:]{.hl2} Infer what we can about the [whole population]{.hl} based on what we **know with certainty** about a [sample population]{.hl}.
 
 :::{.incremental}
 - **Normal distribution**
@@ -457,7 +459,15 @@ In your own words: What is the Central Limit Theorem and what does it allow us t
 
 ## Central Limit Theorem
 
-[Central Limit Theorem:]{.hl} [The distribution of an average (among a collection of samples) tends to be **normal**, even when the distribution from which the average is calculated is non-normal.]{.fragment}
+[GOAL of statistical inference:]{.hl2} Infer what we can about the [whole population]{.hl} based on what we **know with certainty** about a [sample population]{.hl}.
+
+. . .
+
+[Central Limit Theorem (core underlying principle):]{.hl2} A large, properly drawn [sample]{.hl} will resemble the [population]{.hl} from which it is drawn [@wheelan2013naked, p. 128].
+
+. . .
+
+[Central Limit Theorem (specifically):]{.hl2} [The distribution of a collection of [sample means]{.hl} (from a collection of samples) tends to be **normal**, even when the frequency distribution from which the average is calculated is non-normal.]{.fragment}
 
 . . .
 
@@ -499,6 +509,8 @@ In your own words: What is the Central Limit Theorem and what does it allow us t
 :::
 :::
 ::::
+
+This is all a hypothetical exercise.
 
 ---
 
@@ -545,8 +557,8 @@ In your own words: What is the Central Limit Theorem and what does it allow us t
 ::: {.incremental}
 - If we can **envision an infinite number of random samples** and plot our means for each of these random samples, those sample means would be **distributed normally**. Furthermore, the mean of the sampling distribution would be equal to the **true population mean**.
 - It allows us to calculate our **standard error of the mean**.
-- **Standard error** is what we use to quantify our level of *uncertainty* about how well we can infer information about the *population* based on what we know/observe about our *sample*.
-- The larger our sample is, the less uncertain we are about the population.
+- **Standard error** is what we use to quantify our level of *uncertainty* about how well we can infer information about the [population]{.hl} based on what we know/observe about our [sample]{.hl}.
+- The larger our [sample]{.hl} is, the less uncertain we are about the [population]{.hl}.
 :::
 
 ---
@@ -630,7 +642,7 @@ $$\text{S.E.} = \frac{SD}{\sqrt{n}} = \frac{1.71}{\sqrt{600}}$$
 :::
 
 ::: {.fragment}
-- What do **we** ***do*** with a standard error?
+- What do ***do*** with a standard error?
 :::
 :::
 
@@ -638,7 +650,7 @@ $$\text{S.E.} = \frac{SD}{\sqrt{n}} = \frac{1.71}{\sqrt{600}}$$
 ![](12_probability_files/images/image10.png){style="max-height: 42vh; width: auto;"}
 
 ::: {.fragment}
-↳ Capture how *confident* we are that the mean from our *sample* represents the mean from the *whole population*.
+↳ Capture how *confident* we are that the mean from our [sample]{.hl} represents the mean from the [whole population]{.hl}.
 :::
 :::
 ::::
@@ -846,11 +858,47 @@ mean ($\bar{Y}$ or $\mu$) from your sample $\pm$ 3 standard errors ($\sigma$) =
 [*<1% chance the pop. mean is less than 3.26 and <1% chance it is greater than 3.68.*]{style="color: #00B050;"}
 :::
 
+---
+
+## Note about sample sizes {style="font-size: 0.85em;"}
+
+[Central Limit Theorem (core underlying principle):]{.hl2} A large, properly drawn [sample]{.hl} will resemble the [population]{.hl} from which it is drawn [@wheelan2013naked, p. 128].
+
+::: {.incremental}
+- The greater the random [sample size (n)]{.hl} of your dataset, the [less uncertainty]{.hl2} (and *smaller "confidence intervals"*) you will have about the [real population]{.hl}
+  - Rule of thumb: sample size must be at least $n$ = 30 [@wheelan2013naked, p. 135].
+- If our samples were both random, the size of the sample (relative to the population) would not a problem.
+- But: Lot of conditions undermine the randomness of real-world survey data.
+  - WVS: Its really complicated to get a truly "random" sample. [But the statistical models (and `R`) still assume that you are dealing with a random sample.]{.fragment}
+    - Bolivia: 12m (n=2067)
+    - China: 1.4b (n=3036)
+- Your models don't know that these limits exist [→ more confidence than may be appropriate.]{.fragment}
+:::
+
+## Still super confused?
+
+. . .
+
+Grasping these concepts often takes iteration over years.
+
+. . .
+
+What you **need** to know:
+
+:::{.incremental}
+- [Central Limit Theorem (core underlying principle):]{.hl2} A large, properly drawn [sample]{.hl} will resemble the [population]{.hl} from which it is drawn [@wheelan2013naked, p. 128].
+- We take information that we observe in our [sample]{.hl}[---sample size ($n$), your variable's mean and standard deviation---]{.fragment} [to calculate how much uncertainty we have that the real [population's]{.hl} mean resembles the sample mean ([standard error]{.hl2}).]{.fragment}
+- We report that level of uncertainty in the form of [confidence intervals.]{.hl2}
+:::
+
 # Example: Political Ideology
+Follow along with one of your variables!
 
 ---
 
 ## Ex: Political Ideology {style="font-size: 0.9em;"}
+
+[Follow along with one of your variables!]{.slide-sub}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -874,17 +922,21 @@ table(anes_data$V241177)
   67    3  250  819  543 1187  594 1030  309  719
 ```
 ```{.r}
-anes_data <- anes_data %>%
-  rename(ideology_scale = V241177) %>%
-  filter(ideology_scale > 0) %>%
-  filter(ideology_scale < 8)
-
-table(anes_data$ideology_scale)
+anes_data$ideology <- anes_data$V241177
+anes_data$ideology[anes_data$V241177 > 7] <- NA
+anes_data$ideology[anes_data$V241177 < 0] <- NA
+table(anes_data$ideology)
 ```
 ```
    1    2    3    4    5    6    7
  250  819  543 1187  594 1030  309
 ```
+<!--
+anes_data <- anes_data %>%
+  rename(ideology_scale = V241177) %>%
+  filter(ideology_scale > 0) %>%
+  filter(ideology_scale < 8)
+-->
 
 ::: {style="font-size: 0.8em; text-align: center;"}
 ANES 2024 Time Series [@anes2024tsdata].
@@ -897,6 +949,8 @@ ANES 2024 Time Series [@anes2024tsdata].
 ---
 
 ## Ex: Political Ideology {style="font-size: 0.9em;"}
+
+[Follow along with one of your variables!]{.slide-sub}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -912,9 +966,9 @@ ANES 2024 Time Series [@anes2024tsdata].
 ![](12_probability_files/images/ideology_2024.png){style="max-height: 45vh; width: auto;"}
 :::
 
-::: {.fragment fragment-index=2 style="font-size: 0.6em;"}
+::: {.fragment fragment-index=2 style="font-size: 0.85em;"}
 ```{.r}
-barplot(table(anes_data$ideology_scale),
+barplot(table(anes_data$ideology),
         main="Frequency Distribution: Political Ideology",
         xlab="1 = extremely liberal; 7 = extremely conservative",
         ylab="frequency")
@@ -926,6 +980,8 @@ barplot(table(anes_data$ideology_scale),
 ---
 
 ## Ex: Political Ideology {style="font-size: 0.9em;"}
+
+[Follow along with one of your variables!]{.slide-sub}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -941,13 +997,22 @@ barplot(table(anes_data$ideology_scale),
 ::: {.column width="60%"}
 ![](12_probability_files/images/ideology_2024.png){style="max-height: 45vh; width: auto;"}
 
-::: {.fragment style="font-size: 0.85em;"}
+::: {.r-stack style="font-size: 0.85em;"}
+::: {.fragment .fade-in-then-out style="width: 100%;"}
 ```{.r}
-mean(anes_data$ideology_scale)
-## [1] 4.137363
-sd(anes_data$ideology_scale)
+mean(anes_data$ideology)
+## [1] NA
+```
+:::
+
+::: {.fragment style="width: 100%;"}
+```{.r}
+mean(anes_data$ideology, na.rm=T)
+## 4.137363
+sd(anes_data$ideology, na.rm=T)
 ## [1] 1.687654
 ```
+:::
 :::
 :::
 ::::
@@ -955,6 +1020,8 @@ sd(anes_data$ideology_scale)
 ---
 
 ## Ex: Political Ideology {style="font-size: 0.9em;"}
+
+[Follow along with one of your variables!]{.slide-sub}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -974,9 +1041,9 @@ sd(anes_data$ideology_scale)
 
 ::: {style="font-size: 0.85em;"}
 ```{.r}
-mean(anes_data$ideology_scale)
-## [1] 4.137363
-sd(anes_data$ideology_scale)
+mean(anes_data$ideology, na.rm=T)
+## 4.137363
+sd(anes_data$ideology, na.rm=T)
 ## [1] 1.687654
 ```
 :::
@@ -986,6 +1053,8 @@ sd(anes_data$ideology_scale)
 ---
 
 ## Ex: Political Ideology {style="font-size: 0.9em;"}
+
+[Follow along with one of your variables!]{.slide-sub}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -1003,9 +1072,9 @@ sd(anes_data$ideology_scale)
 
 ::: {style="font-size: 0.85em;"}
 ```{.r}
-mean(anes_data$ideology_scale)
-## [1] 4.137363
-sd(anes_data$ideology_scale)
+mean(anes_data$ideology, na.rm=T)
+## 4.137363
+sd(anes_data$ideology, na.rm=T)
 ## [1] 1.687654
 ```
 :::
@@ -1015,6 +1084,8 @@ sd(anes_data$ideology_scale)
 ---
 
 ## Ex: Political Ideology {style="font-size: 0.9em;"}
+
+[Follow along with one of your variables!]{.slide-sub}
 
 :::: {.columns}
 ::: {.column width="40%"}
@@ -1027,24 +1098,21 @@ sd(anes_data$ideology_scale)
 [4\. What is the mean of the population? &ensp;*I'll never know!*]{.past}
 :::
 
-::: {.column width="60%"}
+::: {.column style="width: 60%; margin-top: -3.2em;"}
 ::: {.fragment}
 5\. Use the sample to calculate the range within which I can be 95% confident that the population's mean will reside.
 :::
 
-::: {style="font-size: 0.85em;"}
-::: {.fragment}
-```{.r}
+::: {style="font-size: 1.05em;"}
+```{.r .line-frags}
 # Create the objects I need:
-var_mean <- mean(anes_data$ideology_scale)
-var_sd <- sd(anes_data$ideology_scale)
-n <- length(anes_data$ideology_scale)
+var_mean <- mean(anes_data$ideology, na.rm=T)
+var_sd <- sd(anes_data$ideology, na.rm=T)
+n <- sum(table(anes_data$ideology))
 var_se <- var_sd / sqrt(n)
 ```
-:::
 
-::: {.fragment}
-```{.r}
+```{.r .line-frags}
 # Calculate 95% confidence intervals
 lower <- var_mean - var_se*2
 upper <- var_mean + var_se*2
@@ -1053,9 +1121,20 @@ print(conf_interval_95)
 ## [1] 4.088295 4.137363 4.186430
 ```
 :::
+
+::: {.tight}
+. . .
+
+&rarr; [[I am confident (95% level) that the real population mean lies between 4.088 and 4.186.]{.hl2}]{.fragment}
+
+. . .
+
+&rarr; [[2.5% chance the true population mean is <4.09; 2.5% chance it is >4.19.]{.hl2}]{.fragment}
 :::
+
 :::
 ::::
+
 
 # Class Lab
 
@@ -1066,37 +1145,33 @@ print(conf_interval_95)
 :::: {.columns}
 ::: {.column width="55%"}
 ::: {.fragment}
-**TASKS (For IV and DV):**
+**Things you should already have done for your IV and DV (last weekly assignment):**
 :::
 
 ::: {.incremental}
 1. Rename your variable
-2. Filter out missing data
+2. Change "missing" data to NAs
 3. Transform your variable IF:
     - Your ordinal variable is not in order
     - Your variable is categorical:
-      - *Make it binary*
-      - ex: Muslim (1) or not (0)
-4. Option: Subset your data (WVS) to the countries you want to focus on
-5. Create a plot of your variable's frequency distribution
-6. Calculate your 95% confidence intervals (e.g., the range within which I can be 95% confident that the population's mean will reside)
+      - *Make it binary*[: ex: Muslim (1) or not (0)]{.fragment}
+4. WVS: Subset your data to the 1-3 countries you want to focus on
 :::
 :::
 
 ::: {.column width="45%"}
 ::: {.fragment}
-**WORKING GROUPS**
+[Next Tasks:]{.hl2}
 :::
 
 ::: {.incremental}
-- People working on renaming and filtering out missing data (1-2)
-- People who need to transform one or both of their variables
-- People working on plotting the frequency distribution / calculating confidence intervals (4-5)
-- People working on control variables
+- Create a plot of your variables' frequency distribution ([Slide 41]{.gr1})
+- Calculate your 95% confidence intervals---e.g., the range within which I can be 95% confident that the population's mean will reside ([Slide 45]{.gr1}) 
+- **Interpretation:** What does this mean for your understanding about your variables? Write 2-3 sentences reporting what you've learned about your variables (IV and DV), based on these new pieces of information? 
 :::
 
 ::: {.fragment}
-**Resources:** Slides and sample code
+**Resources:** Slides (Wk9:Probability, Recoding Workshop.pptx).
 :::
 :::
 ::::
