@@ -73,7 +73,7 @@ Slides work on phones and tablets too — swipe left and right to move between s
 
 ## Contact
 
-Questions about course material, assignments, or accommodations should go first to your TA (contact details are in the [syllabus](https://skdreier.github.io/POLS2140/)), then to Professor Dreier at [skdreier@unm.edu](mailto:skdreier@unm.edu). Please check Canvas and your UNM email regularly for course announcements.
+Questions about course material, assignments, or accommodations should go first to your TA (TA contact details are posted on Canvas), then to Professor Dreier at [skdreier@unm.edu](mailto:skdreier@unm.edu). Please check Canvas and your UNM email regularly for course announcements.
 
 ---
 

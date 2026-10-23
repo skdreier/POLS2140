@@ -38,16 +38,22 @@ Course Syllabus permanent link: [https://skdreier.github.io/POLS2140/](https://s
 **Professor Office:** SSCO 2048
 :::
 
-::: {}
+::: {.content-visible when-profile="instructor"}
 **Main TA:** Karla Eickhoff  \
 **E-mail:** [keickhoff@unm.edu](mailto:keickhoff@unm.edu) \
 **Office Hours:** Thurs 12:30-2:30 \
 **Office:** SSCO 2076
 :::
 
-::: {}
+::: {.content-visible when-profile="instructor"}
 **Data News TA:** Lindsey Atencio \
 **E-mail:** [lba@unm.edu](mailto:lba@unm.edu) \
+:::
+
+::: {.content-hidden when-profile="instructor"}
+**Teaching Assistants:** \
+TA names, e-mail addresses, and \
+office hours are posted on Canvas.
 :::
 :::
 
@@ -72,15 +78,15 @@ As part of this process, you will apply the scientific method to examine and wri
 
 **Pre-requisites:** There are no pre-requisites for this class. You do not need to have any prior knowledge or skills to succeed in this class. We will cover statistics concepts and computer coding tools that are new to and/or unfamiliar to many political science majors. In previous years, some students had difficulty approaching course concepts or become uncertain about whether they belonged in the political science major. My advice is to hang in there, work with your TA and/or me, put in some extra hours studying, and/or access student resources. We will guide you along the way and are dedicated to helping each of you take the positive steps and do the focused work you need to do to succeed in this class, to thrive as a political science major, and to master these exciting data-science tools!
 
-**Working with your TA:** Your TAs are graduate students earning their Ph.D.s in political science. Your main TA is Karla Eickhoff. Karla's job is to help support and guide you through the course. She can help you understand course material, trouble-shoot your computer (R) code, develop and execute your research project, and generally navigate course tasks. Lindsey Atencio will be your point of contact for your Data News project. When you have questions about course material, concerns or circumstances to address, accommodations you need, or thoughts you wish to share, **please start by contacting your TAs**. If they are unable to help you, please come to my office hours!
+**Working with your TA:** Your TAs are graduate students earning their Ph.D.s in political science. Your main TA's job is to help support and guide you through the course. Your TA can help you understand course material, trouble-shoot your computer (R) code, develop and execute your research project, and generally navigate course tasks. Your Data News TA will be your point of contact for your Data News project. When you have questions about course material, concerns or circumstances to address, accommodations you need, or thoughts you wish to share, **please start by contacting your TAs**. If they are unable to help you, please come to my office hours!
 
-**Office hours:** Karla holds office hours immediately after class Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas.
+**Office hours:** Your main TA holds office hours immediately after class Thursdays, and Prof. Dreier holds office hours on Tuesday afternoons. During these times, you can come by our offices to discuss any questions about course material, your political science interests, or any concerns you may have. No appointment is needed! If either of us need to cancel/shift our hours, we will notify the class on Canvas.
 
 **Course communication:** You should regularly check your UNM email and UNM Canvas for important course changes, updates, and announcements. We **do not** reply to emails/messages sent via Canvas. ***Note that class time and office hours (rather than email) are usually the most productive venues for you to raise substantive questions regarding course material and evaluation.*** We aim to reply to student emails on **weekdays**, within 48 hours.
 
 **Resources for academic success:** Past students have used campus resources to help them succeed in this course, including: peer tutoring at the [Center for Academic Program Support](https://caps.unm.edu/) (CAPS), [mental health services](http://mentalhealth.unm.edu), free food at the Lobo Food Pantry, and jobs on campus. Your advisor, the resource centers, the Dean of Students, and I can help you find the right opportunities for you.
 
-**Life Responsibilities:** Many students face obstacles to their education as a result of working jobs; caring for children or other family members; meeting family, cultural or religious obligations; or unforeseen personal responsibilities or difficulties. If you experience challenges that require you to miss a class or that otherwise impact your ability to succeed in this course, please contact Karla and/or me. We may be able to build in some flexibility to support your learning.
+**Life Responsibilities:** Many students face obstacles to their education as a result of working jobs; caring for children or other family members; meeting family, cultural or religious obligations; or unforeseen personal responsibilities or difficulties. If you experience challenges that require you to miss a class or that otherwise impact your ability to succeed in this course, please contact your TA and/or me. We may be able to build in some flexibility to support your learning.
 
 **Your Circumstances:** I welcome you to notify me (in person or via email) if you wish to clarify your pronouns or to confidentially discuss any circumstances that may impact your performance in this class. These circumstances may include: a standing conflict with student drop-in hours, an ARC-approved accommodation, your learning preferences, your ability to access required course material, and/or your family- or job-related responsibilities.
 
