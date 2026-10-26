@@ -32,7 +32,9 @@ The syllabus lives at a permanent link:
 
 **<https://skdreier.github.io/POLS2140/>**
 
-This page always shows the most current version, including the course schedule, readings, assignments, and grading policies. Use the table of contents on the left to jump between sections. If something looks out of date, refresh the page — updates can take a minute or two to appear after they are posted.
+The **Spring 2027** syllabus has its own link: **<https://skdreier.github.io/POLS2140/spring2027/>**
+
+Each page always shows the most current version, including the course schedule, readings, assignments, and grading policies. Use the table of contents on the left to jump between sections. If something looks out of date, refresh the page — updates can take a minute or two to appear after they are posted.
 
 ### Lecture slides
 
