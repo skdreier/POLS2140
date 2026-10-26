@@ -28,7 +28,7 @@ Along the way, each student applies the scientific method to a political topic t
 
 ### Syllabus
 
-The syllabus lives at a permanent link:
+The **Fall 2026** syllabus lives at a permanent link:
 
 **<https://skdreier.github.io/POLS2140/>**
 
