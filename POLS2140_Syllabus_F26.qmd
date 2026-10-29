@@ -139,7 +139,7 @@ Your final grade will be determined as follows:
 
 **MIDTERM EXAM (20%):** You will be examined on **political science research design, data exploration, and R coding basics** (material from Weeks 1–7). My goal for the exam is to encourage and facilitate your learning. The exam is an in-person, hand-written exam which includes concept identification, multiple choice, short-answer and paragraph responses. After the exam has been graded, students have the option to update their exams (by providing correct answers and a discussion of their evolved understanding) to raise their exam score by up to one letter grade. **Date: Tue 10/6.**
 
-**FINAL RESEARCH ANALYSIS (20%):** You will develop an original research hypothesis, statistically test that hypothesis using one of two observational datasets provided in class, and evaluate the hypothesis using an experimental survey (completed in groups). The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Observational analysis using multiple-variable regression (OLS), Experimental analysis using a survey experiment, and Concluding Implications. We will break this project into several small assigned tasks (in the weekly assignments) and provide assigned periodic research tasks in incremental chunks throughout the semester to prevent you from scrambling at the end of the term! **Due: Wed 12/9.**
+**FINAL RESEARCH ANALYSIS (20%):** You will develop an original research hypothesis, statistically test that hypothesis using one of two observational datasets provided in class, and evaluate the hypothesis using an experimental survey (completed in groups). The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Observational analysis using multiple-variable regression (OLS),<!--Experimental analysis using a survey experiment,--> and Concluding Implications. We will break this project into several small assigned tasks (in the weekly assignments) and provide assigned periodic research tasks in incremental chunks throughout the semester to prevent you from scrambling at the end of the term! **Due: Wed 12/9.**
 
 **There is no final exam in this course.** All assignments will be posted and submitted (by 11:59 pm on the due date) via **Canvas**. Each submitted assignment will include detailed instructions regarding when and how use of AI tools are acceptable and when such use will be penalized.
 
@@ -560,7 +560,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 <div class="legend">
   <div class="legend-item"><span class="legend-swatch" style="background:#cfe2ff"></span> Class meeting</div>
-  <div class="legend-item"><span class="legend-swatch" style="background:#f8d7da"></span> Midterm exam</div>
+  <div class="legend-item"><span class="legend-swatch" style="background:#f8d7da"></span> Midterm exam / Final paper due</div>
   <div class="legend-item"><span class="legend-swatch" style="background:#e2e3e5"></span> No class</div>
   <div class="legend-item"><span class="legend-swatch" style="background:#fff3cd"></span> Assignment due</div>
 </div>
@@ -659,7 +659,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 <thead><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
 <tbody>
 <tr><td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-class"><span class="cal-num">1</span><span class="cal-label">W16: Statistics Past & Future</span></td><td class=""><span class="cal-num">2</span></td><td class="cal-class"><span class="cal-num">3</span><span class="cal-label">W16: Project Workshop</span></td><td class=""><span class="cal-num">4</span></td><td class=""><span class="cal-num">5</span></td></tr>
-<tr><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td><td class=""><span class="cal-num">8</span></td><td class=""><!--<span id="final-paper-due"></span><span class="cal-label">FINAL PAPER DUE</span>--><span class="cal-num">9</span></td><td class=""><span class="cal-num">10</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
+<tr><td class=""><span class="cal-num">6</span></td><td class=""><span class="cal-num">7</span></td><td class=""><span class="cal-num">8</span></td><td class="cal-exam"><span id="final-paper-due"></span><span class="cal-num">9</span><span class="cal-label">FINAL PAPER DUE</span></td><td class=""><span class="cal-num">10</span></td><td class=""><span class="cal-num">11</span></td><td class=""><span class="cal-num">12</span></td></tr>
 
 </tbody>
 </table>
