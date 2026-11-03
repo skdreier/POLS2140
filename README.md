@@ -58,6 +58,7 @@ https://skdreier.github.io/POLS2140/slides/<deck-name>.html
 | 10 | Descriptive Statistics | [10_variable_types](https://skdreier.github.io/POLS2140/slides/10_variable_types.html) |
 | 12 | Probability and Statistical Inference | [12_probability](https://skdreier.github.io/POLS2140/slides/12_probability.html) |
 | 13 | Bivariate Hypothesis Testing | [13_bivariate_hyp_testing2](https://skdreier.github.io/POLS2140/slides/13_bivariate_hyp_testing2.html) |
+| 15 | Multiple-Variable Regression Analysis | [15_multiple_variable_regression](https://skdreier.github.io/POLS2140/slides/15_multiple_variable_regression.html) |
 | — | Data News Thursday | [data_news_Thurs](https://skdreier.github.io/POLS2140/slides/data_news_Thurs.html) |
 
 New decks are added to this list as the semester goes on. Links to each deck are also posted on Canvas.
