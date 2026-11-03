@@ -1,0 +1,1099 @@
+---
+title: "Multiple-Variable Regression Analysis"
+subtitle: "POLS 2140: Introduction to Political Analysis"
+author:
+  - name: Dr. Sarah Dreier
+format:
+  clean-revealjs:
+    self-contained: true
+    slide-number: true
+    footer: "POLS 2140 — Intro to Political Analysis"
+    title-slide-attributes:
+      data-background-image: "15_multiple_variable_regression_files/images/image1.jpg"
+      data-background-size: cover
+      data-background-opacity: "0.18"
+    # Emphasis shortcut: write  [text]{.hl}  anywhere for teal-bold emphasis.
+    # Secondary emphasis: [text]{.hl2} for maroon-bold callouts.
+    # [text]{.gr1} = green (the PowerPoint's green callout text).
+    # .imgwrap + .ovl / .oval = image with click-revealed highlight boxes/ovals,
+    #   positioned in % of the image, converted from the PowerPoint shape coordinates.
+    include-in-header:
+      text: |
+        <style>
+        .reveal .hl { color: #107895 !important; font-weight: 700; }
+        .reveal .hl2 { color: #9a2515 !important; font-weight: 700; }
+        .reveal .gr1 { color: #0F7A4A !important; font-weight: 700; }
+        .reveal .gray { color: #999999 !important; }
+        .reveal .tight2 p { margin: 0.1em 0; }
+        .reveal .tight3 p { margin: 0.3em 0; }
+        .reveal .onebullet ul { margin: 0.25em 0 0 0; }
+        .reveal .eq { text-align: center; font-size: 1.25em; margin: 0.3em 0; }
+        .reveal .note { font-size: 0.75em; color: #555; }
+        .reveal .pcircle { border: 2.5px solid #107895; border-radius: 50%; padding: 0.05em 0.4em; }
+        .reveal .imgwrap { position: relative; display: inline-block; }
+        .reveal .imgwrap img { display: block; margin: 0; }
+        .reveal .ovl { position: absolute; background: rgba(237, 125, 49, 0.35); border: 1px solid #ED7D31; border-radius: 6px; }
+        .reveal .oval { position: absolute; border: 2.5px solid; border-radius: 50%; }
+        .reveal .codestep pre code { font-size: 0.78em; line-height: 1.3; }
+        .reveal .codestep .cell-output pre code { font-size: 0.7em; }
+        .reveal .sg table { margin: 0 auto; font-size: 0.62em; border-collapse: collapse; }
+        .reveal .sg td { padding: 1px 14px; border: none; }
+        </style>
+    # Every external link opens in a new tab automatically, so a plain
+    # [text](https://…) is all you ever write for a hyperlink.
+    include-after-body:
+      text: |
+        <script>
+          document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+            a.target = "_blank"; a.rel = "noopener";
+          });
+        </script>
+
+bibliography: references_2140.bib
+csl: apa.csl
+
+---
+
+```{r setup}
+#| include: false
+# Static images live permanently in 15_multiple_variable_regression_assets/images/
+# because a knitr-executed self-contained render wipes the whole <deck>_files/
+# folder, including hand-placed images referenced from it. Re-copy them in fresh
+# before anything references 15_multiple_variable_regression_files/images/.
+dir.create("15_multiple_variable_regression_files/images", recursive = TRUE, showWarnings = FALSE)
+file.copy(
+  list.files("15_multiple_variable_regression_assets/images", full.names = TRUE),
+  "15_multiple_variable_regression_files/images",
+  overwrite = TRUE
+)
+```
+
+## Reading Prompt
+
+In your own words, what are **control variables?** Why are they important?
+
+---
+
+## Announcements
+
+:::{.incremental}
+- VOTE TODAY!
+- **Honors program:** Application this Friday (Nov 6)
+- **Dr. Dreier office hours:** Today 2:30-4:30 pm
+- **Karla office hours this week:** Thurs 12:30-2:30
+- **Final research project** instructions are posted. Additional guidelines to be posted this week!
+:::
+
+::: {.notes}
+From the old PowerPoint (update before teaching): **Tuesday:** Lab in class – group work on control variables, R live coding (Prof Dreier: no office hours; Karla: office hours per usual). **Thursday:** Begin regression table interpretation in class. Extra credit if you submit your multiple-variable regression analysis (Weekly Assignment #11) before class on Thursday!
+:::
+
+---
+
+## Recall……
+
+<div style="text-align: center;"><img src="15_multiple_variable_regression_files/images/image2.png" style="max-height: 48vh; width: auto;"></div>
+
+. . .
+
+**OLS linear regression:** Find the line of expected values (for X, Y) that minimizes the (squared) distance between the observed Y and predicted Y.
+
+---
+
+## Recall… {style="font-size: 0.9em;"}
+
+[**OLS linear regression:** Find the line of expected values (for X, Y) that minimizes the (squared) distance between the observed Y and predicted Y.]{.gray}
+
+. . .
+
+**Logic:**
+
+. . .
+
+- We use what we **know** about:
+  - how a given person responded to your IV survey question (X);
+  - how the IV (X) and DV (Y) are related in the sample overall (including the probability that what we observe about the relationship between X and Y also exists in the underlying unobserved population);
+
+. . .
+
+- To calculate how we would **expect** the given person to respond to the DV (Y).
+
+. . .
+
+The $\boldsymbol{\beta}$ **(beta) coefficient** (aka beta parameter) reports the amount of change in the dependent variable (Y) we observe for a one-unit change in the independent variable (X).
+
+# Goodness of Fit
+
+Measures the goodness of fit between the regression line and the actual sample data
+
+## Goodness of fit
+
+**R-Square Statistic (R^2^)**
+
+::: {.incremental}
+- Indicates the proportion of the variation in the dependent variable that is accounted for by the model.
+- Overall, how good a job does the independent variable do in predicting the dependent variable?
+- Range: {0, 1}
+:::
+
+---
+
+## Goodness of fit
+
+**R-Square Statistic (R^2^)**
+
+:::: {.columns}
+::: {.column width="45%"}
+<svg viewBox="20 20 58 54" style="width:100%; max-height:48vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><circle cx="41" cy="40.5" r="17" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="0.4"/><circle cx="56" cy="48.5" r="17" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="0.4"/><text x="32" y="41.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">a</text><text x="49" y="46.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">b</text><text x="65" y="49.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">c</text><text x="39" y="61" font-size="4.2" text-anchor="middle" fill="#1a1a1a">Y</text><text x="58" y="69.5" font-size="4.2" text-anchor="middle" fill="#9a2515">X</text></svg>
+:::
+
+::: {.column width="55%"}
+::: {.fragment}
+**a + b = total variation in Y (DV)**
+:::
+
+::: {.fragment}
+**b + c = total variation in X (IV)**
+:::
+
+::: {.fragment}
+**a = variation in Y (DV) not related to (explained by) variation in X (IV)**
+:::
+
+::: {.fragment}
+**b = covariation between X and Y**
+:::
+:::
+::::
+
+---
+
+## Goodness of fit
+
+**R-Square Statistic (R^2^)**
+
+:::: {.columns}
+::: {.column width="45%"}
+<svg viewBox="20 20 58 54" style="width:100%; max-height:48vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><circle cx="41" cy="40.5" r="17" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="0.4"/><circle cx="56" cy="48.5" r="17" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="0.4"/><text x="32" y="41.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">a</text><text x="49" y="46.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">b</text><text x="65" y="49.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">c</text><text x="39" y="61" font-size="4.2" text-anchor="middle" fill="#1a1a1a">Y</text><text x="58" y="69.5" font-size="4.2" text-anchor="middle" fill="#9a2515">X</text></svg>
+:::
+
+::: {.column width="55%"}
+**a + b = total variation in Y (DV)**
+
+**b + c = total variation in X (IV)**
+
+**a = [residual / stochastic (random) variation in Y]{.hl}**
+
+**b = [systematic component]{.hl}**
+:::
+::::
+
+---
+
+## Goodness of fit
+
+**R-Square Statistic (R^2^)**
+
+<svg viewBox="13 17 120 57" style="width:100%; max-height:48vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><circle cx="34" cy="37.5" r="17" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="0.4"/><circle cx="56" cy="48.5" r="17" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="0.4"/><circle cx="102" cy="44.5" r="17" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="0.4"/><circle cx="111" cy="49.5" r="17" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="0.4"/><text x="25" y="38.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">a</text><text x="46" y="44.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">b</text><text x="65" y="49.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">c</text><text x="32" y="58" font-size="4.2" text-anchor="middle" fill="#1a1a1a">Y</text><text x="58" y="69.5" font-size="4.2" text-anchor="middle" fill="#9a2515">X</text><text x="93" y="45.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">a</text><text x="106.5" y="48.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">b</text><text x="120" y="50.5" font-size="4.2" text-anchor="middle" fill="#1a1a1a" font-style="italic">c</text><text x="95" y="64" font-size="4.2" text-anchor="middle" fill="#1a1a1a">Y</text><text x="115" y="70.5" font-size="4.2" text-anchor="middle" fill="#9a2515">X</text></svg>
+
+---
+
+## Goodness of fit {style="font-size: 0.85em;"}
+
+**R-Square Statistic (R^2^)**
+
+::: {.incremental}
+- If R^2^ = 0.324, it means that our OLS regression model accounts for 32% of the variation in the dependent variable.
+- Is this good?
+- If this R^2^ is about our economy/incumbent vote example:
+- *"We are able to…explain just over 32 percent of the variation in incumbent vote from 1876-2016 with just one measure of the economy. When we start to think of all of the different campaign strategies, personalities, scandals, wars, and everything else that is not in this simple model, this level of accuracy is rather impressive. In fact, we would suggest that this tells us something pretty remarkable about the politics of the United States – the economy is massively important"* [@kellstedt2018fundamentals, p. 199].
+:::
+
+# Controlling for other variables
+
+## What if we fail to control for Z?
+
+::: {.incremental}
+- **Bias:** A statistical problem that occurs when the expected value of the parameter estimate we obtain from a sample will not be equal to the true population parameter.
+- **Omitted variable bias:** Bias resulting from failing to include a variable that "belongs" in our regression model.
+  - Causes the value of the parameter **estimate** for the population to not equal the **true** population parameter.
+:::
+
+---
+
+## What if we fail to control for Z? {.tight2 style="font-size: 0.8em;"}
+
+:::: {.columns}
+::: {.column width="47%"}
+<svg viewBox="0 130 460 400" style="width:100%; max-height:60vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><ellipse cx="160" cy="294" rx="125" ry="120" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="1.5"/><text x="20" y="303" font-size="24" text-anchor="middle" fill="#107895">Y</text><ellipse cx="317" cy="255" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><text x="431" y="170" font-size="24" text-anchor="middle" fill="#9a2515">X</text><text x="230" y="252" font-size="24" text-anchor="middle" fill="#1a1a1a">a</text><g class="fragment" data-fragment-index="7"><ellipse cx="280" cy="386" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><text x="372" y="518" font-size="24" text-anchor="middle" fill="#9a2515">Z</text><text x="254" y="317" font-size="24" text-anchor="middle" fill="#1a1a1a">b</text><text x="319" y="337" font-size="24" text-anchor="middle" fill="#1a1a1a">c</text></g></svg>
+:::
+
+::: {.column width="53%"}
+::: {.fragment fragment-index=1}
+**Goal:** Use X to explain Y
+:::
+
+::: {.fragment fragment-index=2 .onebullet}
+- Ex: How does **political ideology** effect **attitudes toward SOGI (sexual orientation and gender identity)**?
+:::
+
+::: {.fragment fragment-index=3 .onebullet}
+- Overlapping area represents the covariation between X and Y
+:::
+
+::: {.fragment fragment-index=6 .onebullet}
+- But are there other things that might be related to both X and Y?
+:::
+
+::: {.fragment fragment-index=8 .onebullet}
+- Here, Z is related to both Y and X
+:::
+
+::: {.fragment fragment-index=9 .onebullet}
+- If we erased circle Z, we would (incorrectly) attribute all of the area (*a+b*) to X
+:::
+
+::: {.fragment fragment-index=10 .onebullet}
+- → [biased estimate of X's effect on Y]{.hl2}
+:::
+:::
+::::
+
+---
+
+## What if we fail to control for Z? {style="font-size: 0.9em;"}
+
+:::: {.columns}
+::: {.column width="47%"}
+<svg viewBox="0 130 460 400" style="width:100%; max-height:60vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><ellipse cx="160" cy="294" rx="125" ry="120" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="1.5"/><ellipse cx="317" cy="255" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><ellipse cx="280" cy="386" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><text x="20" y="303" font-size="24" text-anchor="middle" fill="#107895">Y</text><text x="431" y="170" font-size="24" text-anchor="middle" fill="#9a2515">X</text><text x="372" y="518" font-size="24" text-anchor="middle" fill="#9a2515">Z</text><text x="230" y="252" font-size="24" text-anchor="middle" fill="#1a1a1a">a</text><text x="254" y="317" font-size="24" text-anchor="middle" fill="#1a1a1a">b</text><text x="319" y="337" font-size="24" text-anchor="middle" fill="#1a1a1a">c</text></svg>
+:::
+
+::: {.column width="53%"}
+::: {.fragment}
+**When do we not need to control for Z?**
+:::
+
+::: {.fragment}
+1. If Z has no effect on the DV
+:::
+
+<div class="fragment" style="position: absolute; left: 0; bottom: 3%; width: 30%;"><svg viewBox="0 0 290 125" style="width: 100%;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><circle cx="60" cy="55" r="48" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="1.2"/><circle cx="138" cy="55" r="48" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.2"/><circle cx="218" cy="55" r="48" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.2"/><text x="60" y="122" font-size="18" text-anchor="middle" fill="#107895">Y</text><text x="138" y="122" font-size="18" text-anchor="middle" fill="#9a2515">X</text><text x="218" y="122" font-size="18" text-anchor="middle" fill="#9a2515">Z</text></svg></div>
+
+::: {.fragment}
+2. If Z is entirely unrelated to the other IVs
+:::
+
+<div class="fragment" style="position: absolute; right: 0; bottom: 3%; width: 30%;"><svg viewBox="0 0 290 125" style="width: 100%;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><circle cx="60" cy="55" r="48" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.2"/><circle cx="138" cy="55" r="48" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="1.2"/><circle cx="218" cy="55" r="48" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.2"/><text x="60" y="122" font-size="18" text-anchor="middle" fill="#9a2515">Z</text><text x="138" y="122" font-size="18" text-anchor="middle" fill="#107895">Y</text><text x="218" y="122" font-size="18" text-anchor="middle" fill="#9a2515">X</text></svg></div>
+
+::: {.fragment}
+*In evaluating how US economic growth → % vote for US incumbent pres,* we don't need to control for economic growth in the AU or the EU.
+:::
+:::
+::::
+
+---
+
+## What if we fail to control for Z? {style="font-size: 0.9em;"}
+
+:::: {.columns}
+::: {.column width="47%"}
+<svg viewBox="0 130 460 400" style="width:100%; max-height:60vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><ellipse cx="160" cy="294" rx="125" ry="120" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="1.5"/><ellipse cx="317" cy="255" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><ellipse cx="280" cy="386" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><text x="20" y="303" font-size="24" text-anchor="middle" fill="#107895">Y</text><text x="431" y="170" font-size="24" text-anchor="middle" fill="#9a2515">X</text><text x="372" y="518" font-size="24" text-anchor="middle" fill="#9a2515">Z</text><text x="230" y="252" font-size="24" text-anchor="middle" fill="#1a1a1a">a</text><text x="254" y="317" font-size="24" text-anchor="middle" fill="#1a1a1a">b</text><text x="319" y="337" font-size="24" text-anchor="middle" fill="#1a1a1a">c</text></svg>
+:::
+
+::: {.column width="53%"}
+::: {.shown}
+**When do we not need to control for Z?**
+:::
+
+::: {.shown}
+1. If Z has no effect on the DV
+:::
+
+::: {.shown}
+2. If Z is entirely unrelated to the other IVs[\*]{.gr1}
+:::
+
+::: {.shown}
+*In evaluating how US economic growth → % vote for US incumbent pres,* we don't need to control for economic growth in the AU or the EU… [*or do we?*]{.gr1}
+:::
+
+::: {.fragment}
+[\*unlikely in practice]{.gr1}
+:::
+:::
+::::
+
+---
+
+## Controls v. independent variables {style="font-size: 0.85em;"}
+
+:::: {.columns}
+::: {.column width="65%"}
+**X**
+
+Key independent variable
+
+Alternative hypothesis variable
+
+Other relevant variables
+
+Control variables
+:::
+
+::: {.column width="35%"}
+**Y**
+
+Dependent variable
+:::
+::::
+
+---
+
+## Controls v. independent variables {style="font-size: 0.85em;"}
+
+:::: {.columns}
+::: {.column width="65%"}
+**X**
+
+Key independent variable
+
+Alternative hypothesis variable
+
+Other relevant variables
+
+Control variables
+
+   → interpretable $\beta$ coefficients ($\beta_1 X_1 + \beta_2 X_2 + \ldots$)
+:::
+
+::: {.column width="35%"}
+[**Y**]{.gray}
+
+[Dependent variable]{.gray}
+:::
+::::
+
+. . .
+
+How you *talk* about these X variables is up to you
+
+. . .
+
+[Statistically, all Xs play the same role in your regression equation.]{.hl}
+
+---
+
+## Selecting your control variables {style="font-size: 0.9em;"}
+
+:::: {.columns}
+::: {.column width="47%"}
+<svg viewBox="0 130 460 400" style="width:100%; max-height:60vh;" xmlns="http://www.w3.org/2000/svg" font-family="Source Sans Pro, Helvetica, sans-serif"><ellipse cx="160" cy="294" rx="125" ry="120" fill="#107895" fill-opacity="0.2" stroke="#107895" stroke-width="1.5"/><ellipse cx="317" cy="255" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><ellipse cx="280" cy="386" rx="125" ry="120" fill="#9a2515" fill-opacity="0.2" stroke="#9a2515" stroke-width="1.5"/><text x="20" y="303" font-size="24" text-anchor="middle" fill="#107895">Y</text><text x="431" y="170" font-size="24" text-anchor="middle" fill="#9a2515">X</text><text x="372" y="518" font-size="24" text-anchor="middle" fill="#9a2515">Z</text><text x="230" y="252" font-size="24" text-anchor="middle" fill="#1a1a1a">a</text><text x="254" y="317" font-size="24" text-anchor="middle" fill="#1a1a1a">b</text><text x="319" y="337" font-size="24" text-anchor="middle" fill="#1a1a1a">c</text></svg>
+:::
+
+::: {.column width="53%"}
+
+:::{.incremental}
+- **Brainstorm with a buddy:** What are 2-3 [control variables]{.hl} that you think you should take into consideration, in order to reduce having a biased outcome?
+- Have you considered every possible control variable? Why or why not?
+:::
+
+:::
+::::
+
+# Interpreting Multiple Regression
+
+## Three things to consider: {style="font-size: 0.85em;"}
+
+[Significance]{.hl2} (p<0.05 or so), [sign]{.hl} (+/-), and [size]{.hl} (substantive effect)
+
+::: {.fragment}
+A relationship between two variables is [statistically significant]{.hl2}: a conclusion, based on the *observed sample data*, that the relationship between two variables is not due to random chance, and therefore likely exists in the *broader population.*
+:::
+
+::: {.fragment}
+  → p-values indicate statistical significance at a given level (e.g., p < 0.05)
+:::
+
+::: {.fragment}
+  → e.g: "X and Y are statistically significant at the p < 0.05 level."
+:::
+
+::: {.fragment}
+If a relationship between X and Y [IS NOT statistically significant]{.hl2}, [you stop]{.hl2} interpreting this relationship. →
+:::
+
+::: {.fragment}
+***You can't reject the null hypothesis*** (that X and Y are not related).
+:::
+
+---
+
+## Three things to consider: {style="font-size: 0.85em;"}
+
+[Significance]{.hl2} (p<0.05 or so), [sign]{.hl} (+/-), and [size]{.hl} (substantive effect)
+
+A relationship between two variables is **statistically significant**: a conclusion, based on the *observed sample data*, that the relationship between two variables is not due to random chance, and therefore likely exists in the *broader population.*
+
+  → p-values indicate statistical significance at a given level (e.g., p < 0.05)
+
+  → e.g: "X and Y are statistically significant at the p < 0.05 level."
+
+::: {.fragment}
+If a relationship between X and Y [IS statistically significant,]{.gr1} [you proceed]{.gr1} to interpret the **beta coefficient**'s [sign]{.hl} and [substantive meaning]{.hl}. →
+:::
+
+::: {.fragment}
+A relationship between two variables is **substantively meaningful:** a judgment call about whether or not a statistically significant relationship is "large" or "small" in terms of their real-world meaning/impact.
+:::
+
+
+
+---
+
+## Interpreting multiple regression (OLS) {.tight3 style="font-size: 0.75em;"}
+
+:::: {layout="[38,62]"}
+::: {#first-column}
+<div class="imgwrap" style="margin-left: 3.5em;"><img src="15_multiple_variable_regression_files/images/image4.png" style="max-height: 66vh; width: auto;"><div class="oval fragment" data-fragment-index="6" style="border-color: #9a2515; left: 15.6%; top: 8.2%; width: 63.4%; height: 5.4%;"></div><div class="oval fragment" data-fragment-index="8" style="border-color: #107895; left: -10.5%; top: 24.4%; width: 80.2%; height: 6.3%;"></div><div class="oval fragment" data-fragment-index="10" style="border-color: #0F7A4A; left: -10.5%; top: 58%; width: 80.2%; height: 6.1%;"></div><div class="oval fragment" data-fragment-index="12" style="border-color: #ED7D31; left: -10.5%; top: 91.1%; width: 43.8%; height: 6.8%;"></div></div>
+:::
+
+::: {#second-column}
+::: {.fragment fragment-index=1}
+*A 1-unit increase in that particular X variable is associated with a $\beta$ change in the Y variable, controlling for the effects of all other independent variables in the model.*
+:::
+
+::: {.fragment fragment-index=2}
+**Party ID:** 1 ("Strong Rep") to 5 ("Strong Dem")
+:::
+
+::: {.fragment fragment-index=3}
+**Political Interest:** 1 ("not interested") to 7 ("very interested")
+:::
+
+::: {.fragment fragment-index=4}
+**M1:**
+:::
+
+<div style="margin-left: 2em;">
+
+::: {.fragment fragment-index=5}
+[Dependent variable]{.hl2} → title
+:::
+
+::: {.fragment fragment-index=7}
+[Key independent variable ($\beta$ par)]{.hl} → first row
+:::
+
+::: {.fragment fragment-index=9}
+[Intercept ($\alpha$ par)]{.gr1} → constant (value of the DV when the IV is 0)
+:::
+
+::: {.fragment fragment-index=11}
+[\*]{style="color: #ED7D31; font-weight: 700;"} → p-values (*whether you can reject the null hyp with a standard level of certainty\**)
+:::
+
+::: {.fragment fragment-index=13}
+**Conclusion**?
+:::
+
+::: {.fragment fragment-index=14}
+Not statistically significant; we can't reject the null hypothesis at this point.
+:::
+
+</div>
+:::
+::::
+
+---
+
+## Interpreting multiple regression {.tight3 style="font-size: 0.75em;"}
+
+:::: {layout="[38,62]"}
+::: {#first-column}
+<div style="margin-left: 3.5em;"><img src="15_multiple_variable_regression_files/images/image4.png" style="max-height: 66vh; width: auto;"></div>
+:::
+
+::: {#second-column}
+*A 1-unit increase in that particular X variable is associated with a $\beta$ change in the Y variable, controlling for the effects of all other independent variables in the model.*
+
+**Party ID:** 1 ("Strong Rep") to 5 ("Strong Dem")
+
+**Political Interest:** 1 ("not interested") to 7 ("very interested")
+
+. . .
+
+**M2:**
+
+. . .
+
+<div style="margin-left: 2em;">
+Dependent variable?
+
+<div class="fragment">
+Key independent variable? Other variables?
+</div>
+
+<div class="fragment">
+**Conclusion**?
+</div>
+</div>
+
+. . .
+
+After controlling for Gender and Family Income, a 1-unit increase (from Rep. to Dem), predicts someone will become more politically interested by .136; this positive relationship is significant at p<.05.
+:::
+::::
+
+---
+
+## Interpreting multiple regression {style="font-size: 0.85em;"}
+
+:::: {layout="[38,62]"}
+::: {#first-column}
+<div class="imgwrap" style="margin-left: 3.5em;"><img src="15_multiple_variable_regression_files/images/image4.png" style="max-height: 66vh; width: auto;"><div class="oval fragment" data-fragment-index="1" style="border-color: #9a2515; left: 70.9%; top: 18.3%; width: 22.8%; height: 18.3%;"></div><div class="oval" style="border-color: #9a2515; left: -3.3%; top: 90.6%; width: 33.6%; height: 6.8%;"></div></div>
+:::
+
+::: {#second-column}
+*We know that Party ID has a statistically significant effect on someone's political interest …*
+
+::: {.fragment fragment-index=2}
+*… Is this substantively meaningful?*
+:::
+
+::: {.fragment fragment-index=3}
+**Party ID:** 1 ("Strong Rep") to 5 ("Strong Dem")
+:::
+
+::: {.fragment fragment-index=4}
+**Political Interest:** 1 ("not interested") to 7 ("very interested")
+:::
+:::
+::::
+
+# Confidence Intervals
+
+## Confidence Intervals {style="font-size: 0.85em;"}
+
+::: {.fragment}
+***Statistics is about quantifying uncertainty!***
+:::
+
+::: {.incremental}
+- An important aspect of regression models is our **degree of uncertainty** about **individual estimates** of **population parameter values** from the **sample regression model.**
+- **Confidence Interval:** A probabilistic statement about the likely value of a population characteristic based on the observations in a sample [@kellstedt2018fundamentals, p. 160].
+- The $\boldsymbol{se(\hat{\beta})}$ (the standard error of the $\beta$ coefficient) is used to calculate the IV-DV relationship's confidence intervals and to assess its statistical significance (\*).
+:::
+
+---
+
+## Confidence Intervals (the underlying math)
+
+A probabilistic statement about the likely value of a population characteristic based on the observations in a sample [@kellstedt2018fundamentals, p. 160]
+
+::: {.eq}
+$\color{#7030A0}{\hat{\beta}} \pm [\color{#0F7A4A}{t} \times \color{#9a2515}{se(\hat{\beta})}]$
+
+$\hat{\alpha} \pm [t \times se(\hat{\alpha})]$
+:::
+
+:::: {.columns .tight2}
+::: {.column style="width: 40%; padding-left: 2em;"}
+[$t$: t-value (p 300)]{.gr1}
+
+  df: $\boldsymbol{n - k}$
+
+  desired p-value\*
+:::
+
+::: {.column width="50%"}
+[$\hat{\beta}$: coefficients in regression table]{style="color: #7030A0; font-weight: 700;"}
+
+[$se(\hat{\beta})$: under coefficients ()]{.hl2}
+:::
+::::
+
+---
+
+## Confidence Intervals
+
+- We use $\boldsymbol{se(\hat{\beta})}$ (and t-statistic) to produce visual representations of our regression line and confidence intervals.
+
+- **A 95% confidence interval for $\boldsymbol{\beta}$:** The interval has a probability of 95% to contain the true value of $\beta$. So, in 95% of all samples that could be drawn, the confidence interval will cover the true value of $\beta$.
+
+
+:::: {.columns}
+::: {.column width="30%"}
+![](15_multiple_variable_regression_files/images/image6.png){style="max-height: 42vh; width: auto;"}
+:::
+
+::: {.column width="38%"}
+![](15_multiple_variable_regression_files/images/image7.png){style="max-height: 42vh; width: auto;"}
+:::
+
+::: {.column width="32%"}
+![](15_multiple_variable_regression_files/images/image5.png){style="max-height: 42vh; width: auto;"}
+:::
+::::
+
+## Confidence Intervals
+
+:::: {.columns}
+::: {.column width="50%"}
+![](15_multiple_variable_regression_files/images/image7.png){style="max-height: 62vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+::: {.incremental}
+- For each point on the line, we can calculate the confidence intervals that represent how big or small a range we would expect (~95%) of our cases to fall within.
+- Do you think it is better (from the standpoint of certainty) to have [wide or narrow]{.hl} confidence intervals?
+:::
+:::
+::::
+
+# Example: multiple-variable regression in R
+
+Does political ideology shape attitudes toward gay men and lesbian women, controlling for gender, age, and education? (ANES 2024)
+
+## Variables {.tight2 style="font-size: 0.72em;"}
+
+| Variable Role | Concept | ANES variable | Values |
+|---|---|---|---|
+| **DV** | Attitudes toward LG people | `V242144` Feeling thermometer: gay men and lesbians[^trans] | 0 (cold) – 100 (warm) |
+| **Main IV** | Political ideology | `V241177` 7-pt liberal–conservative self-placement | 1 (extremely liberal) – 7 (extremely conservative) |
+| Control | Gender | `V241551` R's gender | 1 = man, 2 = woman, 3 = nonbinary, 4 = something else (→ recode to `male` 0/1) |
+| Control | Age | `V241458x` Age on election day | 18 – 80 (80 = 80 or older) |
+| Control | Education | `V241465x` 5-category education | 1 (less than HS) – 5 (graduate degree) |
+
+. . .
+
+::: {style="margin-top: 1.5em;"}
+**Data:** ANES 2024 Time Series [@anes2024tsdata]
+:::
+
+. . .
+
+::: {style="margin-top: 1.5em;"}
+**Method:** OLS linear regression (`lm()`)
+
+$$\text{LG thermometer}_i = \alpha + \beta_1\,\text{ideology}_i + \beta_2\,\text{male}_i + \beta_3\,\text{age}_i + \beta_4\,\text{education}_i + u_i$$
+:::
+
+[^trans]: `V242151`: the post-election feeling thermometer for transgender people.
+
+---
+
+## Variables (more detail) {.tight2 style="font-size: 0.72em;"}
+
+:::: {.columns}
+::: {.column width="50%"}
+**DV: Feeling thermometer, gay men & lesbians** (`lg_therm`, 0–100)
+
+- **0** = very cold / unfavorable
+- **50** = neither warm nor cold
+- **100** = very warm / favorable
+
+**Main IV: Political ideology** (`ideology`)
+
+- **1** = Extremely liberal
+- **2** = Liberal
+- **3** = Slightly liberal
+- **4** = Moderate; middle of the road
+- **5** = Slightly conservative
+- **6** = Conservative
+- **7** = Extremely conservative
+:::
+
+::: {.column width="50%"}
+**Control: Gender** (`male`, recoded from `V241551`)
+
+- **0** = Woman, nonbinary, or something else
+- **1** = Man
+
+**Control: Age** (`age`)
+
+- **18–79** = age in years on election day
+- **80** = 80 years old or older
+
+**Control: Education** (`educ`)
+
+- **1** = Less than high school credential
+- **2** = High school credential
+- **3** = Some post-high school, no bachelor's degree
+- **4** = Bachelor's degree
+- **5** = Graduate degree
+:::
+::::
+
+::: {.note style="margin-top: 0.5em;"}
+Value labels from the ANES 2024 codebook [@anes2024tsdata]. Missing codes (refused, don't know, etc.) are set to `NA` in Step 3.
+:::
+
+---
+
+## Step 1: Load the data {.codestep}
+
+```{r}
+#| echo: true
+#| eval: false
+# Set your working directory to the folder that holds the ANES file, then:
+anes_data <- read.csv("anesdata_2024.csv")
+```
+
+```{r}
+#| echo: false
+# Hidden loader: the full ANES csv (25 MB) is not in this folder, so read a
+# 5-column extract of the same file (all 5,521 rows, raw codes untouched).
+anes_data <- read.csv("15_multiple_variable_regression_assets/anes2024_lg_extract.csv")
+```
+
+```{r}
+#| echo: true
+nrow(anes_data)   # number of respondents
+```
+
+. . .
+
+**Step 2:** Create new variables, with names we can remember, in the original dataset
+
+```{r}
+#| echo: true
+anes_data$lg_therm <- anes_data$V242144   # DV: thermometer, gay men & lesbians
+anes_data$ideology <- anes_data$V241177   # main IV: 7-pt ideology
+anes_data$gender   <- anes_data$V241551   # control: gender
+anes_data$age      <- anes_data$V241458x  # control: age
+anes_data$educ     <- anes_data$V241465x  # control: education (5 categories)
+```
+
+---
+
+## Step 3: Recode missing values to `NA` {.codestep style="font-size: 0.9em;"}
+
+*Recall:* ANES stores "refused," "don't know," and other missing answers as [negative numbers or codes like 99 and 998]{.hl2}. R would treat those as real values (thus disrupting our calculations). Check the codebook, then set the missing values (specific to each variable) `NA`:
+
+```{r}
+#| echo: true
+# DV: valid ratings are 0-100 (negatives = missing; 998 = don't know)
+anes_data$lg_therm[anes_data$lg_therm < 0 | anes_data$lg_therm > 100] <- NA
+
+# Ideology: valid values are 1-7 (99 = "haven't thought much about this")
+anes_data$ideology[anes_data$ideology < 1 | anes_data$ideology > 7] <- NA
+
+# Gender -> dummy variable: male = 1 (man); 0 = woman, nonbinary, or
+# something else; refused/inapplicable (negative codes) = NA
+anes_data$male <- NA
+anes_data$male[anes_data$gender == 1] <- 1
+anes_data$male[anes_data$gender %in% c(2, 3, 4)] <- 0
+
+# Age and education: negative codes = missing
+anes_data$age[anes_data$age < 0] <- NA
+anes_data$educ[anes_data$educ < 0] <- NA
+```
+
+. . .
+
+::: {.note}
+[Researcher choice:]{.hl2} coding gender as `male` (1 = man; 0 = woman, nonbinary, or something else) keeps the 64 nonbinary / "something else" respondents in the analysis instead of dropping them. *Human judgment involved in how you recode categories.*
+:::
+
+---
+
+## Step 4: Run the OLS regression {.codestep}
+
+```{r}
+#| echo: true
+# na.action = na.omit drops every respondent with an NA on any variable in the model
+model.multi <- lm(lg_therm ~ ideology + male + age + educ, data = anes_data,
+                  na.action = na.omit)
+nobs(model.multi)   # respondents used in the model
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+summary(model.multi)
+```
+
+. . .
+
+**Step 5:** Make a regression table with `stargazer` [@hlavac2022stargazer]
+
+```{r}
+#| echo: true
+#| eval: false
+# install.packages("stargazer")   # only once
+library(stargazer)
+stargazer(model.multi, type = "text",
+          dep.var.labels = "Feeling thermometer: Gay men and Lesbian women",
+          covariate.labels = c("Ideology (conservative)", "Male",
+                               "Age (years)", "Education (1-5)"))
+```
+
+---
+
+## Results {.sg}
+
+```{r}
+#| echo: false
+#| results: asis
+library(stargazer)
+sg <- capture.output(
+  stargazer(model.multi, type = "html",
+            dep.var.labels = "Feeling thermometer: Gay Men and Lesbian Women (0-100)",
+            covariate.labels = c("Ideology (1 = ext. liberal, 7 = ext. conservative)",
+                                 "Male (1 = man, 0 = woman/nonbinary/other)",
+                                 "Age (years)", "Education (1-5)"),
+            omit.stat = c("ser", "f"), digits = 2, header = FALSE))
+# escape * so markdown doesn't read the significance stars as italics/bold
+cat(gsub("*", "&#42;", sg, fixed = TRUE), sep = "\n")
+```
+
+::: {.fragment style="font-size: 0.6em; margin-top: 0.4em;"}
+Controlling for gender, age, and education, a one-point move toward the conservative end of the ideology scale is associated with a [7.61-point colder rating]{.hl} of gay men and lesbian women (p < 0.01). Moving from extremely liberal (1) to extremely conservative (7) → about 46 points colder. R^2^ = 0.29.
+:::
+
+---
+
+## Step 6: Expected values with confidence intervals {.codestep style="font-size: 0.9em;"}
+
+The `ggeffects` package [@ludecke2018ggeffects] predicts the DV at each ideology value (1–7), holding the controls constant, in one line:
+
+```{r}
+#| echo: true
+# install.packages(c("ggeffects", "ggplot2"))   # only once
+library(ggeffects)
+ev <- ggpredict(model.multi, terms = "ideology")
+ev   # Predicted = expected value; 95% CI = confidence interval
+```
+
+. . .
+
+[*Adjusted for*]{.hl} lists the values the controls are held at (gender at its mean; age and education at their typical, rounded values).
+
+---
+
+## Step 7: Plot the expected values {.codestep}
+
+```{r ev-plot}
+#| echo: true
+#| eval: false
+library(ggplot2)
+plot(ev) +   # line = expected values; shaded band = 95% CI
+  labs(x = "Political ideology (1 = extremely liberal, 7 = extremely conservative)",
+       y = "Expected thermometer rating (0-100)",
+       title = "Expected feelings toward gay men and lesbians, by ideology") +
+  scale_x_continuous(breaks = 1:7)
+```
+
+---
+
+## Expected values (95% confidence intervals)
+
+```{r}
+#| echo: false
+#| fig-width: 8
+#| fig-height: 4.6
+#| out-width: "88%"
+#| fig-align: center
+<<ev-plot>>
+```
+
+::: {.fragment style="font-size: 0.6em; text-align: center;"}
+Holding gender, age, and education constant. The confidence band is [narrow]{.hl} because n = 3,864 — we are quite certain about each expected value.
+:::
+
+## Steps to interpretation {style="font-size: 0.8em;"}
+
+1. Is the relationship between the IV and DV statistically significant? ($p$-value, represented w/ \* next to each independent variable's $\beta$ coefficient)
+2. If so: What is the sign (+/-) and substantive relationship between IV and DV? ($\beta$ coefficient)
+3. What does this mean in real terms?
+    - Note: you need to know the variables' min/max to make this interpretation
+4. What is the R^2^ score? In your assessment, what is this model's "goodness of fit"? What does this tell you about the relationship between the IV and DV?
+5. Did you learn anything informative about the model's control variables?
+6. What other control variables might be useful to include?
+7. What are some potential *implications* of these results, for:
+    - Understanding people / politics?
+    - Public policy?
+    - Reinforcing or challenging power (unearned advantages / disadvantages) – *Data Feminism*?
+
+# More practice interpreting results
+
+## More practice interpreting regression results
+
+:::: {layout="[30,70]"}
+::: {#first-column}
+- @kellstedt2018fundamentals [Table 10.1, p. 222]
+:::
+
+::: {#second-column}
+<div style="text-align: center;"><img src="15_multiple_variable_regression_files/images/image8.png" style="max-height: 62vh; width: auto;"></div>
+:::
+::::
+
+---
+
+## More practice interpreting regression results
+
+:::: {layout="[30,70]"}
+::: {#first-column}
+- @kellstedt2018fundamentals [Table 10.2, p. 235]
+:::
+
+::: {#second-column}
+<div style="text-align: center;"><img src="15_multiple_variable_regression_files/images/image9.png" style="max-height: 62vh; width: auto;"></div>
+:::
+::::
+
+---
+
+## {#dreier-bias-paper}
+
+:::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: center;"><img src="15_multiple_variable_regression_files/images/image11_top.png" style="width: 92%; margin: 0;"><img src="15_multiple_variable_regression_files/images/image12_crop.png" style="width: 100%; margin: 0;"><div class="imgwrap" style="width: 92%;"><img src="15_multiple_variable_regression_files/images/image11_bottom.png" style="width: 100%;"><div class="ovl fragment" data-fragment-index="1" style="left: -2.2%; top: 45.7%; width: 100%; height: 23.3%;"></div></div></div>
+
+::: {style="font-size: 0.5em; text-align: center; font-style: italic;"}
+Manuscript under "review" (consideration) for publication.
+:::
+:::
+
+::: {.column width="50%"}
+<div class="imgwrap"><img src="15_multiple_variable_regression_files/images/image10.png" style="max-height: 72vh; width: auto;"><div class="ovl fragment" data-fragment-index="2" style="left: 0%; top: 28.3%; width: 90.6%; height: 5.4%;"></div><div class="ovl fragment" data-fragment-index="3" style="left: 0.2%; top: 42.4%; width: 90.2%; height: 5.4%;"></div><div class="ovl fragment" data-fragment-index="4" style="left: 0.2%; top: 61.7%; width: 90.2%; height: 7.4%;"></div></div>
+:::
+::::
+
+::: {style="font-size: 0.5em; text-align: center;"}
+Source: @dreier2022patterns
+:::
+
+---
+
+## {#dreier-bias-interp}
+
+:::: {.columns}
+::: {.column width="55%"}
+<div style="font-size: 0.47em; line-height: 1.25;">
+
+**Observation:** Media appear less likely to identify mass shootings as acts of terrorism if the targets are minoritized (relative to if the targets are white). If this is true, it would suggest a form of systematic oppression (regulatory and hegemonic domains) that treats violence against white people as more serious than violence against minoritized people.
+
+***Main IVs:*** Whether the mass shooting ***target*** was a racial minority (0,1); whether the shooter was a racial minority (0,1).
+
+***DV:*** Extent to which US media mis-categorized the shooting as terrorism, based on disagreement between media and an "expert coder" (0=no disagreement; 5=high levels of disagreement)
+
+***Models test different DVs:***
+
+- Column 1 (Model 5): Includes IV "Immigrant shooter"\*
+- Column 2 (Model 5): Includes IV "Muslim shooter"\*
+- Column 3 (Model 7): Includes IV "Middle Eastern shooter"\*
+- \* Too much covariation between these three to include all in one model
+
+***Results:***
+
+- **After including important variables**, there is a positive relationship between whether the targets were minoritized groups and whether the media mis-categorized the event (ie, failed to identify the event as an act of terrorism).
+- **This means that:** If you take two events that are exactly the same on all other important dimensions but one [did not target minoritized groups (0) and was not mis-characterized (0)]{.hl2}, but the other event **did** target minoritized groups (1), [the media would have slightly greater mis-characterization of the event as terrorism (0.73)]{.hl}. This most likely means that media will be less likely to appropriately name a violent event as an act of terrorism if the victims are not "white."
+- **Therefore:** Reject the null hypothesis (that there is no relationship); model provides supports the hypothesis.
+
+</div>
+:::
+
+::: {.column width="45%"}
+<div class="imgwrap"><img src="15_multiple_variable_regression_files/images/image10.png" style="max-height: 74vh; width: auto;"><div class="ovl" style="left: 0.2%; top: 42.4%; width: 90.2%; height: 5.4%;"></div><div class="ovl" style="left: 0.2%; top: 61.7%; width: 90.2%; height: 7.4%;"></div></div>
+
+::: {style="font-size: 0.45em;"}
+Source: @dreier2022patterns
+:::
+:::
+::::
+
+---
+
+## {#soft-power-paper}
+
+:::: {.columns}
+::: {.column width="55%"}
+<div class="imgwrap" style="margin-top: 1em;"><img src="15_multiple_variable_regression_files/images/image13.png" style="width: 100%;"><div class="ovl" style="left: 2.4%; top: 78.4%; width: 77.2%; height: 4.8%;"></div><div class="ovl fragment" data-fragment-index="1" style="left: 17.5%; top: 73.6%; width: 80%; height: 4.5%;"></div></div>
+
+<div style="margin-left: 21%;"><img src="15_multiple_variable_regression_files/images/image14.png" style="width: 100%; margin: 0;"></div>
+:::
+
+::: {.column width="45%"}
+::: {.fragment fragment-index=2}
+<div class="imgwrap"><img src="15_multiple_variable_regression_files/images/image15.png" style="max-height: 72vh; width: auto;"><div class="ovl fragment" data-fragment-index="3" style="left: 76.5%; top: 14.3%; width: 21.1%; height: 4.6%;"></div></div>
+:::
+:::
+::::
+
+::: {style="font-size: 0.5em; text-align: center;"}
+Source: @goldsmith2012soft
+:::
+
+---
+
+## {#soft-power-interp}
+
+:::: {.columns}
+::: {.column width="58%"}
+<div style="font-size: 0.43em; line-height: 1.2;">
+
+**Interpretation:**
+
+***Main IV:***
+
+- Opinion about US Foreign Policy (average response / country, ranging from -1 to 1)
+
+***DV:***
+
+- Proportion of times the country voted with the US during "important" UN decisions in 2003 (0-100)
+
+***Models test different DVs***
+
+- DV Column 1/2: Sent troops to Iraq 2003
+- DV Column 3/4: BIA entered into force 2003
+- DV Column 5/6: UN voting with US 2003 (Only OLS model here)
+
+***Results (for columns 5/6 – OLS model)***
+
+- At the bivariate level, there does not appear to be a statistically significant relationship between average opinion about US foreign policy and proportion of times the country votes with the US on important UN votes (2003).
+- **However, after including other important variables**, this relationship becomes substantively meaningful and statistically significant: A one-unit increase in opinion about US foreign policy is associated with a 15.78 increase in percentage of UN votes with the US.
+- **This means that:** If you take two countries that are exactly the same on all other important dimensions but one has [the most negative opinion about US foreign policy (-1) and votes with the US 20 percent of the time]{.hl2}, and the other has [a neutral opinion about US foreign policy (0), the country with the neutral opinion will see a 15.78-point increase in votes with the US (35.78 percent of the time)]{.hl}. This relationship is significant at the p<0.01 level.
+- **Therefore:** Reject the null hypothesis (that there is no relationship); model provides support for your hypothesis (that public opinion about the US → more votes w US)
+
+</div>
+:::
+
+::: {.column width="42%"}
+::: {.fragment}
+<div class="imgwrap"><img src="15_multiple_variable_regression_files/images/image15.png" style="max-height: 74vh; width: auto;"><div class="ovl fragment" style="left: 76.5%; top: 14.4%; width: 21.1%; height: 4.6%;"></div></div>
+:::
+
+::: {style="font-size: 0.45em;"}
+Source: @goldsmith2012soft
+:::
+:::
+::::
+
+---
+
+## For Thursday:
+
+[Multiple-variable regression in **R** (no new assigned reading)](https://skdreier.github.io/POLS2140/)
+
+(See the full schedule on the syllabus.)
+
+---
+
+## TL;DR {style="font-size: 0.9em;"}
+
+- **Goodness of fit (R^2^)** is the share of the variation in Y the model accounts for (0 to 1) — "good" is a judgment that depends on what we're trying to explain.
+- **Omitted variable bias:** if a Z related to both X and Y is left out, we wrongly credit X with Z's share of the covariation — so multiple-variable regression **controls for Z**. Statistically, every X (key IV or control) plays the same role.
+- **Interpreting a coefficient:** first check **statistical significance** (p-value, \*); only if significant, interpret the **substantive** size of $\beta$ — a one-unit increase in X → a $\beta$ change in Y, *controlling for all other variables in the model*.
+- **Confidence intervals** ($\hat{\beta} \pm t \times se(\hat{\beta})$) quantify uncertainty; narrower is more certain.
+- In R: recode missing codes to `NA`, `na.action = na.omit` in `lm()`, `lm(y ~ x + z1 + z2)`, `stargazer()` for the table, `ggpredict()` (from `ggeffects`) for expected values with confidence intervals, and `plot()` to graph them.
+
+---
+
+## References {.smaller}
+
+::: {#refs}
+:::
