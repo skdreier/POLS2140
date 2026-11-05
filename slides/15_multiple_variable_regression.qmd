@@ -36,6 +36,20 @@ format:
         .reveal .oval { position: absolute; border: 2.5px solid; border-radius: 50%; }
         .reveal .codestep pre code { font-size: 0.78em; line-height: 1.3; }
         .reveal .codestep .cell-output pre code { font-size: 0.7em; }
+        .reveal .bigcode pre code { font-size: 0.95em !important; line-height: 1.25; }
+        .reveal .bigcode .cell-output pre code { font-size: 0.9em !important; }
+        .reveal .bigcode div.sourceCode, .reveal .bigcode pre { margin: 0.15em 0 !important; }
+        .reveal .bigcode p { margin: 0.3em 0; }
+        .reveal .annot { position: relative; margin: 0.2em 0; }
+        .reveal .annot-code { font-family: monospace; white-space: pre; font-size: 17px; line-height: 1.5; padding: 0.4em 0.6em; border: 1px solid #cfcfcf; border-radius: 4px; background: #fbfbfb; color: #1a1a1a; }
+        .reveal .annot-code span { border-radius: 3px; padding: 0 1px; }
+        .reveal .annot-code span.tok-on { background: #107895; color: #ffffff; }
+        .reveal .annot-lab { position: absolute; box-sizing: border-box; font-size: 18px; line-height: 1.2; padding: 3px 6px; background: #ffffff; border: 1.5px solid #cccccc; border-radius: 5px; }
+        .reveal .annot-svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+        .reveal .annot-line { stroke: #107895; stroke-width: 2; transition: opacity 0.2s; }
+        .reveal .evstep pre code { font-size: 0.84em !important; }
+        .reveal .evstep .cell-output pre code { font-size: 0.8em !important; }
+        .reveal .evstep .column > .fragment > p, .reveal .evstep .column p { font-size: 0.8em; }
         .reveal .sg table { margin: 0 auto; font-size: 0.62em; border-collapse: collapse; }
         .reveal .sg td { padding: 1px 14px; border: none; }
         </style>
@@ -570,85 +584,10 @@ After controlling for Gender and Family Income, a 1-unit increase (from Rep. to 
 :::
 ::::
 
-# Confidence Intervals
+## Reading Response
 
-## Confidence Intervals {style="font-size: 0.85em;"}
-
-::: {.fragment}
-***Statistics is about quantifying uncertainty!***
-:::
-
-::: {.incremental}
-- An important aspect of regression models is our **degree of uncertainty** about **individual estimates** of **population parameter values** from the **sample regression model.**
-- **Confidence Interval:** A probabilistic statement about the likely value of a population characteristic based on the observations in a sample [@kellstedt2018fundamentals, p. 160].
-- The $\boldsymbol{se(\hat{\beta})}$ (the standard error of the $\beta$ coefficient) is used to calculate the IV-DV relationship's confidence intervals and to assess its statistical significance (\*).
-:::
-
----
-
-## Confidence Intervals (the underlying math)
-
-A probabilistic statement about the likely value of a population characteristic based on the observations in a sample [@kellstedt2018fundamentals, p. 160]
-
-::: {.eq}
-$\color{#7030A0}{\hat{\beta}} \pm [\color{#0F7A4A}{t} \times \color{#9a2515}{se(\hat{\beta})}]$
-
-$\hat{\alpha} \pm [t \times se(\hat{\alpha})]$
-:::
-
-:::: {.columns .tight2}
-::: {.column style="width: 40%; padding-left: 2em;"}
-[$t$: t-value (p 300)]{.gr1}
-
-  df: $\boldsymbol{n - k}$
-
-  desired p-value\*
-:::
-
-::: {.column width="50%"}
-[$\hat{\beta}$: coefficients in regression table]{style="color: #7030A0; font-weight: 700;"}
-
-[$se(\hat{\beta})$: under coefficients ()]{.hl2}
-:::
-::::
-
----
-
-## Confidence Intervals
-
-- We use $\boldsymbol{se(\hat{\beta})}$ (and t-statistic) to produce visual representations of our regression line and confidence intervals.
-
-- **A 95% confidence interval for $\boldsymbol{\beta}$:** The interval has a probability of 95% to contain the true value of $\beta$. So, in 95% of all samples that could be drawn, the confidence interval will cover the true value of $\beta$.
-
-
-:::: {.columns}
-::: {.column width="30%"}
-![](15_multiple_variable_regression_files/images/image6.png){style="max-height: 42vh; width: auto;"}
-:::
-
-::: {.column width="38%"}
-![](15_multiple_variable_regression_files/images/image7.png){style="max-height: 42vh; width: auto;"}
-:::
-
-::: {.column width="32%"}
-![](15_multiple_variable_regression_files/images/image5.png){style="max-height: 42vh; width: auto;"}
-:::
-::::
-
-## Confidence Intervals
-
-:::: {.columns}
-::: {.column width="50%"}
-![](15_multiple_variable_regression_files/images/image7.png){style="max-height: 62vh; width: auto;"}
-:::
-
-::: {.column width="50%"}
-::: {.incremental}
-- For each point on the line, we can calculate the confidence intervals that represent how big or small a range we would expect (~95%) of our cases to fall within.
-- Do you think it is better (from the standpoint of certainty) to have [wide or narrow]{.hl} confidence intervals?
-:::
-:::
-::::
+1. What is one thing you learned about **data or statistical concepts** from today's data news presentations? What is one thing you learned about **the political world** from the presentations?
+3. What is one thing you **know** about Tuesday's midterm election, and/or one **question** that you have about the election?
 
 # Example: multiple-variable regression in R
 
@@ -730,7 +669,11 @@ Value labels from the ANES 2024 codebook [@anes2024tsdata]. Missing codes (refus
 
 ---
 
-## Step 1: Load the data {.codestep}
+## Prepare the data {.codestep}
+
+**Step 1:** Load the data 
+
+. . .
 
 ```{r}
 #| echo: true
@@ -766,9 +709,15 @@ anes_data$educ     <- anes_data$V241465x  # control: education (5 categories)
 
 ---
 
-## Step 3: Recode missing values to `NA` {.codestep style="font-size: 0.9em;"}
+## Drop missing values {.codestep style="font-size: 0.9em;"}
 
-*Recall:* ANES stores "refused," "don't know," and other missing answers as [negative numbers or codes like 99 and 998]{.hl2}. R would treat those as real values (thus disrupting our calculations). Check the codebook, then set the missing values (specific to each variable) `NA`:
+**Step 3:** Recode missing values to `NA`
+
+. . .
+
+::: {style="font-size: 0.75em;"}
+*Recall:* ANES stores "refused," "don't know," and other missing answers as [negative or very high numbers (e.g., 99 or 998)]{.hl2}. To prevent R from treatings those as real, meaningful values (thus disrupting our calculations), we set the missing values (specific to each variable) to `NA`:
+:::
 
 ```{r}
 #| echo: true
@@ -797,13 +746,110 @@ anes_data$educ[anes_data$educ < 0] <- NA
 
 ---
 
-## Step 4: Run the OLS regression {.codestep}
+## Estimate the model and examine results {.codestep .bigcode}
+
+```{r}
+#| echo: false
+# Real model (the code itself is shown, annotated, below)
+model.multi <- lm(lg_therm ~ ideology + male + age + educ, data = anes_data,
+                  na.action = na.omit)
+```
+
+**Step 4:** Run the OLS regression
+
+. . .
+
+```{=html}
+<div class="annot" id="lm-annot">
+<div class="annot-code"><span data-k="1">model.multi</span> <span data-k="2">&lt;-</span> <span data-k="3">lm(</span><span data-k="4">lg_therm</span> <span data-k="5">~</span> <span data-k="6">ideology</span> + <span data-k="7">male + age + educ</span>, <span data-k="8">data = anes_data</span>, <span data-k="9">na.action = na.omit</span>)</div>
+<div class="annot-lab fragment" data-k="1" data-side="below">The <b>name</b> we give the saved model (an object we can reuse later)</div>
+<div class="annot-lab fragment" data-k="2" data-side="above"><b>Assign</b>: store the result on the right under the name on the left</div>
+<div class="annot-lab fragment" data-k="3" data-side="below"><b>lm()</b> = linear model: R&rsquo;s OLS regression function</div>
+<div class="annot-lab fragment" data-k="4" data-side="above"><b>DV (<i>Y</i>)</b>: feeling thermometer toward gay men &amp; lesbian women</div>
+<div class="annot-lab fragment" data-k="5" data-side="below"><b>~</b> means &ldquo;is modeled as a function of&rdquo; (DV on the left, IVs on the right)</div>
+<div class="annot-lab fragment" data-k="6" data-side="above"><b>Main IV (<i>X</i>)</b>: political ideology (<span style="white-space: nowrap;">1&ndash;7</span>)</div>
+<div class="annot-lab fragment" data-k="7" data-side="below"><b>Control variables (<i>Z</i>)</b>, each added with <b>+</b></div>
+<div class="annot-lab fragment" data-k="8" data-side="above"><b>Which data frame</b> the variables come from</div>
+<div class="annot-lab fragment" data-k="9" data-side="below"><b>Drop</b> any respondent with an <b>NA</b> on any variable in the model</div>
+<svg class="annot-svg"><defs><marker id="annot-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#107895"/></marker></defs></svg>
+</div>
+<script>
+(function () {
+  var ARM = 50;
+  function layout() {
+    var box = document.getElementById('lm-annot');
+    if (!box || !box.offsetWidth) return;
+    var code = box.querySelector('.annot-code');
+    var svg = box.querySelector('.annot-svg');
+    var labs = [].slice.call(box.querySelectorAll('.annot-lab'));
+    svg.querySelectorAll('line').forEach(function (l) { l.remove(); });
+    var W = box.offsetWidth;
+    var rows = {above: [], below: []};
+    labs.forEach(function (lab, i) { rows[i % 2 ? 'above' : 'below'].push(lab); });
+    ['above', 'below'].forEach(function (side) {
+      rows[side].forEach(function (lab) { lab.style.width = (W / rows[side].length - 14) + 'px'; });
+    });
+    var hA = Math.max.apply(null, rows.above.map(function (l) { return l.offsetHeight; }));
+    var hB = Math.max.apply(null, rows.below.map(function (l) { return l.offsetHeight; }));
+    box.style.paddingTop = (hA + ARM) + 'px';
+    box.style.paddingBottom = (hB + ARM + 16) + 'px';
+    var cTop = code.offsetTop, cBot = cTop + code.offsetHeight;
+    ['above', 'below'].forEach(function (side) {
+      var r = rows[side], n = r.length, cell = W / n;
+      r.forEach(function (lab, j) {
+        var tok = code.querySelector('span[data-k="' + lab.dataset.k + '"]');
+        var tx = tok.offsetLeft + tok.offsetWidth / 2;
+        var lx = j * cell + 7, cx = lx + (cell - 14) / 2, y1, y2;
+        lab.style.left = lx + 'px';
+        if (side === 'above') {
+          lab.style.top = (cTop - ARM - lab.offsetHeight) + 'px';
+          y1 = cTop - ARM + 2; y2 = tok.offsetTop + 2;
+        } else {
+          lab.style.top = (cBot + ARM) + 'px';
+          y1 = cBot + ARM - 2; y2 = tok.offsetTop + tok.offsetHeight - 2;
+        }
+        var l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        l.setAttribute('x1', cx); l.setAttribute('y1', y1);
+        l.setAttribute('x2', tx); l.setAttribute('y2', y2);
+        l.setAttribute('marker-end', 'url(#annot-arrow)');
+        l.setAttribute('class', 'annot-line');
+        l.dataset.k = lab.dataset.k;
+        svg.appendChild(l);
+      });
+    });
+    paint();
+  }
+  function paint() {
+    var box = document.getElementById('lm-annot');
+    if (!box) return;
+    box.querySelectorAll('.annot-lab').forEach(function (lab) {
+      var k = lab.dataset.k;
+      var tok = box.querySelector('.annot-code span[data-k="' + k + '"]');
+      var line = box.querySelector('line[data-k="' + k + '"]');
+      var cur = lab.classList.contains('current-fragment'), vis = lab.classList.contains('visible');
+      tok.className = cur ? 'tok-on' : '';
+      if (line) line.style.opacity = vis ? (cur ? 1 : 0.35) : 0;
+      lab.style.color = cur ? '#1a1a1a' : (vis ? '#999999' : '');
+      lab.style.borderColor = cur ? '#107895' : '#cccccc';
+    });
+  }
+  function init() {
+    if (!(window.Reveal && Reveal.isReady && Reveal.isReady())) { setTimeout(init, 100); return; }
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    Reveal.on('slidechanged', layout);
+    Reveal.on('fragmentshown', paint);
+    Reveal.on('fragmenthidden', paint);
+  }
+  init();
+})();
+</script>
+```
+
+. . .
 
 ```{r}
 #| echo: true
-# na.action = na.omit drops every respondent with an NA on any variable in the model
-model.multi <- lm(lg_therm ~ ideology + male + age + educ, data = anes_data,
-                  na.action = na.omit)
 nobs(model.multi)   # respondents used in the model
 ```
 
@@ -815,19 +861,123 @@ nobs(model.multi)   # respondents used in the model
 summary(model.multi)
 ```
 
-. . .
+---
+
+## Make a regression table {.codestep .bigcode}
 
 **Step 5:** Make a regression table with `stargazer` [@hlavac2022stargazer]
+
+. . .
 
 ```{r}
 #| echo: true
 #| eval: false
 # install.packages("stargazer")   # only once
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
 library(stargazer)
-stargazer(model.multi, type = "text",
-          dep.var.labels = "Feeling thermometer: Gay men and Lesbian women",
-          covariate.labels = c("Ideology (conservative)", "Male",
-                               "Age (years)", "Education (1-5)"))
+```
+
+. . .
+
+```{=html}
+<div class="annot" id="sg-annot" style="margin-top: 0.6em;">
+<div class="annot-code" style="display: inline-block;"><span data-k="1">stargazer(</span><span data-k="2">model.multi</span>, <span data-k="3">type = "text"</span>,
+  <span data-k="4">dep.var.labels = "Feeling thermometer: Gay men and Lesbian women"</span>,
+  <span data-k="5">covariate.labels = c("Ideology (conservative)", "Male",
+                       "Age (years)", "Education (1-5)")</span>)</div>
+<div class="annot-lab fragment" data-k="1" data-side="above"><b>stargazer()</b>: turns a saved model into a formatted regression table</div>
+<div class="annot-lab fragment" data-k="2" data-side="above"><b>Which saved model</b> goes in the table (the object from Step 4)</div>
+<div class="annot-lab fragment" data-k="3" data-side="above"><b>Output format</b>: &ldquo;text&rdquo; prints the table in the R console</div>
+<div class="annot-lab fragment" data-k="4" data-side="right"><b>Readable name for the DV</b> (instead of <code>lg_therm</code>)</div>
+<div class="annot-lab fragment" data-k="5" data-side="right"><b>Readable names for the IVs</b>, in the same order as in the model</div>
+<svg class="annot-svg"><defs><marker id="sg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#107895"/></marker></defs></svg>
+</div>
+<script>
+(function () {
+  var ID = 'sg-annot', ARM = 50, HGAP = 46, VGAP = 10;
+  function rects(el, B, sc) {
+    return [].slice.call(el.getClientRects()).map(function (r) {
+      return {l: (r.left - B.left) / sc, r: (r.right - B.left) / sc, t: (r.top - B.top) / sc, b: (r.bottom - B.top) / sc};
+    });
+  }
+  function layout() {
+    var box = document.getElementById(ID);
+    if (!box || !box.offsetWidth) return;
+    var code = box.querySelector('.annot-code'), svg = box.querySelector('.annot-svg');
+    var labs = [].slice.call(box.querySelectorAll('.annot-lab'));
+    svg.querySelectorAll('line').forEach(function (l) { l.remove(); });
+    var W = box.offsetWidth, cW = code.offsetWidth;
+    var above = labs.filter(function (l) { return l.dataset.side === 'above'; });
+    var right = labs.filter(function (l) { return l.dataset.side === 'right'; });
+    above.forEach(function (l) { l.style.width = (cW / above.length - 14) + 'px'; });
+    var rX = code.offsetLeft + cW + HGAP;
+    right.forEach(function (l) { l.style.width = (W - rX) + 'px'; });
+    var hA = Math.max.apply(null, above.map(function (l) { return l.offsetHeight; }));
+    box.style.paddingTop = (hA + ARM) + 'px';
+    var B = box.getBoundingClientRect(), sc = B.width / box.offsetWidth;
+    var cTop = code.offsetTop, cBot = cTop + code.offsetHeight, lines = [];
+    above.forEach(function (lab, j) {
+      var tok = code.querySelector('span[data-k="' + lab.dataset.k + '"]');
+      var r = rects(tok, B, sc)[0];
+      var cell = cW / above.length, lx = code.offsetLeft + j * cell + 7;
+      lab.style.left = lx + 'px';
+      lab.style.top = (cTop - ARM - lab.offsetHeight) + 'px';
+      lines.push([lab.dataset.k, lx + (cell - 14) / 2, cTop - ARM + 2, (r.l + r.r) / 2, r.t + 2]);
+    });
+    var nextTop = cTop;
+    right.forEach(function (lab) {
+      var tok = code.querySelector('span[data-k="' + lab.dataset.k + '"]');
+      var rs = rects(tok, B, sc), r0 = rs[0], rN = rs[rs.length - 1];
+      var mid = (r0.t + rN.b) / 2, h = lab.offsetHeight;
+      var top = Math.max(nextTop, mid - h / 2);
+      lab.style.left = rX + 'px'; lab.style.top = top + 'px';
+      nextTop = top + h + VGAP;
+      var tgt = rs.reduce(function (a, b) { return b.r > a.r ? b : a; });
+      lines.push([lab.dataset.k, rX - 2, top + h / 2, tgt.r + 4, (tgt.t + tgt.b) / 2]);
+    });
+    box.style.paddingBottom = Math.max(16, nextTop - cBot + 6) + 'px';
+    lines.forEach(function (p) {
+      var l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      l.setAttribute('x1', p[1]); l.setAttribute('y1', p[2]);
+      l.setAttribute('x2', p[3]); l.setAttribute('y2', p[4]);
+      l.setAttribute('marker-end', 'url(#sg-arrow)');
+      l.setAttribute('class', 'annot-line');
+      l.dataset.k = p[0];
+      svg.appendChild(l);
+    });
+    paint();
+  }
+  function paint() {
+    var box = document.getElementById(ID);
+    if (!box) return;
+    box.querySelectorAll('.annot-lab').forEach(function (lab) {
+      var k = lab.dataset.k;
+      var tok = box.querySelector('.annot-code span[data-k="' + k + '"]');
+      var line = box.querySelector('line[data-k="' + k + '"]');
+      var cur = lab.classList.contains('current-fragment'), vis = lab.classList.contains('visible');
+      tok.className = cur ? 'tok-on' : '';
+      if (line) line.style.opacity = vis ? (cur ? 1 : 0.35) : 0;
+      lab.style.color = cur ? '#1a1a1a' : (vis ? '#999999' : '');
+      lab.style.borderColor = cur ? '#107895' : '#cccccc';
+    });
+  }
+  function init() {
+    if (!(window.Reveal && Reveal.isReady && Reveal.isReady())) { setTimeout(init, 100); return; }
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    Reveal.on('slidechanged', layout);
+    Reveal.on('fragmentshown', paint);
+    Reveal.on('fragmenthidden', paint);
+  }
+  init();
+})();
+</script>
 ```
 
 ---
@@ -855,36 +1005,205 @@ Controlling for gender, age, and education, a one-point move toward the conserva
 
 ---
 
-## Step 6: Expected values with confidence intervals {.codestep style="font-size: 0.9em;"}
-
-The `ggeffects` package [@ludecke2018ggeffects] predicts the DV at each ideology value (1–7), holding the controls constant, in one line:
+## Expected values by ideology
 
 ```{r}
-#| echo: true
-# install.packages(c("ggeffects", "ggplot2"))   # only once
+#| echo: false
+#| fig-width: 8
+#| fig-height: 4.6
+#| out-width: "88%"
+#| fig-align: center
 library(ggeffects)
+library(ggplot2)
 ev <- ggpredict(model.multi, terms = "ideology")
-ev   # Predicted = expected value; 95% CI = confidence interval
+ggplot(as.data.frame(ev), aes(x = x, y = predicted)) +
+  geom_line(color = "#107895", linewidth = 1.2) +
+  geom_point(color = "#107895", size = 2.5) +
+  labs(x = "Political ideology (1 = extremely liberal, 7 = extremely conservative)",
+       y = "Expected thermometer rating (0-100)",
+       title = "Expected feelings toward gay men and lesbians, by ideology") +
+  scale_x_continuous(breaks = 1:7) +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "transparent", color = NA),
+        panel.background = element_rect(fill = "transparent", color = NA))
 ```
 
-. . .
+::: {.fragment style="font-size: 0.6em; text-align: center;"}
+Holding gender, age, and education constant. But how [certain]{.hl} are we about each of these expected values?
+:::
 
-[*Adjusted for*]{.hl} lists the values the controls are held at (gender at its mean; age and education at their typical, rounded values).
+# Confidence Intervals
+
+## Confidence Intervals {style="font-size: 0.85em;"}
+
+::: {.fragment}
+***Statistics is about quantifying uncertainty!***
+:::
+
+::: {.incremental}
+- An important aspect of regression models is our **degree of uncertainty** about **individual estimates** of **population parameter values** from the **sample regression model.**
+- **Confidence Interval:** A probabilistic statement about the likely value of a population characteristic based on the observations in a sample [@kellstedt2018fundamentals, p. 160].
+- The $\boldsymbol{se(\hat{\beta})}$ (the standard error of the $\beta$ coefficient) is used to calculate the IV-DV relationship's confidence intervals and to assess its statistical significance (\*).
+:::
 
 ---
 
-## Step 7: Plot the expected values {.codestep}
+## Standard errors in our results {.sg}
 
-```{r ev-plot}
+```{r}
+#| echo: false
+#| results: asis
+# Same table as the Results slide, with each standard error, e.g. "(0.23)", circled
+sg_se <- gsub("*", "&#42;", sg, fixed = TRUE)
+sg_se <- gsub(">\\((-?[0-9.]+)\\)<", "><span class=\"pcircle\">(\\1)</span><", sg_se)
+cat(sg_se, sep = "\n")
+```
+
+::: {style="font-size: 0.6em; margin-top: 0.4em; text-align: center;"}
+The circled numbers in parentheses, under each coefficient, are the [standard errors]{.hl}: $se(\hat{\beta})$.
+:::
+
+---
+
+## Confidence Intervals (the underlying math)
+
+A probabilistic statement about the likely value of a population characteristic based on the observations in a sample [@kellstedt2018fundamentals, p. 160]
+
+::: {.eq}
+$\color{#7030A0}{\hat{\beta}} \pm [\color{#0F7A4A}{t} \times \color{#9a2515}{se(\hat{\beta})}]$
+
+$\hat{\alpha} \pm [t \times se(\hat{\alpha})]$
+:::
+
+:::: {.columns .tight2}
+::: {.column style="width: 40%; padding-left: 2em;"}
+[$t$: t-value (p 300)]{.gr1}
+
+  df: $\boldsymbol{n - k}$
+
+  desired p-value\*
+:::
+
+::: {.column width="50%"}
+[$\hat{\beta}$: coefficients in regression table]{style="color: #7030A0; font-weight: 700;"}
+
+[$se(\hat{\beta})$: under coefficients ()]{.hl2}
+:::
+::::
+
+---
+
+## Confidence Intervals
+
+- We use $\boldsymbol{se(\hat{\beta})}$ (and t-statistic) to produce visual representations of our regression line and confidence intervals.
+
+- **A 95% confidence interval for $\boldsymbol{\beta}$:** The interval has a probability of 95% to contain the true value of $\beta$. So, in 95% of all samples that could be drawn, the confidence interval will cover the true value of $\beta$.
+
+
+:::: {.columns}
+::: {.column width="30%"}
+![](15_multiple_variable_regression_files/images/image6.png){style="max-height: 42vh; width: auto;"}
+:::
+
+::: {.column width="38%"}
+![](15_multiple_variable_regression_files/images/image7.png){style="max-height: 42vh; width: auto;"}
+:::
+
+::: {.column width="32%"}
+![](15_multiple_variable_regression_files/images/image5.png){style="max-height: 42vh; width: auto;"}
+:::
+::::
+
+## Confidence Intervals
+
+:::: {.columns}
+::: {.column width="50%"}
+![](15_multiple_variable_regression_files/images/image7.png){style="max-height: 62vh; width: auto;"}
+:::
+
+::: {.column width="50%"}
+::: {.incremental}
+- For each point on the line, we can calculate the confidence intervals that represent how big or small a range we would expect (~95%) of our cases to fall within.
+- Do you think it is better (from the standpoint of certainty) to have [wide or narrow]{.hl} confidence intervals?
+:::
+:::
+::::
+
+---
+
+## Plot the confidence intervals {.codestep .bigcode .evstep style="font-size: 0.85em;"}
+
+**Steps 6–7:** Calculate the expected values with confidence intervals, then plot them 
+
+The `ggeffects` package [@ludecke2018ggeffects] predicts the DV at each ideology value (1–7), holding the controls constant:
+
+:::: {.columns}
+::: {.column style="width: 67%;"}
+
+```{r}
+#| echo: true
+#| eval: false
+# install.packages(c("ggeffects", "ggplot2"))   # only once
+```
+
+::: {.fragment fragment-index=1}
+```{r}
+#| echo: true
+library(ggeffects)
+```
+:::
+
+::: {.fragment fragment-index=2}
+```{r}
+#| echo: true
+ev <- ggpredict(model.multi, terms = "ideology")
+```
+:::
+
+::: {.fragment fragment-index=3}
+```{r}
+#| echo: true
+#| eval: false
+ev   # Predicted = expected value; 95% CI = confidence interval
+```
+:::
+
+::: {.fragment fragment-index=6}
+```{r}
 #| echo: true
 #| eval: false
 library(ggplot2)
+```
+:::
+
+::: {.fragment fragment-index=7}
+```{r ev-plot}
+#| echo: true
+#| eval: false
 plot(ev) +   # line = expected values; shaded band = 95% CI
   labs(x = "Political ideology (1 = extremely liberal, 7 = extremely conservative)",
        y = "Expected thermometer rating (0-100)",
        title = "Expected feelings toward gay men and lesbians, by ideology") +
   scale_x_continuous(breaks = 1:7)
 ```
+:::
+
+:::
+::: {.column style="width: 31%; padding-left: 1%;"}
+
+::: {.fragment fragment-index=4}
+```{r}
+#| echo: false
+ev
+```
+:::
+
+::: {.fragment fragment-index=5 style="font-size: 0.65em;"}
+[*Adjusted for*]{.hl} lists the values the controls are held at (gender at its mean; age and education at their typical, rounded values).
+:::
+
+:::
+::::
 
 ---
 
@@ -896,11 +1215,23 @@ plot(ev) +   # line = expected values; shaded band = 95% CI
 #| fig-height: 4.6
 #| out-width: "88%"
 #| fig-align: center
+library(ggplot2)
 <<ev-plot>>
 ```
 
 ::: {.fragment style="font-size: 0.6em; text-align: center;"}
 Holding gender, age, and education constant. The confidence band is [narrow]{.hl} because n = 3,864 — we are quite certain about each expected value.
+:::
+
+## Looking ahead to next week
+
+::: {.incremental}
+- **This week's weekly assignment:** run a [multivariate regression analysis]{.hl} and make a [`stargazer` table]{.hl} for your own variables
+    - Code: [slides 30–33](#/prepare-the-data) (prepare the data → drop missing values → estimate the model → make the regression table)
+- **Next week (in class):**
+    - We will [interpret each person's table]{.hl} together. [Be sure to submit your assignment by Monday night!]{.hl2}
+    - Then we will [troubleshoot code]{.hl} with each person to plot their regression line and confidence intervals
+    - No new readings next week.
 :::
 
 ## Steps to interpretation {style="font-size: 0.8em;"}
