@@ -502,7 +502,7 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 
 ---
 
-### Week 14 — WORKSHOP: EXPERIMENTAL DESIGN
+### Week 14 — EXPERIMENTAL RESEARCH DESIGNS (From Week 7)
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 14"}
@@ -512,13 +512,24 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 :::
 :::
 
-- **Tue 11/17:** Workshop: designing your experimental survey
-  - *In-class activity:* Work in groups to draft the survey-experiment component of your Final Research Analysis (used later to evaluate your hypothesis experimentally).
-- **Thu 11/19:** Workshop: designing your experimental survey (cont.)
+
+- **Tue 11/17:** Experimental v. observational research
+  - *Assigned readings:*
+    - *Fundamentals* Ch 4, "Research Design."
+    - Recommended: *The Art of Statistics* Ch 4, "What Causes What?"
+
+- **Thu 11/19:** Field, Survey, and Natural Experiments
+  - *Assigned readings:*
+    - Aizenman, "How to Fix Poverty: Why Not Just Give People Money?" and "An Experiment Gives Cash Aid to the Poor. Is that Ethical?" (Optional: Review results of experimental interventions [here](https://www.givedirectly.org/gdresearch/).)
+    - Select **ONE** of the following research articles:
+      - Ayoub and Harris, "Rooting Equality: Testing the Effectiveness of Activist
+Frames Combating Homophobia in Zimbabwe," especially pp. 9-17. **OR**
+      - Caselli, Falco, and Mattera, "When the Mob Goes Silent: Uncovering the Effects of Racial Harassment through a Natural Experiment," pp. 5-11. (Optional: Read the *New York Times* coverage of the research: Burdick, "[Measuring the Cost of Racial Abuse in Soccer](https://www.nytimes.com/2021/07/16/science/covid-racism-soccer-football-falco.html).")
+
 
 ---
 
-### Week 15 — NO CLASS
+### Week 15 — OPTIONAL REGRESSION INTERPRETATIONS
 
 ::: {.content-visible when-profile="instructor"}
 ::: {.callout-tip title="🔒 Instructor notes — Week 15"}
@@ -527,6 +538,10 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
 - **Next time:**
 :::
 :::
+
+- **Tue 11/24:** OPTIONAL CLASS: Interpreting your regression results 
+
+- **Thurs 11/26:** NO CLASS
 
 ---
 
@@ -547,7 +562,6 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
     - *Art of Statistics*, Ch 13, "How We Can Do Statistics Better."
 
 - **Thu 12/3:** Project workshop day
-
 
 :::{.callout-important}
 **Final Research Analysis: Final Paper ([Due Wed 12/9](#final-paper-due))**

@@ -586,8 +586,11 @@ After controlling for Gender and Family Income, a 1-unit increase (from Rep. to 
 
 ## Reading Response
 
-1. What is one thing you learned about **data or statistical concepts** from today's data news presentations? What is one thing you learned about **the political world** from the presentations?
-3. What is one thing you **know** about Tuesday's midterm election, and/or one **question** that you have about the election?
+1. What is one thing you learned about **data or statistical concepts** from today's data news presentations? What is one thing you learned about **the social or political world** from the presentations?
+
+. . .
+
+2. What is one thing you **know** about Tuesday's midterm election, and/or one **question** that you have about the election?
 
 # Example: multiple-variable regression in R
 
@@ -1233,6 +1236,21 @@ Holding gender, age, and education constant. The confidence band is [narrow]{.hl
     - Then we will [troubleshoot code]{.hl} with each person to plot their regression line and confidence intervals
     - No new readings next week.
 :::
+
+## Announcements
+
+:::{.incremental}
+- Data News
+- Student Announcements
+:::
+
+## Reading Response (11/12)
+
+To the best of your ability, interpret your regression analysis results (specifically the beta coefficient of the effect your independent variable has on your dependent variable). 
+
+We'll return to this later.
+
+# Interpreting your results
 
 ## Steps to interpretation {style="font-size: 0.8em;"}
 

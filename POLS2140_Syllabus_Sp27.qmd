@@ -139,9 +139,7 @@ Your final grade will be determined as follows:
 
 **MIDTERM EXAM (20%):** You will be examined on **political science research design, data exploration, and R coding basics** (material from Weeks 1–7). My goal for the exam is to encourage and facilitate your learning. The exam is an in-person, hand-written exam which includes concept identification, multiple choice, short-answer and paragraph responses. After the exam has been graded, students have the option to update their exams (by providing correct answers and a discussion of their evolved understanding) to raise their exam score by up to one letter grade. **Date: Tue 3/9.**
 
-<!--
 **FINAL RESEARCH ANALYSIS (20%):** You will develop an original research hypothesis, statistically test that hypothesis using one of two observational datasets provided in class, and evaluate the hypothesis using an experimental survey (completed in groups). The final project will include the following sections: Introduction, Theory and Hypothesis, Data and Methods Description, Observational analysis using multiple-variable regression (OLS), Experimental analysis using a survey experiment, and Concluding Implications. We will break this project into several small assigned tasks (in the weekly assignments) and provide assigned periodic research tasks in incremental chunks throughout the semester to prevent you from scrambling at the end of the term! **Due: Wed 12/9.**
--->
 
 **There is no final exam in this course.** All assignments will be posted and submitted (by 11:59 pm on the due date) via **Canvas**. Each submitted assignment will include detailed instructions regarding when and how use of AI tools are acceptable and when such use will be penalized.
 
@@ -269,12 +267,13 @@ For credit, you must [sign up](https://docs.google.com/spreadsheets/d/1P3zJhC_Yn
     - *Fundamentals* Ch 4, "Research Design."
     - Recommended: *The Art of Statistics* Ch 4, "What Causes What?"
 
-- **Thu 2/11:**
+- **Thu 2/11:** Field, Survey, and Natural Experiments
   - *Assigned readings:*
-    - Aizenman, "How to Fix Poverty: Why Not Just Give People Money?" and "An Experiment Gives Cash Aid to the Poor. Is that Ethical?" Review results of experimental interventions [here](https://www.givedirectly.org/gdresearch/).
-    - TBD: Survey research example
-
----
+    - Aizenman, "How to Fix Poverty: Why Not Just Give People Money?" and "An Experiment Gives Cash Aid to the Poor. Is that Ethical?" (Optional: Review results of experimental interventions [here](https://www.givedirectly.org/gdresearch/).)
+    - Select **ONE** of the following research articles:
+      - Ayoub and Harris, "Rooting Equality: Testing the Effectiveness of Activist
+Frames Combating Homophobia in Zimbabwe," especially pp. 9-17. **OR**
+      - Caselli, Falco, and Mattera, "When the Mob Goes Silent: Uncovering the Effects of Racial Harassment through a Natural Experiment," pp. 5-11. (Optional: Read the *New York Times* coverage of the research: Burdick, "[Measuring the Cost of Racial Abuse in Soccer](https://www.nytimes.com/2021/07/16/science/covid-racism-soccer-football-falco.html).")
 
 ---
 
