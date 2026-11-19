@@ -557,11 +557,12 @@ Frames Combating Homophobia in Zimbabwe," especially pp. 9-17. **OR**
 
 - **Tue 12/1:** Statistics' past and future
   - *Assigned readings:*
-    - Clayton, "How Eugenics Shaped Statistics."
     - *Art of Statistics*, Ch 12, "How Things Go Wrong"
     - *Art of Statistics*, Ch 13, "How We Can Do Statistics Better."
 
 - **Thu 12/3:** Project workshop day
+  - *Assigned readings:*
+    - Clayton, "How Eugenics Shaped Statistics."
 
 :::{.callout-important}
 **Final Research Analysis: Final Paper ([Due Wed 12/9](#final-paper-due))**

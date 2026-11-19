@@ -66,6 +66,15 @@ $selection-bg: #26351c !default;
   color: #ffffff;
 }
 
+// Section-divider "subtitle": a plain line written directly under a `#` heading
+// (e.g. `# Field experiment:` then `Give Directly (cash with no strings attached)`)
+// renders as a <p> on the divider slide. Make it read as a subtitle, not body text.
+.reveal .slides section.level1 > h1 + p {
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin-top: 0.2em;
+}
+
 // title and headings
 
 #title-slide {
@@ -81,6 +90,7 @@ $selection-bg: #26351c !default;
   .subtitle {
     color: $accent;
     font-style: italic;
+    font-size: 1.25em;
     margin-top: 0em;
     font-weight: lighter;
   }

@@ -60,6 +60,7 @@ https://skdreier.github.io/POLS2140/slides/<deck-name>.html
 | 13 | Bivariate Hypothesis Testing | [13_bivariate_hyp_testing2](https://skdreier.github.io/POLS2140/slides/13_bivariate_hyp_testing2.html) |
 | 14 | Bivariate Regression Analysis | [14_bivariate_reg_analysis](https://skdreier.github.io/POLS2140/slides/14_bivariate_reg_analysis.html) |
 | 15 | Multiple-Variable Regression Analysis | [15_multiple_variable_regression](https://skdreier.github.io/POLS2140/slides/15_multiple_variable_regression.html) |
+| 16 | Experiments + Observations | [16_experiments_vs_observations](https://skdreier.github.io/POLS2140/slides/16_experiments_vs_observations.html) |
 | — | Data News Thursday | [data_news_Thurs](https://skdreier.github.io/POLS2140/slides/data_news_Thurs.html) |
 
 New decks are added to this list as the semester goes on. Links to each deck are also posted on Canvas.
